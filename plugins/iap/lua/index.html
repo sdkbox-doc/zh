@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>lua - SDKBOX</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="../../..">SDKBOX</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">主页</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../installer/">安装器</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">IAP</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../cpp/">c++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../js/">js</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+<li >
+    <a href="../../adcolony/">AdColony</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../chartboost/">Chartboost</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../vungle/">Vungle</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../googleanalytics/">Google Analytics</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../flurryanalytics/">Flurry Analytics</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../tune/">Tune</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../kochava/">Kochava</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../release-note/">关于</a>
+                    </li>
+                
+                
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                
+                    <li >
+                        <a rel="next" href="../js/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../adcolony/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#_1">介绍</a></li>
+        
+    
+        <li class="main "><a href="#_2">集成</a></li>
+        
+    
+        <li class="main "><a href="#_3">额外的步骤</a></li>
+        
+            <li><a href="#activityjava">修改 &lt;游戏所在Activity&gt;.java</a></li>
+        
+            <li><a href="#sdkbox-iap">在游戏源码中调用 SDKBOX 的 IAP 接口</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<!--
+Include Base: /Users/niteluo/Projects/store/doc/en/src/iap/v3-cpp
+-->
+
+<h2 id="_1">介绍</h2>
+<p>提供了一步集成IAP到cocos2d-x(c, lua, js)工程, <strong>SDKBOX</strong> 极大地简化了集成sdk的过程.</p>
+<h2 id="_2">集成</h2>
+<p>运行下面的命令来集成iap</p>
+<pre><code class="bash">sdkbox import iap
+</code></pre>
+
+<h2 id="_3">额外的步骤</h2>
+<h3 id="activityjava">修改 <code>&lt;游戏所在Activity&gt;.java</code></h3>
+<ul>
+<li>在 <code>&lt;游戏所在Activity&gt;.java</code> 中添加下面的import:</li>
+</ul>
+<pre><code class="java">import android.content.Intent;
+import com.sdkbox.plugin.SDKBox;
+</code></pre>
+
+<ul>
+<li>在上面那个类中的 <code>onCreate(final Bundle savedInstanceState)</code> 函数中添加 <code>SDKBox.init(this);</code> 调用. 添加后的代码:</li>
+</ul>
+<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstanceState);
+  SDKBox.init(this);
+}
+</code></pre>
+
+<ul>
+<li>对以下这几个函数中,添加对应的 SDKBox 接口调用,最后你的代码,应该像以下这样:<ul>
+<li>如果你的类中,有些函数不存在,添加它</li>
+<li>如果你的类中,有些函数已经存在,那在其中添加对应的 SDKBox 相关接口调用</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+          }
+    }
+    @Override
+    protected void onStart() {
+          super.onStart();
+          SDKBox.onStart();
+    }
+    @Override
+    protected void onStop() {
+          super.onStop();
+          SDKBox.onStop();
+    }
+    @Override
+    protected void onResume() {
+          super.onResume();
+          SDKBox.onResume();
+    }
+    @Override
+    protected void onPause() {
+          super.onPause();
+          SDKBox.onPause();
+    }
+    @Override
+    public void onBackPressed() {
+          if(!SDKBox.onBackPressed()) {
+            super.onBackPressed();
+          }
+    }
+</code></pre>
+
+<ul>
+<li>备注:</li>
+</ul>
+<p>cocos2d-x v2中, <code>&lt;游戏所在Activtiy&gt;.java</code> 一般为 <code>proj.android/src/com/cocos/你的游戏/你的游戏.java</code>
+cocos2d-x v3中, <code>&lt;游戏所在Activtiy&gt;.java</code> 一般为 <code>proj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java</code>, LANGUAGE为cpp,lua或javascript</p>
+<h3 id="sdkbox-iap">在游戏源码中调用 SDKBOX 的 IAP 接口</h3>
+<h4 id="1-sdkbox_configjson">1. 配置 <code>sdkbox_config.json</code></h4>
+<ul>
+<li>
+<p><code>sdkbox_config.json</code> 不存在:</p>
+<ul>
+<li>重命名插件中的 <code>sdkbox_config.json.sample</code> 为 <code>sdkbox_config.json</code></li>
+<li>拷贝 <code>sdkbox_config.json</code> 到工程中的 <strong>Resources</strong> 目录</li>
+<li>XCode中,还需要把 <code>sdkbox_config.json</code> 文件拖到工程的资源文件中,确保这个文件会打包到你的ios应用中</li>
+</ul>
+</li>
+<li>
+<p><code>sdkbox_config.json</code> 已经存在:</p>
+<ul>
+<li>把插件中的 <code>sdkbox_config.json.sample</code> 中的 <code>IAP</code> 项拷贝到你工程中的 <code>sdkbox_config.json</code> 中</li>
+</ul>
+</li>
+<li>
+<p>修改 <code>sdkbox_config.json</code> 中的项为你自己的信息</p>
+</li>
+</ul>
+<h4 id="2-iap">2 初始化 IAP</h4>
+<ul>
+<li>修改 <code>AppDelegate.cpp</code> 包括以下头文件:</li>
+</ul>
+<pre><code class="cpp">#include &quot;PluginIAPLua.hpp&quot;
+#include &quot;PluginIAPLuaHelper.hpp&quot;
+</code></pre>
+
+<ul>
+<li>修改 <code>AppDelegate.cpp</code> 在函数 <code>applicationDidFinishLaunching</code> 中注册IAP的Lua绑定:</li>
+</ul>
+<pre><code class="cpp">lua_State *tolua_s = pStack-&gt;getLuaState();
+register_all_PluginIAPLua(tolua_s);
+register_all_PluginIAPLua_helper(tolua_s);
+</code></pre>
+
+<ul>
+<li>在你的代码中调用 <code>ssdkbox.IAP:init()</code> 来完成初始化</li>
+</ul>
+<h4 id="3">3 获取最新的商品信息</h4>
+<p>当你的游戏启动时,最好获取一次最新商品信息
+要获取商品信息,可以调用 <code>sdkbox.IAP:refresh()</code>.</p>
+<blockquote>
+<p><code>onProductRequestSuccess</code> 获取成功,会收到这个回调</p>
+<p><code>onProductRequestFailure</code> 获取失败</p>
+</blockquote>
+<h4 id="4">4 购买</h4>
+<p>购买调用接口 <code>sdkbox.IAP.purchase(name)</code></p>
+<p><strong>提示:</strong> <strong>name</strong> 是你在 <code>sdkbox_config.json</code> 中的 <code>items</code> 项存放在的名字, 而不是你在 iTunes 或 GooglePlay Store 的商品名字</p>
+<blockquote>
+<p><code>onSuccess</code> 购买成功.</p>
+<p><code>onFailure</code> 购买失败.</p>
+<p><code>onCanceled</code> 用户取消购买.</p>
+</blockquote>
+<h4 id="5">5 恢复购买</h4>
+<p>恢复购买调用 <code>sdkbox.IAP:restore()</code>.</p>
+<blockquote>
+<p><code>onRestored</code> 恢复成功</p>
+</blockquote>
+<p><strong>Note:</strong> <code>onRestored</code> 这个回调可能不至只有一次</p>
+<h4 id="6">6 处理购买事件</h4>
+<p>允许你接收处理游戏中 <code>IAP</code> 返回的各种事件</p>
+<ul>
+<li>注册lua script listener:</li>
+</ul>
+<pre><code class="lua">sdkbox.IAP:setListener(function(args)
+        if &quot;onSuccess&quot; == args.event then
+                local product = args.product
+                dump(product, &quot;onSuccess:&quot;)
+        elseif &quot;onFailure&quot; == args.event then
+                local product = args.product
+                local msg = args.msg
+                dump(product, &quot;onFailure:&quot;)
+                print(&quot;msg:&quot;, msg)
+        elseif &quot;onCanceled&quot; == args.event then
+                local product = args.product
+                dump(product, &quot;onCanceled:&quot;)
+        elseif &quot;onRestored&quot; == args.event then
+                local product = args.product
+                dump(product, &quot;onRestored:&quot;)
+        elseif &quot;onProductRequestSuccess&quot; == args.event then
+                local products = args.products
+                dump(products, &quot;onProductRequestSuccess:&quot;)
+        elseif &quot;onProductRequestFailure&quot; == args.event then
+                local msg = args.msg
+                print(&quot;msg:&quot;, msg)
+        else
+                print(&quot;unknow event &quot;, args.event)
+        end
+end)
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script data-main="../../../mkdocs/js/search.js" src="../../../mkdocs/js/require.js"></script>
+        <script src="../../../js/base.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            From here you can search these documents. Enter
+                            your search terms below.
+                        </p>
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                            </div>
+                        </form>
+                        <div id="mkdocs-search-results"></div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

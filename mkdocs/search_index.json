@@ -1,0 +1,329 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "SDKBOX\n\n\n\n\nSDKBOX\n \u53ef\u4ee5\u8ba9cocos2d-x\u7684\u5f00\u53d1\u8005\u5f88\u8f7b\u677e\u5730\u628a\u5404\u79cd\u56fd\u5185\u5916\u7684SDK\u96c6\u6210\u5230\u81ea\u5df1\u7684\u6e38\u620f\u4e2d.\n\u6211\u4eec\u5b8c\u6210\u4e86\u96c6\u6210sdk\u8fc7\u7a0b\u4e2d\u6700\u5355\u8c03,\u91cd\u590d\u7684\u5de5\u4f5c.\u5e76\u5bf9\u96c6\u6210\u597d\u7684\u7684\u670d\u52a1,sdk\u505a\u4e86\u4e25\u683c\u7684\u6d4b\u8bd5.\n\u6240\u6709cocos2d-x\u7684\u6e38\u620f,\u4e0d\u7ba1\u662flua,js\u8fd8\u662f\u539f\u751fc++\u8bed\u8a00,\u90fd\u53ef\u4ee5\u4f7f\u7528 \nSDKBOX\n \u6765\u5b8c\u6210\u96c6\u6210\u5de5\u4f5c\n\n\n\u4ecb\u7ecd\n\n\nSDKBOX\n \u662f\u4e00\u4e2a\u547d\u4ee4\u884c\u7684\u5b89\u88c5\u7a0b\u5e8f,\u4f60\u53ef\u4ee5\u53ea\u7528\u4e00\u4e2a\u547d\u4ee4\u5c31\u628a\u7b2c\u4e09\u65b9SDK\u96c6\u6210\u5230\u81ea\u5df1\u7684\u5de5\u4f5c\u4e2d\n\n\n\n\n\u5e94\u7528\u5185\u4ed8\u8d39\n\n\nSDKBOX IAP\n\n\n\u5e7f\u544a\u7c7b\n\n\nAdColony\n\n\nChartboost\n\n\nVungle\n\n\n\u5206\u6790\u7c7b\n\n\nGoogle Analytics\n\n\nFlurry Analytics\n\n\n\u5e7f\u544a\u8ffd\u8e2a\n\n\nTune\n\n\nKochava", 
+            "title": "\u4e3b\u9875"
+        }, 
+        {
+            "location": "/#sdkbox", 
+            "text": "SDKBOX  \u53ef\u4ee5\u8ba9cocos2d-x\u7684\u5f00\u53d1\u8005\u5f88\u8f7b\u677e\u5730\u628a\u5404\u79cd\u56fd\u5185\u5916\u7684SDK\u96c6\u6210\u5230\u81ea\u5df1\u7684\u6e38\u620f\u4e2d.\n\u6211\u4eec\u5b8c\u6210\u4e86\u96c6\u6210sdk\u8fc7\u7a0b\u4e2d\u6700\u5355\u8c03,\u91cd\u590d\u7684\u5de5\u4f5c.\u5e76\u5bf9\u96c6\u6210\u597d\u7684\u7684\u670d\u52a1,sdk\u505a\u4e86\u4e25\u683c\u7684\u6d4b\u8bd5.\n\u6240\u6709cocos2d-x\u7684\u6e38\u620f,\u4e0d\u7ba1\u662flua,js\u8fd8\u662f\u539f\u751fc++\u8bed\u8a00,\u90fd\u53ef\u4ee5\u4f7f\u7528  SDKBOX  \u6765\u5b8c\u6210\u96c6\u6210\u5de5\u4f5c", 
+            "title": "SDKBOX"
+        }, 
+        {
+            "location": "/#_1", 
+            "text": "SDKBOX  \u662f\u4e00\u4e2a\u547d\u4ee4\u884c\u7684\u5b89\u88c5\u7a0b\u5e8f,\u4f60\u53ef\u4ee5\u53ea\u7528\u4e00\u4e2a\u547d\u4ee4\u5c31\u628a\u7b2c\u4e09\u65b9SDK\u96c6\u6210\u5230\u81ea\u5df1\u7684\u5de5\u4f5c\u4e2d", 
+            "title": "\u4ecb\u7ecd"
+        }, 
+        {
+            "location": "/#_2", 
+            "text": "", 
+            "title": "\u5e94\u7528\u5185\u4ed8\u8d39"
+        }, 
+        {
+            "location": "/#sdkbox-iap", 
+            "text": "", 
+            "title": "SDKBOX IAP"
+        }, 
+        {
+            "location": "/#_3", 
+            "text": "", 
+            "title": "\u5e7f\u544a\u7c7b"
+        }, 
+        {
+            "location": "/#adcolony", 
+            "text": "", 
+            "title": "AdColony"
+        }, 
+        {
+            "location": "/#chartboost", 
+            "text": "", 
+            "title": "Chartboost"
+        }, 
+        {
+            "location": "/#vungle", 
+            "text": "", 
+            "title": "Vungle"
+        }, 
+        {
+            "location": "/#_4", 
+            "text": "", 
+            "title": "\u5206\u6790\u7c7b"
+        }, 
+        {
+            "location": "/#google-analytics", 
+            "text": "", 
+            "title": "Google Analytics"
+        }, 
+        {
+            "location": "/#flurry-analytics", 
+            "text": "", 
+            "title": "Flurry Analytics"
+        }, 
+        {
+            "location": "/#_5", 
+            "text": "", 
+            "title": "\u5e7f\u544a\u8ffd\u8e2a"
+        }, 
+        {
+            "location": "/#tune", 
+            "text": "", 
+            "title": "Tune"
+        }, 
+        {
+            "location": "/#kochava", 
+            "text": "", 
+            "title": "Kochava"
+        }, 
+        {
+            "location": "/installer/", 
+            "text": "SDKBOX \u5b89\u88c5\u4ecb\u7ecd\n\n\n\u5b89\u88c5\n\n\nSDKBOX\n \u63d0\u4f9b\u4e86mac, windows\u7248\u7684\u547d\u4ee4\u884c\u5b89\u88c5\u7a0b\u5e8f,\u4f60\u53ef\u4ee5\u5728cocos store\u4e2d\u641c\u7d22 \nsdkbox\n ,\u5e76\u4e0b\u8f7d\u5b83\n\n\n\u5bf9\u4e8e \nmac\n \u7528\u6237,\u63a8\u8350\u4f60\u628a \nSDKBOX\n \u5b89\u88c5\u7a0b\u5e8f\u653e\u5728 \n/usr/local/bin\n \u76ee\u5f55\u4e0b\n\u5bf9\u4e8e \nwindows\n \u7528\u6237,\u63a8\u8350\u4f60\u628a \nSDKBOX\n \u5b89\u88c5\u7a0b\u5e8f\u6240\u5728\u7684\u76ee\u5f55\u52a0\u5230\u7cfb\u7edf\u73af\u5883\u53d8\u91cf\u4e2d\n\n\n\u4e3a\u4e86\u53d9\u8ff0\u65b9\u4fbf,\u4e0b\u6587\u4e2d\u7528 \nSDKBOX\n \u6307\u4ee3 \nSDKBOX\n \u5b89\u88c5\u5668,\n\n\n\u5b89\u88c5\u63d2\u4ef6\u5230\u5de5\u7a0b\u4e2d\n\n\n\u5b89\u88c5\u5230mac\u5de5\u7a0b\u4e2d\n\n\n\n\n\u5728\u547d\u4ee4\u884c\u4e2d, \ncd\n \u5230\u4f60\u7684\u5de5\u7a0b\u6240\u5728\u76ee\u5f55. \u6bd4\u5982:\n\n\n\n\ncd ~/MyGame\n\n\n\n\n\n\n\u8fd0\u884c\u4ee5\u4e0b\u547d\u4ee4\u628aIAP\u628a\u96c6\u6210\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d,sdkbox\u4f1a\u81ea\u52a8\u4e0b\u8f7d\u5bf9\u5e94\u63d2\u4ef6\u5e76\u5b89\u88c5\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d\n\n\n\n\npath\n/sdkbox import -b iap\n\n\n\n\n\u5b89\u88c5\u5230windows\u5de5\u7a0b\u4e2d\n\n\n\n\n\u5728\u547d\u4ee4\u884c\u4e2d, \ncd\n \u5230\u4f60\u7684\u5de5\u7a0b\u6240\u5728\u76ee\u5f55. \u6bd4\u5982:\n\n\n\n\ncd ~/MyGame\n\n\n\n\n\n\n\u8fd0\u884c\u4ee5\u4e0b\u547d\u4ee4\u628aIAP\u628a\u96c6\u6210\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d,sdkbox\u4f1a\u81ea\u52a8\u4e0b\u8f7d\u5bf9\u5e94\u63d2\u4ef6\u5e76\u5b89\u88c5\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d\n\n\n\n\npath\n/sdkbox.exe import -b iap\n\n\n\n\n\u4ee3\u7801\u4fee\u6539\n\n\n\u63d2\u4ef6\u5b89\u88c5\u597d\u540e,\u5c31\u53ef\u4ee5\u53c2\u7167\u63d2\u4ef6\u7684pdf\u6587\u4ef6\u8c03\u7528 SDKBOX \u63a5\u53e3, \u540c\u65f6 \nSDKBOX\n \u4e5f\u4f1a\u5728\u547d\u4ee4\u884c\u7ed9\u51fa\u5f00\u53d1\u8005\u9700\u8981\u4fee\u6539\u7684\u5730\u65b9,\u547d\u4ee4\u884c\u8f93\u51fa\u53ef\u80fd\u50cf\u4ee5\u4e0b\u8fd9\u6837:\n\n\n$ sdkbox -b ../sdkbox-iap_cpp_v1.1/ import\n _______ ______  _     _ ______   _____  _     _\n |______ |     \\ |____/  |_____] |     |  \\___/\n ______| |_____/ |    \\_ |_____] |_____| _/   \\_\n Copyright \u00a9 2015 Chukong Technologies Inc. v0.1\n\n Remaining Manual Steps:\n Android Integration:\n Step 2.5 - modify Cocos2dxActivity.java\n Step 2.5 - modify YourGameName.java\n Cocos2d-JS specific\n Step 3.2 - add appropriate headers for this plugin to your class.\n Step 3.2 - add appropriate call to initialize the Javascript callbacks.\n Step 3.2 - call sdkbox.IAP.init(); where appropriate in your code. We recommend to do this in the app.js\n Installation Successful :)\n\n\n\n\nSDKBOX\n \u66f4\u591a\u7528\u6cd5\n\n\n\u66f4\u591a\u7528\u6cd5\u53ef\u4ee5\u8fd0\u884c \nsdkbox -h\n\n\n$ \npath\n/sdkbox\n _______ ______  _     _ ______   _____  _     _\n |______ |     \\ |____/  |_____] |     |  \\___/\n ______| |_____/ |    \\_ |_____] |_____| _/   \\_\n Copyright \u00a9 2015 Chukong Technologies Inc. v0.1\n\nusage: sdkbox [-h] [-v] [-p PROJECT] [-b PLUGIN] [--yes] [--dryrun]\n              {import,restore,symbols,api}\n\n\n\n\n\n\n\n\n\n\nswitch\n\n\nalternate switch\n\n\nwhat it does\n\n\n\n\n\n\n\n\n\n\n-h\n\n\n--help\n\n\n\u663e\u793a\u5e2e\u52a9\u4fe1\u606f\n\n\n\n\n\n\n-v\n\n\n--verbose\n\n\n\u663e\u793a\u66f4\u5168\u7684\u4fe1\u606f\n\n\n\n\n\n\n-p PROJECT\n\n\n--project PROJECT\n\n\n\u8981\u96c6\u6210\u7684\u5de5\u7a0b\u7684\u6839\u76ee\u5f55 (defaults to .)\n\n\n\n\n\n\n-b PLUGIN\n\n\n--plugin PLUGIN\n\n\n\u63d2\u4ef6\u7684\u540d\u5b57 (defaults to .)\n\n\n\n\n\n\n\n\n--dryrun\n\n\ntest install before performing.\n\n\n\n\n\n\n\n\n\u66f4\u65b0\n\n\nSDKBOX\n \u53ef\u4ee5\u81ea\u52a8\u68c0\u67e5\u66f4\u65b0,\u5f53\u6709\u65b0\u7248\u672c\u65f6,\u4f1a\u8be2\u95ee\u4f60\u662f\u5426\u8981\u66f4\u65b0,\u6bd4\u5982\u53ef\u80fd\u4f1a\u4ee5\u4e0b\u50cf\u8fd9\u6837:\n\n\n _______ ______  _     _ ______   _____  _     _\n |______ |     \\ |____/  |_____] |     |  \\___/\n ______| |_____/ |    \\_ |_____] |_____| _/   \\_\n Copyright \u00a9 2015 Chukong Technologies Inc. v0.1\n\nA newer version of SDKBOX is available, would you like to update to v0.5?\nPlease type Yes, No or Quit Yes\nupdated SDKBOX v0.1 to v0.5 at sdkbox", 
+            "title": "\u5b89\u88c5\u5668"
+        }, 
+        {
+            "location": "/installer/#sdkbox", 
+            "text": "", 
+            "title": "SDKBOX \u5b89\u88c5\u4ecb\u7ecd"
+        }, 
+        {
+            "location": "/installer/#_1", 
+            "text": "SDKBOX  \u63d0\u4f9b\u4e86mac, windows\u7248\u7684\u547d\u4ee4\u884c\u5b89\u88c5\u7a0b\u5e8f,\u4f60\u53ef\u4ee5\u5728cocos store\u4e2d\u641c\u7d22  sdkbox  ,\u5e76\u4e0b\u8f7d\u5b83  \u5bf9\u4e8e  mac  \u7528\u6237,\u63a8\u8350\u4f60\u628a  SDKBOX  \u5b89\u88c5\u7a0b\u5e8f\u653e\u5728  /usr/local/bin  \u76ee\u5f55\u4e0b\n\u5bf9\u4e8e  windows  \u7528\u6237,\u63a8\u8350\u4f60\u628a  SDKBOX  \u5b89\u88c5\u7a0b\u5e8f\u6240\u5728\u7684\u76ee\u5f55\u52a0\u5230\u7cfb\u7edf\u73af\u5883\u53d8\u91cf\u4e2d  \u4e3a\u4e86\u53d9\u8ff0\u65b9\u4fbf,\u4e0b\u6587\u4e2d\u7528  SDKBOX  \u6307\u4ee3  SDKBOX  \u5b89\u88c5\u5668,", 
+            "title": "\u5b89\u88c5"
+        }, 
+        {
+            "location": "/installer/#_2", 
+            "text": "\u5b89\u88c5\u5230mac\u5de5\u7a0b\u4e2d   \u5728\u547d\u4ee4\u884c\u4e2d,  cd  \u5230\u4f60\u7684\u5de5\u7a0b\u6240\u5728\u76ee\u5f55. \u6bd4\u5982:   cd ~/MyGame   \u8fd0\u884c\u4ee5\u4e0b\u547d\u4ee4\u628aIAP\u628a\u96c6\u6210\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d,sdkbox\u4f1a\u81ea\u52a8\u4e0b\u8f7d\u5bf9\u5e94\u63d2\u4ef6\u5e76\u5b89\u88c5\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d   path /sdkbox import -b iap  \u5b89\u88c5\u5230windows\u5de5\u7a0b\u4e2d   \u5728\u547d\u4ee4\u884c\u4e2d,  cd  \u5230\u4f60\u7684\u5de5\u7a0b\u6240\u5728\u76ee\u5f55. \u6bd4\u5982:   cd ~/MyGame   \u8fd0\u884c\u4ee5\u4e0b\u547d\u4ee4\u628aIAP\u628a\u96c6\u6210\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d,sdkbox\u4f1a\u81ea\u52a8\u4e0b\u8f7d\u5bf9\u5e94\u63d2\u4ef6\u5e76\u5b89\u88c5\u5230\u4f60\u7684\u5de5\u7a0b\u4e2d   path /sdkbox.exe import -b iap", 
+            "title": "\u5b89\u88c5\u63d2\u4ef6\u5230\u5de5\u7a0b\u4e2d"
+        }, 
+        {
+            "location": "/installer/#_3", 
+            "text": "\u63d2\u4ef6\u5b89\u88c5\u597d\u540e,\u5c31\u53ef\u4ee5\u53c2\u7167\u63d2\u4ef6\u7684pdf\u6587\u4ef6\u8c03\u7528 SDKBOX \u63a5\u53e3, \u540c\u65f6  SDKBOX  \u4e5f\u4f1a\u5728\u547d\u4ee4\u884c\u7ed9\u51fa\u5f00\u53d1\u8005\u9700\u8981\u4fee\u6539\u7684\u5730\u65b9,\u547d\u4ee4\u884c\u8f93\u51fa\u53ef\u80fd\u50cf\u4ee5\u4e0b\u8fd9\u6837:  $ sdkbox -b ../sdkbox-iap_cpp_v1.1/ import\n _______ ______  _     _ ______   _____  _     _\n |______ |     \\ |____/  |_____] |     |  \\___/\n ______| |_____/ |    \\_ |_____] |_____| _/   \\_\n Copyright \u00a9 2015 Chukong Technologies Inc. v0.1\n\n Remaining Manual Steps:\n Android Integration:\n Step 2.5 - modify Cocos2dxActivity.java\n Step 2.5 - modify YourGameName.java\n Cocos2d-JS specific\n Step 3.2 - add appropriate headers for this plugin to your class.\n Step 3.2 - add appropriate call to initialize the Javascript callbacks.\n Step 3.2 - call sdkbox.IAP.init(); where appropriate in your code. We recommend to do this in the app.js\n Installation Successful :)", 
+            "title": "\u4ee3\u7801\u4fee\u6539"
+        }, 
+        {
+            "location": "/installer/#sdkbox_1", 
+            "text": "\u66f4\u591a\u7528\u6cd5\u53ef\u4ee5\u8fd0\u884c  sdkbox -h  $  path /sdkbox\n _______ ______  _     _ ______   _____  _     _\n |______ |     \\ |____/  |_____] |     |  \\___/\n ______| |_____/ |    \\_ |_____] |_____| _/   \\_\n Copyright \u00a9 2015 Chukong Technologies Inc. v0.1\n\nusage: sdkbox [-h] [-v] [-p PROJECT] [-b PLUGIN] [--yes] [--dryrun]\n              {import,restore,symbols,api}     switch  alternate switch  what it does      -h  --help  \u663e\u793a\u5e2e\u52a9\u4fe1\u606f    -v  --verbose  \u663e\u793a\u66f4\u5168\u7684\u4fe1\u606f    -p PROJECT  --project PROJECT  \u8981\u96c6\u6210\u7684\u5de5\u7a0b\u7684\u6839\u76ee\u5f55 (defaults to .)    -b PLUGIN  --plugin PLUGIN  \u63d2\u4ef6\u7684\u540d\u5b57 (defaults to .)     --dryrun  test install before performing.", 
+            "title": "SDKBOX \u66f4\u591a\u7528\u6cd5"
+        }, 
+        {
+            "location": "/installer/#_4", 
+            "text": "SDKBOX  \u53ef\u4ee5\u81ea\u52a8\u68c0\u67e5\u66f4\u65b0,\u5f53\u6709\u65b0\u7248\u672c\u65f6,\u4f1a\u8be2\u95ee\u4f60\u662f\u5426\u8981\u66f4\u65b0,\u6bd4\u5982\u53ef\u80fd\u4f1a\u4ee5\u4e0b\u50cf\u8fd9\u6837:   _______ ______  _     _ ______   _____  _     _\n |______ |     \\ |____/  |_____] |     |  \\___/\n ______| |_____/ |    \\_ |_____] |_____| _/   \\_\n Copyright \u00a9 2015 Chukong Technologies Inc. v0.1\n\nA newer version of SDKBOX is available, would you like to update to v0.5?\nPlease type Yes, No or Quit Yes\nupdated SDKBOX v0.1 to v0.5 at sdkbox", 
+            "title": "\u66f4\u65b0"
+        }, 
+        {
+            "location": "/plugins/iap/cpp/", 
+            "text": "\u4ecb\u7ecd\n\n\n\u63d0\u4f9b\u4e86\u4e00\u6b65\u96c6\u6210IAP\u5230cocos2d-x(c, lua, js)\u5de5\u7a0b, \nSDKBOX\n \u6781\u5927\u5730\u7b80\u5316\u4e86\u96c6\u6210sdk\u7684\u8fc7\u7a0b.\n\n\n\u96c6\u6210\n\n\n\u8fd0\u884c\u4e0b\u9762\u7684\u547d\u4ee4\u6765\u96c6\u6210iap\n\n\nsdkbox import iap\n\n\n\n\n\u989d\u5916\u7684\u6b65\u9aa4\n\n\n\u4fee\u6539 \n\u6e38\u620f\u6240\u5728Activity\n.java\n\n\n\n\n\u5728 \n\u6e38\u620f\u6240\u5728Activity\n.java\n \u4e2d\u6dfb\u52a0\u4e0b\u9762\u7684import:\n\n\n\n\nimport android.content.Intent;\nimport com.sdkbox.plugin.SDKBox;\n\n\n\n\n\n\n\u5728\u4e0a\u9762\u90a3\u4e2a\u7c7b\u4e2d\u7684 \nonCreate(final Bundle savedInstanceState)\n \u51fd\u6570\u4e2d\u6dfb\u52a0 \nSDKBox.init(this);\n \u8c03\u7528. \u6dfb\u52a0\u540e\u7684\u4ee3\u7801:\n\n\n\n\nprotected void onCreate(Bundle savedInstanceState){\n  super.onCreate(savedInstanceState);\n  SDKBox.init(this);\n}\n\n\n\n\n\n\n\u5bf9\u4ee5\u4e0b\u8fd9\u51e0\u4e2a\u51fd\u6570\u4e2d,\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u63a5\u53e3\u8c03\u7528,\u6700\u540e\u4f60\u7684\u4ee3\u7801,\u5e94\u8be5\u50cf\u4ee5\u4e0b\u8fd9\u6837:\n\n\n\u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u4e0d\u5b58\u5728,\u6dfb\u52a0\u5b83\n\n\n\u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u5df2\u7ecf\u5b58\u5728,\u90a3\u5728\u5176\u4e2d\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u76f8\u5173\u63a5\u53e3\u8c03\u7528\n\n\n\n\n\n\n\n\n    @Override\n    protected void onActivityResult(int requestCode, int resultCode, Intent data) {\n          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {\n            super.onActivityResult(requestCode, resultCode, data);\n          }\n    }\n    @Override\n    protected void onStart() {\n          super.onStart();\n          SDKBox.onStart();\n    }\n    @Override\n    protected void onStop() {\n          super.onStop();\n          SDKBox.onStop();\n    }\n    @Override\n    protected void onResume() {\n          super.onResume();\n          SDKBox.onResume();\n    }\n    @Override\n    protected void onPause() {\n          super.onPause();\n          SDKBox.onPause();\n    }\n    @Override\n    public void onBackPressed() {\n          if(!SDKBox.onBackPressed()) {\n            super.onBackPressed();\n          }\n    }\n\n\n\n\n\n\n\u5907\u6ce8:\n\n\n\n\ncocos2d-x v2\u4e2d, \n\u6e38\u620f\u6240\u5728Activtiy\n.java\n \u4e00\u822c\u4e3a \nproj.android/src/com/cocos/\u4f60\u7684\u6e38\u620f/\u4f60\u7684\u6e38\u620f.java\n\ncocos2d-x v3\u4e2d, \n\u6e38\u620f\u6240\u5728Activtiy\n.java\n \u4e00\u822c\u4e3a \nproj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java\n, LANGUAGE\u4e3acpp,lua\u6216javascript\n\n\n\u5728\u6e38\u620f\u6e90\u7801\u4e2d\u8c03\u7528 SDKBOX \u7684 IAP \u63a5\u53e3\n\n\n1. \u914d\u7f6e \nsdkbox_config.json\n\n\n\n\n\n\nsdkbox_config.json\n \u4e0d\u5b58\u5728:\n\n\n\n\n\u91cd\u547d\u540d\u63d2\u4ef6\u4e2d\u7684 \nsdkbox_config.json.sample\n \u4e3a \nsdkbox_config.json\n\n\n\u62f7\u8d1d \nsdkbox_config.json\n \u5230\u5de5\u7a0b\u4e2d\u7684 \nResources\n \u76ee\u5f55\n\n\nXCode\u4e2d,\u8fd8\u9700\u8981\u628a \nsdkbox_config.json\n \u6587\u4ef6\u62d6\u5230\u5de5\u7a0b\u7684\u8d44\u6e90\u6587\u4ef6\u4e2d,\u786e\u4fdd\u8fd9\u4e2a\u6587\u4ef6\u4f1a\u6253\u5305\u5230\u4f60\u7684ios\u5e94\u7528\u4e2d\n\n\n\n\n\n\n\n\nsdkbox_config.json\n \u5df2\u7ecf\u5b58\u5728:\n\n\n\n\n\u628a\u63d2\u4ef6\u4e2d\u7684 \nsdkbox_config.json.sample\n \u4e2d\u7684 \nIAP\n \u9879\u62f7\u8d1d\u5230\u4f60\u5de5\u7a0b\u4e2d\u7684 \nsdkbox_config.json\n \u4e2d\n\n\n\n\n\n\n\n\n\u4fee\u6539 \nsdkbox_config.json\n \u4e2d\u7684\u9879\u4e3a\u4f60\u81ea\u5df1\u7684\u4fe1\u606f\n\n\n\n\n\n\n2 \u521d\u59cb\u5316 IAP\n\n\n\n\n\u5728\u4f60\u7684\u4ee3\u7801\u4e2d\u8c03\u7528 \nsdkbox::IAP::init();\n \u6765\u5b8c\u6210\u521d\u59cb\u5316 (\u5f3a\u70c8\u63a8\u8350\u5728 \nAppDelegate::applicationDidFinishLaunching()\n \u6216 \nAppController:didFinishLaunchingWithOptions()\n \u5b8c\u6210\u521d\u59cb\u5316)\n\n\n\u5728\u8c03\u7528\u521d\u59cb\u5316\u7684\u4ee3\u7801\u4e2d,\u4e00\u5b9a\u8981\u5305\u62ec\u5982\u4e0b\u5934\u6587\u4ef6:\n\n\n\n\n#include \nPluginIAP/PluginIAP.h\n\n\n\n\n\n3 \u83b7\u53d6\u6700\u65b0\u7684\u5546\u54c1\u4fe1\u606f\n\n\n\u5f53\u4f60\u7684\u6e38\u620f\u542f\u52a8\u65f6,\u6700\u597d\u83b7\u53d6\u4e00\u6b21\u6700\u65b0\u5546\u54c1\u4fe1\u606f\n\u8981\u83b7\u53d6\u5546\u54c1\u4fe1\u606f,\u53ef\u4ee5\u8c03\u7528 \nsdkbox::IAP::refresh()\n.\n\n\n\n\nonProductRequestSuccess\n \u83b7\u53d6\u6210\u529f,\u4f1a\u6536\u5230\u8fd9\u4e2a\u56de\u8c03\n\n\nonProductRequestFailure\n \u83b7\u53d6\u5931\u8d25\n\n\n\n\n4 \u8d2d\u4e70\n\n\n\u8d2d\u4e70\u8c03\u7528\u63a5\u53e3 \nsdkbox::IAP::purchase(name)\n\n\n\u63d0\u793a:\n \nname\n \u662f\u4f60\u5728 \nsdkbox_config.json\n \u4e2d\u7684 \nitems\n \u9879\u5b58\u653e\u5728\u7684\u540d\u5b57, \u800c\u4e0d\u662f\u4f60\u5728 iTunes \u6216 GooglePlay Store \u7684\u5546\u54c1\u540d\u5b57\n\n\n\n\nonSuccess\n \u8d2d\u4e70\u6210\u529f.\n\n\nonFailure\n \u8d2d\u4e70\u5931\u8d25.\n\n\nonCanceled\n \u7528\u6237\u53d6\u6d88\u8d2d\u4e70.\n\n\n\n\n5 \u6062\u590d\u8d2d\u4e70\n\n\n\u6062\u590d\u8d2d\u4e70\u8c03\u7528 \nsdkbox::IAP::restore()\n.\n\n\n\n\nonRestored\n \u6062\u590d\u6210\u529f\n\n\n\n\nNote:\n \nonRestored\n \u8fd9\u4e2a\u56de\u8c03\u53ef\u80fd\u4e0d\u81f3\u53ea\u6709\u4e00\u6b21\n\n\n6 \u5904\u7406\u8d2d\u4e70\u4e8b\u4ef6\n\n\n\u5141\u8bb8\u4f60\u63a5\u6536\u5904\u7406\u6e38\u620f\u4e2d \nIAP\n \u8fd4\u56de\u7684\u5404\u79cd\u4e8b\u4ef6\n\n\n\n\n\u4f60\u53ef\u4ee5\u7ee7\u627f\u8fd9\u4e2a\u7c7b \nsdkbox::IAPListener\n:\n\n\n\n\n    #include \nPluginIAP/PluginIAP.h\n\n    class MyClass : public sdkbox::IAPListener\n    {\n    private:\n        virtual void onSuccess(sdkbox::Product const\n p) override;\n        virtual void onFailure(sdkbox::Product const\n p, const std::string \nmsg)\n           override;\n        virtual void onCanceled(sdkbox::Product const\n p) override;\n        virtual void onRestored(sdkbox::Product const\n p) override;\n        virtual void onProductRequestSuccess(std::vector\nsdkbox::Product\n const \nproducts)\n        override;\n        virtual void onProductRequestFailure(const std::string \nmsg) override;\n    }\n\n\n\n\n\n\n\u521b\u5efa\u4e0a\u9762\u7c7b\u7684\u5b9e\u4f8b,\u4f20\u5230 \nIAP\n \u4e2d:\n\n\n\n\nsdkbox::IAP::setListener(listener);", 
+            "title": "c++"
+        }, 
+        {
+            "location": "/plugins/iap/cpp/#_1", 
+            "text": "\u63d0\u4f9b\u4e86\u4e00\u6b65\u96c6\u6210IAP\u5230cocos2d-x(c, lua, js)\u5de5\u7a0b,  SDKBOX  \u6781\u5927\u5730\u7b80\u5316\u4e86\u96c6\u6210sdk\u7684\u8fc7\u7a0b.", 
+            "title": "\u4ecb\u7ecd"
+        }, 
+        {
+            "location": "/plugins/iap/cpp/#_2", 
+            "text": "\u8fd0\u884c\u4e0b\u9762\u7684\u547d\u4ee4\u6765\u96c6\u6210iap  sdkbox import iap", 
+            "title": "\u96c6\u6210"
+        }, 
+        {
+            "location": "/plugins/iap/cpp/#_3", 
+            "text": "\u4fee\u6539  \u6e38\u620f\u6240\u5728Activity .java   \u5728  \u6e38\u620f\u6240\u5728Activity .java  \u4e2d\u6dfb\u52a0\u4e0b\u9762\u7684import:   import android.content.Intent;\nimport com.sdkbox.plugin.SDKBox;   \u5728\u4e0a\u9762\u90a3\u4e2a\u7c7b\u4e2d\u7684  onCreate(final Bundle savedInstanceState)  \u51fd\u6570\u4e2d\u6dfb\u52a0  SDKBox.init(this);  \u8c03\u7528. \u6dfb\u52a0\u540e\u7684\u4ee3\u7801:   protected void onCreate(Bundle savedInstanceState){\n  super.onCreate(savedInstanceState);\n  SDKBox.init(this);\n}   \u5bf9\u4ee5\u4e0b\u8fd9\u51e0\u4e2a\u51fd\u6570\u4e2d,\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u63a5\u53e3\u8c03\u7528,\u6700\u540e\u4f60\u7684\u4ee3\u7801,\u5e94\u8be5\u50cf\u4ee5\u4e0b\u8fd9\u6837:  \u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u4e0d\u5b58\u5728,\u6dfb\u52a0\u5b83  \u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u5df2\u7ecf\u5b58\u5728,\u90a3\u5728\u5176\u4e2d\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u76f8\u5173\u63a5\u53e3\u8c03\u7528         @Override\n    protected void onActivityResult(int requestCode, int resultCode, Intent data) {\n          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {\n            super.onActivityResult(requestCode, resultCode, data);\n          }\n    }\n    @Override\n    protected void onStart() {\n          super.onStart();\n          SDKBox.onStart();\n    }\n    @Override\n    protected void onStop() {\n          super.onStop();\n          SDKBox.onStop();\n    }\n    @Override\n    protected void onResume() {\n          super.onResume();\n          SDKBox.onResume();\n    }\n    @Override\n    protected void onPause() {\n          super.onPause();\n          SDKBox.onPause();\n    }\n    @Override\n    public void onBackPressed() {\n          if(!SDKBox.onBackPressed()) {\n            super.onBackPressed();\n          }\n    }   \u5907\u6ce8:   cocos2d-x v2\u4e2d,  \u6e38\u620f\u6240\u5728Activtiy .java  \u4e00\u822c\u4e3a  proj.android/src/com/cocos/\u4f60\u7684\u6e38\u620f/\u4f60\u7684\u6e38\u620f.java \ncocos2d-x v3\u4e2d,  \u6e38\u620f\u6240\u5728Activtiy .java  \u4e00\u822c\u4e3a  proj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java , LANGUAGE\u4e3acpp,lua\u6216javascript  \u5728\u6e38\u620f\u6e90\u7801\u4e2d\u8c03\u7528 SDKBOX \u7684 IAP \u63a5\u53e3  1. \u914d\u7f6e  sdkbox_config.json    sdkbox_config.json  \u4e0d\u5b58\u5728:   \u91cd\u547d\u540d\u63d2\u4ef6\u4e2d\u7684  sdkbox_config.json.sample  \u4e3a  sdkbox_config.json  \u62f7\u8d1d  sdkbox_config.json  \u5230\u5de5\u7a0b\u4e2d\u7684  Resources  \u76ee\u5f55  XCode\u4e2d,\u8fd8\u9700\u8981\u628a  sdkbox_config.json  \u6587\u4ef6\u62d6\u5230\u5de5\u7a0b\u7684\u8d44\u6e90\u6587\u4ef6\u4e2d,\u786e\u4fdd\u8fd9\u4e2a\u6587\u4ef6\u4f1a\u6253\u5305\u5230\u4f60\u7684ios\u5e94\u7528\u4e2d     sdkbox_config.json  \u5df2\u7ecf\u5b58\u5728:   \u628a\u63d2\u4ef6\u4e2d\u7684  sdkbox_config.json.sample  \u4e2d\u7684  IAP  \u9879\u62f7\u8d1d\u5230\u4f60\u5de5\u7a0b\u4e2d\u7684  sdkbox_config.json  \u4e2d     \u4fee\u6539  sdkbox_config.json  \u4e2d\u7684\u9879\u4e3a\u4f60\u81ea\u5df1\u7684\u4fe1\u606f    2 \u521d\u59cb\u5316 IAP   \u5728\u4f60\u7684\u4ee3\u7801\u4e2d\u8c03\u7528  sdkbox::IAP::init();  \u6765\u5b8c\u6210\u521d\u59cb\u5316 (\u5f3a\u70c8\u63a8\u8350\u5728  AppDelegate::applicationDidFinishLaunching()  \u6216  AppController:didFinishLaunchingWithOptions()  \u5b8c\u6210\u521d\u59cb\u5316)  \u5728\u8c03\u7528\u521d\u59cb\u5316\u7684\u4ee3\u7801\u4e2d,\u4e00\u5b9a\u8981\u5305\u62ec\u5982\u4e0b\u5934\u6587\u4ef6:   #include  PluginIAP/PluginIAP.h   3 \u83b7\u53d6\u6700\u65b0\u7684\u5546\u54c1\u4fe1\u606f  \u5f53\u4f60\u7684\u6e38\u620f\u542f\u52a8\u65f6,\u6700\u597d\u83b7\u53d6\u4e00\u6b21\u6700\u65b0\u5546\u54c1\u4fe1\u606f\n\u8981\u83b7\u53d6\u5546\u54c1\u4fe1\u606f,\u53ef\u4ee5\u8c03\u7528  sdkbox::IAP::refresh() .   onProductRequestSuccess  \u83b7\u53d6\u6210\u529f,\u4f1a\u6536\u5230\u8fd9\u4e2a\u56de\u8c03  onProductRequestFailure  \u83b7\u53d6\u5931\u8d25   4 \u8d2d\u4e70  \u8d2d\u4e70\u8c03\u7528\u63a5\u53e3  sdkbox::IAP::purchase(name)  \u63d0\u793a:   name  \u662f\u4f60\u5728  sdkbox_config.json  \u4e2d\u7684  items  \u9879\u5b58\u653e\u5728\u7684\u540d\u5b57, \u800c\u4e0d\u662f\u4f60\u5728 iTunes \u6216 GooglePlay Store \u7684\u5546\u54c1\u540d\u5b57   onSuccess  \u8d2d\u4e70\u6210\u529f.  onFailure  \u8d2d\u4e70\u5931\u8d25.  onCanceled  \u7528\u6237\u53d6\u6d88\u8d2d\u4e70.   5 \u6062\u590d\u8d2d\u4e70  \u6062\u590d\u8d2d\u4e70\u8c03\u7528  sdkbox::IAP::restore() .   onRestored  \u6062\u590d\u6210\u529f   Note:   onRestored  \u8fd9\u4e2a\u56de\u8c03\u53ef\u80fd\u4e0d\u81f3\u53ea\u6709\u4e00\u6b21  6 \u5904\u7406\u8d2d\u4e70\u4e8b\u4ef6  \u5141\u8bb8\u4f60\u63a5\u6536\u5904\u7406\u6e38\u620f\u4e2d  IAP  \u8fd4\u56de\u7684\u5404\u79cd\u4e8b\u4ef6   \u4f60\u53ef\u4ee5\u7ee7\u627f\u8fd9\u4e2a\u7c7b  sdkbox::IAPListener :       #include  PluginIAP/PluginIAP.h \n    class MyClass : public sdkbox::IAPListener\n    {\n    private:\n        virtual void onSuccess(sdkbox::Product const  p) override;\n        virtual void onFailure(sdkbox::Product const  p, const std::string  msg)\n           override;\n        virtual void onCanceled(sdkbox::Product const  p) override;\n        virtual void onRestored(sdkbox::Product const  p) override;\n        virtual void onProductRequestSuccess(std::vector sdkbox::Product  const  products)\n        override;\n        virtual void onProductRequestFailure(const std::string  msg) override;\n    }   \u521b\u5efa\u4e0a\u9762\u7c7b\u7684\u5b9e\u4f8b,\u4f20\u5230  IAP  \u4e2d:   sdkbox::IAP::setListener(listener);", 
+            "title": "\u989d\u5916\u7684\u6b65\u9aa4"
+        }, 
+        {
+            "location": "/plugins/iap/js/", 
+            "text": "\u4ecb\u7ecd\n\n\n\u63d0\u4f9b\u4e86\u4e00\u6b65\u96c6\u6210IAP\u5230cocos2d-x(c, lua, js)\u5de5\u7a0b, \nSDKBOX\n \u6781\u5927\u5730\u7b80\u5316\u4e86\u96c6\u6210sdk\u7684\u8fc7\u7a0b.\n\n\n\u96c6\u6210\n\n\n\u8fd0\u884c\u4e0b\u9762\u7684\u547d\u4ee4\u6765\u96c6\u6210iap\n\n\nsdkbox import iap\n\n\n\n\n\u989d\u5916\u7684\u6b65\u9aa4\n\n\n\u4fee\u6539 \n\u6e38\u620f\u6240\u5728Activity\n.java\n\n\n\n\n\u5728 \n\u6e38\u620f\u6240\u5728Activity\n.java\n \u4e2d\u6dfb\u52a0\u4e0b\u9762\u7684import:\n\n\n\n\nimport android.content.Intent;\nimport com.sdkbox.plugin.SDKBox;\n\n\n\n\n\n\n\u5728\u4e0a\u9762\u90a3\u4e2a\u7c7b\u4e2d\u7684 \nonCreate(final Bundle savedInstanceState)\n \u51fd\u6570\u4e2d\u6dfb\u52a0 \nSDKBox.init(this);\n \u8c03\u7528. \u6dfb\u52a0\u540e\u7684\u4ee3\u7801:\n\n\n\n\nprotected void onCreate(Bundle savedInstanceState){\n  super.onCreate(savedInstanceState);\n  SDKBox.init(this);\n}\n\n\n\n\n\n\n\u5bf9\u4ee5\u4e0b\u8fd9\u51e0\u4e2a\u51fd\u6570\u4e2d,\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u63a5\u53e3\u8c03\u7528,\u6700\u540e\u4f60\u7684\u4ee3\u7801,\u5e94\u8be5\u50cf\u4ee5\u4e0b\u8fd9\u6837:\n\n\n\u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u4e0d\u5b58\u5728,\u6dfb\u52a0\u5b83\n\n\n\u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u5df2\u7ecf\u5b58\u5728,\u90a3\u5728\u5176\u4e2d\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u76f8\u5173\u63a5\u53e3\u8c03\u7528\n\n\n\n\n\n\n\n\n    @Override\n    protected void onActivityResult(int requestCode, int resultCode, Intent data) {\n          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {\n            super.onActivityResult(requestCode, resultCode, data);\n          }\n    }\n    @Override\n    protected void onStart() {\n          super.onStart();\n          SDKBox.onStart();\n    }\n    @Override\n    protected void onStop() {\n          super.onStop();\n          SDKBox.onStop();\n    }\n    @Override\n    protected void onResume() {\n          super.onResume();\n          SDKBox.onResume();\n    }\n    @Override\n    protected void onPause() {\n          super.onPause();\n          SDKBox.onPause();\n    }\n    @Override\n    public void onBackPressed() {\n          if(!SDKBox.onBackPressed()) {\n            super.onBackPressed();\n          }\n    }\n\n\n\n\n\n\n\u5907\u6ce8:\n\n\n\n\ncocos2d-x v2\u4e2d, \n\u6e38\u620f\u6240\u5728Activtiy\n.java\n \u4e00\u822c\u4e3a \nproj.android/src/com/cocos/\u4f60\u7684\u6e38\u620f/\u4f60\u7684\u6e38\u620f.java\n\ncocos2d-x v3\u4e2d, \n\u6e38\u620f\u6240\u5728Activtiy\n.java\n \u4e00\u822c\u4e3a \nproj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java\n, LANGUAGE\u4e3acpp,lua\u6216javascript\n\n\n\u5728\u6e38\u620f\u6e90\u7801\u4e2d\u8c03\u7528 SDKBOX \u7684 IAP \u63a5\u53e3\n\n\n1. \u914d\u7f6e \nsdkbox_config.json\n\n\n\n\n\n\nsdkbox_config.json\n \u4e0d\u5b58\u5728:\n\n\n\n\n\u91cd\u547d\u540d\u63d2\u4ef6\u4e2d\u7684 \nsdkbox_config.json.sample\n \u4e3a \nsdkbox_config.json\n\n\n\u62f7\u8d1d \nsdkbox_config.json\n \u5230\u5de5\u7a0b\u4e2d\u7684 \nResources\n \u76ee\u5f55\n\n\nXCode\u4e2d,\u8fd8\u9700\u8981\u628a \nsdkbox_config.json\n \u6587\u4ef6\u62d6\u5230\u5de5\u7a0b\u7684\u8d44\u6e90\u6587\u4ef6\u4e2d,\u786e\u4fdd\u8fd9\u4e2a\u6587\u4ef6\u4f1a\u6253\u5305\u5230\u4f60\u7684ios\u5e94\u7528\u4e2d\n\n\n\n\n\n\n\n\nsdkbox_config.json\n \u5df2\u7ecf\u5b58\u5728:\n\n\n\n\n\u628a\u63d2\u4ef6\u4e2d\u7684 \nsdkbox_config.json.sample\n \u4e2d\u7684 \nIAP\n \u9879\u62f7\u8d1d\u5230\u4f60\u5de5\u7a0b\u4e2d\u7684 \nsdkbox_config.json\n \u4e2d\n\n\n\n\n\n\n\n\n\u4fee\u6539 \nsdkbox_config.json\n \u4e2d\u7684\u9879\u4e3a\u4f60\u81ea\u5df1\u7684\u4fe1\u606f\n\n\n\n\n\n\n2 \u521d\u59cb\u5316 IAP\n\n\n\n\n\u4fee\u6539 \nAppDelegate.cpp\n \u5305\u62ec\u4ee5\u4e0b\u5934\u6587\u4ef6:\n\n\n\n\n#include \nPluginIAPJS.hpp\n\n#include \nPluginIAPJSHelper.hpp\n\n\n\n\n\n\n\n\u4fee\u6539 \nAppDelegate.cpp\n \u6ce8\u518cIAP\u7684JS\u7ed1\u5b9a:\n\n\n\n\nsc-\naddRegisterCallback(register_all_PluginIAPJS);\nsc-\naddRegisterCallback(register_all_PluginIAPJS_helper);\n\n\n\n\n\n\n\u5728\u4f60\u7684\u4ee3\u7801\u4e2d\u8c03\u7528 \nsdkbox.IAP.init();\n \u6765\u5b8c\u6210\u521d\u59cb\u5316 (\u5f3a\u70c8\u63a8\u8350\u5728 \napp.js\n \u5b8c\u6210\u521d\u59cb\u5316)\n\n\n\n\n3 \u83b7\u53d6\u6700\u65b0\u7684\u5546\u54c1\u4fe1\u606f\n\n\n\u5f53\u4f60\u7684\u6e38\u620f\u542f\u52a8\u65f6,\u6700\u597d\u83b7\u53d6\u4e00\u6b21\u6700\u65b0\u5546\u54c1\u4fe1\u606f\n\u8981\u83b7\u53d6\u5546\u54c1\u4fe1\u606f,\u53ef\u4ee5\u8c03\u7528 \nsdkbox.IAP.refresh()\n.\n\n\n\n\nonProductRequestSuccess\n \u83b7\u53d6\u6210\u529f,\u4f1a\u6536\u5230\u8fd9\u4e2a\u56de\u8c03\n\n\nonProductRequestFailure\n \u83b7\u53d6\u5931\u8d25\n\n\n\n\n4 \u8d2d\u4e70\n\n\n\u8d2d\u4e70\u8c03\u7528\u63a5\u53e3 \nsdkbox.IAP.purchase(name)\n\n\n\u63d0\u793a:\n \nname\n \u662f\u4f60\u5728 \nsdkbox_config.json\n \u4e2d\u7684 \nitems\n \u9879\u5b58\u653e\u5728\u7684\u540d\u5b57, \u800c\u4e0d\u662f\u4f60\u5728 iTunes \u6216 GooglePlay Store \u7684\u5546\u54c1\u540d\u5b57\n\n\n\n\nonSuccess\n \u8d2d\u4e70\u6210\u529f.\n\n\nonFailure\n \u8d2d\u4e70\u5931\u8d25.\n\n\nonCanceled\n \u7528\u6237\u53d6\u6d88\u8d2d\u4e70.\n\n\n\n\n5 \u6062\u590d\u8d2d\u4e70\n\n\n\u6062\u590d\u8d2d\u4e70\u8c03\u7528 \nsdkbox.IAP.restore()\n.\n\n\n\n\nonRestored\n \u6062\u590d\u6210\u529f\n\n\n\n\nNote:\n \nonRestored\n \u8fd9\u4e2a\u56de\u8c03\u53ef\u80fd\u4e0d\u81f3\u53ea\u6709\u4e00\u6b21\n\n\n6 \u5904\u7406\u8d2d\u4e70\u4e8b\u4ef6\n\n\n\u5141\u8bb8\u4f60\u63a5\u6536\u5904\u7406\u6e38\u620f\u4e2d \nIAP\n \u8fd4\u56de\u7684\u5404\u79cd\u4e8b\u4ef6\n\n\n\n\n\u6ce8\u518cjava script listener:\n\n\n\n\nsdkbox.IAP.setListener({\n    onSuccess : function (product) {\n        //Purchase success\n    },\n    onFailure : function (product, msg) {\n        //Purchase failed\n        //msg is the error message\n    },\n    onCanceled : function (product) {\n        //Purchase was canceled by user\n    },\n    onRestored : function (product) {\n        //Purchase restored\n    },\n    onProductRequestSuccess : function (products) {\n        //Returns you the data for all the iap products\n        //You can get each item using following method\n        for (var i = 0; i \n products.length; i++) {\n            // loop\n        }\n    },\n    onProductRequestFailure : function (msg) {\n        //When product refresh request fails.\n    }\n});", 
+            "title": "js"
+        }, 
+        {
+            "location": "/plugins/iap/js/#_1", 
+            "text": "\u63d0\u4f9b\u4e86\u4e00\u6b65\u96c6\u6210IAP\u5230cocos2d-x(c, lua, js)\u5de5\u7a0b,  SDKBOX  \u6781\u5927\u5730\u7b80\u5316\u4e86\u96c6\u6210sdk\u7684\u8fc7\u7a0b.", 
+            "title": "\u4ecb\u7ecd"
+        }, 
+        {
+            "location": "/plugins/iap/js/#_2", 
+            "text": "\u8fd0\u884c\u4e0b\u9762\u7684\u547d\u4ee4\u6765\u96c6\u6210iap  sdkbox import iap", 
+            "title": "\u96c6\u6210"
+        }, 
+        {
+            "location": "/plugins/iap/js/#_3", 
+            "text": "\u4fee\u6539  \u6e38\u620f\u6240\u5728Activity .java   \u5728  \u6e38\u620f\u6240\u5728Activity .java  \u4e2d\u6dfb\u52a0\u4e0b\u9762\u7684import:   import android.content.Intent;\nimport com.sdkbox.plugin.SDKBox;   \u5728\u4e0a\u9762\u90a3\u4e2a\u7c7b\u4e2d\u7684  onCreate(final Bundle savedInstanceState)  \u51fd\u6570\u4e2d\u6dfb\u52a0  SDKBox.init(this);  \u8c03\u7528. \u6dfb\u52a0\u540e\u7684\u4ee3\u7801:   protected void onCreate(Bundle savedInstanceState){\n  super.onCreate(savedInstanceState);\n  SDKBox.init(this);\n}   \u5bf9\u4ee5\u4e0b\u8fd9\u51e0\u4e2a\u51fd\u6570\u4e2d,\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u63a5\u53e3\u8c03\u7528,\u6700\u540e\u4f60\u7684\u4ee3\u7801,\u5e94\u8be5\u50cf\u4ee5\u4e0b\u8fd9\u6837:  \u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u4e0d\u5b58\u5728,\u6dfb\u52a0\u5b83  \u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u5df2\u7ecf\u5b58\u5728,\u90a3\u5728\u5176\u4e2d\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u76f8\u5173\u63a5\u53e3\u8c03\u7528         @Override\n    protected void onActivityResult(int requestCode, int resultCode, Intent data) {\n          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {\n            super.onActivityResult(requestCode, resultCode, data);\n          }\n    }\n    @Override\n    protected void onStart() {\n          super.onStart();\n          SDKBox.onStart();\n    }\n    @Override\n    protected void onStop() {\n          super.onStop();\n          SDKBox.onStop();\n    }\n    @Override\n    protected void onResume() {\n          super.onResume();\n          SDKBox.onResume();\n    }\n    @Override\n    protected void onPause() {\n          super.onPause();\n          SDKBox.onPause();\n    }\n    @Override\n    public void onBackPressed() {\n          if(!SDKBox.onBackPressed()) {\n            super.onBackPressed();\n          }\n    }   \u5907\u6ce8:   cocos2d-x v2\u4e2d,  \u6e38\u620f\u6240\u5728Activtiy .java  \u4e00\u822c\u4e3a  proj.android/src/com/cocos/\u4f60\u7684\u6e38\u620f/\u4f60\u7684\u6e38\u620f.java \ncocos2d-x v3\u4e2d,  \u6e38\u620f\u6240\u5728Activtiy .java  \u4e00\u822c\u4e3a  proj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java , LANGUAGE\u4e3acpp,lua\u6216javascript  \u5728\u6e38\u620f\u6e90\u7801\u4e2d\u8c03\u7528 SDKBOX \u7684 IAP \u63a5\u53e3  1. \u914d\u7f6e  sdkbox_config.json    sdkbox_config.json  \u4e0d\u5b58\u5728:   \u91cd\u547d\u540d\u63d2\u4ef6\u4e2d\u7684  sdkbox_config.json.sample  \u4e3a  sdkbox_config.json  \u62f7\u8d1d  sdkbox_config.json  \u5230\u5de5\u7a0b\u4e2d\u7684  Resources  \u76ee\u5f55  XCode\u4e2d,\u8fd8\u9700\u8981\u628a  sdkbox_config.json  \u6587\u4ef6\u62d6\u5230\u5de5\u7a0b\u7684\u8d44\u6e90\u6587\u4ef6\u4e2d,\u786e\u4fdd\u8fd9\u4e2a\u6587\u4ef6\u4f1a\u6253\u5305\u5230\u4f60\u7684ios\u5e94\u7528\u4e2d     sdkbox_config.json  \u5df2\u7ecf\u5b58\u5728:   \u628a\u63d2\u4ef6\u4e2d\u7684  sdkbox_config.json.sample  \u4e2d\u7684  IAP  \u9879\u62f7\u8d1d\u5230\u4f60\u5de5\u7a0b\u4e2d\u7684  sdkbox_config.json  \u4e2d     \u4fee\u6539  sdkbox_config.json  \u4e2d\u7684\u9879\u4e3a\u4f60\u81ea\u5df1\u7684\u4fe1\u606f    2 \u521d\u59cb\u5316 IAP   \u4fee\u6539  AppDelegate.cpp  \u5305\u62ec\u4ee5\u4e0b\u5934\u6587\u4ef6:   #include  PluginIAPJS.hpp \n#include  PluginIAPJSHelper.hpp    \u4fee\u6539  AppDelegate.cpp  \u6ce8\u518cIAP\u7684JS\u7ed1\u5b9a:   sc- addRegisterCallback(register_all_PluginIAPJS);\nsc- addRegisterCallback(register_all_PluginIAPJS_helper);   \u5728\u4f60\u7684\u4ee3\u7801\u4e2d\u8c03\u7528  sdkbox.IAP.init();  \u6765\u5b8c\u6210\u521d\u59cb\u5316 (\u5f3a\u70c8\u63a8\u8350\u5728  app.js  \u5b8c\u6210\u521d\u59cb\u5316)   3 \u83b7\u53d6\u6700\u65b0\u7684\u5546\u54c1\u4fe1\u606f  \u5f53\u4f60\u7684\u6e38\u620f\u542f\u52a8\u65f6,\u6700\u597d\u83b7\u53d6\u4e00\u6b21\u6700\u65b0\u5546\u54c1\u4fe1\u606f\n\u8981\u83b7\u53d6\u5546\u54c1\u4fe1\u606f,\u53ef\u4ee5\u8c03\u7528  sdkbox.IAP.refresh() .   onProductRequestSuccess  \u83b7\u53d6\u6210\u529f,\u4f1a\u6536\u5230\u8fd9\u4e2a\u56de\u8c03  onProductRequestFailure  \u83b7\u53d6\u5931\u8d25   4 \u8d2d\u4e70  \u8d2d\u4e70\u8c03\u7528\u63a5\u53e3  sdkbox.IAP.purchase(name)  \u63d0\u793a:   name  \u662f\u4f60\u5728  sdkbox_config.json  \u4e2d\u7684  items  \u9879\u5b58\u653e\u5728\u7684\u540d\u5b57, \u800c\u4e0d\u662f\u4f60\u5728 iTunes \u6216 GooglePlay Store \u7684\u5546\u54c1\u540d\u5b57   onSuccess  \u8d2d\u4e70\u6210\u529f.  onFailure  \u8d2d\u4e70\u5931\u8d25.  onCanceled  \u7528\u6237\u53d6\u6d88\u8d2d\u4e70.   5 \u6062\u590d\u8d2d\u4e70  \u6062\u590d\u8d2d\u4e70\u8c03\u7528  sdkbox.IAP.restore() .   onRestored  \u6062\u590d\u6210\u529f   Note:   onRestored  \u8fd9\u4e2a\u56de\u8c03\u53ef\u80fd\u4e0d\u81f3\u53ea\u6709\u4e00\u6b21  6 \u5904\u7406\u8d2d\u4e70\u4e8b\u4ef6  \u5141\u8bb8\u4f60\u63a5\u6536\u5904\u7406\u6e38\u620f\u4e2d  IAP  \u8fd4\u56de\u7684\u5404\u79cd\u4e8b\u4ef6   \u6ce8\u518cjava script listener:   sdkbox.IAP.setListener({\n    onSuccess : function (product) {\n        //Purchase success\n    },\n    onFailure : function (product, msg) {\n        //Purchase failed\n        //msg is the error message\n    },\n    onCanceled : function (product) {\n        //Purchase was canceled by user\n    },\n    onRestored : function (product) {\n        //Purchase restored\n    },\n    onProductRequestSuccess : function (products) {\n        //Returns you the data for all the iap products\n        //You can get each item using following method\n        for (var i = 0; i   products.length; i++) {\n            // loop\n        }\n    },\n    onProductRequestFailure : function (msg) {\n        //When product refresh request fails.\n    }\n});", 
+            "title": "\u989d\u5916\u7684\u6b65\u9aa4"
+        }, 
+        {
+            "location": "/plugins/iap/lua/", 
+            "text": "\u4ecb\u7ecd\n\n\n\u63d0\u4f9b\u4e86\u4e00\u6b65\u96c6\u6210IAP\u5230cocos2d-x(c, lua, js)\u5de5\u7a0b, \nSDKBOX\n \u6781\u5927\u5730\u7b80\u5316\u4e86\u96c6\u6210sdk\u7684\u8fc7\u7a0b.\n\n\n\u96c6\u6210\n\n\n\u8fd0\u884c\u4e0b\u9762\u7684\u547d\u4ee4\u6765\u96c6\u6210iap\n\n\nsdkbox import iap\n\n\n\n\n\u989d\u5916\u7684\u6b65\u9aa4\n\n\n\u4fee\u6539 \n\u6e38\u620f\u6240\u5728Activity\n.java\n\n\n\n\n\u5728 \n\u6e38\u620f\u6240\u5728Activity\n.java\n \u4e2d\u6dfb\u52a0\u4e0b\u9762\u7684import:\n\n\n\n\nimport android.content.Intent;\nimport com.sdkbox.plugin.SDKBox;\n\n\n\n\n\n\n\u5728\u4e0a\u9762\u90a3\u4e2a\u7c7b\u4e2d\u7684 \nonCreate(final Bundle savedInstanceState)\n \u51fd\u6570\u4e2d\u6dfb\u52a0 \nSDKBox.init(this);\n \u8c03\u7528. \u6dfb\u52a0\u540e\u7684\u4ee3\u7801:\n\n\n\n\nprotected void onCreate(Bundle savedInstanceState){\n  super.onCreate(savedInstanceState);\n  SDKBox.init(this);\n}\n\n\n\n\n\n\n\u5bf9\u4ee5\u4e0b\u8fd9\u51e0\u4e2a\u51fd\u6570\u4e2d,\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u63a5\u53e3\u8c03\u7528,\u6700\u540e\u4f60\u7684\u4ee3\u7801,\u5e94\u8be5\u50cf\u4ee5\u4e0b\u8fd9\u6837:\n\n\n\u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u4e0d\u5b58\u5728,\u6dfb\u52a0\u5b83\n\n\n\u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u5df2\u7ecf\u5b58\u5728,\u90a3\u5728\u5176\u4e2d\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u76f8\u5173\u63a5\u53e3\u8c03\u7528\n\n\n\n\n\n\n\n\n    @Override\n    protected void onActivityResult(int requestCode, int resultCode, Intent data) {\n          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {\n            super.onActivityResult(requestCode, resultCode, data);\n          }\n    }\n    @Override\n    protected void onStart() {\n          super.onStart();\n          SDKBox.onStart();\n    }\n    @Override\n    protected void onStop() {\n          super.onStop();\n          SDKBox.onStop();\n    }\n    @Override\n    protected void onResume() {\n          super.onResume();\n          SDKBox.onResume();\n    }\n    @Override\n    protected void onPause() {\n          super.onPause();\n          SDKBox.onPause();\n    }\n    @Override\n    public void onBackPressed() {\n          if(!SDKBox.onBackPressed()) {\n            super.onBackPressed();\n          }\n    }\n\n\n\n\n\n\n\u5907\u6ce8:\n\n\n\n\ncocos2d-x v2\u4e2d, \n\u6e38\u620f\u6240\u5728Activtiy\n.java\n \u4e00\u822c\u4e3a \nproj.android/src/com/cocos/\u4f60\u7684\u6e38\u620f/\u4f60\u7684\u6e38\u620f.java\n\ncocos2d-x v3\u4e2d, \n\u6e38\u620f\u6240\u5728Activtiy\n.java\n \u4e00\u822c\u4e3a \nproj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java\n, LANGUAGE\u4e3acpp,lua\u6216javascript\n\n\n\u5728\u6e38\u620f\u6e90\u7801\u4e2d\u8c03\u7528 SDKBOX \u7684 IAP \u63a5\u53e3\n\n\n1. \u914d\u7f6e \nsdkbox_config.json\n\n\n\n\n\n\nsdkbox_config.json\n \u4e0d\u5b58\u5728:\n\n\n\n\n\u91cd\u547d\u540d\u63d2\u4ef6\u4e2d\u7684 \nsdkbox_config.json.sample\n \u4e3a \nsdkbox_config.json\n\n\n\u62f7\u8d1d \nsdkbox_config.json\n \u5230\u5de5\u7a0b\u4e2d\u7684 \nResources\n \u76ee\u5f55\n\n\nXCode\u4e2d,\u8fd8\u9700\u8981\u628a \nsdkbox_config.json\n \u6587\u4ef6\u62d6\u5230\u5de5\u7a0b\u7684\u8d44\u6e90\u6587\u4ef6\u4e2d,\u786e\u4fdd\u8fd9\u4e2a\u6587\u4ef6\u4f1a\u6253\u5305\u5230\u4f60\u7684ios\u5e94\u7528\u4e2d\n\n\n\n\n\n\n\n\nsdkbox_config.json\n \u5df2\u7ecf\u5b58\u5728:\n\n\n\n\n\u628a\u63d2\u4ef6\u4e2d\u7684 \nsdkbox_config.json.sample\n \u4e2d\u7684 \nIAP\n \u9879\u62f7\u8d1d\u5230\u4f60\u5de5\u7a0b\u4e2d\u7684 \nsdkbox_config.json\n \u4e2d\n\n\n\n\n\n\n\n\n\u4fee\u6539 \nsdkbox_config.json\n \u4e2d\u7684\u9879\u4e3a\u4f60\u81ea\u5df1\u7684\u4fe1\u606f\n\n\n\n\n\n\n2 \u521d\u59cb\u5316 IAP\n\n\n\n\n\u4fee\u6539 \nAppDelegate.cpp\n \u5305\u62ec\u4ee5\u4e0b\u5934\u6587\u4ef6:\n\n\n\n\n#include \nPluginIAPLua.hpp\n\n#include \nPluginIAPLuaHelper.hpp\n\n\n\n\n\n\n\n\u4fee\u6539 \nAppDelegate.cpp\n \u5728\u51fd\u6570 \napplicationDidFinishLaunching\n \u4e2d\u6ce8\u518cIAP\u7684Lua\u7ed1\u5b9a:\n\n\n\n\nlua_State *tolua_s = pStack-\ngetLuaState();\nregister_all_PluginIAPLua(tolua_s);\nregister_all_PluginIAPLua_helper(tolua_s);\n\n\n\n\n\n\n\u5728\u4f60\u7684\u4ee3\u7801\u4e2d\u8c03\u7528 \nssdkbox.IAP:init()\n \u6765\u5b8c\u6210\u521d\u59cb\u5316\n\n\n\n\n3 \u83b7\u53d6\u6700\u65b0\u7684\u5546\u54c1\u4fe1\u606f\n\n\n\u5f53\u4f60\u7684\u6e38\u620f\u542f\u52a8\u65f6,\u6700\u597d\u83b7\u53d6\u4e00\u6b21\u6700\u65b0\u5546\u54c1\u4fe1\u606f\n\u8981\u83b7\u53d6\u5546\u54c1\u4fe1\u606f,\u53ef\u4ee5\u8c03\u7528 \nsdkbox.IAP:refresh()\n.\n\n\n\n\nonProductRequestSuccess\n \u83b7\u53d6\u6210\u529f,\u4f1a\u6536\u5230\u8fd9\u4e2a\u56de\u8c03\n\n\nonProductRequestFailure\n \u83b7\u53d6\u5931\u8d25\n\n\n\n\n4 \u8d2d\u4e70\n\n\n\u8d2d\u4e70\u8c03\u7528\u63a5\u53e3 \nsdkbox.IAP.purchase(name)\n\n\n\u63d0\u793a:\n \nname\n \u662f\u4f60\u5728 \nsdkbox_config.json\n \u4e2d\u7684 \nitems\n \u9879\u5b58\u653e\u5728\u7684\u540d\u5b57, \u800c\u4e0d\u662f\u4f60\u5728 iTunes \u6216 GooglePlay Store \u7684\u5546\u54c1\u540d\u5b57\n\n\n\n\nonSuccess\n \u8d2d\u4e70\u6210\u529f.\n\n\nonFailure\n \u8d2d\u4e70\u5931\u8d25.\n\n\nonCanceled\n \u7528\u6237\u53d6\u6d88\u8d2d\u4e70.\n\n\n\n\n5 \u6062\u590d\u8d2d\u4e70\n\n\n\u6062\u590d\u8d2d\u4e70\u8c03\u7528 \nsdkbox.IAP:restore()\n.\n\n\n\n\nonRestored\n \u6062\u590d\u6210\u529f\n\n\n\n\nNote:\n \nonRestored\n \u8fd9\u4e2a\u56de\u8c03\u53ef\u80fd\u4e0d\u81f3\u53ea\u6709\u4e00\u6b21\n\n\n6 \u5904\u7406\u8d2d\u4e70\u4e8b\u4ef6\n\n\n\u5141\u8bb8\u4f60\u63a5\u6536\u5904\u7406\u6e38\u620f\u4e2d \nIAP\n \u8fd4\u56de\u7684\u5404\u79cd\u4e8b\u4ef6\n\n\n\n\n\u6ce8\u518clua script listener:\n\n\n\n\nsdkbox.IAP:setListener(function(args)\n        if \nonSuccess\n == args.event then\n                local product = args.product\n                dump(product, \nonSuccess:\n)\n        elseif \nonFailure\n == args.event then\n                local product = args.product\n                local msg = args.msg\n                dump(product, \nonFailure:\n)\n                print(\nmsg:\n, msg)\n        elseif \nonCanceled\n == args.event then\n                local product = args.product\n                dump(product, \nonCanceled:\n)\n        elseif \nonRestored\n == args.event then\n                local product = args.product\n                dump(product, \nonRestored:\n)\n        elseif \nonProductRequestSuccess\n == args.event then\n                local products = args.products\n                dump(products, \nonProductRequestSuccess:\n)\n        elseif \nonProductRequestFailure\n == args.event then\n                local msg = args.msg\n                print(\nmsg:\n, msg)\n        else\n                print(\nunknow event \n, args.event)\n        end\nend)", 
+            "title": "lua"
+        }, 
+        {
+            "location": "/plugins/iap/lua/#_1", 
+            "text": "\u63d0\u4f9b\u4e86\u4e00\u6b65\u96c6\u6210IAP\u5230cocos2d-x(c, lua, js)\u5de5\u7a0b,  SDKBOX  \u6781\u5927\u5730\u7b80\u5316\u4e86\u96c6\u6210sdk\u7684\u8fc7\u7a0b.", 
+            "title": "\u4ecb\u7ecd"
+        }, 
+        {
+            "location": "/plugins/iap/lua/#_2", 
+            "text": "\u8fd0\u884c\u4e0b\u9762\u7684\u547d\u4ee4\u6765\u96c6\u6210iap  sdkbox import iap", 
+            "title": "\u96c6\u6210"
+        }, 
+        {
+            "location": "/plugins/iap/lua/#_3", 
+            "text": "\u4fee\u6539  \u6e38\u620f\u6240\u5728Activity .java   \u5728  \u6e38\u620f\u6240\u5728Activity .java  \u4e2d\u6dfb\u52a0\u4e0b\u9762\u7684import:   import android.content.Intent;\nimport com.sdkbox.plugin.SDKBox;   \u5728\u4e0a\u9762\u90a3\u4e2a\u7c7b\u4e2d\u7684  onCreate(final Bundle savedInstanceState)  \u51fd\u6570\u4e2d\u6dfb\u52a0  SDKBox.init(this);  \u8c03\u7528. \u6dfb\u52a0\u540e\u7684\u4ee3\u7801:   protected void onCreate(Bundle savedInstanceState){\n  super.onCreate(savedInstanceState);\n  SDKBox.init(this);\n}   \u5bf9\u4ee5\u4e0b\u8fd9\u51e0\u4e2a\u51fd\u6570\u4e2d,\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u63a5\u53e3\u8c03\u7528,\u6700\u540e\u4f60\u7684\u4ee3\u7801,\u5e94\u8be5\u50cf\u4ee5\u4e0b\u8fd9\u6837:  \u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u4e0d\u5b58\u5728,\u6dfb\u52a0\u5b83  \u5982\u679c\u4f60\u7684\u7c7b\u4e2d,\u6709\u4e9b\u51fd\u6570\u5df2\u7ecf\u5b58\u5728,\u90a3\u5728\u5176\u4e2d\u6dfb\u52a0\u5bf9\u5e94\u7684 SDKBox \u76f8\u5173\u63a5\u53e3\u8c03\u7528         @Override\n    protected void onActivityResult(int requestCode, int resultCode, Intent data) {\n          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {\n            super.onActivityResult(requestCode, resultCode, data);\n          }\n    }\n    @Override\n    protected void onStart() {\n          super.onStart();\n          SDKBox.onStart();\n    }\n    @Override\n    protected void onStop() {\n          super.onStop();\n          SDKBox.onStop();\n    }\n    @Override\n    protected void onResume() {\n          super.onResume();\n          SDKBox.onResume();\n    }\n    @Override\n    protected void onPause() {\n          super.onPause();\n          SDKBox.onPause();\n    }\n    @Override\n    public void onBackPressed() {\n          if(!SDKBox.onBackPressed()) {\n            super.onBackPressed();\n          }\n    }   \u5907\u6ce8:   cocos2d-x v2\u4e2d,  \u6e38\u620f\u6240\u5728Activtiy .java  \u4e00\u822c\u4e3a  proj.android/src/com/cocos/\u4f60\u7684\u6e38\u620f/\u4f60\u7684\u6e38\u620f.java \ncocos2d-x v3\u4e2d,  \u6e38\u620f\u6240\u5728Activtiy .java  \u4e00\u822c\u4e3a  proj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java , LANGUAGE\u4e3acpp,lua\u6216javascript  \u5728\u6e38\u620f\u6e90\u7801\u4e2d\u8c03\u7528 SDKBOX \u7684 IAP \u63a5\u53e3  1. \u914d\u7f6e  sdkbox_config.json    sdkbox_config.json  \u4e0d\u5b58\u5728:   \u91cd\u547d\u540d\u63d2\u4ef6\u4e2d\u7684  sdkbox_config.json.sample  \u4e3a  sdkbox_config.json  \u62f7\u8d1d  sdkbox_config.json  \u5230\u5de5\u7a0b\u4e2d\u7684  Resources  \u76ee\u5f55  XCode\u4e2d,\u8fd8\u9700\u8981\u628a  sdkbox_config.json  \u6587\u4ef6\u62d6\u5230\u5de5\u7a0b\u7684\u8d44\u6e90\u6587\u4ef6\u4e2d,\u786e\u4fdd\u8fd9\u4e2a\u6587\u4ef6\u4f1a\u6253\u5305\u5230\u4f60\u7684ios\u5e94\u7528\u4e2d     sdkbox_config.json  \u5df2\u7ecf\u5b58\u5728:   \u628a\u63d2\u4ef6\u4e2d\u7684  sdkbox_config.json.sample  \u4e2d\u7684  IAP  \u9879\u62f7\u8d1d\u5230\u4f60\u5de5\u7a0b\u4e2d\u7684  sdkbox_config.json  \u4e2d     \u4fee\u6539  sdkbox_config.json  \u4e2d\u7684\u9879\u4e3a\u4f60\u81ea\u5df1\u7684\u4fe1\u606f    2 \u521d\u59cb\u5316 IAP   \u4fee\u6539  AppDelegate.cpp  \u5305\u62ec\u4ee5\u4e0b\u5934\u6587\u4ef6:   #include  PluginIAPLua.hpp \n#include  PluginIAPLuaHelper.hpp    \u4fee\u6539  AppDelegate.cpp  \u5728\u51fd\u6570  applicationDidFinishLaunching  \u4e2d\u6ce8\u518cIAP\u7684Lua\u7ed1\u5b9a:   lua_State *tolua_s = pStack- getLuaState();\nregister_all_PluginIAPLua(tolua_s);\nregister_all_PluginIAPLua_helper(tolua_s);   \u5728\u4f60\u7684\u4ee3\u7801\u4e2d\u8c03\u7528  ssdkbox.IAP:init()  \u6765\u5b8c\u6210\u521d\u59cb\u5316   3 \u83b7\u53d6\u6700\u65b0\u7684\u5546\u54c1\u4fe1\u606f  \u5f53\u4f60\u7684\u6e38\u620f\u542f\u52a8\u65f6,\u6700\u597d\u83b7\u53d6\u4e00\u6b21\u6700\u65b0\u5546\u54c1\u4fe1\u606f\n\u8981\u83b7\u53d6\u5546\u54c1\u4fe1\u606f,\u53ef\u4ee5\u8c03\u7528  sdkbox.IAP:refresh() .   onProductRequestSuccess  \u83b7\u53d6\u6210\u529f,\u4f1a\u6536\u5230\u8fd9\u4e2a\u56de\u8c03  onProductRequestFailure  \u83b7\u53d6\u5931\u8d25   4 \u8d2d\u4e70  \u8d2d\u4e70\u8c03\u7528\u63a5\u53e3  sdkbox.IAP.purchase(name)  \u63d0\u793a:   name  \u662f\u4f60\u5728  sdkbox_config.json  \u4e2d\u7684  items  \u9879\u5b58\u653e\u5728\u7684\u540d\u5b57, \u800c\u4e0d\u662f\u4f60\u5728 iTunes \u6216 GooglePlay Store \u7684\u5546\u54c1\u540d\u5b57   onSuccess  \u8d2d\u4e70\u6210\u529f.  onFailure  \u8d2d\u4e70\u5931\u8d25.  onCanceled  \u7528\u6237\u53d6\u6d88\u8d2d\u4e70.   5 \u6062\u590d\u8d2d\u4e70  \u6062\u590d\u8d2d\u4e70\u8c03\u7528  sdkbox.IAP:restore() .   onRestored  \u6062\u590d\u6210\u529f   Note:   onRestored  \u8fd9\u4e2a\u56de\u8c03\u53ef\u80fd\u4e0d\u81f3\u53ea\u6709\u4e00\u6b21  6 \u5904\u7406\u8d2d\u4e70\u4e8b\u4ef6  \u5141\u8bb8\u4f60\u63a5\u6536\u5904\u7406\u6e38\u620f\u4e2d  IAP  \u8fd4\u56de\u7684\u5404\u79cd\u4e8b\u4ef6   \u6ce8\u518clua script listener:   sdkbox.IAP:setListener(function(args)\n        if  onSuccess  == args.event then\n                local product = args.product\n                dump(product,  onSuccess: )\n        elseif  onFailure  == args.event then\n                local product = args.product\n                local msg = args.msg\n                dump(product,  onFailure: )\n                print( msg: , msg)\n        elseif  onCanceled  == args.event then\n                local product = args.product\n                dump(product,  onCanceled: )\n        elseif  onRestored  == args.event then\n                local product = args.product\n                dump(product,  onRestored: )\n        elseif  onProductRequestSuccess  == args.event then\n                local products = args.products\n                dump(products,  onProductRequestSuccess: )\n        elseif  onProductRequestFailure  == args.event then\n                local msg = args.msg\n                print( msg: , msg)\n        else\n                print( unknow event  , args.event)\n        end\nend)", 
+            "title": "\u989d\u5916\u7684\u6b65\u9aa4"
+        }, 
+        {
+            "location": "/plugins/adcolony/", 
+            "text": "AdColony for c++\n\n\nAdColony for javascript\n\n\nAdColony for lua", 
+            "title": "AdColony"
+        }, 
+        {
+            "location": "/plugins/adcolony/#adcolony-for-c", 
+            "text": "", 
+            "title": "AdColony for c++"
+        }, 
+        {
+            "location": "/plugins/adcolony/#adcolony-for-javascript", 
+            "text": "", 
+            "title": "AdColony for javascript"
+        }, 
+        {
+            "location": "/plugins/adcolony/#adcolony-for-lua", 
+            "text": "", 
+            "title": "AdColony for lua"
+        }, 
+        {
+            "location": "/plugins/chartboost/", 
+            "text": "IAP for c++\n\n\nIAP for javascript\n\n\nIAP for lua", 
+            "title": "Chartboost"
+        }, 
+        {
+            "location": "/plugins/chartboost/#iap-for-c", 
+            "text": "", 
+            "title": "IAP for c++"
+        }, 
+        {
+            "location": "/plugins/chartboost/#iap-for-javascript", 
+            "text": "", 
+            "title": "IAP for javascript"
+        }, 
+        {
+            "location": "/plugins/chartboost/#iap-for-lua", 
+            "text": "", 
+            "title": "IAP for lua"
+        }, 
+        {
+            "location": "/plugins/vungle/", 
+            "text": "IAP for c++\n\n\nIAP for javascript\n\n\nIAP for lua", 
+            "title": "Vungle"
+        }, 
+        {
+            "location": "/plugins/vungle/#iap-for-c", 
+            "text": "", 
+            "title": "IAP for c++"
+        }, 
+        {
+            "location": "/plugins/vungle/#iap-for-javascript", 
+            "text": "", 
+            "title": "IAP for javascript"
+        }, 
+        {
+            "location": "/plugins/vungle/#iap-for-lua", 
+            "text": "", 
+            "title": "IAP for lua"
+        }, 
+        {
+            "location": "/plugins/googleanalytics/", 
+            "text": "IAP for c++\n\n\nIAP for javascript\n\n\nIAP for lua", 
+            "title": "Google Analytics"
+        }, 
+        {
+            "location": "/plugins/googleanalytics/#iap-for-c", 
+            "text": "", 
+            "title": "IAP for c++"
+        }, 
+        {
+            "location": "/plugins/googleanalytics/#iap-for-javascript", 
+            "text": "", 
+            "title": "IAP for javascript"
+        }, 
+        {
+            "location": "/plugins/googleanalytics/#iap-for-lua", 
+            "text": "", 
+            "title": "IAP for lua"
+        }, 
+        {
+            "location": "/plugins/flurryanalytics/", 
+            "text": "IAP for c++\n\n\nIAP for javascript\n\n\nIAP for lua", 
+            "title": "Flurry Analytics"
+        }, 
+        {
+            "location": "/plugins/flurryanalytics/#iap-for-c", 
+            "text": "", 
+            "title": "IAP for c++"
+        }, 
+        {
+            "location": "/plugins/flurryanalytics/#iap-for-javascript", 
+            "text": "", 
+            "title": "IAP for javascript"
+        }, 
+        {
+            "location": "/plugins/flurryanalytics/#iap-for-lua", 
+            "text": "", 
+            "title": "IAP for lua"
+        }, 
+        {
+            "location": "/plugins/tune/", 
+            "text": "IAP for c++\n\n\nIAP for javascript\n\n\nIAP for lua", 
+            "title": "Tune"
+        }, 
+        {
+            "location": "/plugins/tune/#iap-for-c", 
+            "text": "", 
+            "title": "IAP for c++"
+        }, 
+        {
+            "location": "/plugins/tune/#iap-for-javascript", 
+            "text": "", 
+            "title": "IAP for javascript"
+        }, 
+        {
+            "location": "/plugins/tune/#iap-for-lua", 
+            "text": "", 
+            "title": "IAP for lua"
+        }, 
+        {
+            "location": "/plugins/kochava/", 
+            "text": "IAP for c++\n\n\nIAP for javascript\n\n\nIAP for lua", 
+            "title": "Kochava"
+        }, 
+        {
+            "location": "/plugins/kochava/#iap-for-c", 
+            "text": "", 
+            "title": "IAP for c++"
+        }, 
+        {
+            "location": "/plugins/kochava/#iap-for-javascript", 
+            "text": "", 
+            "title": "IAP for javascript"
+        }, 
+        {
+            "location": "/plugins/kochava/#iap-for-lua", 
+            "text": "", 
+            "title": "IAP for lua"
+        }, 
+        {
+            "location": "/release-note/", 
+            "text": "\u7248\u672c\u8bf4\u660e\n\n\n\n\n1.1.4", 
+            "title": "\u5173\u4e8e"
+        }, 
+        {
+            "location": "/release-note/#_1", 
+            "text": "", 
+            "title": "\u7248\u672c\u8bf4\u660e"
+        }, 
+        {
+            "location": "/release-note/#114", 
+            "text": "", 
+            "title": "1.1.4"
+        }
+    ]
+}
