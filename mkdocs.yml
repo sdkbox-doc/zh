@@ -1,0 +1,19 @@
+site_name: SDKBOX
+pages:
+- 主页: 'index.md'
+- 安装器: 'installer.md'
+- 插件: 
+    - 'IAP':
+        - 'c++': 'plugins/iap/cpp.md'
+        - 'js': 'plugins/iap/js.md'
+        - 'lua': 'plugins/iap/lua.md'
+    - 'AdColony': 'plugins/adcolony.md'
+    - 'Chartboost': 'plugins/chartboost.md'
+    - 'Vungle': 'plugins/vungle.md'
+    - 'Google Analytics': 'plugins/googleanalytics.md'
+    - 'Flurry Analytics': 'plugins/flurryanalytics.md'
+    - 'Tune': 'plugins/tune.md'
+    - 'Kochava': 'plugins/kochava.md'
+- 关于: 'release-note.md'
+
+
