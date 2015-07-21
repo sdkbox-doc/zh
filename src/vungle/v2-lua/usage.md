@@ -28,8 +28,8 @@ bool AppDelegate::applicationDidFinishLaunching()
 sdkbox.PluginVungle:init()
 ```
 
-### Showing Ads
-Display an ad where ever you want from your code, either __video__ or __reward__:
+### 显示广告
+无论 __video__ 还是 __reward__ 类型的广告，可以在任何您想显示它们的地方加入代码：
 ```lua
 sdkbox.PluginVungle:show("video")
 sdkbox.PluginVungle:show("reward")

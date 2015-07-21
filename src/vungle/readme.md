@@ -15,10 +15,10 @@ sdkbox import vungle
 <<[proguard.md]
 
 ## 配置
-SDKBOX Installer 将会自动在你的 `sdkbox_config.json` 中插入一个配置样例。请修改这份配置样例，使其能用于你自己的 app 。
+SDKBOX Installer 将会自动在你的 `sdkbox_config.json` 中插入一份配置样例。请修改这份配置样例，使其能用于你自己的 app 。
 
 对于一个 Vungle 插件的配置样例，你需要将其中的 `<vungle id>` 替换成你特定的 [Vungle](http://vungle.com) 发布帐号的ID。
-如下是一个在 IOS 平台，添加 Vungle 插件的样例：
+如下是一个在 IOS 平台，添加 Vungle 插件的配置样例：
 ```json
 "Vungle" :
 {
