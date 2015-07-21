@@ -1,5 +1,6 @@
 ### 修改 Lua 代码
-修改 `./frameworks/runtime-src/Classes/lua_module_register.h` 文件，包含必要的头文件并且注册 `Tune` 的 Lua\_State。请注意该注册函数需要一个 __lua_State*__ 参数。
+修改 `./frameworks/runtime-src/Classes/lua_module_register.h` 文件，包含必要的头文件并且注册 `Tune` 的 Lua\_State。
+__Note:__ 请注意该注册函数需要一个 __lua_State*__ 参数。
 ```cpp
 #include "PluginTuneLua.hpp"
 #include "PluginTuneLuaHelper.h"
