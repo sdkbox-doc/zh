@@ -34,8 +34,6 @@ SDKBOX Installer 将会自动在你的 `sdkbox_config.json` 中插入一个配�
 }
 ```
 
-Adding `Vungle` to Android is a bit different as it supports __sound__ and
-__backbutton__ settings. Here is an example adding `Vungle` to Android:
 因为多了 __sound__ 和 __backbutton__ 两个选项，在 Android 平台上添加 Vungle 插件会有些许不同。这里有一个在 Android 平台上添加 Vungle 插件的配置样例：
 ```json
 "Vungle" :
@@ -55,7 +53,7 @@ __backbutton__ settings. Here is an example adding `Vungle` to Android:
 }
 ```
 
-##Usage
+## 使用
 <<[usage.md]
 
 <<[api-reference.md]
