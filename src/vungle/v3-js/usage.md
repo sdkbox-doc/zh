@@ -1,6 +1,4 @@
 ### 初始化 Vungle
-* Initialize the plugin by calling `init()` where appropriate in your code. We
-recommend to do this in the `app.js`. Example:
 * 通过在您的代码合适的位置调用 `init()` 方法来初始化这个插件。我们建议您在 `app.js` 中进行初始化。举例如下：
 ```javascript
 sdkbox.PluginVungle.init();
@@ -26,7 +24,7 @@ sdkbox.PluginVungle.show("video");
 sdkbox.PluginVungle.show("reward");
 ```
 
-### Catch Vungle events (optional)
+### 捕捉 Vungle 事件（可选）
 您可以捕捉 `Vungle` 事件来执行一些操作，比如在玩家观看了视频广告后给其发放奖励。
 
 * 创建一个 __listener__ 用于事件回调 (通过写入事件日志举例如下)：
