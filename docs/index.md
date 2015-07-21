@@ -6,22 +6,3 @@ __SDKBOX__ 可以让cocos2d-x的开发者很轻松地把各种国内外的SDK集
 
 #介绍
 __SDKBOX__ 是一个命令行的安装程序,你可以只用一个命令就把第三方SDK集成到自己的工作中
-
----
-
-#应用内付费
-##[SDKBOX IAP](plugins/iap/cpp.md)
-
-#广告类
-##[AdColony](plugins/adcolony.md)
-##[Chartboost](plugins/chartboost.md)
-##[Vungle](plugins/vungle.md)
-
-#分析类
-##[Google Analytics](plugins/googleanalytics.md)
-##[Flurry Analytics](plugins/flurryanalytics.md)
-
-#广告追踪
-##[Tune](plugins/tune.md)
-##[Kochava](plugins/kochava.md)
-

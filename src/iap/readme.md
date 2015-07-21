@@ -2,90 +2,46 @@
 Include Base: /Users/niteluo/Projects/store/doc/en/src/iap/v3-cpp
 -->
 
-## 介绍
-提供了一步集成IAP到cocos2d-x(c, lua, js)工程, __SDKBOX__ 极大地简化了集成sdk的过程.
+#应用内付费
 
-## 集成
-
-运行下面的命令来集成iap
+##集成
+用如下命令来集成 SDKBOX IAP 插件,请确保你可以正常执行的 SDKBOX 安装器.
 ```bash
 sdkbox import iap
 ```
 
-## 额外的步骤
+##额外的步骤
+<<[extra-step.md]
 
-### 修改 `<游戏所在Activity>.java`
-* 在 `<游戏所在Activity>.java` 中添加下面的import:
-```java
-import android.content.Intent;
-import com.sdkbox.plugin.SDKBox;
-```
+## 配置
+SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox_config.json`.在你编译工程前,请修改里面的参数,用你自己的应用信息
 
-* 在上面那个类中的 `onCreate(final Bundle savedInstanceState)` 函数中添加 `SDKBox.init(this);` 调用. 添加后的代码:
-```java
-protected void onCreate(Bundle savedInstanceState){
-  super.onCreate(savedInstanceState);
-  SDKBox.init(this);
+现在给一个修改例子,你需要在[iTunes Connect](http://itunesconnect.apple.com)获取一个应用id,然后替换 `<put the product id for ios here>`,或者,在[Google Play Console](https://play.google.com/apps/publish)申请一个应用id,并替换`<put your googleplay key here>`
+```json
+"ios" :
+{
+    "iap":{
+        "items":{
+            "remove_ads":{
+                "id":"<put the product id for ios here>"
+            }
+        }
+    }
+},
+"android":
+{
+    "iap":{
+        "key":"<put your googleplay key here>",
+        "items":{
+          "remove_ads":{
+              "id":"<put the product id for android here>"
+          }
+        }
+    }
 }
 ```
 
-* 对以下这几个函数中,添加对应的 SDKBox 接口调用,最后你的代码,应该像以下这样:
-    * 如果你的类中,有些函数不存在,添加它
-    * 如果你的类中,有些函数已经存在,那在其中添加对应的 SDKBox 相关接口调用
+##用法
+<<[usage.md]
 
-```java
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
-            super.onActivityResult(requestCode, resultCode, data);
-          }
-    }
-    @Override
-    protected void onStart() {
-          super.onStart();
-          SDKBox.onStart();
-    }
-    @Override
-    protected void onStop() {
-          super.onStop();
-          SDKBox.onStop();
-    }
-    @Override
-    protected void onResume() {
-          super.onResume();
-          SDKBox.onResume();
-    }
-    @Override
-    protected void onPause() {
-          super.onPause();
-          SDKBox.onPause();
-    }
-    @Override
-    public void onBackPressed() {
-          if(!SDKBox.onBackPressed()) {
-            super.onBackPressed();
-          }
-    }
-```
-
-* 备注:
-
-cocos2d-x v2中, `<游戏所在Activtiy>.java` 一般为 `proj.android/src/com/cocos/你的游戏/你的游戏.java`
-cocos2d-x v3中, `<游戏所在Activtiy>.java` 一般为 `proj.android/src/org/cocos2dx/LANGUAGE/AppActivity.java`, LANGUAGE为cpp,lua或javascript
-
-
-### 在游戏源码中调用 SDKBOX 的 IAP 接口
-
-#### 1. 配置 `sdkbox_config.json`
-* `sdkbox_config.json` 不存在:
-      * 重命名插件中的 `sdkbox_config.json.sample` 为 `sdkbox_config.json`
-      * 拷贝 `sdkbox_config.json` 到工程中的 __Resources__ 目录
-      * XCode中,还需要把 `sdkbox_config.json` 文件拖到工程的资源文件中,确保这个文件会打包到你的ios应用中
-
-* `sdkbox_config.json` 已经存在:
-      * 把插件中的 `sdkbox_config.json.sample` 中的 `IAP` 项拷贝到你工程中的 `sdkbox_config.json` 中
-
-* 修改 `sdkbox_config.json` 中的项为你自己的信息
-
-<<[section-a.md]
-
+<<[api-reference.md]
