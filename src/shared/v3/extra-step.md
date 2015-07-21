@@ -1,44 +1,44 @@
 ### 修改 `Cocos2dxActivity.java`
-* 如果你用的是 cocos2d-x 源码, 假定你当前在 `proj.android` 目录, 那么`Cocos2dxActivity.java` 的路径在这个位置:
+* 如果您使用 cocos2d-x 源代码，假设您在 `proj.android` 目录下，那么您可以在如下位置找到 `Cocos2dxActivity.java` 文件：
 
     ```
     ../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/
     lib/Cocos2dxActivity.java
     ```
 
-* 如果你用的是预编译的 cocos2d-x 库, 假定你当前在 `proj.android`, 那么 `Cocos2dxActivity.java` 的路径在这个位置:
+* 如果您使用 cocos2dx-x 预编译库， 假设您在 `proj.android` 目录下，那么您可以在如下位置找到 `Cocos2dxActivity.java` 文件：
 
     ```
     ./src/org/cocos2dx/lib/Cocos2dxActivity.java
     ```
 
-  __注意:__ 当使用 Cocos2d-x 源码时,不同版本的 `Cocos2dxActivity.java` 在不同的路径. 有一个方法就是去看 `proj.android/project.properties`. 比如:
+  __Note:__ 当你使用 cocos2d-x 源代码时，不同的版本中 `Cocos2dxActivity.java` 文件的位置也不同。一个确定该文件位置的方法是查看 `proj.android/project.properties` 。比如：
 ```
 android.library.reference.1=../../cocos2d-x/cocos/platform/android/java
 ```
 
-如上, `Cocos2dxActivity.java` 的路径应该是在:
+在这个例子中， `Cocos2dxActivity.java` 文件应该在如下位置：
 
 ```
 ../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java
 ```
 
-* 修改 `Cocos2dxActivity.java` 包含如下imports:
+* 修改 `Cocos2dxActivity.java` 文件，导入如下包：
 ```java
 import android.content.Intent;
 import com.sdkbox.plugin.SDKBox;
 ```
 
-* 然后, 修改 `Cocos2dxActivity` 中的 `onCreate(final Bundle savedInstanceState)` 函数, 在其中调用 `SDKBox.init(this);`. 这个函数调用的位置很重要. 它必须在 `onLoadNativeLibraries();` 之后调用. 比如:
+* 然后，修改 `Cocos2dxActivity` 类的 `onCreate(final Bundle savedInstanceState)` 函数，添加一个调用语句 `SDKBox.init(this);` 。添加的位置非常重要，必须在调用 `onLoadNativeLibraries();` 之后。如下：
 ```java
 onLoadNativeLibraries();
 SDKBox.init(this);
 ```
 
-* 最后, 我们需要插入 __overrides__ 属性. 这里有几个规定.
-    * 如果以下方法不存在,那么就添加它.
+* 最后, 我需要提供合适的 __overrides__ 方法的代码。这里有一些约定如下。
+    * 如果这个被列出的方法没有在 `SDKBox` 中定义，那么__定义它__。
 
-    * 如果以下方法已经定义了,那么在其中添加调用 `SDKBox` 的相关的接口.
+    * 如果这个被列出的方法已经被定义在 `SDKBox` 中，那么请调用这个在 `SDKBox` 中的__同名方法__。
 ```java
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
