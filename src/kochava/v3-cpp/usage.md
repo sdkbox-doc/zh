@@ -1,4 +1,3 @@
-### Initialize Kochava
 ### 初始化 Kochava
 在您的代码的合适的位置初始化这个插件，我们建议您在 `AppDelegate:applicationDidFinishLaunching()` 或者 `AppController:didFinishLaunchingWithOptions()` 中进行初始化。并确保您的代码中包含了正确的头文件。举例如下：
 ```cpp
