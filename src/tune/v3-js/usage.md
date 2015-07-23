@@ -30,7 +30,7 @@ event.searchString = "sweet srisp red apples";
 event.attribute1 = "srisp";
 event.attribute2 = "red";
 event.quantity = 3;
-sdkbox.PluginTune.measureEventForScript(JSON.stringify(event));
+sdkbox.PluginTune.measureEvent(JSON.stringify(event));
 ```
 
 ### 捕捉 Tune 事件（可选）
@@ -40,6 +40,7 @@ sdkbox.PluginTune.setListener({
   onEnqueuedAction: function(data) {},
   onSucceed: function(data) {},
   onFailed: function(data) {},
-  onReceiveDeeplink: function(data) {}
+  onReceiveDeeplink: function(data, timeout) {},
+  onFailDeeplink: function(errorString) {}
 });
 ```

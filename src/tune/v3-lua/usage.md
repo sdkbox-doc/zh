@@ -38,7 +38,8 @@ sdkbox.PluginTune:measureEventForScript(json.encode(event))
 ### 捕捉 Tune 事件（可选）
 您可以捕捉 `Tune` 事件，根据响应来执行操作。一个简单的例子如下：
 ```lua
-sdkbox.PluginTune:setListener(function(eventName, eventData)
+sdkbox.PluginTune:setListener(function(eventName, eventData, timeout)
+        -- 当eventName为 "onReceiveDeeplink" 时,第三个参数timeout才有效
         print(eventName, eventData)
     end)
 ```
