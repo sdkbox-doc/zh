@@ -859,7 +859,7 @@ event.searchString = &quot;sweet srisp red apples&quot;;
 event.attribute1 = &quot;srisp&quot;;
 event.attribute2 = &quot;red&quot;;
 event.quantity = 3;
-sdkbox.PluginTune.measureEventForScript(JSON.stringify(event));
+sdkbox.PluginTune.measureEvent(JSON.stringify(event));
 </code></pre>
 
 <h3 id="tune_3">捕捉 Tune 事件（可选）</h3>
@@ -868,7 +868,8 @@ sdkbox.PluginTune.measureEventForScript(JSON.stringify(event));
   onEnqueuedAction: function(data) {},
   onSucceed: function(data) {},
   onFailed: function(data) {},
-  onReceiveDeeplink: function(data) {}
+  onReceiveDeeplink: function(data, timeout) {},
+  onFailDeeplink: function(errorString) {}
 });
 </code></pre>
 
