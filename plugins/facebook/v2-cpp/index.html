@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>lua - SDKBOX</title>
+	<title>c++ - SDKBOX</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -91,19 +91,19 @@
         
             
 <li >
-    <a href="../v3-cpp/">c++</a>
+    <a href="../../adcolony/v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../v3-js/">js</a>
+    <a href="../../adcolony/v3-js/">js</a>
 </li>
 
         
             
-<li class="active">
-    <a href="./">lua</a>
+<li >
+    <a href="../../adcolony/v3-lua/">lua</a>
 </li>
 
         
@@ -118,19 +118,19 @@
         
             
 <li >
-    <a href="../v2-cpp/">c++</a>
+    <a href="../../adcolony/v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../v2-js/">js</a>
+    <a href="../../adcolony/v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../v2-lua/">lua</a>
+    <a href="../../adcolony/v2-lua/">lua</a>
 </li>
 
         
@@ -280,19 +280,19 @@
         
             
 <li >
-    <a href="../../facebook/v3-cpp/">c++</a>
+    <a href="../v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../facebook/v3-js/">js</a>
+    <a href="../v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../facebook/v3-lua/">lua</a>
+    <a href="../v3-lua/">lua</a>
 </li>
 
         
@@ -306,20 +306,20 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="../../facebook/v2-cpp/">c++</a>
+<li class="active">
+    <a href="./">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../facebook/v2-js/">js</a>
+    <a href="../v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../facebook/v2-lua/">lua</a>
+    <a href="../v2-lua/">lua</a>
 </li>
 
         
@@ -735,12 +735,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../v3-js/">
+                        <a rel="next" href="../v3-lua/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../v2-cpp/">
+                        <a rel="prev" href="../v2-js/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -756,7 +756,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#adcolony">AdColony</a></li>
+        <li class="main active"><a href="#facebook">Facebook</a></li>
         
             <li><a href="#_1">集成</a></li>
         
@@ -774,48 +774,65 @@
                 <div class="col-md-9" role="main">
 
 <!--
-Include Base: /Users/niteluo/Projects/store/doc/en/src/adcolony/v3-cpp
+Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/facebook/v3-cpp
 -->
 
-<h1 id="adcolony">AdColony</h1>
+<h1 id="facebook">Facebook</h1>
 <h2 id="_1">集成</h2>
-<p>用如下命令来集成 SDKBOX AdColony 插件,请确保你可以正常执行的 SDKBOX 安装器.</p>
-<pre><code class="bash">sdkbox import adcolony
+<p>用如下命令来集成 SDKBOX Facebook 插件,请确保你可以正常执行的 SDKBOX 安装器.</p>
+<pre><code class="bash">sdkbox import facebook
 </code></pre>
 
 <h2 id="_2">额外的步骤</h2>
-<h3 id="cocos2dxactivityjava">修改 <code>Cocos2dxActivity.java</code></h3>
+<p>下面的步骤假定你已经注册为 Facbbook 开发者，并创建了一个 <strong>APP</strong></p>
+<h3 id="ios">iOS的步骤</h3>
 <ul>
-<li>
-<p>如果您使用 cocos2d-x 源代码，假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
-<p><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/
-lib/Cocos2dxActivity.java</code></p>
-</li>
-<li>
-<p>如果您使用 cocos2dx-x 预编译库， 假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
-<p><code>./src/org/cocos2dx/lib/Cocos2dxActivity.java</code></p>
-</li>
+<li>依<a href="https://developers.facebook.com/quickstarts/?platform=ios">iOS快速指导</a> 来配置你的 <strong>APP</strong></li>
+<li>在 <code>AppController.mm</code> 中修改如下代码，不是 <code>AppDelegate.cpp</code> 中</li>
 </ul>
-<p><strong>Note:</strong> 当你使用 cocos2d-x 源代码时，不同的版本中 <code>Cocos2dxActivity.java</code> 文件的位置也不同。一个确定该文件位置的方法是查看 <code>proj.android/project.properties</code> 。比如：</p>
-<pre><code>android.library.reference.1=../../cocos2d-x/cocos/platform/android/java
+<pre><code>- (void)applicationDidBecomeActive:(UIApplication *)application {
+  [FBSDKAppEvents activateApp];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                    didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                         openURL:url
+                                               sourceApplication:sourceApplication
+                                                      annotation:annotation];
+}
 </code></pre>
 
-<p>在这个例子中， <code>Cocos2dxActivity.java</code> 文件应该在如下位置：</p>
-<pre><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java
-</code></pre>
-
+<h3 id="android">Android的步骤</h3>
 <ul>
-<li>修改 <code>Cocos2dxActivity.java</code> 文件，导入如下包：</li>
+<li>确保你的 <code>java -version</code> &gt;= 1.7</li>
+<li>依<a href="https://developers.facebook.com/quickstarts/?platform=android">Android快速指导</a> 来配置你的 <strong>APP</strong></li>
+<li>在 <code>res/values/strings.xml</code> 中给 <code>facebook_app_id</code> 赋值为你的 <code>Facebook App ID</code></li>
+<li>在 <code>AndroidManifest.xml</code> 中给 <code>_replace_with_your_app_id_</code> 赋值为你的 <code>Facebook App ID</code></li>
+<li>在 <code>project.properties</code> 中给 target 赋值为 <code>target=android-15</code></li>
+</ul>
+<h3 id="yourgamenamejava">修改 <code>&lt;YourGameName&gt;.java</code></h3>
+<ul>
+<li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
 </ul>
 <pre><code class="java">import android.content.Intent;
 import com.sdkbox.plugin.SDKBox;
 </code></pre>
 
 <ul>
-<li>然后，修改 <code>Cocos2dxActivity</code> 类的 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this);</code> 。添加的位置非常重要，必须在调用 <code>onLoadNativeLibraries();</code> 之后。如下：</li>
+<li>然后，修改您的类 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this)</code> 。如下：</li>
 </ul>
-<pre><code class="java">onLoadNativeLibraries();
-SDKBox.init(this);
+<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstanceState);
+  SDKBox.init(this);
+}
 </code></pre>
 
 <ul>
@@ -865,220 +882,276 @@ SDKBox.init(this);
     }
 </code></pre>
 
-<h3 id="release">混淆 (release, 可选)</h3>
+<h3 id="release">混淆 (release模式下可选)</h3>
 <ul>
-<li>编辑 <code>project.properties</code>,写入一个 <code>Proguard</code> 配置. Example:</li>
+<li>编辑 <code>project.properties</code> 指定 <code>Proguard</code> 到一个配置文件. 比如:</li>
 </ul>
 <pre><code>proguard.config=proguard.cfg
 </code></pre>
 
 <ul>
-<li>编辑这个文件,填入你想包启的,如下:</li>
+<li>编辑这个配置文件,包含以下内容:</li>
 </ul>
-<pre><code>-dontwarn android.webkit.**
+<pre><code>-libraryjars libs/facebook_lib/libs/android-support-v4.jar
+
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
 </code></pre>
 
 <p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 模式下有效 (比如 <code>cocos run -m release</code>), 在 debug 模式下,不会调到混淆规则.</p>
 <h2 id="_3">配置</h2>
-<p>SDKBOX 安装器会自动在你的工程中添加一个样例配置文件<code>sdkbox_config.json</code>.在你编译工程前,请修改里面的参数,用你自己的应用信息</p>
-<p>下面给出一个AdColony的配置样例,你需要在<a href="https://clients.adcolony.com/login">AdColony</a>注册帐号,然后对应的信息替换 <code>&lt;app id&gt;</code> 和 <code>&lt;zone id&gt;</code>.</p>
-<pre><code class="json">&quot;AdColony&quot;:{
-    &quot;id&quot;:&quot;&lt;app id&gt;&quot;,
-    &quot;debug&quot;:true,
-    &quot;ads&quot;:{
-        &quot;video&quot;:{
-            &quot;zone&quot;: &quot;&lt;zone id&gt;&quot;,
-            &quot;v4vc&quot;: false
-        },
-        &quot;v4vc&quot;:{
-            &quot;zone&quot;: &quot;&lt;zone id&gt;&quot;,
-            &quot;v4vc&quot;: true,
-            &quot;pre_popup&quot; : true,
-            &quot;post_popup&quot;: true
-        }
-    }
+<p>SDKBOX 安装器会为你自动生成一个 <code>sdkbox_config.json</code> 配置文件</p>
+<p>下面给出一个例子,你可以打开/关闭Facebook的调试模式</p>
+<pre><code class="json">&quot;Facebook&quot;:
+{
+    &quot;debug&quot;:true
 }
 </code></pre>
 
 <h2 id="_4">用法</h2>
-<h3 id="modify-lua-code">Modify Lua Code</h3>
-<p>修改 <code>./frameworks/runtime-src/Classes/lua_module_register.h</code> 以包含如下必须头文件, 并调用 <code>AdColony</code> 的lua注册函数.注意它们的参数 <strong>lua_State*</strong> :</p>
-<pre><code class="cpp">#include &quot;PluginAdColonyLua.hpp&quot;
-#include &quot;PluginAdColonyLuaHelper.h&quot;
-</code></pre>
-
-<pre><code class="cpp">static int lua_module_register(lua_State* L)
+<h3 id="facebook_1">初始化 Facebook</h3>
+<p>在你的代码合适的地方初始化插件, 我们建议你在 <code>AppDelegate::applicationDidFinishLaunching()</code> 或 <code>AppController:didFinishLaunchingWithOptions()</code> 中完成初始化. 请确保你包含了对应的头文件:</p>
+<pre><code class="cpp">#include &quot;PluginFacebook/PluginFacebook.h&quot;
+AppDelegate::applicationDidFinishLaunching()
 {
-  register_all_PluginAdColonyLua(L);
-  register_PluginAdColonyLua_helper(L);
+     sdkbox::PluginFacebook::init();
 }
 </code></pre>
 
-<h3 id="adcolony_1">初始化 AdColony</h3>
-<p>修改你的lua代码用 <code>init()</code> 初始化插件. 这个可以在任何地方调用,但是必须在你要想使用 AdColony 的功能之前.</p>
-<pre><code class="lua">sdkbox.PluginAdColony:init()
+<h3 id="facebook_2">使用 Facebook</h3>
+<h4 id="_5">登录</h4>
+<p>用户在使用前需要登录到 Facebook.</p>
+<pre><code class="cpp">sdkbox::PluginFacebook::login();
 </code></pre>
 
-<h3 id="showing-ads">Showing Ads</h3>
-<p>在你的代码中想要显示广告的地方,输入如下代码:</p>
-<pre><code class="lua">sdkbox.PluginAdColony:show(&quot;video&quot;)
+<p>用户不想使用 Facebook 时，可以注销.</p>
+<pre><code class="cpp">sdkbox::PluginFacebook::logout();
 </code></pre>
 
-<p>或:</p>
-<pre><code class="lua">sdkbox.PluginAdColony:show(&quot;v4vc&quot;)
+<p>你可以检查是否已经登录</p>
+<pre><code class="cpp">sdkbox::PluginFacebook::isLoggedIn();
 </code></pre>
 
-<h3 id="adcolony_2">接收 AdColony 事件 (可选)</h3>
-<p>你可以接收 <code>AdColony</code> 的事件, 这样你可以在玩家观看完广告后给他相应的奖励.</p>
+<blockquote>
+<p>注意: 用户只需要登录一次, 除非他们注销</p>
+</blockquote>
+<h4 id="_6">权限</h4>
+<p>Facebook 要求你在使用前去询问用户要相应的权限,比如 posting 相关的权益
+就有两类权限, <strong>read</strong> and <strong>publish</strong>
+你也可以通过<a href="https://developers.facebook.com/docs/facebook-login/permissions/v2.3#reference">这里</a>得到完整的信息</p>
+<p>SDKBOX 提供最常用的几种权限:</p>
 <ul>
-<li>创建一个监听:</li>
+<li>FB_PERM_READ_PUBLIC_PROFILE</li>
+<li>FB_PERM_READ_EMAIL</li>
+<li>FB_PERM_READ_USER_FRIENDS</li>
+<li>FB_PERM_PUBLISH_POST</li>
 </ul>
-<pre><code class="lua">sdkbox.PluginAdColony:setListener(function(args)
-    if &quot;onAdColonyChange&quot; == args.name then
-        local info = args.info  -- sdkbox::AdColonyAdInfo
-        local available = args.available -- boolean
-                dump(info, &quot;onAdColonyChange:&quot;)
-        print(&quot;available:&quot;, available)
-    elseif &quot;onAdColonyReward&quot; ==  args.name then
-        local info = args.info  -- sdkbox::AdColonyAdInfo
-        local currencyName = args.currencyName -- string
-        local amount = args.amount -- int
-        local success = args.success -- boolean
-                dump(info, &quot;onAdColonyReward:&quot;)
-        print(&quot;currencyName:&quot;, currencyName)
-        print(&quot;amount:&quot;, amount)
-        print(&quot;success:&quot;, success)
-    elseif &quot;onAdColonyStarted&quot; ==  args.name then
-        local info = args.info  -- sdkbox::AdColonyAdInfo
-                dump(info, &quot;onAdColonyStarted:&quot;)
-    elseif &quot;onAdColonyFinished&quot; ==  args.name then
-        local info = args.info  -- sdkbox::AdColonyAdInfo
-                dump(info, &quot;onAdColonyFinished:&quot;)
-    end
-end)
+<p>要获取权限,你可以指定你想要权限,比如:</p>
+<pre><code class="cpp">sdkbox::PluginFacebook::requestReadPermissions({FB_PERM_READ_PUBLIC_PROFILE, FB_PERM_READ_USER_FRIENDS});
+sdkbox::PluginFacebook::requestPublishPermissions({FB_PERM_PUBLISH_POST});
+</code></pre>
+
+<h4 id="_7">分享</h4>
+<p>提供了两种分享方式.</p>
+<ul>
+<li><strong>分享</strong> 会自动发布到用户的信息流中
+分享联接:</li>
+</ul>
+<pre><code class="cpp">sdkbox::FBShareInfo info;
+info.type  = FB_LINK;
+info.link  = &quot;http://www.cocos2d-x.org&quot;;
+info.title = &quot;cocos2d-x&quot;;
+info.text  = &quot;Best Game Engine&quot;;
+info.image = &quot;http://cocos2d-x.org/images/logo.png&quot;;
+sdkbox::PluginFacebook::share(info);
+</code></pre>
+
+<p>分享图片:</p>
+<pre><code class="cpp">sdkbox::FBShareInfo info;
+info.type  = FB_PHOTO;
+info.title = &quot;My Photo&quot;;
+info.image = __path to image__;
+sdkbox::PluginFacebook::share(info);
+</code></pre>
+
+<ul>
+<li><strong>dialog</strong> 会显示一个对话框,让用户可以添加他们自己想说的话:</li>
+</ul>
+<p>显一个分享对话框:</p>
+<pre><code class="cpp">sdkbox::FBShareInfo info;
+info.type  = FB_LINK;
+info.link  = &quot;http://www.cocos2d-x.org&quot;;
+info.title = &quot;cocos2d-x&quot;;
+info.text  = &quot;Best Game Engine&quot;;
+info.image = &quot;http://cocos2d-x.org/images/logo.png&quot;;
+sdkbox::PluginFacebook::dialog(info);
+</code></pre>
+
+<p>分享一个带有文字注解的图片:</p>
+<pre><code class="cpp">sdkbox::FBShareInfo info;
+info.type  = FB_PHOTO;
+info.title = &quot;My Photo&quot;;
+info.image = __path to image__;
+sdkbox::PluginFacebook::dialog(info);
+</code></pre>
+
+<blockquote>
+<p>注意: 分享带有文字注解的图片需要用户的手机上已安装了 <strong>Facebook</strong> 应用.</p>
+</blockquote>
+<h3 id="api">图谱API</h3>
+<p>你可以通过 <code>api</code> 函数 执行<a href="https://developers.facebook.com/docs/graph-api/overview/">图谱API</a></p>
+<p>比如,取好友列表:</p>
+<pre><code>sdkbox::PluginFacebook::FBAPIParam params;
+sdkbox::PluginFacebook::api(&quot;/me/friendlists&quot;, &quot;GET&quot;, params, &quot;/me/friendlists&quot;);
+</code></pre>
+
+<h3 id="facebook_3">Facebook 事件</h3>
+<p>你可以接收 <code>Facebook</code> 事件，以对不同事件做不同的处理.</p>
+<ul>
+<li>让你的类继承 <code>sdkbox::FacebookListener</code> 并重写下面的函数:</li>
+</ul>
+<pre><code class="cpp">#include &quot;PluginFacebook/PluginFacebook.h&quot;
+class MyClass : public sdkbox::FacebookListener
+{
+private:
+  void onLogin(bool isLogin, const std::string&amp; msg);
+  void onPermission(bool isLogin, const std::string&amp; msg);
+  void onAPI(const std::string&amp; tag, const std::string&amp; jsonData);
+  void onSharedSuccess(const std::string&amp; message);
+  void onSharedFailed(const std::string&amp; message);
+  void onSharedCancel();
+};
+</code></pre>
+
+<ul>
+<li>创建一个 <strong>listener</strong> 监听事件:</li>
+</ul>
+<pre><code class="cpp">sdkbox::PluginFacebook::setListener(this);
 </code></pre>
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="lua">sdkbox.PluginAdColony:zoneStatusForZone(zoneID)
+<pre><code class="cpp">static void init ( ) ;
 </code></pre>
 
 <blockquote>
-<p>returns the status for the specified zone. Use this to pre-load a zone.</p>
+<p>initialize the plugin instance.</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:isVirtualCurrencyRewardAvailableForZone(zoneID)
+<pre><code class="cpp">static void setListener ( FacebookListener * listener ) ;
 </code></pre>
 
 <blockquote>
-<p>check if this zone offers a virtual currency reward.</p>
+<p>Set listener to listen for facebook events</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:show(name)
+<pre><code class="cpp">static FacebookListener * getListener ( ) ;
 </code></pre>
 
 <blockquote>
-<p>play video ad using provided <strong>zone name</strong> that was specified in <code>sdkbox_config.json</code>.</p>
+<p>Get the listener</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:getStatus(name)
+<pre><code class="cpp">static void removeListener ( ) ;
 </code></pre>
 
 <blockquote>
-<p>Check the availability of the AdColony ads by name</p>
+<p>Remove the listener, and can't listen to events anymore</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:getVirtualCurrencyRewardAmountForZone(zoneID)
+<pre><code class="cpp">static void login ( ) ;
 </code></pre>
 
 <blockquote>
-<p>is there a virtual currency reward available to the user today for passed in
-zone.</p>
+<p>log in</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:init()
+<pre><code class="cpp">static void requestReadPermissions ( const std::vector &lt;std::string&gt; &amp; permissions ) ;
 </code></pre>
 
 <blockquote>
-<p>initialize the instance.</p>
+<p>log in with specific read permissions, conflict with publish permissions
+https://developers.facebook.com/docs/facebook-login/permissions</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:videoAdCurrentlyRunning()
+<pre><code class="cpp">static void requestPublishPermissions ( const std::vector &lt;std::string&gt; &amp; permissions ) ;
 </code></pre>
 
 <blockquote>
-<p>is there a video currently showing?</p>
+<p>log in with specific public permissions
+https://developers.facebook.com/docs/facebook-login/permissions</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:turnAllAdsOff()
+<pre><code class="cpp">static void logout ( ) ;
 </code></pre>
 
 <blockquote>
-<p>turn off all ads.</p>
+<p>log out</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:getVideoCreditBalance(currencyName)
+<pre><code class="cpp">static bool isLoggedIn ( ) ;
 </code></pre>
 
 <blockquote>
-<p>get video credit balance for passed in currency name.</p>
+<p>Check whether the user logined or not</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:getVideosPerReward(currencyName)
+<pre><code class="cpp">static std::string getUserID ( ) ;
 </code></pre>
 
 <blockquote>
-<p>are there multiple videos to watch per reward? Get the number of them.</p>
+<p>get UserID</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:getVirtualCurrencyNameForZone(zoneID)
+<pre><code class="cpp">static std::string getAccessToken ( ) ;
 </code></pre>
 
 <blockquote>
-<p>get virtual currency name for passed in zone.</p>
+<p>get AccessToken</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:getVirtualCurrencyRewardsAvailableTodayForZone(zoneID)
+<pre><code class="cpp">static std::vector &lt;std::string&gt; getPermissionList ( ) ;
 </code></pre>
 
 <blockquote>
-<p>is there a virtual currency reward available to the user today for passed in
-zone.</p>
+<p>get permissoin list</p>
 </blockquote>
-<pre><code class="lua">sdkbox.PluginAdColony:cancelAd()
+<pre><code class="cpp">static void share ( const FBShareInfo &amp; info ) ;
 </code></pre>
 
 <blockquote>
-<p>stop the currently showing ad.</p>
+<p>share</p>
+</blockquote>
+<pre><code class="cpp">static void dialog ( const FBShareInfo &amp; info ) ;
+</code></pre>
+
+<blockquote>
+<p>open a dialog of Facebook app or WebDialog (dialog with photo only avaible with native Facebook app)</p>
+</blockquote>
+<pre><code class="cpp">static std::string getSDKVersion ( ) ;
+</code></pre>
+
+<blockquote>
+<p>return the version of Facebook SDK</p>
+</blockquote>
+<pre><code class="cpp">static void api ( const std::string &amp; path ,
+                  const std::string &amp; method ,
+                  const FBAPIParam &amp; params ,
+                  const std::string &amp; tag ) ;
+</code></pre>
+
+<blockquote>
+<p>use Facebook Open Graph api
+https://developers.facebook.com/docs/ios/graph</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="cpp">/**
- * The structure of data
- * data.name : name of the ad (in sdkbox_config.json)
- * data.zoneID : the zoneID of the ad
- * data.shown : indicates wether the ad gets shown or closed by user
- * data.iapEnabled : indicating whether or not the associated ad is an IAP
- * data.iapProductID : product identifier for the associated ad's IAP
- * data.iapQuantity : he number of items the user wishes to purchase
- * data.iapEngagementType : indicating the IAP engagement mechanism
- *
- * avail = bool
- */
+<pre><code class="cpp">void onLogin ( bool isLogin , const std::string &amp; error );
 </code></pre>
 
-<pre><code class="lua">onAdColonyChange(data, available)
+<pre><code class="cpp">void onSharedSuccess ( const std::string &amp; message );
 </code></pre>
 
-<blockquote>
-<p>called when AdColony is finished loading.</p>
-</blockquote>
-<pre><code class="lua">onAdColonyReward(data, currencyName, amount, success)
+<pre><code class="cpp">void onSharedFailed ( const std::string &amp; message );
 </code></pre>
 
-<blockquote>
-<p>reward was received.</p>
-</blockquote>
-<pre><code class="lua">onAdColonyStarted(data)
+<pre><code class="cpp">void onSharedCancel ( );
 </code></pre>
 
-<blockquote>
-<p>showing an ad has started.</p>
-</blockquote>
-<pre><code class="lua">onAdColonyFinished(data)
+<pre><code class="cpp">void onAPI ( const std::string &amp; key , const std::string &amp; jsonData );
 </code></pre>
 
-<blockquote>
-<p>showing an ad has finished.</p>
-</blockquote></div>
+<pre><code class="cpp">void onPermission ( bool isLogin , const std::string &amp; error );
+</code></pre></div>
             
         </div>
 
