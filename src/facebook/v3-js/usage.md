@@ -54,7 +54,7 @@ sdkbox.PluginFacebook.requestPublishPermissions(["publish_actions"]);
 分享链接:
 ```javascript
 var info = new Object();
-info.type  = FB_LINK;
+info.type  = "link";
 info.link  = "http://www.cocos2d-x.org";
 info.title = "cocos2d-x";
 info.text  = "Best Game Engine";
@@ -64,7 +64,7 @@ sdkbox.PluginFacebook.share(info);
 分享图片:
 ```javascript
 var info = new Object();
-info.type  = FB_PHOTO;
+info.type  = "photo";
 info.title = "My Photo";
 info.image = __path to image__;
 sdkbox.PluginFacebook.share(info);
@@ -74,7 +74,7 @@ sdkbox.PluginFacebook.share(info);
 显示一个对话框:
 ```javascript
 var info = new Object();
-info.type  = FB_LINK;
+info.type  = "link";
 info.link  = "http://www.cocos2d-x.org";
 info.title = "cocos2d-x";
 info.text  = "Best Game Engine";
@@ -85,7 +85,7 @@ sdkbox.PluginFacebook.dialog(info);
 分享带有文字注解的图片:
 ```javascript
 var info = new Object();
-info.type  = FB_PHOTO;
+info.type  = "photo";
 info.title = "My Photo";
 info.image = __path to image__;
 sdkbox.PluginFacebook.dialog(info);

@@ -75,7 +75,7 @@ sdkbox.PluginFacebook:login();
 * 你可以分享链接，比如：
 ```lua
 FBShareInfo info;
-info.type  = FB_LINK;
+info.type  = "link";
 info.link  = "http://www.cocos2d-x.org";
 info.title = "cocos2d-x";
 info.text  = "Best Game Engine";
@@ -86,7 +86,7 @@ sdkbox.PluginFacebook.share(info);
 * 你还可以分享链接，同时文字注解它，但需要当前的设备上已安装了 __Facebook__ 这个应用，比如:
 ```lua
 FBShareInfo info;
-info.type  = FB_LINK;
+info.type  = "link";
 info.link  = "http://www.cocos2d-x.org";
 info.title = "cocos2d-x";
 info.text  = "Best Game Engine";
@@ -97,7 +97,7 @@ sdkbox.PluginFacebook.dialog(info);
 * 你可以分享一个图片:
 ```lua
 FBShareInfo info;
-info.type  = FB_PHOTO;
+info.type  = "photo";
 info.title = "My Photo";
 info.image = __path to image__;
 sdkbox.PluginFacebook.share(info);
@@ -106,7 +106,7 @@ sdkbox.PluginFacebook.share(info);
 * 你还可以分享图片，同时文字注解它，比如：
 ```lua
 FBShareInfo info;
-info.type  = FB_PHOTO;
+info.type  = "photo";
 info.title = "My Photo";
 info.image = __path to image__;
 sdkbox.PluginFacebook.dialog(info);
