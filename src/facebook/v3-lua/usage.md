@@ -59,7 +59,7 @@ sdkbox.PluginFacebook:requestPublishPermissions({FB_PERM_PUBLISH_POST});
 分享联接:
 ```lua
 local info;
-info.type  = FB_LINK;
+info.type  = "link";
 info.link  = "http://www.cocos2d-x.org";
 info.title = "cocos2d-x";
 info.text  = "Best Game Engine";
@@ -69,7 +69,7 @@ sdkbox.PluginFacebook:share(info);
 分享图片:
 ```lua
 local info;
-info.type  = FB_PHOTO;
+info.type  = "photo";
 info.title = "My Photo";
 info.image = __path to image__;
 sdkbox.PluginFacebook:share(info);
@@ -79,7 +79,7 @@ sdkbox.PluginFacebook:share(info);
 显示一个分享对话框:
 ```lua
 local info;
-info.type  = FB_LINK;
+info.type  = "link";
 info.link  = "http://www.cocos2d-x.org";
 info.title = "cocos2d-x";
 info.text  = "Best Game Engine";
@@ -90,7 +90,7 @@ sdkbox.PluginFacebook:dialog(info);
 分享一个带文字注解的图片:
 ```lua
 local info;
-info.type  = FB_PHOTO;
+info.type  = "photo";
 info.title = "My Photo";
 info.image = __path to image__;
 sdkbox.PluginFacebook:dialog(info);
