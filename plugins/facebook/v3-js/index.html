@@ -982,7 +982,7 @@ sdkbox.PluginFacebook.requestPublishPermissions([&quot;publish_actions&quot;]);
 分享链接:</li>
 </ul>
 <pre><code class="javascript">var info = new Object();
-info.type  = FB_LINK;
+info.type  = &quot;link&quot;;
 info.link  = &quot;http://www.cocos2d-x.org&quot;;
 info.title = &quot;cocos2d-x&quot;;
 info.text  = &quot;Best Game Engine&quot;;
@@ -992,7 +992,7 @@ sdkbox.PluginFacebook.share(info);
 
 <p>分享图片:</p>
 <pre><code class="javascript">var info = new Object();
-info.type  = FB_PHOTO;
+info.type  = &quot;photo&quot;;
 info.title = &quot;My Photo&quot;;
 info.image = __path to image__;
 sdkbox.PluginFacebook.share(info);
@@ -1003,7 +1003,7 @@ sdkbox.PluginFacebook.share(info);
 </ul>
 <p>显示一个对话框:</p>
 <pre><code class="javascript">var info = new Object();
-info.type  = FB_LINK;
+info.type  = &quot;link&quot;;
 info.link  = &quot;http://www.cocos2d-x.org&quot;;
 info.title = &quot;cocos2d-x&quot;;
 info.text  = &quot;Best Game Engine&quot;;
@@ -1013,7 +1013,7 @@ sdkbox.PluginFacebook.dialog(info);
 
 <p>分享带有文字注解的图片:</p>
 <pre><code class="javascript">var info = new Object();
-info.type  = FB_PHOTO;
+info.type  = &quot;photo&quot;;
 info.title = &quot;My Photo&quot;;
 info.image = __path to image__;
 sdkbox.PluginFacebook.dialog(info);

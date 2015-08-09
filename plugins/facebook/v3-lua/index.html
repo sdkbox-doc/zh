@@ -985,7 +985,7 @@ sdkbox.PluginFacebook:requestPublishPermissions({FB_PERM_PUBLISH_POST});
 分享联接:</li>
 </ul>
 <pre><code class="lua">local info;
-info.type  = FB_LINK;
+info.type  = &quot;link&quot;;
 info.link  = &quot;http://www.cocos2d-x.org&quot;;
 info.title = &quot;cocos2d-x&quot;;
 info.text  = &quot;Best Game Engine&quot;;
@@ -995,7 +995,7 @@ sdkbox.PluginFacebook:share(info);
 
 <p>分享图片:</p>
 <pre><code class="lua">local info;
-info.type  = FB_PHOTO;
+info.type  = &quot;photo&quot;;
 info.title = &quot;My Photo&quot;;
 info.image = __path to image__;
 sdkbox.PluginFacebook:share(info);
@@ -1006,7 +1006,7 @@ sdkbox.PluginFacebook:share(info);
 </ul>
 <p>显示一个分享对话框:</p>
 <pre><code class="lua">local info;
-info.type  = FB_LINK;
+info.type  = &quot;link&quot;;
 info.link  = &quot;http://www.cocos2d-x.org&quot;;
 info.title = &quot;cocos2d-x&quot;;
 info.text  = &quot;Best Game Engine&quot;;
@@ -1016,7 +1016,7 @@ sdkbox.PluginFacebook:dialog(info);
 
 <p>分享一个带文字注解的图片:</p>
 <pre><code class="lua">local info;
-info.type  = FB_PHOTO;
+info.type  = &quot;photo&quot;;
 info.title = &quot;My Photo&quot;;
 info.image = __path to image__;
 sdkbox.PluginFacebook:dialog(info);
