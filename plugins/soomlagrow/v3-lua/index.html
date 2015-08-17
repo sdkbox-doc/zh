@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>js - SDKBOX</title>
+	<title>lua - SDKBOX</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -280,19 +280,19 @@
         
             
 <li >
-    <a href="../v3-cpp/">c++</a>
+    <a href="../../facebook/v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../v3-js/">js</a>
+    <a href="../../facebook/v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../v3-lua/">lua</a>
+    <a href="../../facebook/v3-lua/">lua</a>
 </li>
 
         
@@ -307,19 +307,19 @@
         
             
 <li >
-    <a href="../v2-cpp/">c++</a>
-</li>
-
-        
-            
-<li class="active">
-    <a href="./">js</a>
+    <a href="../../facebook/v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../v2-lua/">lua</a>
+    <a href="../../facebook/v2-js/">js</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../facebook/v2-lua/">lua</a>
 </li>
 
         
@@ -595,19 +595,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v3-cpp/">c++</a>
+    <a href="../v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-js/">js</a>
+    <a href="../v3-js/">js</a>
 </li>
 
         
             
-<li >
-    <a href="../../soomlagrow/v3-lua/">lua</a>
+<li class="active">
+    <a href="./">lua</a>
 </li>
 
         
@@ -622,19 +622,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v2-cpp/">c++</a>
+    <a href="../v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-js/">js</a>
+    <a href="../v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-lua/">lua</a>
+    <a href="../v2-lua/">lua</a>
 </li>
 
         
@@ -798,12 +798,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../v2-cpp/">
+                        <a rel="next" href="../v3-js/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../v2-lua/">
+                        <a rel="prev" href="../v2-cpp/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -819,17 +819,23 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#facebook">Facebook</a></li>
+        <li class="main active"><a href="#soomlagrow">SoomlaGrow</a></li>
         
             <li><a href="#_1">集成</a></li>
         
-            <li><a href="#_2">额外的步骤</a></li>
+            <li><a href="#android">Android 的额外步骤</a></li>
         
-            <li><a href="#_3">配置</a></li>
+            <li><a href="#_2">配置</a></li>
         
-            <li><a href="#_4">用法</a></li>
+            <li><a href="#_3">用法</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
+        
+            <li><a href="#_4">手动集成</a></li>
+        
+            <li><a href="#ios">iOS 手动集成步骤</a></li>
+        
+            <li><a href="#android_1">Android 手动集成步骤.</a></li>
         
     
     </ul>
@@ -837,65 +843,49 @@
                 <div class="col-md-9" role="main">
 
 <!--
-Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/facebook/v3-cpp
+Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/soomlagrow/v3-cpp
 -->
 
-<h1 id="facebook">Facebook</h1>
+<h1 id="soomlagrow">SoomlaGrow</h1>
+<p>SoomlaGrow 可以收集你的应用中的插件使用情况,现在支持 <code>Facebook</code> 和 <code>IAP</code> 插件</p>
 <h2 id="_1">集成</h2>
-<p>用如下命令来集成 SDKBOX Facebook 插件,请确保你可以正常执行的 SDKBOX 安装器.</p>
-<pre><code class="bash">sdkbox import facebook
+<p>在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX SoomlaGrow 插件。</p>
+<pre><code class="bash">$ sdkbox import soomlagrow
 </code></pre>
 
-<h2 id="_2">额外的步骤</h2>
-<p>下面的步骤假定你已经注册为 Facbbook 开发者，并创建了一个 <strong>APP</strong></p>
-<h3 id="ios">iOS的步骤</h3>
+<h2 id="android">Android 的额外步骤</h2>
+<h3 id="cocos2dxactivityjava">修改 <code>Cocos2dxActivity.java</code></h3>
 <ul>
-<li>依<a href="https://developers.facebook.com/quickstarts/?platform=ios">iOS快速指导</a> 来配置你的 <strong>APP</strong></li>
-<li>在 <code>AppController.mm</code> 中修改如下代码，不是 <code>AppDelegate.cpp</code> 中</li>
+<li>
+<p>如果您使用 cocos2d-x 源代码，假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/
+lib/Cocos2dxActivity.java</code></p>
+</li>
+<li>
+<p>如果您使用 cocos2dx-x 预编译库， 假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>./src/org/cocos2dx/lib/Cocos2dxActivity.java</code></p>
+</li>
 </ul>
-<pre><code>- (void)applicationDidBecomeActive:(UIApplication *)application {
-  [FBSDKAppEvents activateApp];
-}
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
-}
-
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                         openURL:url
-                                               sourceApplication:sourceApplication
-                                                      annotation:annotation];
-}
+<p><strong>Note:</strong> 当你使用 cocos2d-x 源代码时，不同的版本中 <code>Cocos2dxActivity.java</code> 文件的位置也不同。一个确定该文件位置的方法是查看 <code>proj.android/project.properties</code> 。比如：</p>
+<pre><code>android.library.reference.1=../../cocos2d-x/cocos/platform/android/java
 </code></pre>
 
-<h3 id="android">Android的步骤</h3>
+<p>在这个例子中， <code>Cocos2dxActivity.java</code> 文件应该在如下位置：</p>
+<pre><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java
+</code></pre>
+
 <ul>
-<li>确保你的 <code>java -version</code> &gt;= 1.7</li>
-<li>依<a href="https://developers.facebook.com/quickstarts/?platform=android">Android快速指导</a> 来配置你的 <strong>APP</strong></li>
-<li>在 <code>res/values/strings.xml</code> 中给 <code>facebook_app_id</code> 赋值为你的 <code>Facebook App ID</code></li>
-<li>在 <code>AndroidManifest.xml</code> 中给 <code>_replace_with_your_app_id_</code> 赋值为你的 <code>Facebook App ID</code></li>
-<li>在 <code>project.properties</code> 中给 target 赋值为 <code>target=android-15</code></li>
-</ul>
-<h3 id="yourgamenamejava">修改 <code>&lt;YourGameName&gt;.java</code></h3>
-<ul>
-<li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
+<li>修改 <code>Cocos2dxActivity.java</code> 文件，导入如下包：</li>
 </ul>
 <pre><code class="java">import android.content.Intent;
 import com.sdkbox.plugin.SDKBox;
 </code></pre>
 
 <ul>
-<li>然后，修改您的类 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this)</code> 。如下：</li>
+<li>然后，修改 <code>Cocos2dxActivity</code> 类的 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this);</code> 。添加的位置非常重要，必须在调用 <code>onLoadNativeLibraries();</code> 之后。如下：</li>
 </ul>
-<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
-  super.onCreate(savedInstanceState);
-  SDKBox.init(this);
-}
+<pre><code class="java">onLoadNativeLibraries();
+SDKBox.init(this);
 </code></pre>
 
 <ul>
@@ -945,248 +935,192 @@ import com.sdkbox.plugin.SDKBox;
     }
 </code></pre>
 
-<h3 id="release">混淆 (release模式下可选)</h3>
+<h3 id="release">混淆 (release 模式有效, 可选)</h3>
 <ul>
-<li>编辑 <code>project.properties</code> 指定 <code>Proguard</code> 到一个配置文件. 比如:</li>
+<li>编辑 <code>project.properties</code> 指定一个 <code>Proguard</code> 配制文件. 例如:</li>
 </ul>
 <pre><code>proguard.config=proguard.cfg
 </code></pre>
 
 <ul>
-<li>编辑这个配置文件,包含以下内容:</li>
+<li>编辑这个文件,包含如下内容:</li>
 </ul>
-<pre><code>-libraryjars libs/facebook_lib/libs/android-support-v4.jar
-
--keep class * extends java.util.ListResourceBundle {
-    protected Object[][] getContents();
-}
+<pre><code># If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
 </code></pre>
 
-<p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 模式下有效 (比如 <code>cocos run -m release</code>), 在 debug 模式下,不会调到混淆规则.</p>
-<h2 id="_3">配置</h2>
-<p>SDKBOX 安装器会为你自动生成一个 <code>sdkbox_config.json</code> 配置文件</p>
-<p>下面给出一个例子,你可以打开/关闭Facebook的调试模式</p>
-<pre><code class="json">&quot;Facebook&quot;:
+<p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 模式下有效 (例如 <code>cocos run -m release</code>) ,在 debug 模式下不会调用混淆配置文件.</p>
+<h2 id="_2">配置</h2>
+<p>SDKBOX 安装器会为你自动生成一个配置文件 <code>res/sdkbox_config.json</code>,在你使用前,请修改里面的值为你自己的应用.</p>
+<p>下面给给一个 SoomlaGrow 的配置,你需要注册 <a href="http://soom.la/"><strong>Soomla ID</strong></a>帐号信息，然后替换配置文件中的 <code>&lt;game key&gt;</code> 和 <code>&lt;envkey id&gt;</code> 项.</p>
+<pre><code class="json">&quot;SoomlaGrow&quot;:{
+            &quot;GameKey&quot;:&quot;0cbc07e3-0f0c-4b68-bb0c-061c1b5fb553&quot;,
+            &quot;EnvKey&quot;:&quot;8b865add-4541-4db1-be18-f6c7e5e00564&quot;
+        }
+</code></pre>
+
+<h2 id="_3">用法</h2>
+<h3 id="lua-code">修改 Lua Code</h3>
+<p>修改 <code>./frameworks/runtime-src/Classes/lua_module_register.h</code> 包含必要的头文件,并调用相应的注册函数,同时注意它的参数 <strong>lua_State*</strong>:</p>
+<pre><code class="cpp">#include &quot;PluginSoomlaGrowLua.hpp&quot;
+#include &quot;PluginSoomlaGrowLuaHelper.h&quot;
+</code></pre>
+
+<pre><code class="cpp">static int lua_module_register(lua_State* L)
 {
-    &quot;debug&quot;:true
+  register_all_PluginSoomlaGrowLua(L);
+  register_PluginSoomlaGrowLua_helper(L);
 }
 </code></pre>
 
-<h2 id="_4">用法</h2>
-<h3 id="javascript">注册 javascript 函数</h3>
-<p>在使用 Fackbook JS 函数之前，你要把它们注册到 cocos2d-x中.</p>
-<p>这样做:
-* 修改 <code>./frameworks/runtime-src/Classes/AppDelegate.cpp</code> 包含如下头文件:</p>
-<pre><code class="cpp">#include &quot;PluginFacebookJS.hpp&quot;
-#include &quot;PluginFacebookJSHelper.h&quot;
+<h3 id="soomlagrow_1">初始化 SoomlaGrow</h3>
+<p>在你的 Lua 代码中 <code>init()</code> 插件,初始化可以在任何时候做，但是必须要在你要使用相关的接口前.我们强烈建议在应用启动时就初始化插件.</p>
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:init()
 </code></pre>
 
-<ul>
-<li>修改 <code>./frameworks/runtime-src/Classes/AppDelegate.cpp</code> 确保有如下调用:</li>
-</ul>
-<pre><code class="cpp">sc-&gt;addRegisterCallback(register_all_PluginFacebookJS);
-sc-&gt;addRegisterCallback(register_PluginFacebookJS_helper);
+<h3 id="soomlagrow-user-insight">使用 SoomlaGrow 的 user insight 模块</h3>
+<p>在 <code>SoomlaGrow</code> 初始化完成后, 它就会自动记录你的应用中的 <code>IAP</code>, <code>Facebook</code> 插件的使用情况.同时你还可以你的代码中调用 <code>refreshInsight</code>, <code>getUserInsightInfo</code> 接口:</p>
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:refreshInsight()
+sdkbox.PluginSoomlaGrow:getUserInsightInfo()
 </code></pre>
 
-<h3 id="facebook_1">初始化 Facebook</h3>
-<ul>
-<li>在你的代码中合适的地方调用 <code>init()</code>, 我们建议在 <code>app.js</code> 初始化,比如:</li>
-</ul>
-<pre><code class="javascript">sdkbox.PluginFacebook.init();
-</code></pre>
-
-<h3 id="facebook_2">使用 Facebook</h3>
-<h4 id="_5">登录</h4>
-<p>用户在使用前需要登录到 Facebook.</p>
-<pre><code class="javascript">sdkbox.PluginFacebook.login();
-</code></pre>
-
-<p>用户不想使用 Facebook 时，可以注销</p>
-<pre><code class="javascript">sdkbox.PluginFacebook.logout();
-</code></pre>
-
-<p>你可以检查用户是否已经登录</p>
-<pre><code class="javascript">sdkbox.PluginFacebook.isLoggedIn();
-</code></pre>
-
-<blockquote>
-<p>注意: 用户只需要登录一次, 除非他们注销</p>
-</blockquote>
-<h4 id="_6">权限</h4>
-<p>Facebook 要求你在使用前去询问用户要相应的权限,比如 posting 相关的权益
-就有两类权限, <strong>read</strong> and <strong>publish</strong>
-你也可以通过<a href="https://developers.facebook.com/docs/facebook-login/permissions/v2.3#reference">这里</a>得到完整的信息</p>
-<p>要获取权限,你可以指定你想要权限,比如:</p>
-<pre><code class="javascript">sdkbox.PluginFacebook.requestReadPermissions([&quot;public_profile&quot;, &quot;email&quot;]);
-sdkbox.PluginFacebook.requestPublishPermissions([&quot;publish_actions&quot;]);
-</code></pre>
-
-<h4 id="_7">分享</h4>
-<p>提供了两个分享功能</p>
-<ul>
-<li><strong>分享</strong> 会自动发布到用户的信息流中
-分享链接:</li>
-</ul>
-<pre><code class="javascript">var info = new Object();
-info.type  = &quot;link&quot;;
-info.link  = &quot;http://www.cocos2d-x.org&quot;;
-info.title = &quot;cocos2d-x&quot;;
-info.text  = &quot;Best Game Engine&quot;;
-info.image = &quot;http://cocos2d-x.org/images/logo.png&quot;;
-sdkbox.PluginFacebook.share(info);
-</code></pre>
-
-<p>分享图片:</p>
-<pre><code class="javascript">var info = new Object();
-info.type  = &quot;photo&quot;;
-info.title = &quot;My Photo&quot;;
-info.image = __path to image__;
-sdkbox.PluginFacebook.share(info);
-</code></pre>
-
-<ul>
-<li><strong>对话框</strong> 可以显示一个对话框,用户可以在其中添加他们自己的文字:</li>
-</ul>
-<p>显示一个对话框:</p>
-<pre><code class="javascript">var info = new Object();
-info.type  = &quot;link&quot;;
-info.link  = &quot;http://www.cocos2d-x.org&quot;;
-info.title = &quot;cocos2d-x&quot;;
-info.text  = &quot;Best Game Engine&quot;;
-info.image = &quot;http://cocos2d-x.org/images/logo.png&quot;;
-sdkbox.PluginFacebook.dialog(info);
-</code></pre>
-
-<p>分享带有文字注解的图片:</p>
-<pre><code class="javascript">var info = new Object();
-info.type  = &quot;photo&quot;;
-info.title = &quot;My Photo&quot;;
-info.image = __path to image__;
-sdkbox.PluginFacebook.dialog(info);
-</code></pre>
-
-<blockquote>
-<p>注意: 分享带有文字注解的图片需要用户的手机上已安装了 <strong>Facebook</strong> 应用.</p>
-</blockquote>
-<h3 id="api">图谱API</h3>
-<p>你可以通过 <code>api</code> 函数 执行<a href="https://developers.facebook.com/docs/graph-api/overview/">图谱API</a></p>
-<p>比如,取好友列表:</p>
-<pre><code class="javascript">var params = new Object();
-sdkbox.PluginFacebook.api(&quot;/me/friendlists&quot;, &quot;GET&quot;, params, &quot;/me/friendlists&quot;);
-</code></pre>
-
-<h3 id="facebook_3">Facebook 事件</h3>
-<p>你可以接收 <code>Facebook</code> 事件, 然后对不同事件做相应的处理.</p>
-<pre><code class="javascript">sdkbox.PluginFacebook.setListener({
-    onLogin: function(isLogin, msg) {},
-    onAPI: function(tag, data) {},
-    onSharedSuccess: function(data) {},
-    onSharedFailed: function(data) {},
-    onSharedCancel: function() {},
-    onPermission: function(isLogin, msg) {}
-});
+<h3 id="soomlagrow_2">接收 SoomlaGrow 事件 (可选)</h3>
+<p>你可以接收 <code>SoomlaGrow</code> 事件，以便对不同的事件做出不同的处理.一个简单的用法可能像这样:</p>
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:setListener(function(data)
+            if &quot;onHighWayInitialized&quot; == data.event then
+                //highway initialized
+            elseif &quot;onHighWayConnected&quot; == data.event then
+                //highway connected
+            elseif &quot;onHighWayDisconnected&quot; == data.event then
+                //highway disconnected
+            end
+        end)
+sdkbox.PluginSoomlaGrow:init()
 </code></pre>
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="javascript">sdkbox.PluginFacebook.init();
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:init()
 </code></pre>
 
 <blockquote>
 <p>initialize the plugin instance.</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.login();
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:setListener(listener)
 </code></pre>
 
 <blockquote>
-<p>log in</p>
+<p>Set listener to listen for adcolony events</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.requestReadPermissions(permissions);
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:refreshInsight()
 </code></pre>
 
 <blockquote>
-<p>log in with specific read permissions, conflict with publish permissions
-https://developers.facebook.com/docs/facebook-login/permissions</p>
+<p>Refreshed SoomlaInsights information from the server</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.requestPublishPermissions(permissions);
+<pre><code class="lua">sdkbox.PluginSoomlaGrow:getUserInsightInfo()
 </code></pre>
 
 <blockquote>
-<p>log in with specific public permissions
-https://developers.facebook.com/docs/facebook-login/permissions</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.logout();
-</code></pre>
-
-<blockquote>
-<p>log out</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.isLoggedIn();
-</code></pre>
-
-<blockquote>
-<p>Check whether the user logined or not</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.getUserID();
-</code></pre>
-
-<blockquote>
-<p>get UserID</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.getAccessToken();
-</code></pre>
-
-<blockquote>
-<p>get AccessToken</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.getPermissionList();
-</code></pre>
-
-<blockquote>
-<p>get permissoin list</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.share(info);
-</code></pre>
-
-<blockquote>
-<p>share</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.dialog(info);
-</code></pre>
-
-<blockquote>
-<p>open a dialog of Facebook app or WebDialog (dialog with photo only avaible with native Facebook app)</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.getSDKVersion();
-</code></pre>
-
-<blockquote>
-<p>return the version of Facebook SDK</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginFacebook.api(path, method, params, tag);
-</code></pre>
-
-<blockquote>
-<p>use Facebook Open Graph api
-https://developers.facebook.com/docs/ios/graph</p>
+<p>get user insight info
+ Note: the return may be empty</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="javascript">onLogin(isLogin, error);
+<pre><code class="lua">onHighWayInitialized()
 </code></pre>
 
-<pre><code class="javascript">onSharedSuccess(message);
+<blockquote>
+<p>The delegate named onHighWayInitialized is triggerred once the highway initialized.</p>
+</blockquote>
+<pre><code class="lua">onHighWayConnected()
 </code></pre>
 
-<pre><code class="javascript">onSharedFailed(message);
+<blockquote>
+<p>The delegate named onHighWayConnected is triggerred once the highway connected to server success.</p>
+</blockquote>
+<pre><code class="lua">onHighWayDisconnected()
 </code></pre>
 
-<pre><code class="javascript">onSharedCancel();
+<blockquote>
+<p>The delegate named onHighWayDisconnected is triggerred once the highway disconnect to server.</p>
+</blockquote>
+<h2 id="_4">手动集成</h2>
+<p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
+<p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
+<h2 id="ios">iOS 手动集成步骤</h2>
+<p>把 <strong>plugins/ios</strong> 里的如下的 framework 拖到你的 Xcode 工程里的 <code>SoomlaGrow</code> 项,添加时,把 <code>Copy items if needed</code> 勾选上:</p>
+<blockquote>
+<p>sdkbox.framework</p>
+<p>PluginSoomlaGrow.framework</p>
+</blockquote>
+<p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
+<p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
+<h2 id="android_1">Android 手动集成步骤.</h2>
+<h3 id="_5">拷贝文件</h3>
+<p>从安装包中的 <code>plugin/android/libs</code> 文件夹下拷贝下面的 <strong>jar</strong> 文件到你的工程中的 <strong>proj.android/libs</strong> 文件夹.</p>
+<blockquote>
+<p>SoomlaGrowLite.jar</p>
+<p>PluginSoomlaGrow.jar</p>
+<p>sdkbox.jar</p>
+</blockquote>
+<ul>
+<li>如果你用的是 cocos2d-x源码 工程, 拷贝 <strong>jar</strong> 文件到这里:</li>
+</ul>
+<p><code>cocos2d/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你用的是 cocos2d-js 或 lua, 拷贝 <strong>jar</strong> 文件到这里:</li>
+</ul>
+<p><code>frameworks/cocos2d-x/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你用的是预编译的 cocos2d-x ，那拷贝 <strong>jar</strong> 到这里:</li>
+</ul>
+<p><code>proj.android/libs</code></p>
+<p>从 <code>plugin/android/jni</code> 拷贝 <code>pluginsoomlagrow</code> 和 <code>sdkbox</code> 目录到你的工程的 <code>proj.android/jni/</code> 目录.如果 <code>sdkbox</code> 目录已存在，覆盖它.</p>
+<h3 id="androidmanifestxml">编辑 <code>AndroidManifest.xml</code></h3>
+<p>在 <strong>application tag</strong> 这个项前面添加如下权限:</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+&lt;uses-permission android:name=&quot;com.android.vending.BILLING&quot;/&gt;
 </code></pre>
 
-<pre><code class="javascript">onAPI(key, jsonData);
+<h3 id="androidmk">编辑 <code>Android.mk</code></h3>
+<p>在 <code>proj.android/jni/Android.mk</code> 中:</p>
+<p>给 <strong>LOCAL_STATIC_LIBRARIES</strong> 添加如下要求:</p>
+<pre><code>LOCAL_STATIC_LIBRARIES += PluginSoomlaGrow
+LOCAL_STATIC_LIBRARIES += sdkbox
 </code></pre>
 
-<pre><code class="javascript">onPermission(isLogin, error);
+<p>在所有的 <strong>import-module</strong> 项前，添加如下调用:</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+</code></pre>
+
+<p>在所有的 <strong>import-module</strong> 后，新增如下项:</p>
+<pre><code>$(call import-module, ./sdkbox)
+$(call import-module, ./pluginsoomlagrow)
+</code></pre>
+
+<p>修改后，应该和下面的修改类似:</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+$(call import-module, ./sdkbox)
+$(call import-module, ./pluginsoomlagrow)
+</code></pre>
+
+<p><strong>注意:</strong> 如果你使用预编译包, 必须要保证这些修改是在 <code>$(call import-module,./prebuilt-mk)</code> 这一项之前.</p>
+<h3 id="applicationmk-cocos2d-x-v30-v32">修改 <code>Application.mk</code> (只有Cocos2d-x v3.0 到 v3.2 版本需要)</h3>
+<p>编辑 <code>proj.android/jni/Application.mk</code> 确保 <strong>APP_STL</strong> 定义正确. 如果 <code>Application.mk</code> 中包含 <code>APP_STL := c++_static</code>, 那么把它修改为:</p>
+<pre><code>APP_STL := gnustl_static
+</code></pre>
+
+<p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
+<p>把你刚刚拷贝的 <code>.cpp</code> 文件添加到 <code>Android.mk</code> 文件的的 <strong>LOCAL_SRC_FILES</strong> 项.比如</p>
+<pre><code>LOCAL_SRC_FILES := hellocpp/main.cpp \
+                ../../Classes/AppDelegate.cpp \
+                ../../Classes/HelloWorldScene.cpp \
+                                ../../Classes/NewSourceFile.cpp
 </code></pre></div>
             
         </div>
