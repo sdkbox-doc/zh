@@ -39,7 +39,11 @@ sdkbox.PluginVungle:setListener(function(name, isComplete)
     elseif "onVungleFinished" ==  name then
         print("onVungleFinished")
     elseif "onVungleAdViewed" ==  name then
-        print("onVungleAdViewed:", isComplete)
+        // arg is isComplete
+        print("onVungleAdViewed:", arg)
+    elseif "onVungleAdReward" == name then
+        // arg is adName
+        print("onVungleAdReward:", arg)
     end
 end)
 ```

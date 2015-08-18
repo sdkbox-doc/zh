@@ -40,7 +40,7 @@ sdkbox.PluginVungle:show("reward")
 
 * 创建一个 __listener__ 用于事件回调 (通过写入事件日志举例如下)：
 ```lua
-sdkbox.PluginVungle:setListener(function(name, isComplete)
+sdkbox.PluginVungle:setListener(function(name, arg)
     if "onVungleCacheAvailable" == name then
         print("onVungleCacheAvailable")
     elseif "onVungleStarted" ==  name then
@@ -48,7 +48,11 @@ sdkbox.PluginVungle:setListener(function(name, isComplete)
     elseif "onVungleFinished" ==  name then
         print("onVungleFinished")
     elseif "onVungleAdViewed" ==  name then
-        print("onVungleAdViewed:", isComplete)
+        // arg is isComplete
+        print("onVungleAdViewed:", arg)
+    elseif "onVungleAdReward" == name then
+        // arg is adName
+        print("onVungleAdReward:", arg)
     end
 end)
 ```

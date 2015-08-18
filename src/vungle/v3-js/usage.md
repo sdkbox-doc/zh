@@ -33,6 +33,7 @@ sdkbox.PluginVungle.setListener({
     onVungleCacheAvailable : function() { cc.log("onVungleCacheAvailable") },
     onVungleStarted : function() { cc.log("onVungleStarted") },
     onVungleFinished : function() { cc.log("onVungleFinished") },
-    onVungleAdViewed : function(isComplete) { cc.log("onVungleAdViewed" + isComplete) }
+    onVungleAdViewed : function(isComplete) { cc.log("onVungleAdViewed" + isComplete) },
+    onVungleAdReward : function(adName) { cc.log("onVungleAdReward:" + adName) }
 })
 ```

@@ -27,7 +27,8 @@ private:
   void onVungleCacheAvailable();
   void onVungleStarted();
   void onVungleFinished();
-  void onVungleOpenStore();
+  void onVungleAdViewed(bool isComplete);
+  void onVungleAdReward(std::string adName);
 }
 ```
 
