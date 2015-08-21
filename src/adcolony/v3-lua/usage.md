@@ -18,7 +18,7 @@ static int lua_module_register(lua_State* L)
 sdkbox.PluginAdColony:init()
 ```
 
-### Showing Ads
+### 显示广告
 在你的代码中想要显示广告的地方,输入如下代码:
 ```lua
 sdkbox.PluginAdColony:show("video")
