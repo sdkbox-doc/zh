@@ -68,12 +68,12 @@ LOCAL_STATIC_LIBRARIES += PluginAdColony
 LOCAL_STATIC_LIBRARIES += sdkbox
 ```
 
-在任何 __import-module__ 语句之前添加一条 call 语句：
+在所有 __import-module__ 语句之前添加一条 call 语句：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 ```
 
-在文件最后添加额外的 __import-module__ 语句：
+在最后添加额外的 __import-module__ 语句：
 ```
 $(call import-module, ./sdkbox)
 $(call import-module, ./pluginadcolony)

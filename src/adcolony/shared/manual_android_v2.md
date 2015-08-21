@@ -11,7 +11,7 @@
 
 从 `plugin/android/jni` 目录拷贝 `PluginAdColony` 以及 `sdkbox` 目录到你的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 
-### 2.2 编辑 `AndroidManifest.xml`
+### 编辑 `AndroidManifest.xml`
 在标签 __application tag__ 上添加下列权限：
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -51,12 +51,12 @@ LOCAL_LDLIBS += -llog
 LOCAL_STATIC_LIBRARIES += PluginAdColony
 LOCAL_STATIC_LIBRARIES += sdkbox
 ```
-在任何 __import-module__ 语句之前添加一条 call 语句：
+在所有 __import-module__ 语句之前添加一条 call 语句：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 ```
 
-在文件最后添加额外的 __import-module__ 语句：
+在最后添加额外的 __import-module__ 语句：
 ```
 $(call import-module, ./sdkbox)
 $(call import-module, ./pluginadcolony)
