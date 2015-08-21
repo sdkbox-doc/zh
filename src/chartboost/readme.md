@@ -36,7 +36,20 @@ SDKBOX 安装器会自动在你的工程中添加一个样例配置文件 `sdkbo
 }
 ```
 
+<<[sdkbox-config-encrypt.md]
+
 ## 用法
+
 <<[usage.md]
 
 <<[api-reference.md]
+
+<<[manual_integration.md]
+
+<<[manual_ios.md]
+
+<<[manual_android.md]
+
+<<[extra-step.md]
+
+<<[proguard.md]
