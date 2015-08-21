@@ -63,6 +63,17 @@ SDKBOX 安装器会为你自动生成一个 `sdkbox_config.json` 配置文件
 <<[sdkbox-config-encrypt.md]
 
 ##用法
+
 <<[usage.md]
 
 <<[api-reference.md]
+
+<<[manual_integration.md]
+
+<<[manual_ios.md]
+
+<<[manual_android.md]
+
+<<[extra-step.md]
+
+<<[proguard.md]
