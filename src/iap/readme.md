@@ -41,7 +41,33 @@ SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox
 }
 ```
 
-##用法
+如果你有 IAP 条目是 __non-consumable__ 的，需要在你的 `sdkbox_config.json` 里注明这些条目。只有 __Android__ 平台需要这一步骤。*json* 格式看起来如下：
+```json
+"android":
+{
+    "iap":{
+        "key":"<put your googleplay key here>",
+        "items":{
+          "remove_ads":{
+              "id":"<put the product id for android here>",
+              "type":"non_consumable"
+          }
+        }
+    }
+}
+```
+
+<<[sdkbox-config-encrypt.md]
+
+## 用法
 <<[usage.md]
 
 <<[api-reference.md]
+
+<<[manual_integration.md]
+
+<<[manual_ios.md]
+
+<<[manual_android.md]
+
+<<[extra-step.md]
