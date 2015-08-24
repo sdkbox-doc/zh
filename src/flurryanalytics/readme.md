@@ -63,7 +63,19 @@ Android上的配置文件要复杂一点，里面包含了 __locations__, __puls
 }
 ```
 
+<<[sdkbox-config-encrypt.md]
+
 ## 用法
 <<[usage.md]
 
 <<[api-reference.md]
+
+<<[manual_integration.md]
+
+<<[manual_ios.md]
+
+<<[manual_android.md]
+
+<<[extra-step.md]
+
+<<[proguard.md]
