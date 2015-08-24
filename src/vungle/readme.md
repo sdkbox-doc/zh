@@ -57,3 +57,13 @@ SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配�
 <<[usage.md]
 
 <<[api-reference.md]
+
+<<[manual_integration.md]
+
+<<[manual_ios.md]
+
+<<[manual_android.md]
+
+<<[extra-step.md]
+
+<<[proguard.md]
