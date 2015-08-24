@@ -6,7 +6,7 @@ Drag and drop the following frameworks from the __plugins/ios__ folder of the `I
 
 > PluginIAP.framework
 
-上面的 frameworks 依赖于其他 frameworks。如果你没有它们，你也需要添加下列这些系统 frameworks：
+上面的 frameworks 依赖于其他 frameworks。如果你没有添加它们，你也需要添加下列这些 frameworks：
 
 > Security.framework
 
