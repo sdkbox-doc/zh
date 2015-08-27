@@ -24,8 +24,20 @@ sdkbox import facebook
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
+  // ...
+
+  //
+  // **************************
+  // !! 非常重要,非常重要,非常重要 !!
+  // **************************
+  //
+  // 在 app->run() 前调用
+  // [[FBSDKApplicationDelegate sharedInstance] application:didFinishLaunchingWithOptions
+
+  BOOL ret = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                      didFinishLaunchingWithOptions:launchOptions];
+  app->run();
+  return ret;
 }
 
 - (BOOL)application:(UIApplication *)application
