@@ -13,7 +13,7 @@ sdkbox.PluginFlurryAnalytics.init();
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 调用以下函数:
 ```cpp
 sc->addRegisterCallback(register_all_PluginFlurryAnalyticsJS);
-sc->addRegisterCallback(register_PluginFlurryAnalyticsJs_helper);
+sc->addRegisterCallback(register_PluginFlurryAnalyticsJS_helper);
 ```
 
 ### 使用 Flurry Analytics

@@ -7,7 +7,7 @@ sdkbox.PluginAdColony.init();
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 包含如下头文件:
 ```cpp
 #include "PluginAdColonyJS.hpp"
-#include "PluginAdColonyJSHelper.hpp"
+#include "PluginAdColonyJSHelper.h"
 ```
 
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 确保有如下调用:

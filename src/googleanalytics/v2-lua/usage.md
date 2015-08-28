@@ -2,7 +2,7 @@
 * 修改 `Classes/AppDelegate.cpp` 文件，包含下列头文件：
 ```cpp
 #include "PluginGoogleAnalyticsLua.hpp"
-#include "PLuginGoogleAnalyticsLuaHelper.hpp"
+#include "PLuginGoogleAnalyticsLuaHelper.h"
 ```
 
 * 然后，我们需要通过调用 `register_all_PluginGoogleAnalyticsLua(<lua_State*>);` 注册插件的 Lua\_State。
@@ -12,7 +12,7 @@
     这里为您准备了一个例子如下：
 ```cpp
 #include "PluginGoogleAnalyticsLua.hpp"
-#include "PluginGoogleAnalyticsLuaHelper.hpp"
+#include "PluginGoogleAnalyticsLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();

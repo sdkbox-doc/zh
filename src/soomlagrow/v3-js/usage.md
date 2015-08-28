@@ -5,7 +5,7 @@
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 包含如下头文件:
 ```cpp
 #include "PluginSoomlaGrowJS.hpp"
-#include "PluginSoomlaGrowJSHelper.hpp"
+#include "PluginSoomlaGrowJSHelper.h"
 ```
 
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 调用如下函数:

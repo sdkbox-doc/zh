@@ -2,7 +2,7 @@
 修改 `./frameworks/runtime-src/Classes/lua_module_register.h` 以包含如下必须头文件, 并调用 `IAP` 的lua注册函数.注意它们的参数 __lua_State*__ :
 ```cpp
 #include "PluginIAPLua.hpp"
-#include "PluginIAPLuaHelper.hpp"
+#include "PluginIAPLuaHelper.h"
 ```
 ```cpp
 static int lua_module_register(lua_State* L)

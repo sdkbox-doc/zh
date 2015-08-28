@@ -2,7 +2,7 @@
 * 修改 `Classes/AppDelegate.cpp` 包含如下头文件:
 ```cpp
 #include "PluginAdColonyLua.hpp"
-#include "PluginAdColonyLuaHelper.hpp"
+#include "PluginAdColonyLuaHelper.h"
 ```
 
 * 然后, 我们需要调用 `register_all_PluginAdColonyLua(<lua_State*>);` 把插件注册到lua中.
@@ -12,7 +12,7 @@
 	如下是一个修改例子:
 ```cpp
 #include "PluginAdColonyLua.hpp"
-#include "PluginAdColonyLuaHelper.hpp"
+#include "PluginAdColonyLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();
