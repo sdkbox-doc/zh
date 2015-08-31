@@ -10,6 +10,14 @@ Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/facebook/v3-cpp
 sdkbox import facebook
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginFacebookJS_helper` -> `register_all_PluginFacebookJS_helper`
+2. `register_PluginFacebookLua_helper` -> `register_all_PluginFacebookLua_helper`
+3. 更新 Facebook iOS SDK 到 4.5.1
+4. 更新 Facebook Android SDK 到 4.5.1
+
 ## 额外的步骤
 
 下面的步骤假定你已经注册为 Facbbook 开发者，并创建了一个 __APP__

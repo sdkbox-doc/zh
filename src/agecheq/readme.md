@@ -10,6 +10,11 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/agecheq/v3-cpp
 sdkbox import agecheq
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginAgeCheqLua_helper` -> `register_all_PluginAgeCheqLua_helper`
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

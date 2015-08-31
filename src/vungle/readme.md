@@ -10,6 +10,12 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/vungle/v3-cpp
 sdkbox import vungle
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginVungleJS_helper` -> `register_all_PluginVungleJS_helper`
+2. `register_PluginVungleLua_helper` -> `register_all_PluginVungleLua_helper`
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

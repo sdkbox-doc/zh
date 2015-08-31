@@ -10,6 +10,13 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/tune/v3-cpp
 sdkbox import tune
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginTuneJS_helper` -> `register_all_PluginTuneJS_helper`
+2. `register_PluginTuneLua_helper` -> `register_all_PluginTuneLua_helper`
+3. 更新 MobileAppTracker Android SDK 到 3.10.1
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

@@ -10,6 +10,14 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/chartboost/v3-cpp
 sdkbox import chartboost
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginChartboostJS_helper` -> `register_all_PluginChartboostJS_helper`
+2. `register_PluginChartboostLua_helper` -> `register_all_PluginChartboostLua_helper`
+3. 更新 Chartboost iOS SDK 到 5.5.3
+4. 更新 Chartboost Android SDK 到 5.5.3
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

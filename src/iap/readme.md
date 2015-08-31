@@ -10,6 +10,11 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/iap/v3-cpp
 sdkbox import iap
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginIAPLua_helper` -> `register_all_PluginIAPLua_helper`
+
 ##额外的步骤
 <<[extra-step.md]
 
