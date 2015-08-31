@@ -17,6 +17,7 @@ version-x.y.z:
 2. `register_PluginFacebookLua_helper` -> `register_all_PluginFacebookLua_helper`
 3. 更新 Facebook iOS SDK 到 4.5.1
 4. 更新 Facebook Android SDK 到 4.5.1
+5. `#include "PluginFacebookLuaHelper.hpp"` -> `#include "PluginFacebookLuaHelper.h"`
 
 ## 额外的步骤
 

@@ -14,6 +14,8 @@ sdkbox import iap
 
 version-x.y.z:
 1. `register_PluginIAPLua_helper` -> `register_all_PluginIAPLua_helper`
+2. `#include "PluginIAPLuaHelper.hpp"` -> `#include "PluginIAPLuaHelper.h"`
+3. `#include "PluginIAPJSHelper.hpp"` -> `#include "PluginIAPJSHelper.h"`
 
 ##额外的步骤
 <<[extra-step.md]

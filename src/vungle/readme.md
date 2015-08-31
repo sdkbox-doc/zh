@@ -15,6 +15,7 @@ sdkbox import vungle
 version-x.y.z:
 1. `register_PluginVungleJS_helper` -> `register_all_PluginVungleJS_helper`
 2. `register_PluginVungleLua_helper` -> `register_all_PluginVungleLua_helper`
+3. `#include "PluginVungleLuaHelper.hpp"` -> `#include "PluginVungleLuaHelper.h"`
 
 ## 额外的步骤
 <<[extra-step.md]

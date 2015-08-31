@@ -14,6 +14,8 @@ sdkbox import agecheq
 
 version-x.y.z:
 1. `register_PluginAgeCheqLua_helper` -> `register_all_PluginAgeCheqLua_helper`
+2. `#include "PluginAgeCheqLuaHelper.hpp"` -> `#include "PluginAgeCheqLuaHelper.h"`
+3. `#include "PluginAgeCheqJSHelper.hpp"` -> `#include "PluginAgeCheqJSHelper.h"`
 
 ## 额外的步骤
 <<[extra-step.md]

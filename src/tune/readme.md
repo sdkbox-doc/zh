@@ -16,6 +16,7 @@ version-x.y.z:
 1. `register_PluginTuneJS_helper` -> `register_all_PluginTuneJS_helper`
 2. `register_PluginTuneLua_helper` -> `register_all_PluginTuneLua_helper`
 3. 更新 MobileAppTracker Android SDK 到 3.10.1
+4. `#include "PluginTuneLuaHelper.hpp"` -> `#include "PluginTuneLuaHelper.h"`
 
 ## 额外的步骤
 <<[extra-step.md]
