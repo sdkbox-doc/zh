@@ -13,7 +13,7 @@ sdkbox.PluginTune.init();
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 文件，添加如下内容：
 ```cpp
 sc->addRegisterCallback(register_all_PluginTuneJS);
-sc->addRegisterCallback(register_PluginTuneJS_helper);
+sc->addRegisterCallback(register_all_PluginTuneJS_helper);
 ```
 这将注册 Javascript 回调函数。
 

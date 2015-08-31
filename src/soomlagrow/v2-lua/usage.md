@@ -17,7 +17,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();
 	register_all_PluginSoomlaGrowLua(tolua_s);
-	register_PluginSoomlaGrowLua_helper(tolua_s);
+	register_all_PluginSoomlaGrowLua_helper(tolua_s);
 	tolua_extensions_ccb_open(tolua_s);
 }
 ```

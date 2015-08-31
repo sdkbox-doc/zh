@@ -13,7 +13,7 @@ sdkbox.PluginChartboost.init();
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 调用以下函数:
 ```cpp
 sc->addRegisterCallback(register_all_PluginChartboostJS);
-sc->addRegisterCallback(register_PluginChartboostJS_helper);
+sc->addRegisterCallback(register_all_PluginChartboostJS_helper);
 ```
 
 ### 显示广告

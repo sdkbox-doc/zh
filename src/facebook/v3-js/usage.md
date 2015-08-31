@@ -11,7 +11,7 @@
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 确保有如下调用:
 ```cpp
 sc->addRegisterCallback(register_all_PluginFacebookJS);
-sc->addRegisterCallback(register_PluginFacebookJS_helper);
+sc->addRegisterCallback(register_all_PluginFacebookJS_helper);
 ```
 
 ### 初始化 Facebook

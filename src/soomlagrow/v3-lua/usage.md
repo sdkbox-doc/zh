@@ -8,7 +8,7 @@
 static int lua_module_register(lua_State* L)
 {
   register_all_PluginSoomlaGrowLua(L);
-  register_PluginSoomlaGrowLua_helper(L);
+  register_all_PluginSoomlaGrowLua_helper(L);
 }
 ```
 

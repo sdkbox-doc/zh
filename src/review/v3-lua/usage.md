@@ -8,7 +8,7 @@
 static int lua_module_register(lua_State* L)
 {
   register_all_PluginReviewLua(L);
-  register_PluginReviewLua_helper(L);
+  register_all_PluginReviewLua_helper(L);
 }
 ```
 
