@@ -1,6 +1,6 @@
-site_name: SDKBOX
+site_name: SDKBOX文档
 pages:
-- 主页: 'index.md'
+- 介绍: 'index.md'
 - 安装器: 'installer.md'
 - 插件:
     - 'AdColony':
@@ -75,7 +75,7 @@ pages:
             - 'c++': 'plugins/kochava/v2-cpp.md'
             - 'js': 'plugins/kochava/v2-js.md'
             - 'lua': 'plugins/kochava/v2-lua.md'
-    - 'Review':
+    - 'Ratings & Reviews':
         - 'Cocos2dx 3.x':
             - 'c++': 'plugins/review/v3-cpp.md'
             - 'js': 'plugins/review/v3-js.md'
