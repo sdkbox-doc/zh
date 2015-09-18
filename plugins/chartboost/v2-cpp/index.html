@@ -9,12 +9,14 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>c++ - SDKBOX</title>
+	<title>c++ - SDKBOX文档</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/custom.css" rel="stylesheet">
+
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -53,7 +55,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="../../..">SDKBOX</a>
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
         </div>
 
         <!-- Expanded navigation -->
@@ -64,7 +66,7 @@
                 
                 
                     <li >
-                        <a href="../../..">主页</a>
+                        <a href="../../..">介绍</a>
                     </li>
                 
                 
@@ -585,7 +587,7 @@
                         
                             
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">SoomlaGrow</a>
+    <a tabindex="-1" href="">Ratings & Reviews</a>
     <ul class="dropdown-menu">
         
             
@@ -595,19 +597,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v3-cpp/">c++</a>
+    <a href="../../review/v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-js/">js</a>
+    <a href="../../review/v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-lua/">lua</a>
+    <a href="../../review/v3-lua/">lua</a>
 </li>
 
         
@@ -622,19 +624,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v2-cpp/">c++</a>
+    <a href="../../review/v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-js/">js</a>
+    <a href="../../review/v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-lua/">lua</a>
+    <a href="../../review/v2-lua/">lua</a>
 </li>
 
         
@@ -831,6 +833,12 @@
         
             <li><a href="#api-reference">API Reference</a></li>
         
+            <li><a href="#_6">手动集成</a></li>
+        
+            <li><a href="#ios">iOS 平台手动集成</a></li>
+        
+            <li><a href="#android">Android 平台手动集成</a></li>
+        
     
     </ul>
 </div></div>
@@ -993,120 +1001,343 @@ public:
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="cpp">static void init();
+<pre><code class="cpp">static void init ( ) ;
 </code></pre>
 
 <blockquote>
 <p>initialize the plugin instance.</p>
 </blockquote>
-<pre><code class="cpp">static void show(const std::string&amp; name);
+<pre><code class="cpp">static void show ( const std::string &amp; name ) ;
 </code></pre>
 
 <blockquote>
 <p>show ad by specifying ad name.</p>
 </blockquote>
-<pre><code class="cpp">static void setListener(ChartboostListener* listener);
+<pre><code class="cpp">static void setListener ( ChartboostListener * listener ) ;
 </code></pre>
 
 <blockquote>
 <p>creates the an optional listener.</p>
 </blockquote>
-<pre><code class="cpp">static void removeListener();
+<pre><code class="cpp">static ChartboostListener * getListener ( ) ;
+</code></pre>
+
+<pre><code class="cpp">static void removeListener ( ) ;
 </code></pre>
 
 <blockquote>
 <p>removed the listener.</p>
 </blockquote>
-<pre><code class="cpp">static bool isAnyViewVisible();
+<pre><code class="cpp">static bool isAnyViewVisible ( ) ;
 </code></pre>
 
 <blockquote>
 <p>check to see if any views are visible.</p>
 </blockquote>
-<pre><code class="cpp">static bool isAvailable(const std::string&amp; name);
+<pre><code class="cpp">static bool isAvailable ( const std::string &amp; name ) ;
 </code></pre>
 
 <blockquote>
 <p>is the specified ad available?</p>
 </blockquote>
-<pre><code class="cpp">static void setAutoCacheAds(bool shouldCache);
+<pre><code class="cpp">static void cache ( const std::string &amp; name ) ;
+</code></pre>
+
+<pre><code class="cpp">static void setAutoCacheAds ( bool shouldCache ) ;
 </code></pre>
 
 <blockquote>
 <p>set to enable and disable the auto cache feature (Enabled by default).</p>
 </blockquote>
-<pre><code class="cpp">static bool getAutoCacheAds();
+<pre><code class="cpp">static bool getAutoCacheAds ( ) ;
 </code></pre>
 
 <blockquote>
 <p>get the current auto cache behavior (Enabled by default).</p>
 </blockquote>
-<pre><code class="cpp">static void closeImpression();
+<pre><code class="cpp">static void closeImpression ( ) ;
 </code></pre>
 
 <blockquote>
 <p>close any visible Chartboost impressions (interstitials, more apps, rewarded
 video, etc..) and the loading view (if visible).</p>
 </blockquote>
-<pre><code class="cpp">static void setStatusBarBehavior(CB_StatusBarBehavior behavior);
+<pre><code class="cpp">static void setStatusBarBehavior ( CB_StatusBarBehavior behavior ) ;
 </code></pre>
 
 <blockquote>
-<p>set to control how the fullscreen ad units should interact with the status bar. (CBStatusBarBehaviorIgnore by default).</p>
+<p>set to control how the fullscreen ad units should interact with the status bar.
+(CBStatusBarBehaviorIgnore by default).</p>
 </blockquote>
-<pre><code class="cpp">static void didPassAgeGate(bool pass);
+<pre><code class="cpp">static void didPassAgeGate ( bool pass ) ;
 </code></pre>
 
 <blockquote>
 <p>confirm if an age gate passed or failed. When specified Chartboost will wait for
- this call before showing the IOS App Store.</p>
+call before showing the IOS App Store.</p>
 </blockquote>
-<pre><code class="cpp">static void setShouldPauseClickForConfirmation(bool shouldPause);
+<pre><code class="cpp">static void setShouldPauseClickForConfirmation ( bool shouldPause ) ;
 </code></pre>
 
 <blockquote>
 <p>decide if Chartboost SDK should block for an age gate.</p>
 </blockquote>
-<pre><code class="cpp">static bool handleOpenURL(const std::string&amp; url, const std::string&amp; sourceApp);
+<pre><code class="cpp">static bool handleOpenURL ( const std::string &amp; url ,
+                            const std::string &amp; sourceApp ) ;
 </code></pre>
 
 <blockquote>
 <p>opens a "deep link" URL for a Chartboost Custom Scheme.</p>
 </blockquote>
-<pre><code class="cpp">static void setCustomID(const std::string&amp; customID);
+<pre><code class="cpp">static void setCustomID ( const std::string &amp; customID ) ;
 </code></pre>
 
 <blockquote>
-<p>set a custom identifier to send in the POST body for all Chartboost API server
-requests.</p>
+<p>set a custom identifier to send in the POST body for all Chartboost API server requests.</p>
 </blockquote>
-<pre><code class="cpp">static std::string getCustomID();
+<pre><code class="cpp">static std::string getCustomID ( ) ;
 </code></pre>
 
 <blockquote>
 <p>get the current custom identifier being sent in the POST body for all Chartboost
 API server requests.</p>
 </blockquote>
-<pre><code class="cpp">static void setShouldRequestInterstitialsInFirstSession(bool shouldRequest);
+<pre><code class="cpp">static void setShouldRequestInterstitialsInFirstSession ( bool shouldRequest ) ;
 </code></pre>
 
 <blockquote>
 <p>decide if Chartboost SDK should show interstitials in the first session.</p>
 </blockquote>
-<pre><code class="cpp">static void setShouldDisplayLoadingViewForMoreApps(bool shouldDisplay);
+<pre><code class="cpp">static void setShouldDisplayLoadingViewForMoreApps ( bool shouldDisplay ) ;
 </code></pre>
 
 <blockquote>
 <p>decide if Chartboost SDK should show a loading view while preparing to display
 the "more applications" UI.</p>
 </blockquote>
-<pre><code class="cpp">static void setShouldPrefetchVideoContent(bool shouldPrefetch);
+<pre><code class="cpp">static void setShouldPrefetchVideoContent ( bool shouldPrefetch ) ;
 </code></pre>
 
 <blockquote>
 <p>decide if Chartboost SDK will attempt to fetch videos from the Chartboost API
 servers.</p>
-</blockquote></div>
+</blockquote>
+<h3 id="listeners">Listeners</h3>
+<pre><code class="cpp">void onChartboostCached ( const std::string &amp; name );
+</code></pre>
+
+<blockquote>
+<p>there is cached content</p>
+</blockquote>
+<pre><code class="cpp">bool onChartboostShouldDisplay ( const std::string &amp; name );
+</code></pre>
+
+<blockquote>
+<p>should Chartboost display</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostDisplay ( const std::string &amp; name );
+</code></pre>
+
+<blockquote>
+<p>Charboost ad has displayed</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostDismiss ( const std::string &amp; name );
+</code></pre>
+
+<blockquote>
+<p>Chartboost ad has been dismissed</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostClose ( const std::string &amp; name );
+</code></pre>
+
+<blockquote>
+<p>Chartboost is not running</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostClick ( const std::string &amp; name );
+</code></pre>
+
+<blockquote>
+<p>Chartboost ad was clicked on</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostReward ( const std::string &amp; name , int reward );
+</code></pre>
+
+<blockquote>
+<p>Chartboost reward was given</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostFailedToLoad ( const std::string &amp; name , CB_LoadError e );
+</code></pre>
+
+<blockquote>
+<p>Chartboost failed to load</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostFailToRecordClick ( const std::string &amp; name ,
+                                     CB_ClickError e );
+</code></pre>
+
+<blockquote>
+<p>Chartboost failed to record click</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostConfirmation ( );
+</code></pre>
+
+<blockquote>
+<p>Chartboost confirmation</p>
+</blockquote>
+<pre><code class="cpp">void onChartboostCompleteStore ( );
+</code></pre>
+
+<blockquote>
+<p>Chartboost complete store</p>
+</blockquote>
+<h2 id="_6">手动集成</h2>
+<p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
+<p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
+<h2 id="ios">iOS 平台手动集成</h2>
+<p>拖拽下列 framework 从 <code>Chartboost</code> 插件包的 <strong>plugins/ios</strong> 目录到你的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
+<blockquote>
+<p>sdkbox.framework</p>
+<p>PluginChartboost.framework</p>
+<p>Chartboost.framework</p>
+</blockquote>
+<p>上面的 frameworks 依赖于其他 frameworks。如果你没有添加它们，你也需要添加下列这些 frameworks：</p>
+<blockquote>
+<p>Security.framework</p>
+<p>StoreKit.framework</p>
+<p>Foundation.framework</p>
+<p>CoreGraphics.framework</p>
+<p>UIKit.framework</p>
+</blockquote>
+<h2 id="android">Android 平台手动集成</h2>
+<h3 id="_7">拷贝文件</h3>
+<p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
+<blockquote>
+<p>chartboost.jar</p>
+<p>PluginChartboost.jar</p>
+<p>sdkbox.jar</p>
+</blockquote>
+<p>从 <code>plugin/android/jni</code> 目录拷贝 <code>pluginchartboost</code> 以及 <code>sdkbox</code> 目录到你的工程的 <code>proj.android/jni</code> 目录。如果 <code>sdkbox</code> 目录在工程中已经存在，请覆盖它。</p>
+<h3 id="androidmanifestxml">编辑 <code>AndroidManifest.xml</code></h3>
+<p>在标签 <strong>application tag</strong> 上添加下列权限：</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;
+</code></pre>
+
+<p>使 <strong>hardware acceleration</strong> 属性生效。这一标签是一个在新版本 sdk 上的选项，不能用于2.3.3版本。</p>
+<pre><code class="xml">&lt;android:hardwareAccelerated=&quot;true&quot; /&gt;
+</code></pre>
+
+<h3 id="androidmk">编辑 <code>Android.mk</code></h3>
+<p>编辑 <code>proj.android/jni/Android.mk</code>：</p>
+<p>为 <strong>LOCAL_STATIC_LIBRARIES</strong> 添加额外的库：</p>
+<pre><code>LOCAL_STATIC_LIBRARIES += android_native_app_glue
+LOCAL_LDLIBS += -landroid
+LOCAL_LDLIBS += -llog
+LOCAL_STATIC_LIBRARIES += PluginChartboost
+LOCAL_STATIC_LIBRARIES += sdkbox
+</code></pre>
+
+<p>在所有 <strong>import-module</strong> 语句之前添加一条 call 语句：</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+</code></pre>
+
+<p>在最后添加额外的 <strong>import-module</strong> 语句：</p>
+<pre><code>$(call import-module, ./sdkbox)
+$(call import-module, ./pluginchartboost)
+</code></pre>
+
+<p>这意味着你的语句顺序看起来像是这样：</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+$(call import-module, ./sdkbox)
+$(call import-module, ./pluginchartboost)
+</code></pre>
+
+<h3 id="applicationmk">编辑 <code>Application.mk</code></h3>
+<p>编辑 <code>proj.android/jni/Application.mk</code>：</p>
+<p>为 <strong>APP_PATFORM</strong> 添加版本：</p>
+<pre><code>APP_PLATFORM := android-9
+</code></pre>
+
+<h3 id="yourgamenamejava_1">修改 <code>&lt;YourGameName&gt;.java</code></h3>
+<ul>
+<li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
+</ul>
+<pre><code class="java">import android.content.Intent;
+import com.sdkbox.plugin.SDKBox;
+</code></pre>
+
+<ul>
+<li>然后，修改您的类 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this)</code> 。如下：</li>
+</ul>
+<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstanceState);
+  SDKBox.init(this);
+}
+</code></pre>
+
+<ul>
+<li>
+<p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
+<ul>
+<li>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+</li>
+<li>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+          }
+    }
+    @Override
+    protected void onStart() {
+          super.onStart();
+          SDKBox.onStart();
+    }
+    @Override
+    protected void onStop() {
+          super.onStop();
+          SDKBox.onStop();
+    }
+    @Override
+    protected void onResume() {
+          super.onResume();
+          SDKBox.onResume();
+    }
+    @Override
+    protected void onPause() {
+          super.onPause();
+          SDKBox.onPause();
+    }
+    @Override
+    public void onBackPressed() {
+          if(!SDKBox.onBackPressed()) {
+            super.onBackPressed();
+          }
+    }
+</code></pre>
+
+<h3 id="proguard-release-optional_1">Proguard (release, optional)</h3>
+<ul>
+<li>修改 <code>project.properties</code> 加入你的 <code>Proguard</code> 配置文件. 比如:</li>
+</ul>
+<pre><code>proguard.config=proguard.cfg
+</code></pre>
+
+<ul>
+<li>修改这个你的配置文件,并在其中加下以下代码:</li>
+</ul>
+<pre><code>-keep class com.chartboost.** { *; }
+</code></pre>
+
+<p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 编译模式下有效 (i.e <code>cocos run -m release</code>) debug 编译下不会调用到混淆规则.</p></div>
             
         </div>
 

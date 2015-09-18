@@ -9,12 +9,14 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>c++ - SDKBOX</title>
+	<title>c++ - SDKBOX文档</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/custom.css" rel="stylesheet">
+
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -53,7 +55,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="../../..">SDKBOX</a>
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
         </div>
 
         <!-- Expanded navigation -->
@@ -64,7 +66,7 @@
                 
                 
                     <li >
-                        <a href="../../..">主页</a>
+                        <a href="../../..">介绍</a>
                     </li>
                 
                 
@@ -585,7 +587,7 @@
                         
                             
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">SoomlaGrow</a>
+    <a tabindex="-1" href="">Ratings & Reviews</a>
     <ul class="dropdown-menu">
         
             
@@ -595,19 +597,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v3-cpp/">c++</a>
+    <a href="../../review/v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-js/">js</a>
+    <a href="../../review/v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-lua/">lua</a>
+    <a href="../../review/v3-lua/">lua</a>
 </li>
 
         
@@ -622,19 +624,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v2-cpp/">c++</a>
+    <a href="../../review/v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-js/">js</a>
+    <a href="../../review/v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-lua/">lua</a>
+    <a href="../../review/v2-lua/">lua</a>
 </li>
 
         
@@ -830,6 +832,12 @@
             <li><a href="#_4">用法</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
+        
+            <li><a href="#_5">手动集成</a></li>
+        
+            <li><a href="#ios">iOS 平台手动集成</a></li>
+        
+            <li><a href="#android">Android 平台手动集成</a></li>
         
     
     </ul>
@@ -1086,38 +1094,38 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Start a Flurry session for the project denoted by @c apiKey.</p>
+<p>Start a Flurry session for the project denoted by  apiKey.</p>
 </blockquote>
 <pre><code class="cpp">static void endSession ( ) ;
 </code></pre>
 
 <blockquote>
-<p>end session, just valid on android</p>
+<p>end session, just valid on Android</p>
 </blockquote>
 <pre><code class="cpp">static bool activeSessionExists ( ) ;
 </code></pre>
 
 <blockquote>
-<p>Start a Flurry session for the project denoted by @c apiKey.</p>
+<p>Start a Flurry session for the project denoted by  apiKey.</p>
 </blockquote>
 <pre><code class="cpp">static std::string getSessionID ( ) ;
 </code></pre>
 
 <blockquote>
-<p>Start a Flurry session for the project denoted by @c apiKey.</p>
+<p>Start a Flurry session for the project denoted by  apiKey.</p>
 </blockquote>
 <pre><code class="cpp">static void pauseBackgroundSession ( ) ;
 </code></pre>
 
 <blockquote>
-<p>Pauses a Flurry session left running in background. on valid on ios</p>
+<p>Pauses a Flurry session left running in background. on valid on iOS</p>
 </blockquote>
 <pre><code class="cpp">static void addOrigin ( const std::string &amp; originName ,
                         const std::string &amp; originVersion ) ;
 </code></pre>
 
 <blockquote>
-<p>Adds an SDK origin specified by @c originName and @c originVersion.</p>
+<p>Adds an SDK origin specified by  originName and  originVersion.</p>
 </blockquote>
 <pre><code class="cpp">static void addOrigin ( const std::string &amp; originName ,
                         const std::string &amp; originVersion ,
@@ -1126,7 +1134,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Adds a custom parameterized origin specified by @c originName with @c originVersion and @c parameters.</p>
+<p>Adds a custom parameterized origin specified by  originName with  originVersion and  parameters.</p>
 </blockquote>
 <pre><code class="cpp">static void addOrigin ( const std::string &amp; originName ,
                         const std::string &amp; originVersion ,
@@ -1140,7 +1148,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Records a custom event specified by @c eventName.</p>
+<p>Records a custom event specified by  eventName.</p>
 </blockquote>
 <pre><code class="cpp">static int logEvent ( const std::string &amp; eventName ,
                       std::map &lt;std::string ,
@@ -1148,7 +1156,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Records a custom parameterized event specified by @c eventName with @c parameters.</p>
+<p>Records a custom parameterized event specified by  eventName with  parameters.</p>
 </blockquote>
 <pre><code class="cpp">static int logEvent ( const std::string &amp; eventName ,
                       const std::string &amp; parameters ) ;
@@ -1161,7 +1169,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Records a timed event specified by @c eventName.</p>
+<p>Records a timed event specified by  eventName.</p>
 </blockquote>
 <pre><code class="cpp">static int logEvent ( const std::string &amp; eventName ,
                       std::map &lt;std::string ,
@@ -1170,7 +1178,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Records a custom parameterized timed event specified by @c eventName with @c parameters.</p>
+<p>Records a custom parameterized timed event specified by  eventName with  parameters.</p>
 </blockquote>
 <pre><code class="cpp">static int logEvent ( const std::string &amp; eventName ,
                       const std::string &amp; parameters ,
@@ -1192,7 +1200,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Ends a timed event specified by @c eventName and optionally updates parameters with @c parameters.</p>
+<p>Ends a timed event specified by  eventName and optionally updates parameters with  parameters.</p>
 </blockquote>
 <pre><code class="cpp">static void endTimedEvent ( const std::string &amp; eventName ,
                             const std::string &amp; parameters ) ;
@@ -1237,7 +1245,7 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>Set whether Flurry should record location via GPS. Defaults to true. valid on android</p>
+<p>Set whether Flurry should record location via GPS. Defaults to true. valid on Android</p>
 </blockquote>
 <pre><code class="cpp">static void setLatitude ( double latitude ,
                           double longitude ,
@@ -1252,25 +1260,25 @@ sdkbox::PluginFlurryAnalytics::endSession();
 </code></pre>
 
 <blockquote>
-<p>clear the default location.valid on andriod</p>
+<p>clear the default location.valid on Android</p>
 </blockquote>
 <pre><code class="cpp">static void setSessionReportsOnCloseEnabled ( bool sendSessionReportsOnClose ) ;
 </code></pre>
 
 <blockquote>
-<p>Set session to report when app closes.valid on ios</p>
+<p>Set session to report when app closes.valid on iOS</p>
 </blockquote>
 <pre><code class="cpp">static void setSessionReportsOnPauseEnabled ( bool setSessionReportsOnPauseEnabled ) ;
 </code></pre>
 
 <blockquote>
-<p>Set session to report when app is sent to the background.valid on ios</p>
+<p>Set session to report when app is sent to the background.valid on iOS</p>
 </blockquote>
 <pre><code class="cpp">static void setBackgroundSessionEnabled ( bool setBackgroundSessionEnabled ) ;
 </code></pre>
 
 <blockquote>
-<p>Set session to support background execution.valid on ios</p>
+<p>Set session to support background execution.valid on iOS</p>
 </blockquote>
 <pre><code class="cpp">static void setEventLoggingEnabled ( bool value ) ;
 </code></pre>
@@ -1310,7 +1318,177 @@ sdkbox::PluginFlurryAnalytics::endSession();
 
 <blockquote>
 <p>Invoked when analytics session is created,</p>
-</blockquote></div>
+</blockquote>
+<h2 id="_5">手动集成</h2>
+<p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
+<p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
+<h2 id="ios">iOS 平台手动集成</h2>
+<p>拖拽下列 framework 从 <code>FlurryAnalytics</code> 插件包的 <strong>plugins/ios</strong> 目录到你的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
+<blockquote>
+<p>sdkbox.framework</p>
+<p>PluginFlurryAnalytics.framework</p>
+</blockquote>
+<p>上面的 frameworks 依赖于其他 frameworks。如果你没有添加它们，你也需要添加下列这些 frameworks：</p>
+<blockquote>
+<p>Security.framework</p>
+<p>SystemConfiguration.framework</p>
+</blockquote>
+<h2 id="android">Android 平台手动集成</h2>
+<h3 id="_6">拷贝文件</h3>
+<p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
+<blockquote>
+<p>FlurryAnalytics-5.5.0.jar</p>
+<p>PluginFlurryAnalytics.jar</p>
+<p>sdkbox.jar</p>
+</blockquote>
+<ul>
+<li>如果你使用 cocos2d-x 源码，拷贝 <strong>jar</strong> 文件到：</li>
+</ul>
+<p><code>cocos2d/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你使用 cocos2d-js 或者 lua ，拷贝 <strong>jar</strong> 文件到:</li>
+</ul>
+<p><code>frameworks/cocos2d-x/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你使用 cocos2d-x 预编译包，拷贝 <strong>jar</strong> 文件到：</li>
+</ul>
+<p><code>proj.android/libs</code></p>
+<p>从 <code>plugin/android/jni</code> 目录拷贝 <code>pluginflurryanalytics</code> 以及 <code>sdkbox</code> 目录到你的工程的 <code>proj.android/jni</code> 目录。如果 <code>sdkbox</code> 目录在工程中已经存在，请覆盖它。</p>
+<h3 id="androidmanifestxml">编辑 <code>AndroidManifest.xml</code></h3>
+<p>在标签 <strong>application tag</strong> 上添加下列权限：</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;/&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot;/&gt;
+</code></pre>
+
+<p>使 <strong>hardware acceleration</strong> 属性生效。这一标签是一个在新版本 sdk 上的选项，不能用于2.3.3版本。</p>
+<pre><code class="xml">&lt;android:hardwareAccelerated=&quot;true&quot; /&gt;
+</code></pre>
+
+<h3 id="androidmk">编辑 <code>Android.mk</code></h3>
+<p>编辑 <code>proj.android/jni/Android.mk</code>：</p>
+<p>为 <strong>LOCAL_STATIC_LIBRARIES</strong> 添加额外的库：</p>
+<pre><code>LOCAL_STATIC_LIBRARIES += PluginFlurryAnalytics
+LOCAL_STATIC_LIBRARIES += sdkbox
+</code></pre>
+
+<p>在所有 <strong>import-module</strong> 语句之前添加一条 call 语句：</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+</code></pre>
+
+<p>在最后添加额外的 <strong>import-module</strong> 语句：</p>
+<pre><code>$(call import-module, ./sdkbox)
+$(call import-module, ./pluginflurryanalytics)
+</code></pre>
+
+<p>这意味着你的语句顺序看起来像是这样：</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+$(call import-module, ./sdkbox)
+$(call import-module, ./pluginflurryanalytics)
+</code></pre>
+
+<p><strong>Note:</strong> 如果你使用的是 cocos2d-x 预编译库，那么保证这些语句在已有的 <code>$(call import-module,./prebuilt-mk)</code> 语句之上非常重要。</p>
+<h3 id="applicationmk-cocos2d-x-v30-v32">编辑 <code>Application.mk</code> （只限 Cocos2d-x v3.0 到 v3.2 版本）</h3>
+<p>编辑 <code>proj.android/jni/Application.mk</code> 保证 <strong>APP_STL</strong> 的定义正确。如果 <code>Application.mk</code> 包含了 <code>APP_STL := c++_static</code> 语句，那么这条语句应该被改为：</p>
+<pre><code>APP_STL := gnustl_static
+</code></pre>
+
+<h3 id="cocos2dxactivityjava_1">修改 <code>Cocos2dxActivity.java</code></h3>
+<ul>
+<li>
+<p>如果您使用 cocos2d-x 源代码，假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/
+lib/Cocos2dxActivity.java</code></p>
+</li>
+<li>
+<p>如果您使用 cocos2dx-x 预编译库， 假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>./src/org/cocos2dx/lib/Cocos2dxActivity.java</code></p>
+</li>
+</ul>
+<p><strong>Note:</strong> 当你使用 cocos2d-x 源代码时，不同的版本中 <code>Cocos2dxActivity.java</code> 文件的位置也不同。一个确定该文件位置的方法是查看 <code>proj.android/project.properties</code> 。比如：</p>
+<pre><code>android.library.reference.1=../../cocos2d-x/cocos/platform/android/java
+</code></pre>
+
+<p>在这个例子中， <code>Cocos2dxActivity.java</code> 文件应该在如下位置：</p>
+<pre><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java
+</code></pre>
+
+<ul>
+<li>修改 <code>Cocos2dxActivity.java</code> 文件，导入如下包：</li>
+</ul>
+<pre><code class="java">import android.content.Intent;
+import com.sdkbox.plugin.SDKBox;
+</code></pre>
+
+<ul>
+<li>然后，修改 <code>Cocos2dxActivity</code> 类的 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this);</code> 。添加的位置非常重要，必须在调用 <code>onLoadNativeLibraries();</code> 之后。如下：</li>
+</ul>
+<pre><code class="java">onLoadNativeLibraries();
+SDKBox.init(this);
+</code></pre>
+
+<ul>
+<li>
+<p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
+<ul>
+<li>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+</li>
+<li>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+          }
+    }
+    @Override
+    protected void onStart() {
+          super.onStart();
+          SDKBox.onStart();
+    }
+    @Override
+    protected void onStop() {
+          super.onStop();
+          SDKBox.onStop();
+    }
+    @Override
+    protected void onResume() {
+          super.onResume();
+          SDKBox.onResume();
+    }
+    @Override
+    protected void onPause() {
+          super.onPause();
+          SDKBox.onPause();
+    }
+    @Override
+    public void onBackPressed() {
+          if(!SDKBox.onBackPressed()) {
+            super.onBackPressed();
+          }
+    }
+</code></pre>
+
+<h3 id="release-optional_1">混淆 (release, optional)</h3>
+<ul>
+<li>编辑 <code>project.properties</code> 指定一个 <code>Proguard</code> 配置文件. 比如:</li>
+</ul>
+<pre><code>proguard.config=proguard.cfg
+</code></pre>
+
+<ul>
+<li>编辑配置文件包含如下:</li>
+</ul>
+<pre><code>-dontwarn android.webkit.**
+</code></pre>
+
+<p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 编译模式下有效 (i.e <code>cocos run -m release</code>) debug 编译下不会调用到混淆规则.</p></div>
             
         </div>
 

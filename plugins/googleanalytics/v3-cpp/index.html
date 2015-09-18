@@ -9,12 +9,14 @@
         
         <link rel="shortcut icon" href="../../../img/favicon.ico">
 
-	<title>c++ - SDKBOX</title>
+	<title>c++ - SDKBOX文档</title>
 
         <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/custom.css" rel="stylesheet">
+
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -53,7 +55,7 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="../../..">SDKBOX</a>
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
         </div>
 
         <!-- Expanded navigation -->
@@ -64,7 +66,7 @@
                 
                 
                     <li >
-                        <a href="../../..">主页</a>
+                        <a href="../../..">介绍</a>
                     </li>
                 
                 
@@ -585,7 +587,7 @@
                         
                             
   <li class="dropdown-submenu">
-    <a tabindex="-1" href="">SoomlaGrow</a>
+    <a tabindex="-1" href="">Ratings & Reviews</a>
     <ul class="dropdown-menu">
         
             
@@ -595,19 +597,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v3-cpp/">c++</a>
+    <a href="../../review/v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-js/">js</a>
+    <a href="../../review/v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-lua/">lua</a>
+    <a href="../../review/v3-lua/">lua</a>
 </li>
 
         
@@ -622,19 +624,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v2-cpp/">c++</a>
+    <a href="../../review/v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-js/">js</a>
+    <a href="../../review/v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-lua/">lua</a>
+    <a href="../../review/v2-lua/">lua</a>
 </li>
 
         
@@ -827,9 +829,17 @@
         
             <li><a href="#_3">配置</a></li>
         
-            <li><a href="#_4">使用</a></li>
+            <li><a href="#_4">追踪器</a></li>
+        
+            <li><a href="#_5">使用</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
+        
+            <li><a href="#_6">手动集成</a></li>
+        
+            <li><a href="#ios">iOS 平台手动集成</a></li>
+        
+            <li><a href="#android">Android 平台手动集成</a></li>
         
     
     </ul>
@@ -967,7 +977,29 @@ SDKBox.init(this);
 }
 </code></pre>
 
-<h2 id="_4">使用</h2>
+<h2 id="_4">追踪器</h2>
+<p>一个 <strong>追踪器</strong> 用于统计被追踪的事件。这里有以下几点需要开发人员注意：</p>
+<ul>
+<li>
+<p>你必须创建一个移动追踪器或者使用之前创建的追踪器。</p>
+</li>
+<li>
+<p>如果这个追踪器是新创建的，它将在24小时之后才能显示追踪的数据。</p>
+</li>
+<li>
+<p>一旦你在追踪器上看见历史活动记录，你也能看见当前的实时数据。</p>
+</li>
+<li>
+<p>你可以创建任意数量的追踪器，但是插件配置里仅仅允许你定义一个（用于基本情况）。</p>
+</li>
+<li>
+<p>如果没有追踪器在配置里被设置，将不会有追踪会话。这意味着，一个（或者多个）追踪器可能在之后被创建。在这种情况下，需要显示的调用 <code>startSession()</code> 。</p>
+</li>
+<li>
+<p>不管这个追踪器是设置在插件配置中还是被手动创建，所有的追踪事件将被自动发往服务器。这一功能的实现是先缓存追踪事件，然后集中一批发往服务器。</p>
+</li>
+</ul>
+<h2 id="_5">使用</h2>
 <h3 id="google-analytics_1">初始化 Google Analytics</h3>
 <p>在您的代码的合适的位置初始化这个插件，我们建议您在 <code>AppDelegate:applicationDidFinishLaunching()</code> 或者 <code>AppController:didFinishLaunchingWithOptions()</code> 中进行初始化。并确保您的代码中包含了正确的头文件。举例如下：</p>
 <pre><code class="cpp">#include &quot;PluginGoogleAnalytics/PluginGoogleAnalytics.h&quot;
@@ -979,105 +1011,97 @@ AppDelegate::applicationDidFinishLaunching()
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<h4 id="dispatch-methods-dispatches-hits-view-events-etc-to-google-analytics-if-a-network-connection-is-available">Dispatch Methods. Dispatches hits (view, events, etc.) to Google Analytics if a network connection is available.</h4>
-<pre><code class="cpp">static void init();
+<pre><code class="cpp">static void init ( ) ;
 </code></pre>
 
 <blockquote>
 <p>initialize the plugin instance.</p>
 </blockquote>
-<pre><code class="cpp">static void dispatchHits();
+<pre><code class="cpp">static void startSession ( ) ;
+</code></pre>
+
+<blockquote>
+<p>The analytics session is being explicitly started at plugin initialization time.</p>
+</blockquote>
+<pre><code class="cpp">static void stopSession ( ) ;
+</code></pre>
+
+<blockquote>
+<p>You normally will never stop a session manually.</p>
+</blockquote>
+<pre><code class="cpp">static void dispatchHits ( ) ;
 </code></pre>
 
 <blockquote>
 <p>Manually request dispatch of hits. By default, data is dispatched from the
 Google Analytics SDK for Android every 5 minutes.</p>
 </blockquote>
-<pre><code class="cpp">static void dispatchPeriodically(int numberOfSeconds);
+<pre><code class="cpp">static void dispatchPeriodically ( int seconds ) ;
 </code></pre>
 
 <blockquote>
 <p>Change the dispatch info time period to the desired amount of seconds.</p>
 </blockquote>
-<pre><code class="cpp">static void stopPeriodicalDispatch();
+<pre><code class="cpp">static void stopPeriodicalDispatch ( ) ;
 </code></pre>
 
 <blockquote>
 <p>Stop periodically sending info. Then manually the <code>dispatchPeridically</code>
 or <code>dispatchHits</code> should be called.</p>
 </blockquote>
-<h4 id="session-control-a-session-represents-a-single-period-of-user-interaction-with-your-game-sessions-serve-as-useful-containers-of-measured-activity-which-includes-screen-views-events-and-ecommerce-transactions">Session control.  A session represents a single period of user interaction with your game. Sessions serve as useful containers of measured activity, which includes screen views, events, and ecommerce transactions.</h4>
-<pre><code class="cpp">static void startSession();
-</code></pre>
-
-<blockquote>
-<p>The analytics session is being explicitly started at plugin initialization time.</p>
-</blockquote>
-<pre><code class="cpp">static void stopSession();
-</code></pre>
-
-<blockquote>
-<p>You normally will never stop a session manually.</p>
-</blockquote>
-<h4 id="screens-screens-in-google-analytics-represent-content-users-are-viewing-within-your-game-a-screen-view-consists-of-a-single-string-field-that-will-be-used-as-the-screen-name-in-your-google-analytics-reports">Screens. Screens in Google Analytics represent content users are viewing within your game. A screen view consists of a single string field that will be used as the screen name in your Google Analytics reports.</h4>
-<pre><code class="cpp">static void logScreen(std::string title);
+<pre><code class="cpp">static void logScreen ( string title ) ;
 </code></pre>
 
 <blockquote>
 <p>Log screen info. title is the title of a screen. Screens are logical units
 inside your app you'd like to identify at analytics panel.</p>
 </blockquote>
-<h4 id="events-events-are-a-useful-way-to-collect-data-about-a-users-interaction-with-interactive-components-of-your-game-like-the-use-of-a-particular-item-an-event-consists-of-four-fields-that-you-can-use-to-describe-a-users-interaction-with-your-game">Events. Events are a useful way to collect data about a user's interaction with interactive components of your game, like the use of a particular item. An event consists of four fields that you can use to describe a user's interaction with your game.</h4>
-<pre><code class="cpp">static void logEvent(std::string eventCategory,
-                      std::string eventAction,
-                      std::string eventLabel,
-                      long value);
+<pre><code class="cpp">static void logEvent ( string eventCategory ,
+                       string eventAction ,
+                       string eventLabel ,
+                       int value ) ;
 </code></pre>
 
 <blockquote>
-<p>sdkbox::PluginGoogleAnalytics::logEvent("Achievement", "Unlocked", "Slay 10 dragons", 5);</p>
+<p>GoogleAnalytics::logEvent("Achievement", "Unlocked", "Slay 10 dragons", 5);</p>
 </blockquote>
-<h4 id="crashes-and-exceptions-crash-and-exception-measurement-allows-you-to-measure-the-number-and-type-of-caught-and-uncaught-crashes-and-exceptions-that-occur-in-your-game">Crashes and Exceptions. Crash and exception measurement allows you to measure the number and type of caught and uncaught crashes and exceptions that occur in your game.</h4>
-<pre><code class="cpp">static void logException(std::string exceptionDescription, bool isFatal);
+<pre><code class="cpp">static void logException ( string exceptionDescription , bool isFatal ) ;
 </code></pre>
 
 <blockquote>
 <p>Log an exception. It is a basic support for in-app events.</p>
 </blockquote>
-<h4 id="user-timing-measuring-user-timings-provides-a-native-way-to-measure-a-period-of-time-in-google-analytics-for-example-this-can-be-useful-to-measure-resource-load-times">User timing. Measuring user timings provides a native way to measure a period of time in Google Analytics. For example, this can be useful to measure resource load times.</h4>
-<pre><code class="cpp">static void logTiming(std::string timingCategory,
-                        int timingInterval,
-                        std::string timingName,
-                        std::string timingLabel);
+<pre><code class="cpp">static void logTiming ( string timingCategory ,
+                        int timingInterval ,
+                        string timingName ,
+                        string timingLabel ) ;
 </code></pre>
 
 <blockquote>
 <p>Measure a time inside the application.</p>
 </blockquote>
-<h4 id="social-social-interaction-measurement-allows-you-to-measure-a-users-interactions-with-various-social-network-sharing-and-recommendation-widgets-embedded-in-your-content">Social. Social interaction measurement allows you to measure a user's interactions with various social network sharing and recommendation widgets embedded in your content.</h4>
-<pre><code class="cpp">static void logSocial(std::string socialNetwork,
-                        std::string socialAction,
-                        std::string socialTarget);
+<pre><code class="cpp">static void logSocial ( string socialNetwork ,
+                        string socialAction ,
+                        string socialTarget ) ;
 </code></pre>
 
 <blockquote>
 <p>Log a social event.</p>
 </blockquote>
-<h4 id="general-purpose-methods">General purpose methods.</h4>
-<pre><code class="cpp">static void setDryRun(bool dr);
+<pre><code class="cpp">static void setDryRun ( bool dr ) ;
 </code></pre>
 
 <blockquote>
 <p>While running on dry run, the tracked events won't be sent to the actual
 analytics account.</p>
 </blockquote>
-<pre><code class="cpp">static void enableAdvertisingTracking(bool e);
+<pre><code class="cpp">static void enableAdvertisingTracking ( bool e ) ;
 </code></pre>
 
 <blockquote>
 <p>Enable advertising tracking when in google's ad vendors.</p>
 </blockquote>
-<pre><code class="cpp">static void createTracker(std::string trackerId);
+<pre><code class="cpp">static void createTracker ( string trackerId ) ;
 </code></pre>
 
 <blockquote>
@@ -1086,13 +1110,222 @@ If the tracker already existed, no new tracker will be created. In any case, the
 tracker associated with tracker id will be set as default tracker for  analytics
 operations.</p>
 </blockquote>
-<pre><code class="cpp">static void enableTracker(std::string trackerId);
+<pre><code class="cpp">static void enableTracker ( string trackerId ) ;
 </code></pre>
 
 <blockquote>
 <p>Enable a tracker identified by a trackerId. If the tracker does not exist,
 nothing will happen.</p>
-</blockquote></div>
+</blockquote>
+<h3 id="listeners">Listeners</h3>
+<h2 id="_6">手动集成</h2>
+<p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
+<p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
+<h2 id="ios">iOS 平台手动集成</h2>
+<p>拖拽下列 framework 从 <code>GoogleAnalytics</code> 插件包的 <strong>plugins/ios</strong> 目录到你的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
+<blockquote>
+<p>sdkbox.framework</p>
+<p>PluginGoogleAnalytics.framework</p>
+</blockquote>
+<p>上面的 frameworks 依赖于其他 frameworks。如果你没有添加它们，你也需要添加下列这些 frameworks：</p>
+<blockquote>
+<p>CoreData.framework</p>
+<p>Security.framework</p>
+<p>SystemConfiguration.framework</p>
+<p>libz.dylib</p>
+<p>libsqlite3.dylib</p>
+<p>libAdIdAccess.a (optional, required for IDFA)</p>
+<p>AdSupport.framework (optional, required for IDFA)</p>
+</blockquote>
+<p>Add a linker flag, if your setup requires it, to:
+<strong>Target -&gt; Build Settings -&gt; Linking -&gt; Other Linker Flags</strong>:</p>
+<blockquote>
+<p>-force_load /path/to/libAdIdAccess.a</p>
+</blockquote>
+<h2 id="android">Android 平台手动集成</h2>
+<h3 id="_7">拷贝文件</h3>
+<p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
+<blockquote>
+<p>PluginGoogleAnalytics.jar</p>
+<p>sdkbox.jar</p>
+</blockquote>
+<ul>
+<li>如果你使用 cocos2d-x 源码，拷贝 <strong>jar</strong> 文件到：</li>
+</ul>
+<p><code>cocos2d/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你使用 cocos2d-js 或者 lua ，拷贝 <strong>jar</strong> 文件到:</li>
+</ul>
+<p><code>frameworks/cocos2d-x/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你使用 cocos2d-x 预编译包，拷贝 <strong>jar</strong> 文件到：</li>
+</ul>
+<p><code>proj.android/libs</code></p>
+<p>从 <code>plugin/android/jni</code> 目录拷贝 <code>plugingoogleanalytics</code> 以及 <code>sdkbox</code> 目录到你的工程的 <code>proj.android/jni</code> 目录。如果 <code>sdkbox</code> 目录在工程中已经存在，请覆盖它。</p>
+<h3 id="androidmanifestxml">编辑 <code>AndroidManifest.xml</code></h3>
+<p>在标签 <strong>application tag</strong> 上添加下列权限：</p>
+<pre><code class="xml">  &lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+  &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+  &lt;uses-permission android:name=&quot;android.permission.WAKE_LOCK&quot; /&gt;
+</code></pre>
+
+<p>还有一些必要的元数据标签需要添加：</p>
+<pre><code class="xml">&lt;meta-data android:name=&quot;com.google.android.gms.version&quot;
+    android:value=&quot;@integer/google_play_services_version&quot; /&gt;
+&lt;meta-data
+    android:name=&quot;com.google.android.gms.analytics.globalConfigResource&quot;
+    android:resource=&quot;@xml/global_tracker&quot; /&gt;
+</code></pre>
+
+<h3 id="_8">编辑元数据文件</h3>
+<p>在上面的步骤中，会指定一个名为 <code>global_tracker.xml</code> 的文件。这个文件必须放在 <code>proj.android/res/xml/</code> 目录下，并包含一些必要的设置。如下：</p>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;resources&gt;
+    &lt;integer name=&quot;ga_dispatchPeriod&quot;&gt;300&lt;/integer&gt;
+    &lt;string name=&quot;ga_logLevel&quot;&gt;verbose&lt;/string&gt;
+&lt;/resources&gt;
+</code></pre>
+
+<h3 id="androidmk">编辑 <code>Android.mk</code></h3>
+<p>编辑 <code>proj.android/jni/Android.mk</code>：</p>
+<p>为 <strong>LOCAL_STATIC_LIBRARIES</strong> 添加额外的库：</p>
+<pre><code>LOCAL_STATIC_LIBRARIES += PluginGoogleAnalytics
+LOCAL_STATIC_LIBRARIES += sdkbox
+</code></pre>
+
+<p>在所有 <strong>import-module</strong> 语句之前添加一条 call 语句：</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+</code></pre>
+
+<p>在最后添加额外的 <strong>import-module</strong> 语句：</p>
+<pre><code>$(call import-module, ./sdkbox)
+$(call import-module, ./plugingoogleanalytics)
+</code></pre>
+
+<p>这意味着你的语句顺序看起来像是这样：</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+$(call import-module, ./sdkbox)
+$(call import-module, ./plugingoogleanalytics)
+</code></pre>
+
+<p><strong>Note:</strong> 如果你使用的是 cocos2d-x 预编译库，那么保证这些语句在已有的 <code>$(call import-module,./prebuilt-mk)</code> 语句之上非常重要。</p>
+<h3 id="applicationmk-cocos2d-x-v30-v32">编辑 <code>Application.mk</code> （只限 Cocos2d-x v3.0 到 v3.2 版本）</h3>
+<p>编辑 <code>proj.android/jni/Application.mk</code> 保证 <strong>APP_STL</strong> 的定义正确。如果 <code>Application.mk</code> 包含了 <code>APP_STL := c++_static</code> 语句，那么这条语句应该被改为：</p>
+<pre><code>APP_STL := gnustl_static
+</code></pre>
+
+<h3 id="cocos2dxactivityjava_1">修改 <code>Cocos2dxActivity.java</code></h3>
+<ul>
+<li>
+<p>如果您使用 cocos2d-x 源代码，假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/
+lib/Cocos2dxActivity.java</code></p>
+</li>
+<li>
+<p>如果您使用 cocos2dx-x 预编译库， 假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>./src/org/cocos2dx/lib/Cocos2dxActivity.java</code></p>
+</li>
+</ul>
+<p><strong>Note:</strong> 当你使用 cocos2d-x 源代码时，不同的版本中 <code>Cocos2dxActivity.java</code> 文件的位置也不同。一个确定该文件位置的方法是查看 <code>proj.android/project.properties</code> 。比如：</p>
+<pre><code>android.library.reference.1=../../cocos2d-x/cocos/platform/android/java
+</code></pre>
+
+<p>在这个例子中， <code>Cocos2dxActivity.java</code> 文件应该在如下位置：</p>
+<pre><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java
+</code></pre>
+
+<ul>
+<li>修改 <code>Cocos2dxActivity.java</code> 文件，导入如下包：</li>
+</ul>
+<pre><code class="java">import android.content.Intent;
+import com.sdkbox.plugin.SDKBox;
+</code></pre>
+
+<ul>
+<li>然后，修改 <code>Cocos2dxActivity</code> 类的 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this);</code> 。添加的位置非常重要，必须在调用 <code>onLoadNativeLibraries();</code> 之后。如下：</li>
+</ul>
+<pre><code class="java">onLoadNativeLibraries();
+SDKBox.init(this);
+</code></pre>
+
+<ul>
+<li>
+<p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
+<ul>
+<li>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+</li>
+<li>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+          }
+    }
+    @Override
+    protected void onStart() {
+          super.onStart();
+          SDKBox.onStart();
+    }
+    @Override
+    protected void onStop() {
+          super.onStop();
+          SDKBox.onStop();
+    }
+    @Override
+    protected void onResume() {
+          super.onResume();
+          SDKBox.onResume();
+    }
+    @Override
+    protected void onPause() {
+          super.onPause();
+          SDKBox.onPause();
+    }
+    @Override
+    public void onBackPressed() {
+          if(!SDKBox.onBackPressed()) {
+            super.onBackPressed();
+          }
+    }
+</code></pre>
+
+<h3 id="proguard-release_1">使用 Proguard （release模式下可选）</h3>
+<ul>
+<li>编辑 <code>project.properties</code> 文件， 指定一个 <code>Proguard</code> 配置文件。比如：</li>
+</ul>
+<pre><code>proguard.config=proguard.cfg
+</code></pre>
+
+<ul>
+<li>编辑这个配置文件，加入如下内容：</li>
+</ul>
+<pre><code>-libraryjars libs/android-support-v4.jar
+
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
+
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+    @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keepnames class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+</code></pre>
+
+<p><strong>Note:</strong> Proguard 只能工作在 <strong>Release</strong> 模式下 （比如： <code>cocos run -m release</code>） debug 模式下不会触发 Proguard。</p></div>
             
         </div>
 
