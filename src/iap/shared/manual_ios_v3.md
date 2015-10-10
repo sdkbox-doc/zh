@@ -11,3 +11,5 @@ Drag and drop the following frameworks from the __plugins/ios__ folder of the `I
 > Security.framework
 
 > StoreKit.framework
+
+> SystemConfiguration.framework
