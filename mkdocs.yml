@@ -117,4 +117,4 @@ theme: mkdocs
 theme_dir: 'custom_theme'
 # theme: readthedocs
 
-google_analytics: ['UA-62579154-2', 'docs.sdkbox.com/zh']
+google_analytics: ['UA-70044300-2', 'docs.sdkbox.com/zh']
