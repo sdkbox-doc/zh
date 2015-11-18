@@ -471,19 +471,19 @@
         
             
 <li >
-    <a href="../v3-cpp/">c++</a>
+    <a href="../../iap/v3-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../v3-js/">js</a>
+    <a href="../../iap/v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../v3-lua/">lua</a>
+    <a href="../../iap/v3-lua/">lua</a>
 </li>
 
         
@@ -497,20 +497,20 @@
     <ul class="dropdown-menu">
         
             
-<li class="active">
-    <a href="./">c++</a>
+<li >
+    <a href="../../iap/v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../v2-js/">js</a>
+    <a href="../../iap/v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../v2-lua/">lua</a>
+    <a href="../../iap/v2-lua/">lua</a>
 </li>
 
         
@@ -659,20 +659,20 @@
     <ul class="dropdown-menu">
         
             
-<li >
-    <a href="../../soomlagrow/v3-cpp/">c++</a>
+<li class="active">
+    <a href="./">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-js/">js</a>
+    <a href="../v3-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v3-lua/">lua</a>
+    <a href="../v3-lua/">lua</a>
 </li>
 
         
@@ -687,19 +687,19 @@
         
             
 <li >
-    <a href="../../soomlagrow/v2-cpp/">c++</a>
+    <a href="../v2-cpp/">c++</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-js/">js</a>
+    <a href="../v2-js/">js</a>
 </li>
 
         
             
 <li >
-    <a href="../../soomlagrow/v2-lua/">lua</a>
+    <a href="../v2-lua/">lua</a>
 </li>
 
         
@@ -863,12 +863,12 @@
                 </li>
                 
                     <li >
-                        <a rel="next" href="../v3-lua/">
+                        <a rel="next" href="../../review/v2-lua/">
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
                     <li >
-                        <a rel="prev" href="../v2-js/">
+                        <a rel="prev" href="../v3-js/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -884,23 +884,23 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
     
-        <li class="main active"><a href="#_1">应用内付费</a></li>
+        <li class="main active"><a href="#soomlagrow">SoomlaGrow</a></li>
         
-            <li><a href="#_2">集成</a></li>
+            <li><a href="#_1">集成</a></li>
         
-            <li><a href="#_3">额外的步骤</a></li>
+            <li><a href="#android">Android 的额外步骤</a></li>
         
-            <li><a href="#_4">配置</a></li>
+            <li><a href="#_2">配置</a></li>
         
-            <li><a href="#_5">用法</a></li>
+            <li><a href="#_3">用法</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
         
-            <li><a href="#_10">手动集成</a></li>
+            <li><a href="#_4">手动集成</a></li>
         
-            <li><a href="#ios">iOS 平台手动集成</a></li>
+            <li><a href="#ios">iOS 手动集成步骤</a></li>
         
-            <li><a href="#android">Android 平台手动集成</a></li>
+            <li><a href="#android_1">Android 手动集成步骤.</a></li>
         
     
     </ul>
@@ -908,31 +908,49 @@
                 <div class="col-md-9" role="main">
 
 <!--
-Include Base: /Users/niteluo/Projects/store/doc/en/src/iap/v3-cpp
+Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/soomlagrow/v3-cpp
 -->
 
-<h1 id="_1">应用内付费</h1>
-<h2 id="_2">集成</h2>
-<p>用如下命令来集成 SDKBOX IAP 插件,请确保你可以正常执行的 SDKBOX 安装器.</p>
-<pre><code class="bash">sdkbox import iap
+<h1 id="soomlagrow">SoomlaGrow</h1>
+<p>SoomlaGrow 可以收集你的应用中的插件使用情况,现在支持 <code>Facebook</code> 和 <code>IAP</code> 插件</p>
+<h2 id="_1">集成</h2>
+<p>在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX SoomlaGrow 插件。</p>
+<pre><code class="bash">$ sdkbox import soomlagrow
 </code></pre>
 
-<h2 id="_3">额外的步骤</h2>
-<h3 id="yourgamenamejava">修改 <code>&lt;YourGameName&gt;.java</code></h3>
+<h2 id="android">Android 的额外步骤</h2>
+<h3 id="cocos2dxactivityjava">修改 <code>Cocos2dxActivity.java</code></h3>
 <ul>
-<li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
+<li>
+<p>如果您使用 cocos2d-x 源代码，假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/
+lib/Cocos2dxActivity.java</code></p>
+</li>
+<li>
+<p>如果您使用 cocos2dx-x 预编译库， 假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>
+<p><code>./src/org/cocos2dx/lib/Cocos2dxActivity.java</code></p>
+</li>
+</ul>
+<p><strong>Note:</strong> 当你使用 cocos2d-x 源代码时，不同的版本中 <code>Cocos2dxActivity.java</code> 文件的位置也不同。一个确定该文件位置的方法是查看 <code>proj.android/project.properties</code> 。比如：</p>
+<pre><code>android.library.reference.1=../../cocos2d-x/cocos/platform/android/java
+</code></pre>
+
+<p>在这个例子中， <code>Cocos2dxActivity.java</code> 文件应该在如下位置：</p>
+<pre><code>../../cocos2d-x/cocos/platform/android/java/src/org/cocos2dx/lib/Cocos2dxActivity.java
+</code></pre>
+
+<ul>
+<li>修改 <code>Cocos2dxActivity.java</code> 文件，导入如下包：</li>
 </ul>
 <pre><code class="java">import android.content.Intent;
 import com.sdkbox.plugin.SDKBox;
 </code></pre>
 
 <ul>
-<li>然后，修改您的类 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this)</code> 。如下：</li>
+<li>然后，修改 <code>Cocos2dxActivity</code> 类的 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this);</code> 。添加的位置非常重要，必须在调用 <code>onLoadNativeLibraries();</code> 之后。如下：</li>
 </ul>
-<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
-  super.onCreate(savedInstanceState);
-  SDKBox.init(this);
-}
+<pre><code class="java">onLoadNativeLibraries();
+SDKBox.init(this);
 </code></pre>
 
 <ul>
@@ -982,323 +1000,192 @@ import com.sdkbox.plugin.SDKBox;
     }
 </code></pre>
 
-<h2 id="_4">配置</h2>
-<p>SDKBOX 安装器会自动在你的工程中添加一个样例配置文件<code>sdkbox_config.json</code>.在你编译工程前,请修改里面的参数,用你自己的应用信息</p>
-<p>现在给一个修改例子,你需要在<a href="http://itunesconnect.apple.com">iTunes Connect</a>获取一个应用id,然后替换 <code>&lt;put the product id for ios here&gt;</code>,或者,在<a href="https://play.google.com/apps/publish">Google Play Console</a>申请一个应用id,并替换<code>&lt;put your googleplay key here&gt;</code></p>
-<pre><code class="json">&quot;ios&quot; :
-{
-    &quot;iap&quot;:{
-        &quot;items&quot;:{
-            &quot;remove_ads&quot;:{
-                &quot;id&quot;:&quot;&lt;put the product id for ios here&gt;&quot;
-            }
-        }
-    }
-},
-&quot;android&quot;:
-{
-    &quot;iap&quot;:{
-        &quot;key&quot;:&quot;&lt;put your googleplay key here&gt;&quot;,
-        &quot;items&quot;:{
-          &quot;remove_ads&quot;:{
-              &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;
-          }
-        }
-    }
-}
+<h3 id="release">混淆 (release 模式有效, 可选)</h3>
+<ul>
+<li>编辑 <code>project.properties</code> 指定一个 <code>Proguard</code> 配制文件. 例如:</li>
+</ul>
+<pre><code>proguard.config=proguard.cfg
 </code></pre>
 
-<p>如果你有 IAP 条目是 <strong>non-consumable</strong> 的，需要在你的 <code>sdkbox_config.json</code> 里注明这些条目。只有 <strong>Android</strong> 平台需要这一步骤。<em>json</em> 格式看起来如下：</p>
-<pre><code class="json">&quot;android&quot;:
-{
-    &quot;iap&quot;:{
-        &quot;key&quot;:&quot;&lt;put your googleplay key here&gt;&quot;,
-        &quot;items&quot;:{
-          &quot;remove_ads&quot;:{
-              &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;,
-              &quot;type&quot;:&quot;non_consumable&quot;
-          }
-        }
-    }
-}
+<ul>
+<li>编辑这个文件,包含如下内容:</li>
+</ul>
+<pre><code># If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
 </code></pre>
 
-<h2 id="_5">用法</h2>
-<h3 id="iap">初始化 IAP</h3>
-<p>在你的工程中合适的地方初始化插件.我们推荐在 <code>AppDelegate::applicationDidFinishLaunching()</code> or <code>AppController:didFinishLaunchingWithOptions()</code> 中.确保包含了相关的头文件:</p>
-<pre><code class="cpp">#include &quot;PluginIAP/PluginIAP.h&quot;
+<p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 模式下有效 (例如 <code>cocos run -m release</code>) ,在 debug 模式下不会调用混淆配置文件.</p>
+<h2 id="_2">配置</h2>
+<p>SDKBOX 安装器会为你自动生成一个配置文件 <code>res/sdkbox_config.json</code>,在你使用前,请修改里面的值为你自己的应用.</p>
+<p>下面给给一个 SoomlaGrow 的配置,你需要注册 <a href="http://soom.la/"><strong>Soomla ID</strong></a>帐号信息，然后替换配置文件中的 <code>&lt;game key&gt;</code> 和 <code>&lt;envkey id&gt;</code> 项.</p>
+<pre><code class="json">&quot;SoomlaGrow&quot;:{
+            &quot;GameKey&quot;:&quot;0cbc07e3-0f0c-4b68-bb0c-061c1b5fb553&quot;,
+            &quot;EnvKey&quot;:&quot;8b865add-4541-4db1-be18-f6c7e5e00564&quot;
+        }
+</code></pre>
+
+<h2 id="_3">用法</h2>
+<h3 id="soomlagrow_1">初始化 SoomlaGrow</h3>
+<p>在您的代码的合适的位置初始化这个插件，我们建议您在 <code>AppDelegate:applicationDidFinishLaunching()</code> 或者 <code>AppController:didFinishLaunchingWithOptions()</code> 中进行初始化。并确保您的代码中包含了正确的头文件。举例如下:</p>
+<pre><code class="cpp">#include &quot;PluginSoomlaGrow/PluginSoomlaGrow.h&quot;
 AppDelegate::applicationDidFinishLaunching()
 {
-     sdkbox::IAP::init();
+     sdkbox::PluginSoomlaGrow::init();
 }
 </code></pre>
 
-<h3 id="_6">获取最新的价格</h3>
-<p>在你的游戏开始时,最好先从商店中取最新的商品价格信息.</p>
-<p>在取最新的 IAP 数据, 只需要简单地调用 <code>sdkbox::IAP::refresh()</code>.</p>
-<blockquote>
-<p><code>onProductRequestSuccess</code> 成功获取会收到这个事件.</p>
-<p><code>onProductRequestFailure</code> 获取失败的话,会收到这个事件.</p>
-</blockquote>
-<h3 id="_7">购买</h3>
-<p>购买只需要调用 <code>sdkbox::IAP::purchase(name)</code></p>
-<p><strong>注意:</strong> <strong>name</strong> 是你在配置文件中 <code>items</code> 项的值, 而不是你在 iTunes 或 GooglePlay Store 中的商品名.</p>
-<blockquote>
-<p><code>onSuccess</code> 购买成功会收到这个事件.</p>
-<p><code>onFailure</code> 购买失败事件.</p>
-<p><code>onCanceled</code> 用户取消了购买.</p>
-</blockquote>
-<h3 id="_8">恢复购买</h3>
-<p>恢复购买调用 <code>sdkbox::IAP::restore()</code>.</p>
-<blockquote>
-<p><code>onRestored</code> 恢复购买成功事件.</p>
-</blockquote>
-<p><strong>注意:</strong> <code>onRestored</code> 可能会被多次触发</p>
-<h3 id="_9">处理付费事件</h3>
-<p>允许你接收 <code>IAP</code> 的事件,这样你就可以对用户,IAP服务器做不同的处理.</p>
+<h3 id="soomlagrow-userinsight">使用 SoomlaGrow 的 UserInsight 模块</h3>
+<p>在初始化完成后，你就可以使用 SoomlaGrow 的功能了，在任何你想使用的地方, 调用 <code>refreshInsight</code> 或 <code>getUserInsightInfo</code>:</p>
+<pre><code class="cpp">sdkbox::PluginSoomlaGrow::refreshInsight();
+std::string jsonStr = sdkbox::PluginSoomlaGrow::getUserInsightInfo();
+</code></pre>
+
+<h3 id="soomlagrow_2">接收 SoomlaGrow 事件 (可选)</h3>
+<p>你可以接收 <code>SoomlaGrow</code> 事件,以便对不同事件做不同处理.一个简单的用法可以像下面这样:</p>
 <ul>
-<li>继承这个类 <code>sdkbox::IAPListener</code>:</li>
+<li>让你的类继承 <code>sdkbox::SoomlaGrowListener</code></li>
 </ul>
-<pre><code class="cpp">    #include &quot;PluginIAP/PluginIAP.h&quot;
-    class MyClass : public sdkbox::IAPListener
-    {
-    private:
-        virtual void onSuccess(sdkbox::Product const&amp; p) override;
-        virtual void onFailure(sdkbox::Product const&amp; p, const std::string &amp;msg)
-           override;
-        virtual void onCanceled(sdkbox::Product const&amp; p) override;
-        virtual void onRestored(sdkbox::Product const&amp; p) override;
-        virtual void onProductRequestSuccess(std::vector&lt;sdkbox::Product&gt; const &amp;products)
-        override;
-        virtual void onProductRequestFailure(const std::string &amp;msg) override;
-    }
+<pre><code class="cpp">#include &quot;PluginSoomlaGrow/PluginSoomlaGrow.h&quot;
+class MyClass : public sdkbox::SoomlaGrowListener
+{
+private:
+    void onHighWayInitialized();
+    void onHighWayConnected();
+    void onHighWayDisconnected();
+};
 </code></pre>
 
 <ul>
-<li>创建一个监听类来接收回调事件:</li>
+<li>使用 <strong>listener</strong> 来监听事件:</li>
 </ul>
-<pre><code class="cpp">sdkbox::IAP::setListener(listener);
+<pre><code class="cpp">sdkbox::PluginSoomlaGrow::setListener(this);
 </code></pre>
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="cpp">static void init ( ) ;
+<pre><code class="cpp">static bool init();
 </code></pre>
 
 <blockquote>
-<p>Initialize SDKBox IAP</p>
+<p>initialize the plugin instance.</p>
 </blockquote>
-<pre><code class="cpp">static void setDebug ( bool debug ) ;
+<pre><code class="cpp">static void setListener(SoomlaGrowListener* listener);
 </code></pre>
 
 <blockquote>
-<p>Enable/disable debug logging</p>
+<p>Set listener to listen for agecheq events</p>
 </blockquote>
-<pre><code class="cpp">static void purchase ( const std::string &amp; name ) ;
+<pre><code class="cpp">static SoomlaGrowListener* getListener();
 </code></pre>
 
 <blockquote>
-<p>Make a purchase request</p>
+<p>Get the listener</p>
 </blockquote>
-<pre><code class="cpp">static void refresh ( ) ;
+<pre><code class="cpp">static void removeListener();
 </code></pre>
 
 <blockquote>
-<p>Refresh the IAP data(title, price, description)</p>
+<p>Remove the listener, and can't listen to events anymore</p>
 </blockquote>
-<pre><code class="cpp">static void restore ( ) ;
+<pre><code class="cpp">static void refreshInsight();
 </code></pre>
 
 <blockquote>
-<p>Restore purchase</p>
+<p>Refreshed SoomlaInsights information from the server</p>
 </blockquote>
-<pre><code class="cpp">static void setListener ( IAPListener * listener ) ;
+<pre><code class="cpp">static std::string getUserInsightInfo();
 </code></pre>
 
 <blockquote>
-<p>Set listener for IAP</p>
-</blockquote>
-<pre><code class="cpp">static void removeListener ( ) ;
-</code></pre>
-
-<blockquote>
-<p>Remove listener for IAP</p>
+<p>get user insight info
+ Note: the return may be empty</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="cpp">void onInitialized ( bool ok );
+<pre><code class="cpp">void onHighWayInitialized();
 </code></pre>
 
 <blockquote>
-<p>Called when IAP initialized</p>
+<p>The delegate named onHighWayInitialized is triggerred once the highway initialized.</p>
 </blockquote>
-<pre><code class="cpp">void onSuccess ( const Product &amp; p );
+<pre><code class="cpp">void onHighWayConnected();
 </code></pre>
 
 <blockquote>
-<p>Called when an IAP processed successfully</p>
+<p>The delegate named onHighWayConnected is triggerred once the highway connected to server success.</p>
 </blockquote>
-<pre><code class="cpp">void onFailure ( const Product &amp; p , const std::string &amp; msg );
+<pre><code class="cpp">void onHighWayDisconnected();
 </code></pre>
 
 <blockquote>
-<p>Called when an IAP fails</p>
+<p>The delegate named onHighWayDisconnected is triggerred once the highway disconnect to server.</p>
 </blockquote>
-<pre><code class="cpp">void onCanceled ( const Product &amp; p );
-</code></pre>
-
-<blockquote>
-<p>Called when user canceled the IAP</p>
-</blockquote>
-<pre><code class="cpp">void onRestored ( const Product &amp; p );
-</code></pre>
-
-<blockquote>
-<p>Called when server returns the IAP items user already purchased
-@note this callback will be called multiple times if there are multiple IAP</p>
-</blockquote>
-<pre><code class="cpp">void onProductRequestSuccess ( const std::vector &lt;Product&gt; &amp; products );
-</code></pre>
-
-<blockquote>
-<p>Called the product request is successful, usually developers use product request to update the latest info(title, price) from IAP</p>
-</blockquote>
-<pre><code class="cpp">void onProductRequestFailure ( const std::string &amp; msg );
-</code></pre>
-
-<blockquote>
-<p>Called when the product request fails</p>
-</blockquote>
-<pre><code class="cpp">void onRestoreComplete ( bool ok , const std::string &amp; msg );
-</code></pre>
-
-<blockquote>
-<p>Called when the restore completed</p>
-</blockquote>
-<h2 id="_10">手动集成</h2>
+<h2 id="_4">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
-<h2 id="ios">iOS 平台手动集成</h2>
-<p>Drag and drop the following frameworks from the <strong>plugins/ios</strong> folder of the <code>IAP</code> bundle into your Xcode project, check <code>Copy items if needed</code> when adding frameworks:
-拖拽下列 framework 从 <code>IAP</code> 插件包的 <strong>plugins/ios</strong> 目录到你的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
+<h2 id="ios">iOS 手动集成步骤</h2>
+<p>把 <strong>plugins/ios</strong> 里的如下的 framework 拖到你的 Xcode 工程里的 <code>SoomlaGrow</code> 项,添加时,把 <code>Copy items if needed</code> 勾选上:</p>
 <blockquote>
 <p>sdkbox.framework</p>
-<p>PluginIAP.framework</p>
+<p>PluginSoomlaGrow.framework</p>
 </blockquote>
-<p>上面的 frameworks 依赖于其他 frameworks。如果你没有添加它们，你也需要添加下列这些 frameworks：</p>
+<h2 id="android_1">Android 手动集成步骤.</h2>
+<h3 id="_5">拷贝文件</h3>
+<p>从安装包中的 <code>plugin/android/libs</code> 文件夹下拷贝下面的 <strong>jar</strong> 文件到你的工程中的 <strong>proj.android/libs</strong> 文件夹.</p>
 <blockquote>
-<p>Security.framework</p>
-<p>StoreKit.framework</p>
-<p>SystemConfiguration.framework</p>
-</blockquote>
-<h2 id="android">Android 平台手动集成</h2>
-<h3 id="_11">拷贝文件</h3>
-<p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
-<blockquote>
-<p>PluginGooglePlay.jar</p>
-<p>PluginIAP.jar</p>
+<p>SoomlaGrowLite.jar</p>
+<p>PluginSoomlaGrow.jar</p>
 <p>sdkbox.jar</p>
 </blockquote>
-<p>从 <code>plugin/android/jni</code> 目录拷贝 <code>pluginiap</code> 以及 <code>sdkbox</code> 目录到你的工程的 <code>proj.android/jni</code> 目录。如果 <code>sdkbox</code> 目录在工程中已经存在，请覆盖它。</p>
+<ul>
+<li>如果你用的是 cocos2d-x源码 工程, 拷贝 <strong>jar</strong> 文件到这里:</li>
+</ul>
+<p><code>cocos2d/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你用的是 cocos2d-js 或 lua, 拷贝 <strong>jar</strong> 文件到这里:</li>
+</ul>
+<p><code>frameworks/cocos2d-x/cocos/platform/android/java/libs</code></p>
+<ul>
+<li>如果你用的是预编译的 cocos2d-x ，那拷贝 <strong>jar</strong> 到这里:</li>
+</ul>
+<p><code>proj.android/libs</code></p>
+<p>从 <code>plugin/android/jni</code> 拷贝 <code>pluginsoomlagrow</code> 和 <code>sdkbox</code> 目录到你的工程的 <code>proj.android/jni/</code> 目录.如果 <code>sdkbox</code> 目录已存在，覆盖它.</p>
 <h3 id="androidmanifestxml">编辑 <code>AndroidManifest.xml</code></h3>
-<p>在标签 <strong>application tag</strong> 上添加下列权限：</p>
-<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+<p>在 <strong>application tag</strong> 这个项前面添加如下权限:</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;
 &lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
 &lt;uses-permission android:name=&quot;com.android.vending.BILLING&quot;/&gt;
 </code></pre>
 
 <h3 id="androidmk">编辑 <code>Android.mk</code></h3>
-<p>编辑 <code>proj.android/jni/Android.mk</code>：</p>
-<p>为 <strong>LOCAL_STATIC_LIBRARIES</strong> 添加额外的库：</p>
-<pre><code>LOCAL_STATIC_LIBRARIES += android_native_app_glue
-LOCAL_LDLIBS += -landroid
-LOCAL_LDLIBS += -llog
-LOCAL_STATIC_LIBRARIES += PluginIAP
+<p>在 <code>proj.android/jni/Android.mk</code> 中:</p>
+<p>给 <strong>LOCAL_STATIC_LIBRARIES</strong> 添加如下要求:</p>
+<pre><code>LOCAL_STATIC_LIBRARIES += PluginSoomlaGrow
 LOCAL_STATIC_LIBRARIES += sdkbox
 </code></pre>
 
-<p>在所有 <strong>import-module</strong> 语句之前添加一条 call 语句：</p>
+<p>在所有的 <strong>import-module</strong> 项前，添加如下调用:</p>
 <pre><code>$(call import-add-path,$(LOCAL_PATH))
 </code></pre>
 
-<p>在最后添加额外的 <strong>import-module</strong> 语句：</p>
+<p>在所有的 <strong>import-module</strong> 后，新增如下项:</p>
 <pre><code>$(call import-module, ./sdkbox)
-$(call import-module, ./pluginiap)
+$(call import-module, ./pluginsoomlagrow)
 </code></pre>
 
-<p>这意味着你的语句顺序看起来像是这样：</p>
+<p>修改后，应该和下面的修改类似:</p>
 <pre><code>$(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)
-$(call import-module, ./pluginiap)
+$(call import-module, ./pluginsoomlagrow)
 </code></pre>
 
-<h3 id="applicationmk">编辑 <code>Application.mk</code></h3>
-<p>编辑 <code>proj.android/jni/Application.mk</code>：</p>
-<p>为 <strong>APP_PATFORM</strong> 添加版本：</p>
-<pre><code>APP_PLATFORM := android-9
-</code></pre>
-
-<h3 id="yourgamenamejava_1">修改 <code>&lt;YourGameName&gt;.java</code></h3>
-<ul>
-<li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
-</ul>
-<pre><code class="java">import android.content.Intent;
-import com.sdkbox.plugin.SDKBox;
-</code></pre>
-
-<ul>
-<li>然后，修改您的类 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this)</code> 。如下：</li>
-</ul>
-<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
-  super.onCreate(savedInstanceState);
-  SDKBox.init(this);
-}
-</code></pre>
-
-<ul>
-<li>
-<p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
-<ul>
-<li>
-<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
-</li>
-<li>
-<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code class="java">    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
-            super.onActivityResult(requestCode, resultCode, data);
-          }
-    }
-    @Override
-    protected void onStart() {
-          super.onStart();
-          SDKBox.onStart();
-    }
-    @Override
-    protected void onStop() {
-          super.onStop();
-          SDKBox.onStop();
-    }
-    @Override
-    protected void onResume() {
-          super.onResume();
-          SDKBox.onResume();
-    }
-    @Override
-    protected void onPause() {
-          super.onPause();
-          SDKBox.onPause();
-    }
-    @Override
-    public void onBackPressed() {
-          if(!SDKBox.onBackPressed()) {
-            super.onBackPressed();
-          }
-    }
+<p><strong>注意:</strong> 如果你使用预编译包, 必须要保证这些修改是在 <code>$(call import-module,./prebuilt-mk)</code> 这一项之前.</p>
+<h3 id="applicationmk-cocos2d-x-v30-v32">修改 <code>Application.mk</code> (只有Cocos2d-x v3.0 到 v3.2 版本需要)</h3>
+<p>编辑 <code>proj.android/jni/Application.mk</code> 确保 <strong>APP_STL</strong> 定义正确. 如果 <code>Application.mk</code> 中包含 <code>APP_STL := c++_static</code>, 那么把它修改为:</p>
+<pre><code>APP_STL := gnustl_static
 </code></pre></div>
             
         </div>
