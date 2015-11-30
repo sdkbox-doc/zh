@@ -1,5 +1,5 @@
-##Manual Integration For Android
-SDKBOX supports three different kinds of __Android__ projects __command-line__, __eclipse__ and __Android Studio__. 
+##Android 手动集成
+SDKBox 支持三种 __Android__ 工程, __command-line__, __eclipse__ 和 __Android Studio__.
 
-* `proj.android` will be used as our `<project_root>` for __command-line__ and __eclipse__ project
-* `proj.android-studio` will be used as our `<project_root>` for __Android Studio__ project.
+* __command-line__ 和 __eclipse__ 类型的项目, `<project_root>` 指代 `proj.android` .
+* __Android Studio__ 类型的项目, `<project_root>` 指代 `proj.android-studio` .

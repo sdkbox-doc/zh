@@ -1,8 +1,8 @@
-## Important Notice
-If you upgraded to Xcode7 you need to perform the following steps to your project for plugin to function correctly.
+## 重点注意事项
+如果您升级到了 Xcode7, 则需要以下额外步骤来确保插件工作正常:
 
-#### Disable App Transport Security
-Adding the following entry to the plist:
+#### 禁用应用程序安全传输
+添加以下项到 plist:
 ```
 <key>NSAppTransportSecurity</key>
 <dict>
@@ -10,11 +10,11 @@ Adding the following entry to the plist:
     <true/>
 </dict>
 ```
-#### Disable Bitcode support
-You have to turn off __Bitcode__ support. If you don't cocos2d-x will fail to build.
+#### 禁止 Bitcode 支持
+您必须禁止 __Bitcode__ 的支持，否则将会编译失败
 
-#### Set your game requires full screen
-If your game doesn't support all screen orientations you will need to check `Requires full screen` in Xcode. If you do not, your app will fail Apple's submission process.
+#### 游戏全屏配置
+如果您的游戏不同时支持横竖屏，则必须在 Xcode 中选中 `Requires full screen`，否则将不会通过 Apple 的审核.
 
-#### Whitelist canOpenURL function
-This depends on what plugins are in your project. You may need to add the required entry to the `info.plist`, under `LSApplicationQueriesSchemes`.
+#### canOpenURL 白名单
+取决于您使用哪些插件。需要在 `info.plist` 的 `LSApplicationQueriesSchemes` 下添加名单.
