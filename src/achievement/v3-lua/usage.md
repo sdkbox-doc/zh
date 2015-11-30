@@ -6,7 +6,7 @@
    Developer Portal](https://developer.playphone.com/games).
   - 配置 Playphone 数据[Playphone plugin documentation](http://sdkbox- staging.github.io/en/plugins/playphone/v3 -cpp/#extra-steps).
 
-修改你的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在你要想使用 AdColony 的功能之前.
+修改你的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在你要想使用 Achievement 的功能之前.
 ```lua
 sdkbox.PluginAchievement:init();
 sdkbox.IAP:init();

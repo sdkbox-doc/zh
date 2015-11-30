@@ -6,7 +6,7 @@ Include Base: /Users/jtsm/Chukong-Inc/en/src/playphone/v3-cpp
 当前, `Playphone` 只支持 __Android__ 平台.  __Playphone__ 是一个专业的游戏发布平台, 从 [http://playphone.com](http://playphone.com) 获取更多信息.
 
 ## 集成
-用如下命令来集成 SDKBOX AdColony 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Playphone 插件,请确保你可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import playphone
 ```
