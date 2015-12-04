@@ -10,6 +10,14 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/adcolony/v3-cpp
 sdkbox import adcolony
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. 更新 AdColony iOS SDK 到 2.5.3
+2. `register_PluginAdColonyLua_helper` -> `register_all_PluginAdColonyLua_helper`
+3. `#include "PluginAdColonyLuaHelper.hpp"` -> `#include "PluginAdColonyLuaHelper.h"`
+4. `#include "PluginAdColonyJSHelper.hpp"` -> `#include "PluginAdColonyJSHelper.h"`
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

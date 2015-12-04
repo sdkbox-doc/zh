@@ -2,7 +2,7 @@
 * 修改 `Classes/AppDelegate.cpp` 包含如下文件:
 ```cpp
 #include "PluginIAPLua.hpp"
-#include "PluginIAPLuaHelper.hpp"
+#include "PluginIAPLuaHelper.h"
 ```
 
 * 然后, 我们需要调用 `register_all_PluginIAPLua(<lua_State*>);` 来把插件注册到lua中.
@@ -12,7 +12,7 @@
 	下面给出了一个例子:
 ```cpp
 #include "PluginIAPLua.hpp"
-#include "PluginIAPLuaHelper.hpp"
+#include "PluginIAPLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();

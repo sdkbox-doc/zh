@@ -12,7 +12,7 @@
 	下面给出一个例子:
 ```cpp
 #include "PluginAgeCheqLua.hpp"
-#include "PluginAgeCheqLuaHelper.hpp"
+#include "PluginAgeCheqLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();

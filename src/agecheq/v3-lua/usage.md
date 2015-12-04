@@ -8,7 +8,7 @@
 static int lua_module_register(lua_State* L)
 {
   register_all_PluginAgeCheqLua(L);
-  register_PluginAgeCheqLua_helper(L);
+  register_all_PluginAgeCheqLua_helper(L);
 }
 ```
 

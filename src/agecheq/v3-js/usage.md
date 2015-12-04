@@ -7,7 +7,7 @@ sdkbox.PluginAgeCheq.init();
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 在其中包含如下头文件:
 ```cpp
 #include "PluginAgeCheqJS.hpp"
-#include "PluginAgeCheqJSHelper.hpp"
+#include "PluginAgeCheqJSHelper.h"
 ```
 
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 在其中调下如下代码:

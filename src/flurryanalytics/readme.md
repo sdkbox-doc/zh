@@ -10,6 +10,15 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/flurryanalytics/v3-cpp
 sdkbox import flurryanalytics
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `register_PluginFlurryAnalyticsJS_helper` -> `register_all_PluginFlurryAnalyticsJS_helper`
+2. `register_PluginFlurryAnalyticsLua_helper` -> `register_all_PluginFlurryAnalyticsLua_helper`
+3. 更新 Flurry iOS SDK 到 6.7.0
+4. 更新 Flurry Android SDK 到 5.6.0
+5. `#include "PluginFlurryAnalyticsLuaHelper.hpp"` -> `#include "PluginFlurryAnalyticsLuaHelper.h"`
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

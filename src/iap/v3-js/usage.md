@@ -7,7 +7,7 @@ sdkbox.IAP.init();
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 包含如下头文件:
 ```cpp
 #include "PluginIAPJS.hpp"
-#include "PluginIAPJSHelper.hpp"
+#include "PluginIAPJSHelper.h"
 ```
 
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 确保调用了如下函数:

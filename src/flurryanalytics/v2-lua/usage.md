@@ -12,7 +12,7 @@
     下面给出一个例子:
 ```cpp
 #include "PluginFlurryAnalyticsLua.hpp"
-#include "PluginFlurryAnalyticsLuaHelper.hpp"
+#include "PluginFlurryAnalyticsLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();

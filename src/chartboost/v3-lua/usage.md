@@ -8,7 +8,7 @@
 static int lua_module_register(lua_State* L)
 {
   register_all_PluginChartboostLua(L);
-  register_PluginChartboostLua_helper(L);
+  register_all_PluginChartboostLua_helper(L);
 }
 ```
 

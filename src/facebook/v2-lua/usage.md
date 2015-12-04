@@ -2,7 +2,7 @@
 * 修改 `Classes/AppDelegate.cpp` 包含如下头文件:
 ```cpp
 #include "PluginFacebookLua.hpp"
-#include "PluginFacebookLuaHelper.hpp"
+#include "PluginFacebookLuaHelper.h"
 ```
 
 * 然后,我们可以调用`register_all_PluginFacebookLua(<lua_State*>);` 把这个插件注册到 Lua 中.
@@ -12,7 +12,7 @@
 	下面给出一个例子:
 ```cpp
 #include "PluginFacebookLua.hpp"
-#include "PluginFacebookLuaHelper.hpp"
+#include "PluginFacebookLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();
