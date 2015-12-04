@@ -31,7 +31,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-70044300-2', 'auto');
+            ga('create', 'UA-70044300-2', 'docs.sdkbox.com/zh');
             ga('send', 'pageview');
         </script>
         
@@ -1027,7 +1027,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     lua_State *tolua_s = pStack-&gt;getLuaState();
     register_all_PluginSoomlaGrowLua(tolua_s);
-    register_PluginSoomlaGrowLua_helper(tolua_s);
+    register_all_PluginSoomlaGrowLua_helper(tolua_s);
     tolua_extensions_ccb_open(tolua_s);
 }
 </code></pre>

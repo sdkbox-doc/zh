@@ -31,7 +31,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-70044300-2', 'auto');
+            ga('create', 'UA-70044300-2', 'docs.sdkbox.com/zh');
             ga('send', 'pageview');
         </script>
         
@@ -883,15 +883,17 @@
         
             <li><a href="#_1">集成</a></li>
         
-            <li><a href="#_2">额外的步骤</a></li>
+            <li><a href="#_2">更新日志</a></li>
         
-            <li><a href="#_3">配置</a></li>
+            <li><a href="#_3">额外的步骤</a></li>
         
-            <li><a href="#_4">用法</a></li>
+            <li><a href="#_4">配置</a></li>
+        
+            <li><a href="#_5">用法</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
         
-            <li><a href="#_8">手动集成</a></li>
+            <li><a href="#_9">手动集成</a></li>
         
             <li><a href="#ios_1">iOS 平台手动集成</a></li>
         
@@ -912,7 +914,14 @@ Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/facebook/v3-cpp
 <pre><code class="bash">sdkbox import facebook
 </code></pre>
 
-<h2 id="_2">额外的步骤</h2>
+<h2 id="_2">更新日志</h2>
+<p>version-x.y.z:
+1. <code>register_PluginFacebookJS_helper</code> -&gt; <code>register_all_PluginFacebookJS_helper</code>
+2. <code>register_PluginFacebookLua_helper</code> -&gt; <code>register_all_PluginFacebookLua_helper</code>
+3. 更新 Facebook iOS SDK 到 4.5.1
+4. 更新 Facebook Android SDK 到 4.5.1
+5. <code>#include "PluginFacebookLuaHelper.hpp"</code> -&gt; <code>#include "PluginFacebookLuaHelper.h"</code></p>
+<h2 id="_3">额外的步骤</h2>
 <p>下面的步骤假定你已经注册为 Facbbook 开发者，并创建了一个 <strong>APP</strong></p>
 <h3 id="ios">iOS的步骤</h3>
 <ul>
@@ -1058,7 +1067,7 @@ SDKBox.init(this);
 </code></pre>
 
 <p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 模式下有效 (比如 <code>cocos run -m release</code>), 在 debug 模式下,不会调到混淆规则.</p>
-<h2 id="_3">配置</h2>
+<h2 id="_4">配置</h2>
 <p>SDKBOX 安装器会为你自动生成一个 <code>sdkbox_config.json</code> 配置文件</p>
 <p>下面给出一个例子,你可以打开/关闭Facebook的调试模式</p>
 <pre><code class="json">&quot;Facebook&quot;:
@@ -1067,7 +1076,7 @@ SDKBox.init(this);
 }
 </code></pre>
 
-<h2 id="_4">用法</h2>
+<h2 id="_5">用法</h2>
 <h3 id="facebook_1">初始化 Facebook</h3>
 <p>在你的代码合适的地方初始化插件, 我们建议你在 <code>AppDelegate::applicationDidFinishLaunching()</code> 或 <code>AppController:didFinishLaunchingWithOptions()</code> 中完成初始化. 请确保你包含了对应的头文件:</p>
 <pre><code class="cpp">#include &quot;PluginFacebook/PluginFacebook.h&quot;
@@ -1078,7 +1087,7 @@ AppDelegate::applicationDidFinishLaunching()
 </code></pre>
 
 <h3 id="facebook_2">使用 Facebook</h3>
-<h4 id="_5">登录</h4>
+<h4 id="_6">登录</h4>
 <p>用户在使用前需要登录到 Facebook.</p>
 <pre><code class="cpp">sdkbox::PluginFacebook::login();
 </code></pre>
@@ -1094,7 +1103,7 @@ AppDelegate::applicationDidFinishLaunching()
 <blockquote>
 <p>注意: 用户只需要登录一次, 除非他们注销</p>
 </blockquote>
-<h4 id="_6">权限</h4>
+<h4 id="_7">权限</h4>
 <p>Facebook 要求你在使用前去询问用户要相应的权限,比如 posting 相关的权益
 就有两类权限, <strong>read</strong> and <strong>publish</strong>
 你也可以通过<a href="https://developers.facebook.com/docs/facebook-login/permissions/v2.3#reference">这里</a>得到完整的信息</p>
@@ -1110,7 +1119,7 @@ AppDelegate::applicationDidFinishLaunching()
 sdkbox::PluginFacebook::requestPublishPermissions({FB_PERM_PUBLISH_POST});
 </code></pre>
 
-<h4 id="_7">分享</h4>
+<h4 id="_8">分享</h4>
 <p>提供了两种分享方式.</p>
 <ul>
 <li><strong>分享</strong> 会自动发布到用户的信息流中
@@ -1326,7 +1335,7 @@ https://developers.facebook.com/docs/ios/graph</p>
 <pre><code class="cpp">void onFetchFriends ( bool ok , const std::string &amp; msg );
 </code></pre>
 
-<h2 id="_8">手动集成</h2>
+<h2 id="_9">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios_1">iOS 平台手动集成</h2>
@@ -1340,7 +1349,7 @@ https://developers.facebook.com/docs/ios/graph</p>
 <p>Security.framework</p>
 </blockquote>
 <h2 id="android_1">Android 平台手动集成</h2>
-<h3 id="_9">拷贝文件</h3>
+<h3 id="_10">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>PluginFacebook.jar</p>

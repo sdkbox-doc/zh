@@ -31,7 +31,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-70044300-2', 'auto');
+            ga('create', 'UA-70044300-2', 'docs.sdkbox.com/zh');
             ga('send', 'pageview');
         </script>
         
@@ -883,15 +883,17 @@
         
             <li><a href="#_1">集成</a></li>
         
-            <li><a href="#_2">额外的步骤</a></li>
+            <li><a href="#_2">更新日志</a></li>
         
-            <li><a href="#_3">配置</a></li>
+            <li><a href="#_3">额外的步骤</a></li>
         
-            <li><a href="#_4">用法</a></li>
+            <li><a href="#_4">配置</a></li>
+        
+            <li><a href="#_5">用法</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
         
-            <li><a href="#_5">手动集成</a></li>
+            <li><a href="#_6">手动集成</a></li>
         
             <li><a href="#ios">iOS 平台手动集成</a></li>
         
@@ -912,7 +914,12 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/agecheq/v3-cpp
 <pre><code class="bash">sdkbox import agecheq
 </code></pre>
 
-<h2 id="_2">额外的步骤</h2>
+<h2 id="_2">更新日志</h2>
+<p>version-x.y.z:
+1. <code>register_PluginAgeCheqLua_helper</code> -&gt; <code>register_all_PluginAgeCheqLua_helper</code>
+2. <code>#include "PluginAgeCheqLuaHelper.hpp"</code> -&gt; <code>#include "PluginAgeCheqLuaHelper.h"</code>
+3. <code>#include "PluginAgeCheqJSHelper.hpp"</code> -&gt; <code>#include "PluginAgeCheqJSHelper.h"</code></p>
+<h2 id="_3">额外的步骤</h2>
 <h3 id="yourgamenamejava">修改 <code>&lt;YourGameName&gt;.java</code></h3>
 <ul>
 <li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
@@ -995,7 +1002,7 @@ import com.sdkbox.plugin.SDKBox;
 </code></pre>
 
 <p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 编译模式下有效 (i.e <code>cocos run -m release</code>) debug 编译下不会调用到混淆规则.</p>
-<h2 id="_3">配置</h2>
+<h2 id="_4">配置</h2>
 <p>SDKBOX 安装器会自动在你的工程中添加一个样例配置文件<code>res/sdkbox_config.json</code>.在你编译工程前,请修改里面的参数,用你自己的应用信息</p>
 <p>下面给出一个 AgeCheq 的配置样例,你需要在<a href="http://developer.agecheq.com/"><strong>AgeCheq ID</strong></a>注册帐号,然后用对应的信息替换 <code>&lt;AppID&gt;</code> 和 <code>&lt;DeveloperKey&gt;</code>.</p>
 <pre><code class="json">&quot;AgeCheq&quot;:{
@@ -1004,7 +1011,7 @@ import com.sdkbox.plugin.SDKBox;
 }
 </code></pre>
 
-<h2 id="_4">用法</h2>
+<h2 id="_5">用法</h2>
 <h3 id="initialize-agecheq">Initialize AgeCheq</h3>
 <ul>
 <li>在你的代码中合适的地方调用 <code>init()</code>, 我们建议在 <code>app.js</code> 初始化,比如:</li>
@@ -1016,7 +1023,7 @@ import com.sdkbox.plugin.SDKBox;
 <li>修改 <code>./frameworks/runtime-src/Classes/AppDelegate.cpp</code> 在其中包含如下头文件:</li>
 </ul>
 <pre><code class="cpp">#include &quot;PluginAgeCheqJS.hpp&quot;
-#include &quot;PluginAgeCheqJSHelper.hpp&quot;
+#include &quot;PluginAgeCheqJSHelper.h&quot;
 </code></pre>
 
 <ul>
@@ -1103,7 +1110,7 @@ sdkbox.PluginAgeCheq.check(&quot;agecheqPin&quot;);
 <blockquote>
 <p>The delegate named associateDataResponse is triggered once the associateData command executes.</p>
 </blockquote>
-<h2 id="_5">手动集成</h2>
+<h2 id="_6">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -1115,7 +1122,7 @@ sdkbox.PluginAgeCheq.check(&quot;agecheqPin&quot;);
 <p>把 <code>plugin/jsbindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
 <h2 id="android">Android 平台手动集成</h2>
-<h3 id="_6">拷贝文件</h3>
+<h3 id="_7">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>AgeCheqLib.jar</p>

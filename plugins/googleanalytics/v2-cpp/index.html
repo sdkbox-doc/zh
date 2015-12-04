@@ -31,7 +31,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-70044300-2', 'auto');
+            ga('create', 'UA-70044300-2', 'docs.sdkbox.com/zh');
             ga('send', 'pageview');
         </script>
         
@@ -883,17 +883,19 @@
         
             <li><a href="#_1">集成</a></li>
         
-            <li><a href="#_2">额外的步骤</a></li>
+            <li><a href="#_2">更新日志</a></li>
         
-            <li><a href="#_3">配置</a></li>
+            <li><a href="#_3">额外的步骤</a></li>
         
-            <li><a href="#_4">追踪器</a></li>
+            <li><a href="#_4">配置</a></li>
         
-            <li><a href="#_5">使用</a></li>
+            <li><a href="#_5">追踪器</a></li>
+        
+            <li><a href="#_6">使用</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
         
-            <li><a href="#_6">手动集成</a></li>
+            <li><a href="#_7">手动集成</a></li>
         
             <li><a href="#ios">iOS 平台手动集成</a></li>
         
@@ -914,7 +916,10 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/googleanalytics/v3-cpp
 <pre><code class="bash">sdkbox import googleanalytics
 </code></pre>
 
-<h2 id="_2">额外的步骤</h2>
+<h2 id="_2">更新日志</h2>
+<p>version-x.y.z:
+1. <code>#include "PluginGoogleAnalyticsLuaHelper.hpp"</code> -&gt; <code>#include "PluginGoogleAnalyticsLuaHelper.h"</code></p>
+<h2 id="_3">额外的步骤</h2>
 <h3 id="yourgamenamejava">修改 <code>&lt;YourGameName&gt;.java</code></h3>
 <ul>
 <li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
@@ -1010,7 +1015,7 @@ import com.sdkbox.plugin.SDKBox;
 </code></pre>
 
 <p><strong>Note:</strong> Proguard 只能工作在 <strong>Release</strong> 模式下 （比如： <code>cocos run -m release</code>） debug 模式下不会触发 Proguard。</p>
-<h2 id="_3">配置</h2>
+<h2 id="_4">配置</h2>
 <p>SDKBOX Installer 将会自动在您的 <code>res/sdkbox_config.json</code> 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。</p>
 <p>对于一个 Google Analytics 插件的配置样例，您需要将其中的 <code>&lt;TRACKING_CODE&gt;</code> 替换成您特定的 <a href="https://support.google.com/analytics/answer/1008080?hl=en"><strong>Google Analytics</strong></a> 帐号中的信息。</p>
 <pre><code class="json">&quot;GoogleAnalytics&quot; : {
@@ -1018,7 +1023,7 @@ import com.sdkbox.plugin.SDKBox;
 }
 </code></pre>
 
-<h2 id="_4">追踪器</h2>
+<h2 id="_5">追踪器</h2>
 <p>一个 <strong>追踪器</strong> 用于统计被追踪的事件。这里有以下几点需要开发人员注意：</p>
 <ul>
 <li>
@@ -1040,7 +1045,7 @@ import com.sdkbox.plugin.SDKBox;
 <p>不管这个追踪器是设置在插件配置中还是被手动创建，所有的追踪事件将被自动发往服务器。这一功能的实现是先缓存追踪事件，然后集中一批发往服务器。</p>
 </li>
 </ul>
-<h2 id="_5">使用</h2>
+<h2 id="_6">使用</h2>
 <h3 id="google-analytics_1">初始化 Google Analytics</h3>
 <p>在您的代码的合适的位置初始化这个插件，我们建议您在 <code>AppDelegate:applicationDidFinishLaunching()</code> 或者 <code>AppController:didFinishLaunchingWithOptions()</code> 中进行初始化。并确保您的代码中包含了正确的头文件。举例如下：</p>
 <pre><code class="cpp">#include &quot;PluginGoogleAnalytics/PluginGoogleAnalytics.h&quot;
@@ -1159,7 +1164,7 @@ operations.</p>
 nothing will happen.</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<h2 id="_6">手动集成</h2>
+<h2 id="_7">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -1184,7 +1189,7 @@ nothing will happen.</p>
 <p>-force_load /path/to/libAdIdAccess.a</p>
 </blockquote>
 <h2 id="android">Android 平台手动集成</h2>
-<h3 id="_7">拷贝文件</h3>
+<h3 id="_8">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>PluginGoogleAnalytics.jar</p>
@@ -1210,7 +1215,7 @@ nothing will happen.</p>
     android:resource=&quot;@xml/global_tracker&quot; /&gt;
 </code></pre>
 
-<h3 id="_8">编辑元数据文件</h3>
+<h3 id="_9">编辑元数据文件</h3>
 <p>在上面的步骤中，会指定一个名为 <code>global_tracker.xml</code> 的文件。这个文件必须放在 <code>proj.android/res/xml/</code> 目录下，并包含一些必要的设置。如下：</p>
 <pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 &lt;resources&gt;

@@ -31,7 +31,7 @@
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
             })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-70044300-2', 'auto');
+            ga('create', 'UA-70044300-2', 'docs.sdkbox.com/zh');
             ga('send', 'pageview');
         </script>
         
@@ -883,15 +883,17 @@
         
             <li><a href="#_1">集成</a></li>
         
-            <li><a href="#_2">额外的步骤</a></li>
+            <li><a href="#_2">更新日志</a></li>
         
-            <li><a href="#_3">配置</a></li>
+            <li><a href="#_3">额外的步骤</a></li>
         
-            <li><a href="#_4">用法</a></li>
+            <li><a href="#_4">配置</a></li>
+        
+            <li><a href="#_5">用法</a></li>
         
             <li><a href="#api-reference">API Reference</a></li>
         
-            <li><a href="#_6">手动集成</a></li>
+            <li><a href="#_7">手动集成</a></li>
         
             <li><a href="#ios">iOS 平台手动集成</a></li>
         
@@ -912,7 +914,14 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/chartboost/v3-cpp
 <pre><code class="bash">sdkbox import chartboost
 </code></pre>
 
-<h2 id="_2">额外的步骤</h2>
+<h2 id="_2">更新日志</h2>
+<p>version-x.y.z:
+1. <code>register_PluginChartboostJS_helper</code> -&gt; <code>register_all_PluginChartboostJS_helper</code>
+2. <code>register_PluginChartboostLua_helper</code> -&gt; <code>register_all_PluginChartboostLua_helper</code>
+3. 更新 Chartboost iOS SDK 到 5.5.3
+4. 更新 Chartboost Android SDK 到 5.5.3
+5. <code>#include "PluginChartboostLuaHelper.hpp"</code> -&gt; <code>#include "PluginChartboostLuaHelper.h"</code></p>
+<h2 id="_3">额外的步骤</h2>
 <h3 id="cocos2dxactivityjava">修改 <code>Cocos2dxActivity.java</code></h3>
 <ul>
 <li>
@@ -1008,7 +1017,7 @@ SDKBox.init(this);
 </code></pre>
 
 <p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 编译模式下有效 (i.e <code>cocos run -m release</code>) debug 编译下不会调用到混淆规则.</p>
-<h2 id="_3">配置</h2>
+<h2 id="_4">配置</h2>
 <p>SDKBOX 安装器会自动在你的工程中添加一个样例配置文件 <code>sdkbox_config.json</code>.在你编译工程前,请用你自己的应用信息修改里面的参数值</p>
 <p>下面给出一个 Chartboost 的配置样例,你需要在<a href="https://www.chartboost.com">Chartboost</a>注册帐号,然后用对应的信息替换 <code>&lt;CHARTBOOST ID&gt;</code> 和 <code>&lt;CHARTBOOST SIGNATURE&gt;</code>.</p>
 <pre><code class="json">&quot;Chartboost&quot;:{
@@ -1028,7 +1037,7 @@ SDKBox.init(this);
 }
 </code></pre>
 
-<h2 id="_4">用法</h2>
+<h2 id="_5">用法</h2>
 <h3 id="chartboost_1">初始化 Chartboost</h3>
 <ul>
 <li>在你的代码中合适的地方调用 <code>init()</code>, 我们建议在 <code>app.js</code> 初始化,比如:</li>
@@ -1047,10 +1056,10 @@ SDKBox.init(this);
 <li>修改 <code>./frameworks/runtime-src/Classes/AppDelegate.cpp</code> 调用以下函数:</li>
 </ul>
 <pre><code class="cpp">sc-&gt;addRegisterCallback(register_all_PluginChartboostJS);
-sc-&gt;addRegisterCallback(register_PluginChartboostJs_helper);
+sc-&gt;addRegisterCallback(register_all_PluginChartboostJS_helper);
 </code></pre>
 
-<h3 id="_5">显示广告</h3>
+<h3 id="_6">显示广告</h3>
 <p>在你的代码中任何地方都可以显示广告:</p>
 <pre><code class="javascript">// To use the Chartboost predefined locations
 sdkbox.PluginChartboost.show(&quot;Default&quot;);
@@ -1258,7 +1267,7 @@ servers.</p>
 <blockquote>
 <p>Chartboost complete store</p>
 </blockquote>
-<h2 id="_6">手动集成</h2>
+<h2 id="_7">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -1279,7 +1288,7 @@ servers.</p>
 <p>把 <code>plugin/jsbindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
 <h2 id="android">Android 平台手动集成</h2>
-<h3 id="_7">拷贝文件</h3>
+<h3 id="_8">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到你的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>chartboost.jar</p>
