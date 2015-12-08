@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2015-12-03</lastmod>
+     <lastmod>2015-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,12 +12,54 @@
     
     <url>
      <loc>None/installer/</loc>
-     <lastmod>2015-12-03</lastmod>
+     <lastmod>2015-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
         
     <url>
      <loc>None</loc>
@@ -96,7 +138,7 @@
     
     <url>
      <loc>None/release-note/</loc>
-     <lastmod>2015-12-03</lastmod>
+     <lastmod>2015-12-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
