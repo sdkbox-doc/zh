@@ -3,6 +3,7 @@ Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/inmobi/v3-cpp
 -->
 
 #InMobi
+- [收益化最佳实践](https://support.inmobi.com/monetize/best-practices/)
 
 ## 集成
 用如下命令来集成 SDKBOX InMobi 插件,请确保你可以正常执行的 SDKBOX 安装器.
