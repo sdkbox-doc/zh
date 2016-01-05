@@ -1,0 +1,51 @@
+<!--
+Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/inmobi/v3-cpp
+-->
+
+#InMobi
+
+## 集成
+用如下命令来集成 SDKBOX InMobi 插件,请确保你可以正常执行的 SDKBOX 安装器.
+```bash
+$ sdkbox import inmobi
+```
+
+<<[../../shared/notice.md]
+
+<!--## Configuration
+<<[../../shared/sdkbox_cloud.md]
+<<[../../shared/remote_application_config.md]-->
+
+### 配置
+SDKBOX 安装器会为你自动生成一个 `sdkbox_config.json` 配置文件, 请先修改再使用.
+
+下面给出一个例子, 你必须替换掉 `<account_id>`, 这个账号从 [__InMobi__](http://www.inmobi.com/)
+获取.
+
+```json
+"InMobi":{
+	"interstitial_placement_id": "1449919424310", 		// 插屏广告的 id
+    "account_id": "922cc696d9fa475097651b5cad78567d",	// 从官网获取
+    "banner_h": 50, 									// 横幅广告得高度
+    "banner_placement_id": "1447081423897" 				// 横幅广告的 id, 不需要可以删除
+}
+```
+
+<!--<<[sdkbox-config-encrypt.md]-->
+
+##Usage
+<<[usage.md]
+
+<<[api-reference.md]
+
+<<[manual_integration.md]
+
+<<[manual_ios.md]
+
+<<[../../shared/manual_integration_android_and_android_studio.md]
+
+<<[manual_android.md]
+
+<<[extra-step.md]
+
+<<[proguard.md]
