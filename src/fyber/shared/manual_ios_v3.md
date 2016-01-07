@@ -27,8 +27,10 @@
 
 > CFNetwork.framework
 
+> GameController.framework
+
 在以下位置添加两个单独的链接选项：
 __Target -> Build Settings -> Linking -> Other Linker Flags__:
 
-> -force_load PluginFyber.framework/PluginFyber
+> -ObjC
 

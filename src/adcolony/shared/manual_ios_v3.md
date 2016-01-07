@@ -35,6 +35,8 @@
 
 > Security.framework
 
+> GameController.framework
+
 > Social.framework (Set to Optional)
 
 > StoreKit.framework (Set to Optional)
@@ -46,6 +48,6 @@
 在以下位置添加两个单独的链接选项：
 __Target -> Build Settings -> Linking -> Other Linker Flags__:
 
-> -force_load AdColony.framework/AdColony
+> -ObjC
 
 > -fobjc-arc (this allows AdColony to use ARC even if your project does not)
