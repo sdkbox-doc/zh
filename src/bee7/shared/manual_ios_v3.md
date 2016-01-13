@@ -1,6 +1,5 @@
 ## Manual Integration For iOS
-Drag and drop the following frameworks from the __plugins/ios__ folder of
-the`Bee7` bundle into your Xcode project, check `Copy items if needed` when adding frameworks:
+拖拽下列 framework 从 `Bee7` 插件包的 __plugins/ios__ 目录到你的 Xcode 工程中，在添加 frameworks 的时候，请勾选 `Copy items if needed` 。
 
 > sdkbox.framework
 
@@ -8,7 +7,7 @@ the`Bee7` bundle into your Xcode project, check `Copy items if needed` when addi
 
 > Bee7GWResources.bundle
 
-The above frameworks depend upon a large number of other frameworks. You also need to add the following system frameworks, if you don't already have them:
+上面的 frameworks 依赖于大量其他 frameworks。如果你没有添加它们，你也需要添加下列这些系统 frameworks：
 
 > MessageUI.framework
 
@@ -22,9 +21,14 @@ The above frameworks depend upon a large number of other frameworks. You also ne
 
 > libsqlite3.dylib
 
+> CoreText.framework
 
-Add separate linker flags to:
+> GameController.framework
+
+> MediaPlayer.framework
+
+在以下位置添加两个单独的链接选项：
 __Target -> Build Settings -> Linking -> Other Linker Flags__:
 
-> -force_load PluginBee7.framework/PluginBee7
+> -ObjC
 
