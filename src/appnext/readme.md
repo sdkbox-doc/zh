@@ -1,7 +1,5 @@
-[&#8249; Appnext Doc Home](./)
 
 <h1>Appnext 整合指南</h1>
-<<[../../shared/-VERSION-/version.md]
 
 ##集成
 首先，您必须到 [Appnext](https://www.appnext.com/) 注册并配置好你的应用。
