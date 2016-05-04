@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>Vungle with Lua - SDKBOX文档</title>
+
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/custom.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-70044300-2', 'docs.sdkbox.com/zh');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">介绍</a>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../installer/">安装器</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">插件 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Achievements</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../achievement/v3-cpp/">Achievements with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../achievement/v3-js/">Achievements with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../achievement/v3-lua/">Achievements with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../achievement/v2-cpp/">Achievements with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../achievement/v2-js/">Achievements with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../achievement/v2-lua/">Achievements with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">AdColony</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../adcolony/v3-cpp/">AdColony with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../adcolony/v3-js/">AdColony with JS</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../adcolony/v3-lua/">AdColony with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../adcolony/v2-cpp/">AdColony with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../adcolony/v2-js/">AdColony with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../adcolony/v2-lua/">AdColony with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">AgeCheq</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../agecheq/v3-cpp/">AgeCheq with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../agecheq/v3-js/">AgeCheq with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../agecheq/v3-lua/">AgeCheq with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../agecheq/v2-cpp/">AgeCheq with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../agecheq/v2-js/">AgeCheq with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../agecheq/v2-lua/">AgeCheq with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Appnext</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v3-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v2-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Appodeal</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appodeal/v3-cpp/">Appodeal with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appodeal/v3-js/">Appodeal with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appodeal/v3-lua/">Appodeal with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appodeal/v2-cpp/">Appodeal with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appodeal/v2-js/">Appodeal with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appodeal/v2-lua/">Appodeal with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Bee7</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../bee7/v3-cpp/">Bee7 with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../bee7/v3-js/">Bee7 with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../bee7/v3-lua/">Bee7 with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../bee7/v2-cpp/">Bee7 with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../bee7/v2-js/">Bee7 with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../bee7/v2-lua/">Bee7 with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Chartboost</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../chartboost/v3-cpp/">Chartboost with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../chartboost/v3-js/">Chartboost with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../chartboost/v3-lua/">Chartboost with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../chartboost/v2-cpp/">Chartboost with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../chartboost/v2-js/">Chartboost with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../chartboost/v2-lua/">Chartboost with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Facebook</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../facebook/v3-cpp/">Facebook with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../facebook/v3-js/">Facebook with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../facebook/v3-lua/">Facebook with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../facebook/v2-cpp/">Facebook with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../facebook/v2-js/">Facebook with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../facebook/v2-lua/">Facebook with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Flurry Analytics</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../flurryanalytics/v3-cpp/">Flurry with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../flurryanalytics/v3-js/">Flurry with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../flurryanalytics/v3-lua/">Flurry with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../flurryanalytics/v2-cpp/">Flurry with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../flurryanalytics/v2-js/">Flurry with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../flurryanalytics/v2-lua/">Flurry with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Fyber</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../fyber/v3-cpp/">Fyber with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../fyber/v3-js/">Fyber with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../fyber/v3-lua/">Fyber with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../fyber/v2-cpp/">Fyber with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../fyber/v2-js/">Fyber with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../fyber/v2-lua/">Fyber with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Google Analytics</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../googleanalytics/v3-cpp/">Google Analytics with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../googleanalytics/v3-js/">Google Analytics with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../googleanalytics/v3-lua/">Google Analytics with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../googleanalytics/v2-cpp/">Google Analytics with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../googleanalytics/v2-js/">Google Analytics with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../googleanalytics/v2-lua/">Google Analytics with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">IAP</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../iap/v3-cpp/">In-App Purchases(IAP) with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../iap/v3-js/">In-App Purchases(IAP) with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../iap/v3-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../iap/v2-cpp/">In-App Purchases(IAP) with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../iap/v2-js/">In-App Purchases(IAP) with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../iap/v2-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">InMobi</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v3-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v2-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Kochava</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../kochava/v3-cpp/">Kochava with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../kochava/v3-js/">Kochava with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../kochava/v3-lua/">Kochava with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../kochava/v2-cpp/">Kochava with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../kochava/v2-js/">Kochava with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../kochava/v2-lua/">Kochava with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Leaderboard</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../leaderboard/v3-cpp/">Leaderboard with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../leaderboard/v3-js/">Leaderboard with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../leaderboard/v3-lua/">Leaderboard with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../leaderboard/v2-cpp/">Leaderboard with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../leaderboard/v2-js/">Leaderboard with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../leaderboard/v2-lua/">Leaderboard with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Playphone</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../playphone/v3-cpp/">Playphone with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../playphone/v3-js/">Playphone with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../playphone/v3-lua/">Playphone with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../playphone/v2-cpp/">Playphone with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../playphone/v2-js/">Playphone with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../playphone/v2-lua/">Playphone with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Ratings & Reviews</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../review/v3-cpp/">App Rating & Review with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../review/v3-js/">App Rating & Review with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../review/v3-lua/">App Rating & Review with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../review/v2-cpp/">App Rating & Review with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../review/v2-js/">App Rating & Review with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../review/v2-lua/">App Rating & Review with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">SOOMLA Grow</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../soomlagrow/v3-cpp/">SOOMLA Grow with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../soomlagrow/v3-js/">SOOMLA Grow with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../soomlagrow/v3-lua/">SOOMLA Grow with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../soomlagrow/v2-cpp/">SOOMLA Grow with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../soomlagrow/v2-js/">SOOMLA Grow with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../soomlagrow/v2-lua/">SOOMLA Grow with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Tune</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../tune/v3-cpp/">Tune with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../tune/v3-js/">Tune with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../tune/v3-lua/">Tune with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../tune/v2-cpp/">Tune with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../tune/v2-js/">Tune with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../tune/v2-lua/">Tune with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Valuepotion</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../valuepotion/v3-cpp/">Valuepotion with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../valuepotion/v3-js/">Valuepotion with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../valuepotion/v3-lua/">Valuepotion with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../valuepotion/v2-cpp/">Valuepotion with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../valuepotion/v2-js/">Valuepotion with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../valuepotion/v2-lua/">Valuepotion with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Vungle</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../vungle/v3-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v3-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v3-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../vungle/v2-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v2-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v2-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Youtube</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../v3-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../v3-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v3-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../v2-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../v2-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li class="active">
+    <a href="./">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../../release-note/">关于</a>
+                    </li>
+                
+                
+
+                    <!-- new add for language button -->
+                    <li>
+                        <a href="http://sdkbox-doc.github.io/en/">English</a>
+                    </li>
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li >
+                        <a rel="next" href="../v2-js/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../../release-note/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#integration">Integration</a></li>
+        
+    
+        <li class="main "><a href="#_1">重点注意事项</a></li>
+        
+            <li><a href="#_2">禁用应用程序安全传输</a></li>
+        
+            <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
+        
+            <li><a href="#_3">游戏全屏配置</a></li>
+        
+            <li><a href="#canopenurl">canOpenURL 白名单</a></li>
+        
+            <li><a href="#json-configuration">JSON Configuration</a></li>
+        
+    
+        <li class="main "><a href="#usage">Usage</a></li>
+        
+            <li><a href="#initialize-youtube">Initialize Youtube</a></li>
+        
+            <li><a href="#play-video">Play Video</a></li>
+        
+            <li><a href="#play-multiple-videos">Play multiple videos</a></li>
+        
+            <li><a href="#implement-youtubelistner">Implement YoutubeListner</a></li>
+        
+    
+        <li class="main "><a href="#api-reference">API Reference</a></li>
+        
+            <li><a href="#methods">Methods</a></li>
+        
+            <li><a href="#listeners">Listeners</a></li>
+        
+    
+        <li class="main "><a href="#_4">手动集成</a></li>
+        
+    
+        <li class="main "><a href="#manual-integration-for-ios">Manual Integration For iOS</a></li>
+        
+            <li><a href="#add-assets-folder">Add "Assets" folder</a></li>
+        
+    
+        <li class="main "><a href="#android">Android 手动集成</a></li>
+        
+            <li><a href="#copy-files">Copy Files</a></li>
+        
+            <li><a href="#edit-androidmanifestxml">Edit AndroidManifest.xml</a></li>
+        
+            <li><a href="#edit-androidmk">Edit Android.mk</a></li>
+        
+            <li><a href="#edit-aplicationmk">Edit Aplication.mk</a></li>
+        
+            <li><a href="#add-assets-folder_1">Add "Assets" folder</a></li>
+        
+            <li><a href="#yourgamenamejava">修改 &lt;YourGameName&gt;.java</a></li>
+        
+    
+        <li class="main "><a href="#proguard-optional">Proguard (optional)</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><a href="../">&#8249; YouTube Doc Home</a></p>
+<h1>YouTube Integration Guide</h1>
+
+<h4><em><b>For the Lua version of cocos2d-x v2.x</b> - (<a href="./../">all other versions</a>)</em></h4>
+
+<h2 id="integration">Integration</h2>
+<p>Open a terminal and use the following command to install the SDKBOX Youtube plugin.</p>
+<pre><code class="bash">$ sdkbox import youtube
+</code></pre>
+
+<h2 id="_1">重点注意事项</h2>
+<p>如果您升级到了 Xcode7, 则需要以下额外步骤来确保插件工作正常:</p>
+<h4 id="_2">禁用应用程序安全传输</h4>
+<p>添加以下项到 plist:</p>
+<pre><code>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
+    &lt;true/&gt;
+&lt;/dict&gt;
+</code></pre>
+
+<h4 id="bitcode">禁止 Bitcode 支持</h4>
+<p>您必须禁止 <strong>Bitcode</strong> 的支持，否则将会编译失败</p>
+<h4 id="_3">游戏全屏配置</h4>
+<p>如果您的游戏不同时支持横竖屏，则必须在 Xcode 中选中 <code>Requires full screen</code>，否则将不会通过 Apple 的审核.</p>
+<h4 id="canopenurl">canOpenURL 白名单</h4>
+<p>取决于您使用哪些插件。需要在 <code>info.plist</code> 的 <code>LSApplicationQueriesSchemes</code> 下添加名单.</p>
+<!--## Configuration
+### SDKBOX Cloud
+SDKBOX Cloud enables developers to receive the benefits of a centralized application management interface, by helping to boost their applications with extended functionality. The two main features are: __Remote Application Management__ which provides the abilities of updating and testing, and __IAP Receipt Verification__.
+
+Developers must register at Chukong’s website to get __developers credentials__. After receiving __developers credentials__, developers can register an unlimited number of __applications__. Each __application__ will have an associated __application token__ and a __application secret__. These are used to securely transmit new plugin configurations to the clients as well as grant access to all the remotely accessible services.
+
+### Remote Application Configuration
+SDKBOX allows developers to create a __Remote Application Configuration__ for each application they are developing.
+
+Registering the applications’ allows for on-the-fly update of its plugin’s configuration. For example, it will allow the change of the Google Analytics tracking code, switch to a new AdColony campaign or add new in-app purchase products without rebuilding and redeploying your apps to the app stores.
+
+To enable this cloud service in your applications is as easy as calling a single __init()__ function and passing in your __application token__ and __application secret__ that were provided when you created the app in the previous section.
+
+wzxhzdk:2
+
+  __Note__: each application will have it’s own __application token__ and each configuration for each game will have it’s own __application secret__. The __application secret__ is the actual encryption key used to decipher the remote configuration.
+
+When the developer updates a __Remote Application Configuration__ the application will automatically pull the new configuration and put it into effect. This means that you can update configuration information on the fly and everyone playing your game will get updated the next time the user starts the application!
+
+To ensure security, during normal execution the new configuration is locally saved in the applications’s private folder, and the next time it restarts it is applied. Also, configurations are cyphered and its contents are not exposed, even if your application runs on a rooted/jailbroken device.
+-->
+
+<h3 id="json-configuration">JSON Configuration</h3>
+<p>SDKBOX Installer will automatically inject a sample configuration to your <code>sdkbox_config.json</code>, that you have to modify it before you can use it for your own app</p>
+<p>If you want to display youtube vidoe in your app, you have to register a new youtube API key <a href="https://developers.google.com/youtube/android/player/register#Create_API_Keys">here</a> and put in <code>developer_key</code> section of the <code>sdkbox_config.json</code></p>
+<pre><code class="json">{
+    &quot;ios&quot; :
+    {
+        &quot;Youtube&quot;:
+        {
+            &quot;developer_key&quot;:&quot;AIzaSyDMuDjrVSL3uj_QvlI3bbjKn5I4nNB1XZk&quot;
+        }
+    },
+    &quot;android&quot; :
+    {
+        &quot;Youtube&quot;:
+        {
+            &quot;developer_key&quot;:&quot;AIzaSyDMuDjrVSL3uj_QvlI3bbjKn5I4nNB1XZk&quot;
+        }
+    }
+}
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+<h3 id="initialize-youtube">Initialize Youtube</h3>
+<ul>
+<li>modify your Lua code to <code>init()</code> the plugin. This can be done anyplace, however it must be done before trying to use the plugin's features.</li>
+</ul>
+<pre><code class="lua">sdkbox.PluginYoutube:init()
+</code></pre>
+
+<h3 id="play-video">Play Video</h3>
+<p>Play a youtube video with a youtube video id</p>
+<p>For example</p>
+<pre><code class="lua">sdkbox.PluginYoutube:playVideo(&quot;cdgQpa1pUUE&quot;, 0, true, true);
+</code></pre>
+
+<h3 id="play-multiple-videos">Play multiple videos</h3>
+<p>There are two methods you can use if you want to play multiple videos</p>
+<p>You can either play a youtube playlist</p>
+<pre><code class="lua">sdkbox.PluginYoutube:playVideo(&quot;cdgQpa1pUUE&quot;, 0, true, true);
+</code></pre>
+
+<p>or you can put a group of videos together and play them</p>
+<pre><code class="lua">v = {&quot;cdgQpa1pUUE&quot;,&quot;8aCYZ3gXfy8&quot;};
+
+sdkbox.PluginYoutube.playVideoList(v, 0, 0, true, true);
+</code></pre>
+
+<h3 id="implement-youtubelistner">Implement YoutubeListner</h3>
+<ul>
+<li>You can implement YoutubeListener if you want to receive callbacks like video finish playing.</li>
+</ul>
+<pre><code class="lua">
+sdkbox.PluginYoutube.setListener(function(name, args)
+    if &quot;onPlayEnds&quot; == name then
+      print(&quot;Video Finished&quot;)
+    end
+end)
+
+</code></pre>
+
+<h2 id="api-reference">API Reference</h2>
+<h3 id="methods">Methods</h3>
+<pre><code class="lua">sdkbox.PluginYoutube:init()
+</code></pre>
+
+<blockquote>
+<p>initialize the plugin instance.</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:setListener(listener)
+</code></pre>
+
+<blockquote>
+<p>set provided listener.</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:getListener()
+</code></pre>
+
+<blockquote>
+<p>get provided listener.</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:removeListener()
+</code></pre>
+
+<blockquote>
+<p>remove listeners.</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:playVideo(video_id, startMillis, autoplay, lightbox)
+</code></pre>
+
+<blockquote>
+<p>Play youtube video with video id
+you can find video id as the last part of the youtube video's url</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:playPlayList(playlist_id,
+                                   playListStartIndex,
+                                   startMillis,
+                                   autoplay,
+                                   lightbox)
+</code></pre>
+
+<blockquote>
+<p>Play a youtube playlist</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:playVideoList(video_ids,
+                                    playListStartIndex,
+                                    startMillis,
+                                    autoplay,
+                                    lightbox)
+</code></pre>
+
+<blockquote>
+<p>Play a group of youtube videos</p>
+</blockquote>
+<pre><code class="lua">sdkbox.PluginYoutube:close()
+</code></pre>
+
+<blockquote>
+<p>Close youtube player</p>
+</blockquote>
+<h3 id="listeners">Listeners</h3>
+<pre><code class="lua">onPlayEnds(played_ok)
+</code></pre>
+
+<h2 id="_4">手动集成</h2>
+<p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
+<p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
+<h2 id="manual-integration-for-ios">Manual Integration For iOS</h2>
+<p>Drag and drop the following frameworks from the <strong>plugins/ios</strong> folder of the <code>Youtube</code> bundle into your Xcode project, check <code>Copy items if needed</code> when
+adding frameworks:</p>
+<blockquote>
+<p>sdkbox.framework</p>
+<p>PluginYoutube.framework</p>
+</blockquote>
+<p>You also need to add the following system frameworks, if you don't already have them:</p>
+<blockquote>
+<p>UIKit.framework</p>
+<p>WebKit.framework</p>
+<p>SystemConfiguration.framework</p>
+</blockquote>
+<h3 id="add-assets-folder">Add "Assets" folder</h3>
+<p>Drag and drop the following frameworks from the <strong>plugins/ios</strong>/plugin_youtube_res_bundle folder of the <code>Youtube</code> bundle into your Xcode project, check <code>Copy items if needed</code> and <code>Create folder references</code> when</p>
+<blockquote>
+<p>Assets</p>
+</blockquote>
+<p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
+<p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
+<h2 id="android">Android 手动集成</h2>
+<p>SDKBox 支持三种 <strong>Android</strong> 工程, <strong>command-line</strong>, <strong>eclipse</strong> 和 <strong>Android Studio</strong>.</p>
+<ul>
+<li><strong>command-line</strong> 和 <strong>eclipse</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android</code> .</li>
+<li><strong>Android Studio</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android-studio</code> .</li>
+</ul>
+<h3 id="copy-files">Copy Files</h3>
+<p>Copy the everything from <code>plugin/android/libs</code> folder of this
+bundle into your project’s <strong>proj.android/libs</strong> folder.</p>
+<h4 id="jni">拷贝 jni 库</h4>
+<p>从 <code>plugin/android/jni/</code> 拷贝并覆盖 <code>&lt;your_project_root&gt;/jni/</code> 目录.</p>
+<blockquote>
+<p>注意: sdkbox 默认使用 <code>gnustl</code> 链接, 如果您的项目使用 <code>c++_static</code> 链接, 请把
+<code>&lt;project_root&gt;/jni/&lt;plugin_name&gt;/libs</code> 目录下的文件夹替换成 <code>&lt;project_root&gt;/jni/&lt;plugin_name&gt;/libs_c++_static</code> 里面的</p>
+</blockquote>
+<h3 id="edit-androidmanifestxml">Edit <code>AndroidManifest.xml</code></h3>
+<p>Include the following permissions above the <strong>application tag</strong>:</p>
+<pre><code class="xml">&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot; /&gt;
+&lt;uses-permission android:name=&quot;android.permission.ACCESS_WIFI_STATE&quot; /&gt;
+</code></pre>
+
+<h3 id="edit-androidmk">Edit <code>Android.mk</code></h3>
+<p>Edit <code>proj.android/jni/Android.mk</code> to:</p>
+<p>Add additional requirements to <strong>LOCAL_WHOLE_STATIC_LIBRARIES</strong>:</p>
+<pre><code>LOCAL_WHOLE_STATIC_LIBRARIES += android_native_app_glue
+LOCAL_LDLIBS += -landroid
+LOCAL_LDLIBS += -llog
+LOCAL_WHOLE_STATIC_LIBRARIES += PluginYoutube
+LOCAL_WHOLE_STATIC_LIBRARIES += sdkbox
+</code></pre>
+
+<p>Add a call to:</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+</code></pre>
+
+<p>before any <strong>import-module</strong> statements.</p>
+<p>Add additional <strong>import-module</strong> statements at the end:</p>
+<pre><code>$(call import-module, ./sdkbox)
+$(call import-module, ./pluginyoutube)
+</code></pre>
+
+<p>This means that your ordering should look similar to this:</p>
+<pre><code>$(call import-add-path,$(LOCAL_PATH))
+$(call import-module, ./sdkbox)
+$(call import-module, ./pluginyoutube)
+</code></pre>
+
+<h3 id="edit-aplicationmk">Edit <code>Aplication.mk</code></h3>
+<p>Edit <code>proj.android/jni/Application.mk</code> to:</p>
+<p>Add <strong>APP_PATFORM</strong> version requirements:</p>
+<pre><code>APP_PLATFORM := android-9
+</code></pre>
+
+<h3 id="add-assets-folder_1">Add "Assets" folder</h3>
+<p>Edit <code>proj.android/build-cfg.json</code></p>
+<pre><code class="json">    &quot;copy_resources&quot;: [
+        {
+            &quot;from&quot;: &quot;../Resources&quot;,
+            &quot;to&quot;: &quot;&quot;
+        },
+        {
+            &quot;from&quot;: &quot;plugin_youtube_res_project/Assets&quot;,
+            &quot;to&quot;: &quot;&quot;
+        }
+    ]
+</code></pre>
+
+<p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
+<p>把你刚刚拷贝的 <code>.cpp</code> 文件添加到 <code>Android.mk</code> 文件的的 <strong>LOCAL_SRC_FILES</strong> 项.比如</p>
+<pre><code>LOCAL_SRC_FILES := hellocpp/main.cpp \
+                ../../Classes/AppDelegate.cpp \
+                ../../Classes/HelloWorldScene.cpp \
+                                ../../Classes/NewSourceFile.cpp
+</code></pre>
+
+<h3 id="yourgamenamejava">修改 <code>&lt;YourGameName&gt;.java</code></h3>
+<ul>
+<li>修改 <code>proj.android/src/&lt;package identifier&gt;/&lt;YourGameName&gt;.java</code> 文件，导入如下包：</li>
+</ul>
+<pre><code class="java">import android.content.Intent;
+import com.sdkbox.plugin.SDKBox;
+</code></pre>
+
+<ul>
+<li>然后，修改您的类 <code>onCreate(final Bundle savedInstanceState)</code> 函数，添加一个调用语句 <code>SDKBox.init(this)</code> 。如下：</li>
+</ul>
+<pre><code class="java">protected void onCreate(Bundle savedInstanceState){
+  super.onCreate(savedInstanceState);
+  SDKBox.init(this);
+}
+</code></pre>
+
+<ul>
+<li>
+<p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
+<ul>
+<li>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+</li>
+<li>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="java">    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+          if(!SDKBox.onActivityResult(requestCode, resultCode, data)) {
+            super.onActivityResult(requestCode, resultCode, data);
+          }
+    }
+    @Override
+    protected void onStart() {
+          super.onStart();
+          SDKBox.onStart();
+    }
+    @Override
+    protected void onStop() {
+          super.onStop();
+          SDKBox.onStop();
+    }
+    @Override
+    protected void onResume() {
+          super.onResume();
+          SDKBox.onResume();
+    }
+    @Override
+    protected void onPause() {
+          super.onPause();
+          SDKBox.onPause();
+    }
+    @Override
+    public void onBackPressed() {
+          if(!SDKBox.onBackPressed()) {
+            super.onBackPressed();
+          }
+    }
+</code></pre>
+
+<h2 id="proguard-optional">Proguard (optional)</h2>
+<ul>
+<li>Edit <code>project.properties</code>  to specify a <code>Proguard</code> configuration file. Example:</li>
+</ul>
+<pre><code>proguard.config=proguard.cfg
+</code></pre>
+
+<ul>
+<li>Edit the file you specified to include the following:</li>
+</ul>
+<pre><code># If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+# cocos2d-x
+-keep public class org.cocos2dx.** { *; }
+-dontwarn org.cocos2dx.**
+-keep public class com.chukong.** { *; }
+-dontwarn com.chukong.**
+
+# google play service
+-keep public class com.google.android.gms.** { public *; }
+-dontwarn com.google.android.gms.**
+
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
+
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+    @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keepnames class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+#sdkbox
+-keep public class com.sdkbox.** { *; }
+-dontwarn com.sdkbox.**
+
+</code></pre>
+
+<p><strong>Note:</strong> Proguard only works with <strong>Release</strong> builds (i.e <code>cocos run -m release</code>) debug builds do not invoke Proguard rules.</p></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../js/base.js"></script>
+
+
+    </body>
+</html>

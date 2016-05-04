@@ -272,6 +272,69 @@
                         
                             
   <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Appnext</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v3-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v2-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
     <a tabindex="-1" href="">Appodeal</a>
     <ul class="dropdown-menu">
         
@@ -763,6 +826,69 @@
             
 <li >
     <a href="../../iap/v2-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">InMobi</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v3-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v2-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-lua/">InMobi with Lua</a>
 </li>
 
         
@@ -1278,6 +1404,69 @@
   </li>
 
                         
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Youtube</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../youtube/v3-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v3-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v3-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../youtube/v2-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v2-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v2-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
                         </ul>
                     </li>
                 
@@ -1545,7 +1734,16 @@ sdkbox.PluginTune.measureEvent(JSON.stringify(event));
 <blockquote>
 <p>Set to YES to allow duplicate requests to be registered with the MAT server.</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginTune.checkForDeferredDeeplinkWithTimeout(timeout);
+<pre><code class="javascript">// use checkForDeferredDeepLink()
+sdkbox.PluginTune.checkForDeferredDeeplinkWithTimeout(timeout);
+</code></pre>
+
+<blockquote>
+<p>Check for a deferred deeplink entry point upon app installation.
+This is safe to call at every app launch, since the function does nothing
+unless this is the first launch.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginTune.checkForDeferredDeepLink();
 </code></pre>
 
 <blockquote>
@@ -1620,7 +1818,8 @@ Defaults to the Bundle Identifier of the app that is running the sdk.</p>
 <p>Specifies if the sdk should pull the Apple Vendor Identifier from the device.
 Note that setting to false will clear any previously set value for the property.</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginTune.setSiteId(siteId);
+<pre><code class="javascript">// use setPackageName()
+sdkbox.PluginTune.setSiteId(siteId);
 </code></pre>
 
 <blockquote>
@@ -1717,7 +1916,8 @@ If measureEvent is called with a non-zero revenue, this is automatically set to 
 <blockquote>
 <p>Sets publisher information for attribution.</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginTune.matId();
+<pre><code class="javascript">// use tuneId()
+sdkbox.PluginTune.matId();
 </code></pre>
 
 <blockquote>
@@ -1797,6 +1997,12 @@ used in conjunction with the setTracking:advertiserId:offerId:publisherId:redire
 This typically occurs during OAUTH or when an app exits and is returned
 to via a URL. The data will be sent to the HasOffers server when the next
 measureXXX method is called so that a Re-Engagement can be recorded.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginTune.setDeepLink(deepLinkUrl);
+</code></pre>
+
+<blockquote>
+<p>Record the URL and Source when an application is opened via a URL scheme.</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
 <pre><code class="javascript">onEnqueuedAction(referenceId);

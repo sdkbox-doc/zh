@@ -272,6 +272,69 @@
                         
                             
   <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Appnext</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v3-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v2-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
     <a tabindex="-1" href="">Appodeal</a>
     <ul class="dropdown-menu">
         
@@ -763,6 +826,69 @@
             
 <li >
     <a href="../../iap/v2-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">InMobi</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v3-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v2-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-lua/">InMobi with Lua</a>
 </li>
 
         
@@ -1278,6 +1404,69 @@
   </li>
 
                         
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Youtube</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../youtube/v3-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v3-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v3-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../youtube/v2-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v2-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v2-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
                         </ul>
                     </li>
                 
@@ -1488,14 +1677,13 @@ end)
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="manual-integration-for-ios">Manual Integration For iOS</h2>
-<p>Drag and drop the following frameworks from the <strong>plugins/ios</strong> folder of
-the<code>Bee7</code> bundle into your Xcode project, check <code>Copy items if needed</code> when adding frameworks:</p>
+<p>拖拽下列 framework 从 <code>Bee7</code> 插件包的 <strong>plugins/ios</strong> 目录到你的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
 <blockquote>
 <p>sdkbox.framework</p>
 <p>PluginBee7.framework</p>
 <p>Bee7GWResources.bundle</p>
 </blockquote>
-<p>The above frameworks depend upon a large number of other frameworks. You also need to add the following system frameworks, if you don't already have them:</p>
+<p>上面的 frameworks 依赖于大量其他 frameworks。如果你没有添加它们，你也需要添加下列这些系统 frameworks：</p>
 <blockquote>
 <p>MessageUI.framework</p>
 <p>CoreMedia.framework</p>
@@ -1503,11 +1691,14 @@ the<code>Bee7</code> bundle into your Xcode project, check <code>Copy items if n
 <p>StoreKit.framework</p>
 <p>AdSupport.framework</p>
 <p>libsqlite3.dylib</p>
+<p>CoreText.framework</p>
+<p>GameController.framework</p>
+<p>MediaPlayer.framework</p>
 </blockquote>
-<p>Add separate linker flags to:
+<p>在以下位置添加两个单独的链接选项：
 <strong>Target -&gt; Build Settings -&gt; Linking -&gt; Other Linker Flags</strong>:</p>
 <blockquote>
-<p>-force_load PluginBee7.framework/PluginBee7</p>
+<p>-ObjC</p>
 </blockquote>
 <p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>

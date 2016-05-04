@@ -272,6 +272,69 @@
                         
                             
   <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Appnext</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v3-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v3-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../appnext/v2-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../appnext/v2-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
     <a tabindex="-1" href="">Appodeal</a>
     <ul class="dropdown-menu">
         
@@ -763,6 +826,69 @@
             
 <li >
     <a href="../../iap/v2-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">InMobi</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v3-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v3-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../inmobi/v2-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../inmobi/v2-lua/">InMobi with Lua</a>
 </li>
 
         
@@ -1278,6 +1404,69 @@
   </li>
 
                         
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Youtube</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../youtube/v3-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v3-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../vungle/v3-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../youtube/v2-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v2-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../youtube/v2-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
                         </ul>
                     </li>
                 
@@ -1696,6 +1885,7 @@ as well as those triggered by AdColony’s IAP Promo (IAPP) advertisements and w
 <p>MessageUI.framework</p>
 <p>QuartzCore.framework</p>
 <p>Security.framework</p>
+<p>GameController.framework</p>
 <p>Social.framework (Set to Optional)</p>
 <p>StoreKit.framework (Set to Optional)</p>
 <p>SystemConfiguration.framework</p>
@@ -1704,7 +1894,7 @@ as well as those triggered by AdColony’s IAP Promo (IAPP) advertisements and w
 <p>在以下位置添加两个单独的链接选项：
 <strong>Target -&gt; Build Settings -&gt; Linking -&gt; Other Linker Flags</strong>:</p>
 <blockquote>
-<p>-force_load AdColony.framework/AdColony</p>
+<p>-ObjC</p>
 <p>-fobjc-arc (this allows AdColony to use ARC even if your project does not)</p>
 </blockquote>
 <p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
