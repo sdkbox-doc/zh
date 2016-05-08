@@ -16,7 +16,7 @@ $ sdkbox import valuepotion
 <<[../../shared/sdkbox_cloud.md]
 <<[../../shared/remote_application_config.md]-->
 
-### 配置
+## 配置
 SDKBOX 安装器会自动在你的工程中添加一个样例配置文件 `sdkbox_config.json` .
 
 下面给出一个 Valuepotion 的配置样例, 您需要替换 `<client id>`  和 `<secret key>` :
