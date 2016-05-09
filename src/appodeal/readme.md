@@ -1,11 +1,10 @@
-<!--
-Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/appodeal/v3-cpp
--->
+[&#8249; Appodeal Doc Home](./)
 
-#Appodeal
+<h1>Appodeal 集成指南</h1>
+<<[../../shared/-VERSION-/version.md]
 
-##Integration
-Open a terminal and use the following command to install the SDKBOX Appodeal plugin. Make sure you setup the SDKBOX installer correctly.
+## 集成
+在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX Appodeal 插件。
 ```bash
 $ sdkbox import appodeal
 ```
@@ -16,10 +15,10 @@ $ sdkbox import appodeal
 <<[../../shared/sdkbox_cloud.md]
 <<[../../shared/remote_application_config.md]-->
 
-### JSON Configuration
-SDKBOX Installer will automatically inject a sample configuration to your `res/sdkbox_config.json`, that you have to modify it before you can use it for your own app
+### JSON 配置
+SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。
 
-Here is an example of the Appodeal configuration, you need to replace `<app_key>` items with your specific [__Appodeal Key__](http://www.appodeal.com/) account information.
+对于一个 Appodeal 插件的配置样例，您需要将其中的 `<app_key>` 替换成您特定的 [__Appodeal__](http://www.appodeal.com/) 帐号中的信息。
 ```json
 "Appodeal":{
     "app_key":"2cfc9cc638980eb7f5ff35d6eb63dbe404503151ccc451ed"
@@ -28,7 +27,8 @@ Here is an example of the Appodeal configuration, you need to replace `<app_key>
 
 <!--<<[sdkbox-config-encrypt.md]-->
 
-##Usage
+## 使用
+
 <<[usage.md]
 
 <<[api-reference.md]

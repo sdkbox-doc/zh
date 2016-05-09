@@ -1,26 +1,22 @@
-<!--
-Include Base: /Users/niteluo/Projects/store/doc/en/src/iap/v3-cpp
--->
+[&#8249; IAP Doc Home](./)
 
-#应用内付费
+<h1>IAP 集成指南</h1>
+<<[../../shared/-VERSION-/version.md]
 
-##集成
+## 集成
 用如下命令来集成 SDKBOX IAP 插件,请确保你可以正常执行的 SDKBOX 安装器.
 ```bash
 sdkbox import iap
 ```
 
-## 更新日志
+<<[../../shared/notice.md]
 
-version-x.y.z:
-1. `register_PluginIAPLua_helper` -> `register_all_PluginIAPLua_helper`
-2. `#include "PluginIAPLuaHelper.hpp"` -> `#include "PluginIAPLuaHelper.h"`
-3. `#include "PluginIAPJSHelper.hpp"` -> `#include "PluginIAPJSHelper.h"`
+<!--## Configuration
+<<[../../shared/sdkbox_cloud.md]
+<<[../../shared/remote_application_config.md]-->
 
-##额外的步骤
-<<[extra-step.md]
 
-## 配置
+### JSON 配置
 SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox_config.json`.在你编译工程前,请修改里面的参数,用你自己的应用信息
 
 现在给一个修改例子,你需要在[iTunes Connect](http://itunesconnect.apple.com)获取一个应用id,然后替换 `<put the product id for ios here>`,或者,在[Google Play Console](https://play.google.com/apps/publish)申请一个应用id,并替换`<put your googleplay key here>`
@@ -66,7 +62,8 @@ SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox
 
 <<[sdkbox-config-encrypt.md]
 
-## 用法
+## 使用
+
 <<[usage.md]
 
 <<[api-reference.md]

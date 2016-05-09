@@ -1,8 +1,7 @@
-<!--
-Include Base: /Users/niteluo/Projects/store/doc/en/src/googleanalytics/v3-cpp
--->
+[&#8249; Google Analytics Doc Home](./)
 
-# Google Analytics
+<h1>Google Analytics 集成指南</h1>
+<<[../../shared/-VERSION-/version.md]
 
 ## 集成
 在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX Google Analytics 插件。
@@ -10,16 +9,14 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/googleanalytics/v3-cpp
 sdkbox import googleanalytics
 ```
 
-## 更新日志
+<<[../../shared/notice.md]
 
-version-x.y.z:
-1. `#include "PluginGoogleAnalyticsLuaHelper.hpp"` -> `#include "PluginGoogleAnalyticsLuaHelper.h"`
+<!--## Configuration
+<<[../../shared/sdkbox_cloud.md]
+<<[../../shared/remote_application_config.md]-->
 
-## 额外的步骤
-<<[extra-step.md]
-<<[proguard.md]
 
-## 配置
+### JSON 配置
 SDKBOX Installer 将会自动在您的 `res/sdkbox_config.json` 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。
 
 对于一个 Google Analytics 插件的配置样例，您需要将其中的 `<TRACKING_CODE>` 替换成您特定的 [__Google Analytics__](https://support.google.com/analytics/answer/1008080?hl=en) 帐号中的信息。
@@ -29,7 +26,7 @@ SDKBOX Installer 将会自动在您的 `res/sdkbox_config.json` 中插入一份�
 }
 ```
 
-## 追踪器
+### 追踪器
 一个 __追踪器__ 用于统计被追踪的事件。这里有以下几点需要开发人员注意：
 
 * 你必须创建一个移动追踪器或者使用之前创建的追踪器。
