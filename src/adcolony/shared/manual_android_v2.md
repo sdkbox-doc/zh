@@ -1,7 +1,7 @@
 ## Android 平台手动集成
 
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > adcolony.jar
 
@@ -9,7 +9,7 @@
 
 > sdkbox.jar
 
-从 `plugin/android/jni` 目录拷贝 `PluginAdColony` 以及 `sdkbox` 目录到你的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
+从 `plugin/android/jni` 目录拷贝 `PluginAdColony` 以及 `sdkbox` 目录到您的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 
 ### 编辑 `AndroidManifest.xml`
 在标签 __application tag__ 上添加下列权限：
@@ -38,7 +38,7 @@
 	  android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
 ```
 
- __Note:__ 如果你的 app targets 版本低于 __API 13__，你可能需要从上面的 __activity tags__ 的 __configChanges__ 属性里删除 `screenSize` 。
+ __Note:__ 如果您的 app targets 版本低于 __API 13__，您可能需要从上面的 __activity tags__ 的 __configChanges__ 属性里删除 `screenSize` 。
 
 ### 编辑 `Android.mk`
 编辑 `proj.android/jni/Android.mk`：
@@ -62,7 +62,7 @@ $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)
 $(call import-module, ./pluginadcolony)
 ```
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

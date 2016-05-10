@@ -1,5 +1,5 @@
 ### 初始化 IAP
-* 在你的代码合适的地方调用 `init()` 完成初始化. 我们推荐在 `app.js` 中完成初始化.比如:
+* 在您的代码合适的地方调用 `init()` 完成初始化. 我们推荐在 `app.js` 中完成初始化.比如:
 ```javascript
 sdkbox.IAP.init();
 ```
@@ -17,7 +17,7 @@ sc->addRegisterCallback(register_all_PluginIAPJS_helper);
 ```
 
 ### 获取最新的价格
-在你的游戏开始时,最好先从商店中取最新的商品价格信息.
+在您的游戏开始时,最好先从商店中取最新的商品价格信息.
 
 要获取最新的 IAP 数据,只需要简单地调用 `sdkbox.IAP.refresh()`.
 
@@ -28,7 +28,7 @@ sc->addRegisterCallback(register_all_PluginIAPJS_helper);
 ### 购买
 购买调用 `sdkbox.IAP.purchase(name)`
 
-__注意:__ __name__ 是在你的配置文件中 `items` 项的名字,不是你在 iTunes 或 GooglePlay Store中的产品id.
+__注意:__ __name__ 是在您的配置文件中 `items` 项的名字,不是您在 iTunes 或 GooglePlay Store中的产品id.
 
 > `onSuccess` 购买成功事件.
 
@@ -44,7 +44,7 @@ __注意:__ __name__ 是在你的配置文件中 `items` 项的名字,不是你�
 __注意:__ `onRestored` 可能会触发多次
 
 ### 处理付费事件
-你可以接收 `IAP` 事件, 不同事件对你的用户及 IAP 服务器做不同的处理.
+您可以接收 `IAP` 事件, 不同事件对您的用户及 IAP 服务器做不同的处理.
 ```Javascript
 sdkbox.IAP.setListener({
     onSuccess : function (product) {

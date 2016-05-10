@@ -6,7 +6,7 @@
 - [收益化最佳实践](https://support.inmobi.com/monetize/best-practices/)
 
 ## 集成
-用如下命令来集成 SDKBOX InMobi 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX InMobi 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import inmobi
 ```
@@ -18,9 +18,9 @@ $ sdkbox import inmobi
 <<[../../shared/remote_application_config.md]-->
 
 ### JSON 配置
-SDKBOX 安装器会为你自动生成一个 `sdkbox_config.json` 配置文件, 请先修改再使用.
+SDKBOX 安装器会为您自动生成一个 `sdkbox_config.json` 配置文件, 请先修改再使用.
 
-下面给出一个例子, 你必须替换掉 `<account_id>`, 这个账号从 [__InMobi__](http://www.inmobi.com/)
+下面给出一个例子, 您必须替换掉 `<account_id>`, 这个账号从 [__InMobi__](http://www.inmobi.com/)
 获取.
 
 ```json

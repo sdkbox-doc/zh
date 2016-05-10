@@ -1,7 +1,7 @@
 ## Android 平台手动集成
 
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > PluginGooglePlay.jar
 
@@ -9,7 +9,7 @@
 
 > sdkbox.jar
 
-从 `plugin/android/jni` 目录拷贝 `pluginiap` 以及 `sdkbox` 目录到你的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
+从 `plugin/android/jni` 目录拷贝 `pluginiap` 以及 `sdkbox` 目录到您的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 
 ### 编辑 `AndroidManifest.xml`
 在标签 __application tag__ 上添加下列权限：
@@ -42,7 +42,7 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginiap)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

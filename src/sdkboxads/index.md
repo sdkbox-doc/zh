@@ -11,7 +11,7 @@
 
 ### AdUnit
 一个 AdUnit 是指能够被 SdkboxAds 管理的任何插件。比如 AdColony，Vungle 或者 Chartboost 都是 AdUnit 。
-AdUnit 对已经存在的广告插件做了一个封装并且将它们用一个通用的接口表现出来。没错，你可以通过统一的代码形式来管理所有的 AdUnit 。
+AdUnit 对已经存在的广告插件做了一个封装并且将它们用一个通用的接口表现出来。没错，您可以通过统一的代码形式来管理所有的 AdUnit 。
 每一个 AdUnit 在配置形式上都表现为不同元素的集合，比如 interstitial，videos 或者 rewards 。比如 AdColony 定义了 zones , Chartboost 定义了 locations 以及 Vungle 定义了 places 。所有的这些概念其实都一样：是一种广告类型的名字。
 
 ### Placement

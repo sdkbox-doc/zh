@@ -1,5 +1,5 @@
 ### 初始化 AdColony
-* 在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
+* 在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
 ```javascript
 sdkbox.PluginAdColony.init();
 ```
@@ -17,7 +17,7 @@ sc->addRegisterCallback(register_all_PluginAdColonyJS_helper);
 ```
 
 ### 显示广告
-要在你想要显示广告的代码中,输入如下:
+要在您想要显示广告的代码中,输入如下:
 ```cpp
 sdkbox.PluginAdColony.show("video");
 ```
@@ -27,7 +27,7 @@ sdkbox.PluginAdColony.show("v4vc");
 ```
 
 ### 接收 AdColony 事件 (可选)
-你可以接收 `AdColony` 的事件, 这样你可以在玩家观看完广告后给他相应的奖励.
+您可以接收 `AdColony` 的事件, 这样您可以在玩家观看完广告后给他相应的奖励.
 
 * 创建一个监听:
 ```javascript

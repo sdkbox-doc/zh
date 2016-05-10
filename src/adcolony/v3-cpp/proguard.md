@@ -4,7 +4,7 @@
 proguard.config=proguard.cfg
 ```
 
-* 编辑这个文件,填入你想包启的,如下:
+* 编辑这个文件，加入如下内容:
 ```
 -dontwarn android.webkit.**
 ```

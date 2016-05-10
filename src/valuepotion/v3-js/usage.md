@@ -13,7 +13,7 @@ sc->addRegisterCallback(register_all_PluginValuePotionJS_helper);
 ```
 
 ### 初始化 Valuepotion
-* 在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化, 比如:
+* 在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化, 比如:
 ```javascript
 sdkbox.PluginValuePotion.init();
 ```

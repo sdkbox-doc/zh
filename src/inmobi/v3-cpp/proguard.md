@@ -1,10 +1,10 @@
 ### Proguard (release, optional)
-* 修改 `project.properties` 加入你的 `Proguard` 配置文件. 比如：
+* 修改 `project.properties` 加入您的 `Proguard` 配置文件. 比如：
 ```
 proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt
 ```
 
-* 修改这个你的配置文件,并在其中加下以下代码：
+* 修改这个您的配置文件,并在其中加下以下代码：
 
 ```
 # inmobi

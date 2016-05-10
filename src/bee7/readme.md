@@ -10,7 +10,7 @@
 * iOS 系统, Bee7 的游戏墙支持竖屏.
 
 ## 集成
-用如下命令来集成 SDKBOX Bee7 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Bee7 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import bee7
 ```
@@ -22,7 +22,7 @@ $ sdkbox import bee7
 <<[../../shared/remote_application_config.md]-->
 
 ### JSON 配置
-SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox_config.json`.在你编译工程前,请修改里面的参数,用你自己的应用信息
+SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox_config.json`.在您编译工程前,请修改里面的参数,用您自己的应用信息
 
 下面给出一个Bee7的配置样例:
 

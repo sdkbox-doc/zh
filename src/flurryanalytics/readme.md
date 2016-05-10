@@ -4,7 +4,7 @@
 <<[../../shared/-VERSION-/version.md]
 
 ## 集成
-用如下命令来集成 SDKBOX Flurry Analytics 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Flurry Analytics 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 sdkbox import flurryanalytics
 ```
@@ -18,9 +18,9 @@ sdkbox import flurryanalytics
 
 
 ### JSON 配置
-SDKBOX 安装器会自动在你的工程中添加一个样例配置文件 `sdkbox_config.json`.在你编译工程前,请用你自己的应用信息修改里面的参数值
+SDKBOX 安装器会自动在您的工程中添加一个样例配置文件 `sdkbox_config.json`.在您编译工程前,请用您自己的应用信息修改里面的参数值
 
-下面给出一个 Flurry Analytics 的配置样例,你需要用在 [__Flurry Analytics ID__](http://www.flurry.com/solutions/analytics)注册的帐号信息,替换 `<API KEY>`.
+下面给出一个 Flurry Analytics 的配置样例,您需要用在 [__Flurry Analytics ID__](http://www.flurry.com/solutions/analytics)注册的帐号信息,替换 `<API KEY>`.
 
 下面给出一个 iOS 下的配置例子
 ```json

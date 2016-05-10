@@ -13,7 +13,7 @@ static int lua_module_register(lua_State* L)
 ```
 
 ### 初始化 Facebook
-修改你的lua代码来初始化这个插件. 这个初始化,可以在任意地方,但是必须在你调用插件的功能接口之前.
+修改您的lua代码来初始化这个插件. 这个初始化,可以在任意地方,但是必须在您调用插件的功能接口之前.
 ```lua
 sdkbox.PluginFacebook:init();
 ```
@@ -28,16 +28,16 @@ sdkbox.PluginFacebook:login();
 ```lua
 sdkbox.PluginFacebook:logout();
 ```
-你可以检查是否已经登录
+您可以检查是否已经登录
 ```lua
 sdkbox.PluginFacebook:isLoggedIn();
 ```
 > 注意: 用户只需要登录一次, 除非他们注销
 
 #### 权限
-Facebook 要求你在使用前去询问用户要相应的权限,比如 posting 相关的权益
+Facebook 要求您在使用前去询问用户要相应的权限,比如 posting 相关的权益
 就有两类权限, __read__ and __publish__
-你也可以通过[这里](https://developers.facebook.com/docs/facebook-login/permissions/v2.3#reference)得到完整的信息
+您也可以通过[这里](https://developers.facebook.com/docs/facebook-login/permissions/v2.3#reference)得到完整的信息
 
 SDKBOX 提供最常用的几种权限:
 
@@ -46,7 +46,7 @@ SDKBOX 提供最常用的几种权限:
 * FB_PERM_READ_USER_FRIENDS
 * FB_PERM_PUBLISH_POST
 
-要获取权限,你可以指定你想要权限,比如:
+要获取权限,您可以指定您想要权限,比如:
 ```lua
 sdkbox.PluginFacebook:requestReadPermissions({FB_PERM_READ_PUBLIC_PROFILE, FB_PERM_READ_USER_FRIENDS});
 sdkbox.PluginFacebook:requestPublishPermissions({FB_PERM_PUBLISH_POST});
@@ -98,7 +98,7 @@ sdkbox.PluginFacebook:dialog(info);
  > 注意: 分享带有文字注解的图片需要用户的手机上已安装了 __Facebook__ 应用.
 
 ### 图谱API
-你可以通过 `api` 函数 执行[图谱API](https://developers.facebook.com/docs/graph-api/overview/)
+您可以通过 `api` 函数 执行[图谱API](https://developers.facebook.com/docs/graph-api/overview/)
 
 比如,取好友列表:
 ```
@@ -107,7 +107,7 @@ sdkbox.PluginFacebook:api("/me/friendlists", "GET", params, "/me/friendlists");
 ```
 
 ### Facebook 事件
-你可以接收 Facebook 事件,并对不同事件做不同的处理.
+您可以接收 Facebook 事件,并对不同事件做不同的处理.
 
 ```lua
 sdkbox.PluginFacebook:setListener(function(args)

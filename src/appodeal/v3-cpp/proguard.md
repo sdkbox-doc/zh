@@ -4,7 +4,7 @@
 proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt
 ```
 
-* 编辑这个文件,填入你想包启的,如下:
+* 编辑这个文件，包含如下内容：
 
 ```
 # appodeal

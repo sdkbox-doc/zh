@@ -4,7 +4,7 @@
 proguard.config=proguard.cfg
 ```
 
-* 编辑这个文件,填入你想包启的,如下:
+* 编辑这个文件,填入您想包启的,如下:
 ```
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface

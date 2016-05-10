@@ -1,5 +1,5 @@
 ### 初始化 InMobi
-* 在你的代码合适的地方初始化插件, 我们建议你在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保你包含了对应的头文件:
+* 在您的代码合适的地方初始化插件, 我们建议您在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保您包含了对应的头文件:
 ```cpp
 #include "PluginInMobi/PluginInMobi.h"
 AppDelegate::applicationDidFinishLaunching()
@@ -52,7 +52,7 @@ sdkbox::PluginInMobi::setPostalCode("618000");
 
 ### 接收 InMobi 事件 (可选)
 
-* 让你的类继承 `sdkbox::InMobiListener`
+* 让您的类继承 `sdkbox::InMobiListener`
 ```cpp
 #include "PluginInMobi/PluginInMobi.h"
 class MyClass : public sdkbox::InMobiListener {

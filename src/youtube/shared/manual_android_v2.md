@@ -1,7 +1,7 @@
 ## Android 平台手动集成
 
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝所有 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝所有 文件到您的工程的 __proj.android/libs__ 目录。
 
 <<[../../shared/copy_jni_lib.md]
 
@@ -39,7 +39,7 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginyoutube)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

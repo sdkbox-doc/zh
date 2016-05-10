@@ -10,7 +10,7 @@
 * __Fyber__ 不能 __SOOMLA GROW__ 在一个工程中同时存在.
 
 ## 集成
-用如下命令来集成 SDKBOX Fyber 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Fyber 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import fyber
 ```
@@ -34,7 +34,7 @@ $ sdkbox import fyber
 <<[../../shared/remote_application_config.md]-->
 
 ### JSON 配置
-SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox_config.json`.
+SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox_config.json`.
 
 下面给出一个 Fyber 的配置样例
 ```json

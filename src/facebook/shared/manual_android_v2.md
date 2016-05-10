@@ -1,15 +1,15 @@
 ## Android 平台手动集成
 
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > PluginFacebook.jar
 
 > sdkbox.jar
 
-从 `plugin/android/jni` 目录拷贝 `pluginfacebook` 以及 `sdkbox` 目录到你的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
+从 `plugin/android/jni` 目录拷贝 `pluginfacebook` 以及 `sdkbox` 目录到您的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 
-从 `plugin/android/libs` 拷贝 `facebook_lib` 目录到你的 `proj.android/libs/` 目录。
+从 `plugin/android/libs` 拷贝 `facebook_lib` 目录到您的 `proj.android/libs/` 目录。
 
 ### 编辑 `AndroidManifest.xml`
 在标签 __application tag__ 上添加下列权限：
@@ -37,7 +37,7 @@
 ```
 
 ### 编辑 strings.xml
-打开 `res/values/strings.xml`，添加一个新的名为 `facebook_app_id` 的字串，其值是你的 Facebook App ID。比如：
+打开 `res/values/strings.xml`，添加一个新的名为 `facebook_app_id` 的字串，其值是您的 Facebook App ID。比如：
 
   ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -70,7 +70,7 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginfacebook)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

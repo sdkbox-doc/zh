@@ -17,7 +17,7 @@ $ sdkbox import review
 
 
 ### JSON 配置
-SDKBOX 安装器会为你自动生成一个配置文件 `res/sdkbox_config.json`,在你使用前,请修改里面的值为你自己的应用所需的值.
+SDKBOX 安装器会为您自动生成一个配置文件 `res/sdkbox_config.json`,在您使用前,请修改里面的值为您自己的应用所需的值.
 
 下面给一个 Review 的配置.
 ```json

@@ -4,9 +4,9 @@
 <<[../../shared/-VERSION-/version.md]
 
 ## 集成
-首先，您必须到 [Appnext](https://www.appnext.com/) 注册并配置好你的应用。
+首先，您必须到 [Appnext](https://www.appnext.com/) 注册并配置好您的应用。
 
-第二，用如下命令来集成 SDKBOX AdColony 插件,请确保你可以正常执行的 SDKBOX 安装器.
+第二，用如下命令来集成 SDKBOX AdColony 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import appnext
 ```
@@ -18,7 +18,7 @@ $ sdkbox import appnext
 <<[../../shared/remote_application_config.md]-->
 
 ### JSON 配置
-SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox_config.json`.在你编译工程前,请修改里面的参数,用你自己的应用信息
+SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox_config.json`.在您编译工程前,请修改里面的参数,用您自己的应用信息
 
 - id: 广告 id
 

@@ -8,7 +8,7 @@
 当前, `Playphone` 只支持 __Android__ 平台.  __Playphone__ 是一个专业的游戏发布平台, 从 [http://playphone.com](http://playphone.com) 获取更多信息.
 
 ## 集成
-用如下命令来集成 SDKBOX Playphone 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Playphone 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import playphone
 ```
@@ -25,7 +25,7 @@ $ sdkbox import playphone
 ```
 
   __注意__:
-  如果您想把游戏提交到其他商店, 比如 __Google Play__, 请把 `store` 的值修改为 `googleplay`, 否则你将得到错误的配置信息.
+  如果您想把游戏提交到其他商店, 比如 __Google Play__, 请把 `store` 的值修改为 `googleplay`, 否则您将得到错误的配置信息.
 
   `<meta-data android:name="store" android:value="googleplay" />`
 

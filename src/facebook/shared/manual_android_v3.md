@@ -1,34 +1,34 @@
 ## Android 平台手动集成
 
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > PluginFacebook.jar
 
 > sdkbox.jar
 
 
-* 如果你使用 cocos2d-x 源码，拷贝 __jar__ 文件到：
+* 如果您使用 cocos2d-x 源码，拷贝 __jar__ 文件到：
 
   ```
   cocos2d/cocos/platform/android/java/libs
   ```
 
-* 如果你使用 cocos2d-js 或者 lua ，拷贝 __jar__ 文件到:
+* 如果您使用 cocos2d-js 或者 lua ，拷贝 __jar__ 文件到:
 
   ```
   frameworks/cocos2d-x/cocos/platform/android/java/libs
   ```
 
-* 如果你使用 cocos2d-x 预编译包，拷贝 __jar__ 文件到：
+* 如果您使用 cocos2d-x 预编译包，拷贝 __jar__ 文件到：
 
   ```
   proj.android/libs
   ```
 
-从 `plugin/android/jni` 目录拷贝 `pluginfacebook` 以及 `sdkbox` 目录到你的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
+从 `plugin/android/jni` 目录拷贝 `pluginfacebook` 以及 `sdkbox` 目录到您的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 
-从 `plugin/android/libs` 拷贝 `facebook_lib` 目录到你的 `proj.android/libs/` 目录。
+从 `plugin/android/libs` 拷贝 `facebook_lib` 目录到您的 `proj.android/libs/` 目录。
 
 
 ### 编辑 `AndroidManifest.xml`
@@ -52,7 +52,7 @@
 ```
 
 ### 编辑 strings.xml
-打开 `res/values/strings.xml`，添加一个新的名为 `facebook_app_id` 的字串，其值是你的 Facebook App ID。比如：
+打开 `res/values/strings.xml`，添加一个新的名为 `facebook_app_id` 的字串，其值是您的 Facebook App ID。比如：
 
   ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -82,14 +82,14 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginfacebook)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)
 $(call import-module, ./pluginfacebook)
 ```
 
-  __Note:__ 如果你使用的是 cocos2d-x 预编译库，那么保证这些语句在已有的 `$(call import-module,./prebuilt-mk)` 语句之上非常重要。
+  __Note:__ 如果您使用的是 cocos2d-x 预编译库，那么保证这些语句在已有的 `$(call import-module,./prebuilt-mk)` 语句之上非常重要。
 
 ### 编辑 `Application.mk` （只限 Cocos2d-x v3.0 到 v3.2 版本）
 编辑 `proj.android/jni/Application.mk` 保证 __APP_STL__ 的定义正确。如果 `Application.mk` 包含了 `APP_STL := c++_static` 语句，那么这条语句应该被改为：

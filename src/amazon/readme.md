@@ -9,10 +9,10 @@
 - 需要 Amazon Kindle Fire 设备。
 
 ### 提示：
-当你使用 __Amazon__ 插件时，必须安装 __IAP__ 插件以使它能够正常运行。
+当您使用 __Amazon__ 插件时，必须安装 __IAP__ 插件以使它能够正常运行。
 
 ## 集成
-用如下命令来集成 SDKBOX Amazon 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Amazon 插件,请确保您可以正常执行的 SDKBOX 安装器.
 
 ```bash
 $ sdkbox import amazon

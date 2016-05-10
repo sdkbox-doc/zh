@@ -5,7 +5,7 @@
 <<[../../shared/-VERSION-/version.md]
 
 ## 集成
-用如下命令来集成 SDKBOX ValuePotion 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX ValuePotion 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import valuepotion
 ```
@@ -17,7 +17,7 @@ $ sdkbox import valuepotion
 <<[../../shared/remote_application_config.md]-->
 
 ### JSON 配置
-SDKBOX 安装器会自动在你的工程中添加一个样例配置文件 `sdkbox_config.json` .
+SDKBOX 安装器会自动在您的工程中添加一个样例配置文件 `sdkbox_config.json` .
 
 下面给出一个 Valuepotion 的配置样例, 您需要替换 `<client id>`  和 `<secret key>` :
 - [__Valuepotion ID__](https://www.valuepotion.com/).

@@ -1,5 +1,5 @@
 ### 初始化 Appodeal
-* 在你的代码合适的地方初始化插件, 我们建议你在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保你包含了对应的头文件:
+* 在您的代码合适的地方初始化插件, 我们建议您在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保您包含了对应的头文件:
 ```cpp
 #include "PluginAppodeal/PluginAppodeal.h"
 AppDelegate::applicationDidFinishLaunching()
@@ -22,7 +22,7 @@ sdkbox::PluginAppodeal::showAd(sdkbox::PluginAppodeal::ShowStyle::AppodealShowSt
 
 ### 接收 Appodeal events (可选)
 
-* 让你的类继承 `sdkbox::AppodealListener`
+* 让您的类继承 `sdkbox::AppodealListener`
 ```cpp
 #include "PluginAppodeal/PluginAppodeal.h"
 class ADListener : public sdkbox::AppodealListener {

@@ -4,7 +4,7 @@
 proguard.config=proguard.cfg
 ```
 
-* 编辑配置文件包含如下:
+* 编辑配置文件包含如下内容:
 ```
 -dontwarn android.webkit.**
 ```

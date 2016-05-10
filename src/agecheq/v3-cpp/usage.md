@@ -1,5 +1,5 @@
 ### 初始化 AgeCheq
-* 在你的代码合适的地方初始化插件, 我们建议你在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保你包含了对应的头文件:
+* 在您的代码合适的地方初始化插件, 我们建议您在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保您包含了对应的头文件:
 ```cpp
 #include "PluginAgeCheq/PluginAgeCheq.h"
 AppDelegate::applicationDidFinishLaunching()
@@ -9,16 +9,16 @@ AppDelegate::applicationDidFinishLaunching()
 ```
 
 ### 使用 AgeCheq
-在初始化完成后,你就可以使用 AgeCheq 的功能了, 在你的代码中需要的地方调用 `check` 或 `associateDate()`:
+在初始化完成后,您就可以使用 AgeCheq 的功能了, 在您的代码中需要的地方调用 `check` 或 `associateDate()`:
 ```cpp
 sdkbox::PluginAgeCheq::check("1426");
 sdkbox::PluginAgeCheq::associateData("1426", "ikfill");
 ```
 
 ### 接收 AgeCheq 事件 (可选)
-你可以接收 AgeCheq 的事件,然后在程序做不同的处理与响应.一个简单的例子可能会如下:
+您可以接收 AgeCheq 的事件,然后在程序做不同的处理与响应.一个简单的例子可能会如下:
 
-* 让你的类继承 `sdkbox::AgeCheqListener`
+* 让您的类继承 `sdkbox::AgeCheqListener`
 ```cpp
 #include "PluginAgeCheq/PluginAgeCheq.h"
 class MyClass : public sdkbox::AgeCheqListener

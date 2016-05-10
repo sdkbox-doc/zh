@@ -12,7 +12,7 @@ static int lua_module_register(lua_State* L)
 ```
 
 ### 初始化 Google Analytics
-* 修改你的 Lua 代码， 调用 `init()` 初始化插件。初始化可以放在代码的任何位置，但是，必须在使用插件功能之前完成。
+* 修改您的 Lua 代码， 调用 `init()` 初始化插件。初始化可以放在代码的任何位置，但是，必须在使用插件功能之前完成。
 ```lua
 sdkbox.PluginGoogleAnalytics:init()
 ```

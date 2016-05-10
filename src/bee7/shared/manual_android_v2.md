@@ -1,5 +1,5 @@
 ### 拷贝文件
-* 从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+* 从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > PluginBee7.jar
 
@@ -8,7 +8,7 @@
 <<[../../shared/copy_jni_lib.md]
 
 
-* 从 `plugin/android/libs` 拷贝 `bee7-android-sdk-gamewall` 目录到你游戏工程目录的 `proj.android/libs/` 目录.
+* 从 `plugin/android/libs` 拷贝 `bee7-android-sdk-gamewall` 目录到您游戏工程目录的 `proj.android/libs/` 目录.
 
 
 ### 编辑 `AndroidManifest.xml`
@@ -18,7 +18,7 @@
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-为了 game wall 的视频能正常工作, 确保在你的游戏中有以下其一设置:
+为了 game wall 的视频能正常工作, 确保在您的游戏中有以下其一设置:
 
   - `<uses-sdk>` 的 targetSdkVersion 属性设置为最新的 Android SDK 版本
 
@@ -94,7 +94,7 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginbee7)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

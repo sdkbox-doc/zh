@@ -1,5 +1,5 @@
 ### 初始化 Chartboost
-* 在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
+* 在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
 ```javascript
 sdkbox.PluginChartboost.init();
 ```
@@ -17,7 +17,7 @@ sc->addRegisterCallback(register_all_PluginChartboostJS_helper);
 ```
 
 ### 显示广告
-在你的代码中任何地方都可以显示广告:
+在您的代码中任何地方都可以显示广告:
 ```javascript
 // To use the Chartboost predefined locations
 sdkbox.PluginChartboost.show("Default");
@@ -26,7 +26,7 @@ sdkbox.PluginChartboost.show("your_ad_name");
 ```
 
 ### 接收 Chartboost 事件 (可选)
-你可以接收 `Chartboost` 事件, 当玩家观看了广告过,你可以在代码中做某些操作,比如奖励玩家.
+您可以接收 `Chartboost` 事件, 当玩家观看了广告过,您可以在代码中做某些操作,比如奖励玩家.
 
 * 创建一个监听 (用logging来显示返回内容):
 ```javascript

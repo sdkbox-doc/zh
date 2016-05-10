@@ -23,7 +23,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 ```
 
 ### 初始化 Appodeal
-修改你的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在你要想使用 Appodeal 的功能之前.
+修改您的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在您要想使用 Appodeal 的功能之前.
 ```lua
 sdkbox.PluginAppodeal:init()
 ```

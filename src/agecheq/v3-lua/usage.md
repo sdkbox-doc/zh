@@ -13,19 +13,19 @@ static int lua_module_register(lua_State* L)
 ```
 
 ### 初始化 AgeCheq
-修改你的lua代码来初始化这个插件. 这个初始化,可以在任意地方,但是必须在你调用插件的功能接口之前.
+修改您的lua代码来初始化这个插件. 这个初始化,可以在任意地方,但是必须在您调用插件的功能接口之前.
 ```lua
 sdkbox.PluginAgeCheq:init()
 ```
 
 ### 使用 AgeCheq
-初始化完成后,你可以在你的代码任意需要的地方调用 `check` 功能:
+初始化完成后,您可以在您的代码任意需要的地方调用 `check` 功能:
 ```lua
 sdkbox.PluginAgeCheq:check("agecheqPin")
 ```
 
 ### 接收 AgeCheq 事件 (可选)
-你可以接收 AgeCheq 事件,然后对不同的事件在程序中做出不同的响应.一个简单的例子可能会如下:
+您可以接收 AgeCheq 事件,然后对不同的事件在程序中做出不同的响应.一个简单的例子可能会如下:
 ```lua
 sdkbox.PluginAgeCheq:init()
 sdkbox.PluginAgeCheq:setListener(function(data)
