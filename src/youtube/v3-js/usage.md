@@ -1,5 +1,4 @@
 ### 注册 Javascript 函数
-You need to register all the Youtube JS functions with cocos2d-x before using them.
 您需要在使用之前，在 cocos2d-x 中注册所有的 Youtube JS 函数。
 
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 文件，包含下列头文件：
@@ -15,7 +14,7 @@ sc->addRegisterCallback(register_all_PluginYoutubeJS_helper);
 ```
 
 ### 初始化 Youtube
-* 通过在您的代码合适的位置调用 `init()` 方法来初始化这个插件。我们建议您在 `app.js` 中进行初始化。举例如下：
+通过在您的代码合适的位置调用 `init()` 方法来初始化这个插件。我们建议您在 `app.js` 中进行初始化。举例如下：
 ```javascript
 sdkbox.PluginYoutube.init();
 ```
