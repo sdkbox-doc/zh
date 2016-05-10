@@ -5,7 +5,7 @@
 
 > PluginYoutube.framework
 
-You also need to add the following system frameworks, if you don't already have them:
+如果您没有添加下面这些系统库，您有需要添加它们：
 
 > UIKit.framework
 
