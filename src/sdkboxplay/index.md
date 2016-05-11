@@ -4,7 +4,7 @@
 
 ## 介绍
 
-SdkboxPlay 插件 是一个 Google Play 以及 Game Center 社交服务的集合。针对每个平台，在通用的 API 下访问 Leaderboards 以及 Achievements 插件。
+SdkboxPlay 插件 是一个针对 Google Play 以及 Game Center 社交服务的抽象。针对每个平台，在通用的 API 下访问 Leaderboards 以及 Achievements 插件。
 为了能适用于两个插件平台，SdkboxPlay 在实现上做了一些权衡，具体细节将在文档的相关部分描述。
 
 现在，这个插件针对 Leaderboards 以及 Achievements 提供了通用的实现。
