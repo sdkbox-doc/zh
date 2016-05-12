@@ -81,7 +81,6 @@ static void setUser(string userID);
 
 <h6>
 Set value for custom dimension.
-定制规格。
 </h6>
 ```
 static void setDimension(int index, string value);
@@ -89,7 +88,6 @@ static void setDimension(int index, string value);
 
 <h6>
 Set value for custom metric.
-定制
 </h6>
 ```
 static void setMetric(int index, string value);
@@ -98,8 +96,6 @@ static void setMetric(int index, string value);
 <h6>
 Log screen info. title is the title of a screen. Screens are logical units
 inside your app you'd like to identify at analytics panel.
-记录屏幕信息。标题是屏幕的标题。
-
 </h6>
 ```
 static void logScreen(string title);
