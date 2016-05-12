@@ -1,0 +1,2425 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+
+	<title>In-App Purchase - SDKBOX</title>
+
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../../css/highlight.css">
+        <link href="../../css/custom.css" rel="stylesheet">
+
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-70044300-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../..">Overview</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cocos <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../cocos/">Cocos Integration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../installer/">Installer</a>
+</li>
+
+                        
+                            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Plugins</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/achievement/">Achievements</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Achievements</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/achievement/v3-cpp/">Achievements with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/achievement/v3-js/">Achievements with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/achievement/v3-lua/">Achievements with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/achievement/v2-cpp/">Achievements with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/achievement/v2-js/">Achievements with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/achievement/v2-lua/">Achievements with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/adcolony/">AdColony</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_AdColony</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/adcolony/v3-cpp/">AdColony with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/adcolony/v3-js/">AdColony with JS</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/adcolony/v3-lua/">AdColony with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/adcolony/v2-cpp/">AdColony with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/adcolony/v2-js/">AdColony with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/adcolony/v2-lua/">AdColony with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/admob/">AdMob</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_AdMob</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/admob/v3-cpp/">AdMob with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/admob/v3-js/">AdMob with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/admob/v3-lua/">AdMob with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/admob/v2-cpp/">AdMob with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/admob/v2-js/">AdMob with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/admob/v2-lua/">AdMob with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/agecheq/">AgeCheq</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_AgeCheq</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/agecheq/v3-cpp/">AgeCheq with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/agecheq/v3-js/">AgeCheq with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/agecheq/v3-lua/">AgeCheq with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/agecheq/v2-cpp/">AgeCheq with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/agecheq/v2-js/">AgeCheq with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/agecheq/v2-lua/">AgeCheq with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/appnext/">Appnext</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Appnext</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/appnext/v3-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appnext/v3-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appnext/v3-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/appnext/v2-cpp/">Appnext with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appnext/v2-js/">Appnext with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appnext/v2-lua/">Appnext with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/appodeal/">Appodeal</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Appodeal</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/appodeal/v3-cpp/">Appodeal with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appodeal/v3-js/">Appodeal with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appodeal/v3-lua/">Appodeal with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/appodeal/v2-cpp/">Appodeal with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appodeal/v2-js/">Appodeal with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/appodeal/v2-lua/">Appodeal with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/amazon/">Amazon</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Amazon</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/amazon/v3-cpp/">Amazon with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/amazon/v3-js/">Amazon with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/amazon/v3-lua/">Amazon with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/amazon/v2-cpp/">Amazon with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/amazon/v2-js/">Amazon with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/amazon/v2-lua/">Amazon with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/apteligent/">Apteligent</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Apteligent</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/apteligent/v3-cpp/">Apteligent with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/apteligent/v3-js/">Apteligent with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/apteligent/v3-lua/">Apteligent with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/apteligent/v2-cpp/">Apteligent with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/apteligent/v2-js/">Apteligent with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/apteligent/v2-lua/">Apteligent with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/bee7/">Bee7</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Bee7</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/bee7/v3-cpp/">Bee7 with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/bee7/v3-js/">Bee7 with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/bee7/v3-lua/">Bee7 with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/bee7/v2-cpp/">Bee7 with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/bee7/v2-js/">Bee7 with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/bee7/v2-lua/">Bee7 with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/chartboost/">Chartboost</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Chartboost</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/chartboost/v3-cpp/">Chartboost with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/chartboost/v3-js/">Chartboost with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/chartboost/v3-lua/">Chartboost with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/chartboost/v2-cpp/">Chartboost with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/chartboost/v2-js/">Chartboost with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/chartboost/v2-lua/">Chartboost with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/facebook/">Facebook</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Facebook</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/facebook/v3-cpp/">Facebook with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/facebook/v3-js/">Facebook with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/facebook/v3-lua/">Facebook with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/facebook/v2-cpp/">Facebook with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/facebook/v2-js/">Facebook with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/facebook/v2-lua/">Facebook with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/">Flurry Analytics</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Flurry Analytics</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/v3-cpp/">Flurry with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/v3-js/">Flurry with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/v3-lua/">Flurry with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/v2-cpp/">Flurry with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/v2-js/">Flurry with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/flurryanalytics/v2-lua/">Flurry with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/fyber/">Fyber</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Fyber</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/fyber/v3-cpp/">Fyber with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/fyber/v3-js/">Fyber with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/fyber/v3-lua/">Fyber with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/fyber/v2-cpp/">Fyber with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/fyber/v2-js/">Fyber with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/fyber/v2-lua/">Fyber with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/">Google Analytics</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Google Analytics</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/v3-cpp/">Google Analytics with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/v3-js/">Google Analytics with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/v3-lua/">Google Analytics with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/v2-cpp/">Google Analytics with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/v2-js/">Google Analytics with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/googleanalytics/v2-lua/">Google Analytics with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/iap/">In-App Purchase</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_IAP</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/iap/v3-cpp/">In-App Purchases(IAP) with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/iap/v3-js/">In-App Purchases(IAP) with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/iap/v3-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/iap/v2-cpp/">In-App Purchases(IAP) with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/iap/v2-js/">In-App Purchases(IAP) with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/iap/v2-lua/">In-App Purchases(IAP) with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/inmobi/">InMobi</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_InMobi</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/inmobi/v3-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/inmobi/v3-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/inmobi/v3-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/inmobi/v2-cpp/">InMobi with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/inmobi/v2-js/">InMobi with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/inmobi/v2-lua/">InMobi with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/kochava/">Kochava</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Kochava</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/kochava/v3-cpp/">Kochava with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/kochava/v3-js/">Kochava with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/kochava/v3-lua/">Kochava with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/kochava/v2-cpp/">Kochava with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/kochava/v2-js/">Kochava with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/kochava/v2-lua/">Kochava with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/">LeadBolt</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_LeadBolt</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/v3-cpp/">LeadBolt with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/v3-js/">LeadBolt with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/v3-lua/">LeadBolt with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/v2-cpp/">LeadBolt with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/v2-js/">LeadBolt with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leadbolt/v2-lua/">LeadBolt with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/">Leaderboard</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Leaderboard</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/v3-cpp/">Leaderboard with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/v3-js/">Leaderboard with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/v3-lua/">Leaderboard with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/v2-cpp/">Leaderboard with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/v2-js/">Leaderboard with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/leaderboard/v2-lua/">Leaderboard with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/playphone/">Playphone</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Playphone</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/playphone/v3-cpp/">Playphone with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/playphone/v3-js/">Playphone with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/playphone/v3-lua/">Playphone with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/playphone/v2-cpp/">Playphone with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/playphone/v2-js/">Playphone with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/playphone/v2-lua/">Playphone with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/review/">Ratings & Reviews</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Ratings & Reviews</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/review/v3-cpp/">App Rating & Review with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/review/v3-js/">App Rating & Review with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/review/v3-lua/">App Rating & Review with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/review/v2-cpp/">App Rating & Review with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/review/v2-js/">App Rating & Review with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/review/v2-lua/">App Rating & Review with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/">SDKBOX Ads</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_sdkboxAds</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/v3-cpp/">Ads with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/v3-js/">Ads with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/v3-lua/">Ads with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/v2-cpp/">Ads with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/v2-js/">Ads with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxads/v2-lua/">Ads with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/">SDKBOX Play</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_sdkboxPlay</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/v3-cpp/">Play with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/v3-js/">Play with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/v3-lua/">Play with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/v2-cpp/">Play with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/v2-js/">Play with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/sdkboxplay/v2-lua/">Play with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/share/">Social Sharing</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Share</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/share/v3-cpp/">Share with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/share/v3-js/">Share with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/share/v3-lua/">Share with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/share/v2-cpp/">Share with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/share/v2-js/">Share with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/share/v2-lua/">Share with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/tune/">Tune</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Tune</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/tune/v3-cpp/">Tune with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/tune/v3-js/">Tune with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/tune/v3-lua/">Tune with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/tune/v2-cpp/">Tune with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/tune/v2-js/">Tune with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/tune/v2-lua/">Tune with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/">Valuepotion</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Valuepotion</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/v3-cpp/">Valuepotion with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/v3-js/">Valuepotion with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/v3-lua/">Valuepotion with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/v2-cpp/">Valuepotion with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/v2-js/">Valuepotion with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/valuepotion/v2-lua/">Valuepotion with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/vungle/">Vungle</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Vungle</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/vungle/v3-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/vungle/v3-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/vungle/v3-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/vungle/v2-cpp/">Vungle with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/vungle/v2-js/">Vungle with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/vungle/v2-lua/">Vungle with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+<li >
+    <a href="../../plugins/youtube/">Youtube</a>
+</li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">_Youtube</a>
+    <ul class="dropdown-menu">
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v3.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/youtube/v3-cpp/">Youtube with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/youtube/v3-js/">Youtube with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/youtube/v3-lua/">Youtube with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+            
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="">Cocos2d-x v2.x</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../plugins/youtube/v2-cpp/">Youtube with C++</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/youtube/v2-js/">Youtube with Javascript</a>
+</li>
+
+        
+            
+<li >
+    <a href="../../plugins/youtube/v2-lua/">Youtube with Lua</a>
+</li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+        
+    </ul>
+  </li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unity <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../unity/iap/">In-App Purchase</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../unity/review/">Ratings & Reviews</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../unity/socialshare/">SocialShare</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../unity/googleanalytics/documentation/">Google Analytics</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unreal <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li class="active">
+    <a href="./">In-App Purchase</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">LiveOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../liveops/">Setup</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../liveops/remote-config/">Remote Configuration</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../liveops/receipt-verification/">Server-side IAP receipt verification</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../liveops/catalog-management/">On-the-fly catalog management</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li >
+                        <a href="../../release-note/">About</a>
+                    </li>
+                
+                
+
+                    <!-- new add for language button -->
+                    <li>
+                        <a href="http://sdkbox-doc.github.io/en/">English</a>
+                    </li>
+                </ul>
+            
+
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li >
+                        <a rel="next" href="../../unity/googleanalytics/documentation/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../../liveops/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+    
+        <li class="main active"><a href="#iap">IAP 插件文档</a></li>
+        
+            <li><a href="#iap-4">为 IAP 插件配置您的虚幻4引擎工程</a></li>
+        
+            <li><a href="#ue4-sdkbox-iap">安装 UE4 SDKBOX IAP 插件</a></li>
+        
+            <li><a href="#_3">激活插件</a></li>
+        
+            <li><a href="#_4">初始化插件</a></li>
+        
+            <li><a href="#_5">处理事件</a></li>
+        
+            <li><a href="#_6">从商店中获取购买项目</a></li>
+        
+            <li><a href="#_7">进行购买</a></li>
+        
+            <li><a href="#_11">代码参考</a></li>
+        
+    
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><img alt="" src="./SDKBOX_logo.png" /></p>
+<h1 id="iap">IAP 插件文档</h1>
+<p>更多的信息，请访问我们的主页：<a href="http://cocos2d-x.org/sdkbox">www.sdkbox.com</a></p>
+<h2 id="iap-4">为 IAP 插件配置您的虚幻4引擎工程</h2>
+<p>这部分文档不会包括如何创建工程，如何在 iOS 或者 Google 应用商店里创建 app 。关于这些方面的内容，请您参考 iOS 以及 Android 的相关文档。</p>
+<p>The most important thing is setting the identifier used to identify the application in the Apple and Android store that you are going to buy from.
+最重要的事是，配置标识符以从 Apple 或者 Android 平台应用商店区分应用程序。</p>
+<p>对于 Apple 平台来说是包标识符，对于 Android 平台来说是 android 包名字。在 UE4 编辑器中访问项目属性并且在 iOS 和 Android 配置项下可以为这两项设置合适的值。</p>
+<p>更多信息请参考相关平台的文档：
+<em> <a href="https://developer.apple.com/library/ios/documentation/LanguagesUtilities/Conceptual/iTunesConnectInAppPurchase_Guide/Chapters/Introduction.html#//apple_ref/doc/uid/TP40013727">iOS 平台</a>
+</em> <a href="http://developer.android.com/google/play/billing/billing_overview.html">Android 平台</a></p>
+<h2 id="ue4-sdkbox-iap">安装 UE4 SDKBOX IAP 插件</h2>
+<p>从 <a href="http://unreal.sdkbox.com">SDKBOX UE4</a> 页面下载 SDKBOX IAP 插件。</p>
+<h3 id="_1">在您的引擎中</h3>
+<ol>
+<li>解压文件到 <code>Engine/Plugins/SDKBOXIAP</code> 下。</li>
+<li>执行引擎根目录下的脚本 GenerateProjectFiles 。</li>
+<li>打开您的引擎工程文件然后编译编辑器。</li>
+</ol>
+<h3 id="_2">在您的项目代码中</h3>
+<ol>
+<li>解压文件到您的项目目录 <code>[Project Root]/Plugins</code> 下。</li>
+<li>重新运行编辑器。将会提示您为编辑器编译这个插件。点击继续并且编译插件，然后再运行编辑器。</li>
+</ol>
+<h2 id="_3">激活插件</h2>
+<p>如果您已经添加了插件到您的工程中，请依次点击 Settings -&gt; Plugins 并向下滚动选中它。否则，这个插件将是内建工程的一部分。</p>
+<p><img alt="" src="./img1.png" /></p>
+<p>确保 Enable 复选框被选中。您可能需要在这步之后重启编辑器。</p>
+<h2 id="_4">初始化插件</h2>
+<p>确保尽可能早的调用 SDKBOX IAP 初始化方法，至少确保在调用任何其他方法之前调用它。您可以在您的游戏对象初始化的时候进行这个工作，或者在您的第一个场景播放事件中进行这个工作。</p>
+<p>这个初始化方法有一个 JSON 字符串函数。您可以给它传递原始字符串，也可以在 Blueprint 编辑器中编辑购买项目描述并且在运行时生成字符串。</p>
+<p><strong>重要提示：</strong> 在 Android 平台下， 您需要提供 license key, 您可以从 Google Play 控制台中您的 App 下的 <strong>Services &amp; APIs</strong> 配置项中找到 license key 。这点非常重要，因为 IAP 将不能在缺少它的情况下工作。这个 key 应该是传递的 JSON 字符串的一部分，您也可以通过编辑购买项目描述并且在运行时生成字符串的方式来把它加入到 JSON 字符串中。</p>
+<p><img alt="" src="./img2.png" /></p>
+<p>在 Blueprint 编辑器中添加购买项目，首先您要添加一个类型为 <code>SDKBox IAPProductDescription</code> 的 <code>Products</code> 数组变量。</p>
+<p>然后您可以在编辑器中单击 Products 添加购买项目。</p>
+<p><img alt="" src="./img3.png" /></p>
+<p>名字是一个字符串值，在购买时您可以用它来标识一个购买项目。</p>
+<p>ID 是一个标识符用于在商店里创建购买项目。</p>
+<p>Consumable 类型的购买项目能够被购买多于一次，而 Non-Consumable 型的项目仅仅能够被购买一次。这两种类型的购买项目被所有平台支持。</p>
+<p>You can have different Id's for each platform by specifying the Affinity for either iOS or Android. Specifying All will use the same details for all platforms.</p>
+<p>您可以创建一个函数去把 Products 类型的变量转换成 JSON 字符串，然后把它用于传入初始化函数中（如上图所示）。</p>
+<h2 id="_5">处理事件</h2>
+<p>在您的场景中，您可以使用把 SDKBOX IAP 组件添加到 actor 的方式来处理事件。</p>
+<p><img alt="" src="./img13.png" /></p>
+<p>有8个事件您可以处理。</p>
+<p><img alt="" src="./img6.png" /></p>
+<p>您可以单击 <code>+</code> 添加一个事件处理程序，用来在您的应用程序中实现 IAP 流程。</p>
+<p><img alt="" src="./img4.png" /></p>
+<p>您总是能收到 <code>OnInitialized</code> 事件， 并且 <code>Status</code> 布尔参数用于表示初始化成功与否。</p>
+<h2 id="_6">从商店中获取购买项目</h2>
+<p><img alt="" src="./img5.png" /></p>
+<p>如果初始化成功，您将收到 <code>OnProductRequestSuccess</code> 事件，它会提供一个数组参数来存储可购买项目信息（不要购买项目描述弄混，这是个相似的概念但含有的信息量较少）。</p>
+<h2 id="_7">进行购买</h2>
+<p><img alt="" src="./img8.png" /></p>
+<h3 id="_8">处理购买成功及失败</h3>
+<p>您可以监听 <code>OnSuccess，OnFailure 以及 OnCanceled</code> 事件。这些事件的都会以正在购买的项目作为参数。</p>
+<p><img alt="" src="./img9.png" /></p>
+<p>一些事件也会提供错误诊断信息用于判断诊断错误。</p>
+<p><img alt="" src="./img10.png" /></p>
+<h3 id="_9">恢复购买项目</h3>
+<p>简单的调用 restore 方法，就可以恢复之前的购买项目。</p>
+<p><img alt="" src="./img11.png" /></p>
+<p>This will send you a <code>OnRestored</code> event for each product that has been restored, and finally it will send a <code>OnRestoreComplete</code> event to signal that all products have been restored. Note that it is possible to receive only the complete event in the case where you have no previously purchased products.</p>
+<p><img alt="" src="./img12.png" /></p>
+<h3>Verify In App Purchase Receipt</h3>
+
+<h3 id="_10">校验购买收据</h3>
+<p>收据信息不会被默认发送， 您需要如下图所示，打开收据校验功能。</p>
+<p><img alt="" src="./img7.png" /></p>
+<p>在 onSuccess 事件中为 IAP 收据数据检查 product.receipt 以及 product.receiptCipheredPayload的值。</p>
+<p>提示： 只有 Google Play 提供收据数据，iOS 平台仅仅提供一个加密的内容字符串给用户去执行 IAP 校验。</p>
+<h2 id="_11">代码参考</h2>
+<h3 id="sdkbox-iap-functions">SDKBOX IAP Functions</h3>
+<pre><code>UCLASS(NotBlueprintable)
+class USdkboxIAPFunctions
+    : public UObject
+{
+    GENERATED_BODY()
+
+public:
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static void SdkboxIapInitialize(FString jsonstring);
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static void SdkboxIapShutdown();
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static void SdkboxIapPurchase(FString product);
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static void SdkboxIapRefresh();
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static void SdkboxIapRestore();
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static FString SdkboxIapJsonStringFromProductDescriptions(const TArray&lt;FSdkboxIAPProductDescription&gt;&amp; Descriptions);
+
+    UFUNCTION(BlueprintCallable, meta = (Keywords = &quot;SDKBOX iap&quot;), Category = &quot;SDKBOX&quot;)
+    static void SdkboxIapEnableUserSideVerification(bool enable);
+};
+</code></pre>
+
+<h3 id="sdkbox-iap-product">SDKbOX IAP Product</h3>
+<pre><code>UCLASS(ClassGroup=SDKBOX, HideCategories=(Activation, &quot;Components|Activation&quot;, Collision), meta=(BlueprintSpawnableComponent))
+class USdkboxIAPProduct
+    : public UObject
+{
+    GENERATED_BODY()
+
+public:
+
+    USdkboxIAPProduct(const FObjectInitializer&amp; ObjectInitializer);
+
+    static USdkboxIAPProduct* ProductFromSdkboxProduct(const sdkbox::Product&amp; product);
+
+    // The name of the product
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Name&quot;))
+    FString Name;
+
+    // The product id of an In App Purchase
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Id&quot;))
+    FString Id;
+
+    // Type of iap item true if consumable
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Consumable&quot;))
+    bool Consumable;
+
+    // The title of the IAP item
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Title&quot;))
+    FString Title;
+
+    // The description of the IAP item
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Description&quot;))
+    FString Description;
+
+    // Price value in float
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;PriceValue&quot;))
+    float PriceValue;
+
+    // Localized price
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Price&quot;))
+    FString Price;
+
+    // price currency code
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;CurrencyCode&quot;))
+    FString CurrencyCode;
+
+    // cyphered payload
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;ReceiptCipheredPayload&quot;))
+    FString ReceiptCipheredPayload;
+
+    // receipt info. will be empty string for iOS
+    UPROPERTY(BlueprintReadOnly, Category=General, meta=(DisplayName=&quot;Receipt&quot;))
+    FString Receipt;
+};
+</code></pre>
+
+<h3>SDKBOX IAP Product Description</h3>
+
+<pre><code>UENUM(BlueprintType)
+enum class EProductAffinityEnum : uint8
+{
+    PAE_ALL     UMETA(DisplayName=&quot;All&quot;),
+    PAE_IOS     UMETA(DisplayName=&quot;iOS&quot;),
+    PAE_ANDROID UMETA(DisplayName=&quot;Android&quot;)
+};
+
+USTRUCT(BlueprintType)
+struct FSdkboxIAPProductDescription
+{
+    GENERATED_USTRUCT_BODY()
+
+    // The name of the product
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=General, meta=(DisplayName=&quot;Name&quot;))
+    FString Name;
+
+    // The product id of an In App Purchase
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=General, meta=(DisplayName=&quot;Id&quot;))
+    FString Id;
+
+    // Type of iap item true if consumable
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=General, meta=(DisplayName=&quot;Consumable&quot;))
+    bool Consumable;
+
+    // Which platform this product description is for
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=General, meta=(DisplayName=&quot;Affinity&quot;))
+    EProductAffinityEnum Affinity;
+};
+</code></pre>
+
+<h3 id="json">JSON 配置</h3>
+<p>这是一个 JSON 配置的样例。您需要用您的购买项目 ID 替换 <put the product id for ios here> 或者 替换 <put your googleplay key here> 。</p>
+<pre><code>&quot;ios&quot; :
+{
+    &quot;iap&quot;:{
+        &quot;items&quot;:{
+            &quot;remove_ads&quot;:{
+                &quot;id&quot;:&quot;&lt;put the product id for ios here&gt;&quot;
+            }
+        }
+    }
+},
+&quot;android&quot;:
+{
+    &quot;iap&quot;:{
+        &quot;key&quot;:&quot;&lt;put your googleplay key here&gt;&quot;,
+        &quot;items&quot;:{
+          &quot;remove_ads&quot;:{
+              &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;
+          }
+        }
+    }
+}
+</code></pre>
+
+<p>如果您的购买项目是 non-consumable 类型的， 它也有必要添加到 JSON 配置中。只有 Android 平台下，需要这样做。用上面的 JSON 配置作为例子来说明这点：</p>
+<pre><code>&quot;android&quot;:
+{
+    &quot;iap&quot;:{
+        &quot;key&quot;:&quot;&lt;put your googleplay key here&gt;&quot;,
+        &quot;items&quot;:{
+          &quot;remove_ads&quot;:{
+              &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;,
+              &quot;type&quot;:&quot;non_consumable&quot;
+          }
+        }
+    }
+}
+</code></pre></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        <script src="../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../js/highlight.pack.js"></script>
+        <script>var base_url = '../..';</script>
+        <script src="../../js/base.js"></script>
+
+
+    </body>
+</html>
