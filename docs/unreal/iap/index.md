@@ -123,7 +123,7 @@ This will send you a ```OnRestored``` event for each product that has been resto
 
 提示： 只有 Google Play 提供收据数据，iOS 平台仅仅提供一个加密的内容字符串给用户去执行 IAP 校验。
 
-# 代码参考
+## 代码参考
 
 ### SDKBOX IAP Functions
 
@@ -252,7 +252,6 @@ struct FSdkboxIAPProductDescription
 
 ### JSON 配置
 
-Here is an example of the JSON configuration. You will need to replace <put the product id for ios here> with the product id from your iTunes Connect or replace <put your googleplay key here> from your Google Play Console
 这是一个 JSON 配置的样例。您需要用您的购买项目 ID 替换 <put the product id for ios here> 或者 替换 <put your googleplay key here> 。
 
 ```
