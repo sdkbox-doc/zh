@@ -8,7 +8,7 @@
 static int lua_module_register(lua_State* L)
 {
   register_all_PluginAdColonyLua(L);
-  register_PluginAdColonyLua_helper(L);
+  register_all_PluginAdColonyLua_helper(L);
 }
 ```
 

@@ -12,7 +12,7 @@
     这里为您准备了一个例子如下：
 ```cpp
 #include "PluginTuneLua.hpp"
-#include "PluginTuneLuaHelper.hpp"
+#include "PluginTuneLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();

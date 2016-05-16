@@ -10,6 +10,11 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/googleanalytics/v3-cpp
 sdkbox import googleanalytics
 ```
 
+## 更新日志
+
+version-x.y.z:
+1. `#include "PluginGoogleAnalyticsLuaHelper.hpp"` -> `#include "PluginGoogleAnalyticsLuaHelper.h"`
+
 ## 额外的步骤
 <<[extra-step.md]
 <<[proguard.md]

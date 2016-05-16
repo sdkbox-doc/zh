@@ -12,7 +12,7 @@
     这里为您准备了一个例子如下：
 ```cpp
 #include "PluginVungleLua.hpp"
-#include "PluginVungleLuaHelper.hpp"
+#include "PluginVungleLuaHelper.h"
 bool AppDelegate::applicationDidFinishLaunching()
 {
 	lua_State *tolua_s = pStack->getLuaState();

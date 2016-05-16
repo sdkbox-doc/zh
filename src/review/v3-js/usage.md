@@ -5,7 +5,7 @@
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 包含如下头文件:
 ```cpp
 #include "PluginReviewJS.hpp"
-#include "PluginReviewJSHelper.hpp"
+#include "PluginReviewJSHelper.h"
 ```
 
 * 修改 `./frameworks/runtime-src/Classes/AppDelegate.cpp` 调用如下函数:

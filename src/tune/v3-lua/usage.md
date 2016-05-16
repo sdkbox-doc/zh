@@ -9,7 +9,7 @@ __Note:__ 请注意该注册函数需要一个 __lua_State*__ 参数。
 static int lua_module_register(lua_State* L)
 {
   register_all_PluginTuneLua(L);
-  register_PluginTuneLua_helper(L);
+  register_all_PluginTuneLua_helper(L);
 }
 ```
 
