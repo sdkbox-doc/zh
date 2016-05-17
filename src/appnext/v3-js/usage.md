@@ -13,7 +13,7 @@ sc->addRegisterCallback(register_all_PluginAppnextJS_helper);
 ```
 
 ### 初始化 Appnext
-* 在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
+* 在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
 ```javascript
 sdkbox.PluginAppnext.init();
 ```
@@ -33,7 +33,7 @@ sdkbox.PluginAppnext.cacheVideo("fullscreen");
 sdkbox.PluginAppnext.refreshAds();
 sdkbox.PluginAppnext.refreshVideo("fullscreen");
 ```
-**NOTE** : 你需要在一个广告关闭时刷新它，否则下次不会显示广告。
+**NOTE** : 您需要在一个广告关闭时刷新它，否则下次不会显示广告。
 
 
 ### 显示插屏或者视频广告

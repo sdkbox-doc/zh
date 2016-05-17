@@ -23,13 +23,13 @@ bool AppDelegate::applicationDidFinishLaunching()
 ```
 
 ### 初始化 Chartboost
-修改你的lua代码来初始化这个插件. 这个初始化,可以在任意地方,但是必须在你调用插件的功能接口之前.
+修改您的lua代码来初始化这个插件. 这个初始化,可以在任意地方,但是必须在您调用插件的功能接口之前.
 ```lua
 sdkbox.PluginChartboost:init()
 ```
 
 ### 显示广告
-在你的代码中任何地方都可以显示广告:
+在您的代码中任何地方都可以显示广告:
 ```lua
 // To use the Chartboost predefined locations
 sdkbox.PluginChartboost:show("Default")
@@ -38,7 +38,7 @@ sdkbox.PluginChartboost:show("your_ad_name")
 ```
 
 ### 接收 Chartboost 事件 (可选)
-你可以接收 `Chartboost` 事件, 当玩家观看了广告过,你可以在代码中做某些操作,比如奖励玩家.
+您可以接收 `Chartboost` 事件, 当玩家观看了广告过,您可以在代码中做某些操作,比如奖励玩家.
 
 * 注册回调(通过log演示结果):
 ```lua

@@ -13,13 +13,13 @@ static int lua_module_register(lua_State* L)
 ```
 
 ### 初始化 IAP
-修改你的lua代码去初始插件, 初始化可以在任何地方来做,但是必须要在你想使用插件的功能之前.
+修改您的lua代码去初始插件, 初始化可以在任何地方来做,但是必须要在您想使用插件的功能之前.
 ```lua
 sdkbox.IAP:init()
 ```
 
 ### 获取最新的商品数据
-最好在你的游戏开始前从服务器获取一次最新的商品数据
+最好在您的游戏开始前从服务器获取一次最新的商品数据
 
 要获取商品数据,只需要简单调用 `sdkbox.IAP:refresh()`.
 
@@ -30,7 +30,7 @@ sdkbox.IAP:init()
 ### 购买
 购买商口调用 `sdkbox.IAP:purchase(name)`
 
-__注意:__ __name__ 是你工程的 IAP 配置文件中的 `items` 项下的名字,而不是你在 iTunes 或 GooglePlay Store中的商品名
+__注意:__ __name__ 是您工程的 IAP 配置文件中的 `items` 项下的名字,而不是您在 iTunes 或 GooglePlay Store中的商品名
 
 > `onSuccess` 购买成功事件.
 
@@ -46,7 +46,7 @@ __注意:__ __name__ 是你工程的 IAP 配置文件中的 `items` 项下的名
 __注意:__ `onRestored` 可能被会多次触发
 
 ### 处理付费事件
-你可以接收付费过程中的 `IAP` 事件, 不同事件对用户, IAP 服务器做不同的处理.
+您可以接收付费过程中的 `IAP` 事件, 不同事件对用户, IAP 服务器做不同的处理.
 ```lua
 sdkbox.IAP:setListener(function(args)
 		if "onSuccess" == args.event then

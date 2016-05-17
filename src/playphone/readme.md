@@ -1,20 +1,22 @@
-<!--
-Include Base: /Users/jtsm/Chukong-Inc/en/src/playphone/v3-cpp
--->
+[&#8249; Playphone Doc Home](./)
 
-#Playphone
+<h1>Playphone 集成指南</h1>
+<<[../../shared/-VERSION-/version.md]
+
+## 前提条件
+
 当前, `Playphone` 只支持 __Android__ 平台.  __Playphone__ 是一个专业的游戏发布平台, 从 [http://playphone.com](http://playphone.com) 获取更多信息.
 
 ## 集成
-用如下命令来集成 SDKBOX Playphone 插件,请确保你可以正常执行的 SDKBOX 安装器.
+用如下命令来集成 SDKBOX Playphone 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash
 $ sdkbox import playphone
 ```
 
-##额外步骤
+### 额外步骤
 确保您已经拥有 __Playphone Developer__ 开发者账号, 并且在 __Playphone__ 网站上创建了 __游戏__.
 
-###配置 Android
+### 配置 Android
 * 打开 `AndroidManifest.xml` 文件, 并添加一下信息:
 
 ```xml
@@ -22,11 +24,11 @@ $ sdkbox import playphone
 <meta-data android:name="leaderboard" android:value="playphone" />
 ```
 
-  __注意__: 
-  如果您想把游戏提交到其他商店, 比如 __Google Play__, 请把 `store` 的值修改为 `googleplay`, 否则你将得到错误的配置信息.
+  __注意__:
+  如果您想把游戏提交到其他商店, 比如 __Google Play__, 请把 `store` 的值修改为 `googleplay`, 否则您将得到错误的配置信息.
 
   `<meta-data android:name="store" android:value="googleplay" />`
-  
+
   或者使用 `sdkbox` 命令来修改 `store` 的值
   ```bash
   $ sdkbox set store googleplay
@@ -73,7 +75,7 @@ SDKBox 安装器会在 `sdkbox_config.json` 中注入一个简单配置, 您需�
 }
 ```
 
-##混淆 (release, 可选)
+## 混淆 (release, 可选)
 
 * 编辑 `project.properties`,写入一个 `Proguard` 配置. Example:
 
@@ -118,14 +120,14 @@ proguard.config=proguard.cfg
     public static final ** CREATOR;
 }
 
-#sdkbox
+# sdkbox
 -keep public class com.sdkbox.** { *; }
 -dontwarn com.sdkbox.**
 
-#playphone
+# playphone
 -keep public class com.playphone.psgn.** { *; }
 -dontwarn com.playphone.psgn.**
 ```
 
  __注意:__ 混淆只在 __Release__ 模式下有效 (比如 `cocos run -m release`), 在 debug 模式下,不会调到混淆规则.
- 
+

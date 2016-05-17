@@ -1,14 +1,14 @@
 [&#171; SDKBOX Home](http://sdkbox.com)
 
-<h1>Appnext Plugin</h1>
+<h1>Appnext 插件</h1>
 
-##Overview
-You can find [more information about this plugin here.](http://www.cocos2d-x.org/sdkbox/appnext)
+## 介绍
+您可以访问 [这里](http://www.cocos2d-x.org/sdkbox/appnext) 取更多关于插件的细节。
 
 
 <<[../shared/guides.md]
 
 
-##Sample Project
+## 样例工程
 
-[A demo project on github](https://github.com/sdkbox/sdkbox-appnext-sample)
+[github 上的一个样例](https://github.com/sdkbox/sdkbox-sample-appnext)

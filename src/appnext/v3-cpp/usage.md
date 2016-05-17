@@ -1,5 +1,5 @@
 ### 初始化 Appnext
-* 在你的代码合适的地方初始化插件, 我们建议你在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保你包含了对应的头文件:
+* 在您的代码合适的地方初始化插件, 我们建议您在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保您包含了对应的头文件:
 ```cpp
 #include "PluginAppnext/PluginAppnext.h"
 AppDelegate::applicationDidFinishLaunching()
@@ -23,7 +23,7 @@ sdkbox::PluginAppnext::cacheVideo("fullscreen");
 sdkbox::PluginAppnext::refreshAds();
 sdkbox::PluginAppnext::refreshVideo("fullscreen");
 ```
-**NOTE** : 你需要在一个广告关闭时刷新它，否则下次不会显示广告。
+**NOTE** : 您需要在一个广告关闭时刷新它，否则下次不会显示广告。
 
 
 ### 显示插屏或者视频广告
@@ -44,7 +44,7 @@ sdkbox::PluginAppnext::isVideoReady("fullscreen");
 ```
 
 ### 接受 AppnextListner 事件 （可选）
-* 让你的类继承 `AppnextListener`
+* 让您的类继承 `AppnextListener`
 ```cpp
 #include "PluginAppnext/PluginAppnext.h"
 class MyClass : public sdkbox::AppnextListener

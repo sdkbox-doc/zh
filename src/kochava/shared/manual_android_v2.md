@@ -1,7 +1,7 @@
 ## Android 平台手动集成
 
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > KochavaSDK.jar
 
@@ -9,7 +9,7 @@
 
 > sdkbox.jar
 
-从 `plugin/android/jni` 目录拷贝 `pluginkochava` 以及 `sdkbox` 目录到你的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
+从 `plugin/android/jni` 目录拷贝 `pluginkochava` 以及 `sdkbox` 目录到您的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 
 ### 编辑 `AndroidManifest.xml`
 在标签 __application tag__ 上添加下列权限：
@@ -20,7 +20,7 @@
 <uses-permission android:name ="android.permission.READ_PHONE_STATE"/>
 ```
 
-另外，你需要在 __application tag__ 里添加 Kochava 广播接收器以及下面的元数据标签，这些都是 Google Play 数据捕获所需要的。
+另外，您需要在 __application tag__ 里添加 Kochava 广播接收器以及下面的元数据标签，这些都是 Google Play 数据捕获所需要的。
 ```xml
 <receiver android:name ="com.kochava.android.tracker.ReferralCapture"
   android:exported ="true" >
@@ -61,7 +61,7 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginkochava)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

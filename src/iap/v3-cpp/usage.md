@@ -1,5 +1,5 @@
 ### 初始化 IAP
-在你的工程中合适的地方初始化插件.我们推荐在 `AppDelegate::applicationDidFinishLaunching()` or `AppController:didFinishLaunchingWithOptions()` 中.确保包含了相关的头文件:
+在您的工程中合适的地方初始化插件.我们推荐在 `AppDelegate::applicationDidFinishLaunching()` or `AppController:didFinishLaunchingWithOptions()` 中.确保包含了相关的头文件:
 ```cpp
 #include "PluginIAP/PluginIAP.h"
 AppDelegate::applicationDidFinishLaunching()
@@ -9,7 +9,7 @@ AppDelegate::applicationDidFinishLaunching()
 ```
 
 ### 获取最新的价格
-在你的游戏开始时,最好先从商店中取最新的商品价格信息.
+在您的游戏开始时,最好先从商店中取最新的商品价格信息.
 
 在取最新的 IAP 数据, 只需要简单地调用 `sdkbox::IAP::refresh()`.
 
@@ -20,7 +20,7 @@ AppDelegate::applicationDidFinishLaunching()
 ### 购买
 购买只需要调用 `sdkbox::IAP::purchase(name)`
 
-__注意:__ __name__ 是你在配置文件中 `items` 项的值, 而不是你在 iTunes 或 GooglePlay Store 中的商品名.
+__注意:__ __name__ 是您在配置文件中 `items` 项的值, 而不是您在 iTunes 或 GooglePlay Store 中的商品名.
 
 > `onSuccess` 购买成功会收到这个事件.
 
@@ -36,7 +36,7 @@ __注意:__ __name__ 是你在配置文件中 `items` 项的值, 而不是你在
 __注意:__ `onRestored` 可能会被多次触发
 
 ### 处理付费事件
-允许你接收 `IAP` 的事件,这样你就可以对用户,IAP服务器做不同的处理.
+允许您接收 `IAP` 的事件,这样您就可以对用户,IAP服务器做不同的处理.
 
 * 继承这个类 `sdkbox::IAPListener`:
 ```cpp

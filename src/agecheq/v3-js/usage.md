@@ -1,5 +1,5 @@
 ### Initialize AgeCheq
-* 在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
+* 在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
 ```javascript
 sdkbox.PluginAgeCheq.init();
 ```
@@ -17,13 +17,13 @@ sc->addRegisterCallback(register_all_PluginAgeCheqJS_helper);
 ```
 
 ### 使用 AgeCheq
-在初始化后,你就可以使用 AgeCheq 的功能了. 在你的代码任意使用 `check` 功能:
+在初始化后,您就可以使用 AgeCheq 的功能了. 在您的代码任意使用 `check` 功能:
 ```cpp
 sdkbox.PluginAgeCheq.check("agecheqPin");
 ```
 
 ### 接收 AgeCheq 事件 (可选)
-你可以接收 AgeCheq 的事件,并对不同的事件做不同的响应. 一个简单的例子可能会如下:
+您可以接收 AgeCheq 的事件,并对不同的事件做不同的响应. 一个简单的例子可能会如下:
 ```javascript
 sdkbox.PluginAgeCheq.init();
 sdkbox.PluginAgeCheq.setListener({

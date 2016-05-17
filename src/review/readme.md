@@ -1,9 +1,7 @@
-<!--
-Include Base: /Users/jtsm/Chukong-Inc/pr/en/src/review/v3-cpp
--->
+[&#8249; Review Doc Home](./)
 
-# Review
-Review 可以帮助你提示用户去评价你的应用
+<h1>Review 集成指南</h1>
+<<[../../shared/-VERSION-/version.md]
 
 ## 集成
 在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX Review 插件。
@@ -11,14 +9,17 @@ Review 可以帮助你提示用户去评价你的应用
 $ sdkbox import review
 ```
 
-## Android 的额外步骤
-<<[extra-step.md]
-<<[proguard.md]
+<<[../../shared/notice.md]
 
-## 配置
-SDKBOX 安装器会为你自动生成一个配置文件 `res/sdkbox_config.json`,在你使用前,请修改里面的值为你自己的应用所需的值.
+<!--## Configuration
+<<[../../shared/sdkbox_cloud.md]
+<<[../../shared/remote_application_config.md]-->
 
-下面给给一个 Review 的配置.
+
+### JSON 配置
+SDKBOX 安装器会为您自动生成一个配置文件 `res/sdkbox_config.json`,在您使用前,请修改里面的值为您自己的应用所需的值.
+
+下面给一个 Review 的配置.
 ```json
 "Review":{
     "ios": {
@@ -47,7 +48,7 @@ SDKBOX 安装器会为你自动生成一个配置文件 `res/sdkbox_config.json`
 
 <<[sdkbox-config-encrypt.md]
 
-## 用法
+## 使用
 <<[usage.md]
 
 <<[api-reference.md]
@@ -57,3 +58,8 @@ SDKBOX 安装器会为你自动生成一个配置文件 `res/sdkbox_config.json`
 <<[manual_ios.md]
 
 <<[manual_android.md]
+
+<<[extra-step.md]
+
+<<[proguard.md]
+

@@ -1,5 +1,5 @@
 ### 拷贝文件
-从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到你的工程的 __proj.android/libs__ 目录。
+从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
 > PluginLeaderboard.jar
 
@@ -39,7 +39,7 @@ $(call import-module, ./sdkbox)
 $(call import-module, ./pluginleaderboard)
 ```
 
-这意味着你的语句顺序看起来像是这样：
+这意味着您的语句顺序看起来像是这样：
 ```
 $(call import-add-path,$(LOCAL_PATH))
 $(call import-module, ./sdkbox)

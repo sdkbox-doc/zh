@@ -1,7 +1,7 @@
 ## Android 手动集成步骤.
 
 ### 拷贝文件
-从安装包中的 `plugin/android/libs` 文件夹下拷贝下面的 __jar__ 文件到你的工程中的 __proj.android/libs__ 文件夹.
+从安装包中的 `plugin/android/libs` 文件夹下拷贝下面的 __jar__ 文件到您的工程中的 __proj.android/libs__ 文件夹.
 
 > ReviewLite.jar
 
@@ -9,9 +9,9 @@
 
 > sdkbox.jar
 
-从 `plugin/android/jni` 拷贝 `pluginreview` 和 `sdkbox` 目录到你的工程的 `proj.android/jni/` 目录.如果 `sdkbox` 目录已存在，覆盖它.
+从 `plugin/android/jni` 拷贝 `pluginreview` 和 `sdkbox` 目录到您的工程的 `proj.android/jni/` 目录.如果 `sdkbox` 目录已存在，覆盖它.
 
-从 `plugin/android` 拷贝 `plugin_review_res_project` 到你工程中的 `proj.android`,同时让你的工程引用到 `plugin_review_res_project` 这个工程
+从 `plugin/android` 拷贝 `plugin_review_res_project` 到您工程中的 `proj.android`,同时让您的工程引用到 `plugin_review_res_project` 这个工程
 
 ### 编辑 `AndroidManifest.xml`
 在 __application tag__ 这个项前面添加如下权限:

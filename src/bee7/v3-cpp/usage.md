@@ -1,5 +1,5 @@
 ### 初始化 Bee7
-* 在你的代码合适的地方初始化插件, 我们建议你在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保你包含了对应的头文件:
+* 在您的代码合适的地方初始化插件, 我们建议您在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 请确保您包含了对应的头文件:
 
 ```cpp
 #include "PluginBee7/PluginBee7.h"
@@ -17,7 +17,7 @@ sdkbox::PluginBee7::showGameWall();
 
 ### 接收 Bee7 事件 (可选)
 
-* 让你的类继承 `sdkbox::Bee7Listener`:
+* 让您的类继承 `sdkbox::Bee7Listener`:
 ```cpp
 #include "PluginBee7/PluginBee7.h"
 class MyClass : public sdkbox::Bee7Listener

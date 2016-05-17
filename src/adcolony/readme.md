@@ -1,8 +1,7 @@
-<!--
-Include Base: /Users/niteluo/Projects/store/doc/en/src/adcolony/v3-cpp
--->
+[&#8249; AdColony Doc Home](./)
 
-#AdColony
+<h1>AdColony 集成指南</h1>
+<<[../../shared/-VERSION-/version.md]
 
 ## 集成
 用如下命令来集成 SDKBOX AdColony 插件,请确保你可以正常执行的 SDKBOX 安装器.
@@ -10,20 +9,16 @@ Include Base: /Users/niteluo/Projects/store/doc/en/src/adcolony/v3-cpp
 sdkbox import adcolony
 ```
 
-## 更新日志
 
-version-x.y.z:
-1. 更新 AdColony iOS SDK 到 2.5.3
-2. `register_PluginAdColonyLua_helper` -> `register_all_PluginAdColonyLua_helper`
-3. `#include "PluginAdColonyLuaHelper.hpp"` -> `#include "PluginAdColonyLuaHelper.h"`
-4. `#include "PluginAdColonyJSHelper.hpp"` -> `#include "PluginAdColonyJSHelper.h"`
+<<[../../shared/notice.md]
 
-## 额外的步骤
-<<[extra-step.md]
-<<[proguard.md]
+<!--## Configuration
+<<[../../shared/sdkbox_cloud.md]
+<<[../../shared/remote_application_config.md]-->
 
-## 配置
-SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox_config.json`.在你编译工程前,请修改里面的参数,用你自己的应用信息
+
+### JSON 配置
+SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。
 
 下面给出一个AdColony的配置样例,你需要在[AdColony](https://clients.adcolony.com/login)注册帐号,然后对应的信息替换 `<app id>` 和 `<zone id>`.
 ```json
@@ -59,5 +54,6 @@ SDKBOX 安装器会自动在你的工程中添加一个样例配置文件`sdkbox
 <<[manual_android.md]
 
 <<[extra-step.md]
+
 <<[proguard.md]
 

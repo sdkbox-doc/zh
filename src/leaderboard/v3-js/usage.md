@@ -13,7 +13,7 @@ sc->addRegisterCallback(register_all_PluginLeaderboardJS_helper);
 ```
 
 ### 初始化 Leaderboard
-在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
+在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
 ```javascript
 sdkbox.PluginLeaderboard.init();
 sdkbox.IAP.init();

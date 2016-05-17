@@ -1,5 +1,5 @@
 ### 初始化 Fyber
-* 在你的代码合适的地方初始化插件, 我们建议你在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化. 
+* 在您的代码合适的地方初始化插件, 我们建议您在 `AppDelegate::applicationDidFinishLaunching()` 或 `AppController:didFinishLaunchingWithOptions()` 中完成初始化.
 
 ```cpp
 #include "PluginFyber/PluginFyber.h"
@@ -11,12 +11,12 @@ AppDelegate::applicationDidFinishLaunching()
 
 ### 使用 Fyber
 #### Offer Wall
-使用显示 Offer Wall 
+使用显示 Offer Wall
 ```cpp
 sdkbox::PluginFyber::showOfferWall();
 ```
 
-使用自定义的 __placementId__ 显示 Offer Wall 
+使用自定义的 __placementId__ 显示 Offer Wall
 ```cpp
 sdkbox::PluginFyber::showOfferWall("coins");
 ```
@@ -63,7 +63,7 @@ sdkbox::PluginFyber::requestDeltaOfCoins("currencyId")
 
 ### 接收 Fyber 事件 (可选)
 
-* 让你的类继承 `sdkbox::FyberListener`:
+* 让您的类继承 `sdkbox::FyberListener`:
 ```cpp
 #include "PluginFyber/PluginFyber.h"
 class MyClass : public sdkbox::FyberListener

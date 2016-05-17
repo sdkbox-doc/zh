@@ -1,5 +1,5 @@
 ### 注册 Lua 函数
-* 修改 `./frameworks/runtime-src/Classes/lua_module_register.h` 
+* 修改 `./frameworks/runtime-src/Classes/lua_module_register.h`
 ```cpp
 #include "PluginValuePotionLua.hpp"
 #include "PluginValuePotionLuaHelper.h"
@@ -14,7 +14,7 @@ static int lua_module_register(lua_State* L)
 ```
 
 ### 初始化 Valuepotion
-修改你的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在你要想使用 ValuePotion 的功能之前.
+修改您的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在您要想使用 ValuePotion 的功能之前.
 ```lua
 sdkbox.PluginValuePotion:init()
 ```

@@ -13,19 +13,19 @@ sc->addRegisterCallback(register_all_PluginFyberJS_helper);
 ```
 
 ### 初始化 Fyber
-* 在你的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
+* 在您的代码中合适的地方调用 `init()`, 我们建议在 `app.js` 初始化,比如:
 ```javascript
 sdkbox.PluginFyber.init();
 ```
 
 ### 使用 Fyber
 #### Offer Wall
-显示 Offer Wall 
+显示 Offer Wall
 ```javascript
 sdkbox.PluginFyber.showOfferWall();
 ```
 
-使用自定义的 __placementId__ 显示 Offer Wall 
+使用自定义的 __placementId__ 显示 Offer Wall
 ```javascript
 sdkbox.PluginFyber.showOfferWall("coins");
 ```

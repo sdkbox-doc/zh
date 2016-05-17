@@ -1,10 +1,10 @@
-## Proguard (optional)
-* Edit `project.properties`  to specify a `Proguard` configuration file. Example:
+### 混淆 (release, 可选)
+* 修改 `project.properties` 加入一个特定的 `Proguard` 配置文件. 比如:
 ```
 proguard.config=proguard.cfg
 ```
 
-* Edit the file you specified to include the following:
+* 编辑您特定的文件,以包含以下内容:
 ```
 # If your project uses WebView with JS, uncomment the following
 # and specify the fully qualified class name to the JavaScript interface
@@ -49,4 +49,4 @@ proguard.config=proguard.cfg
 -dontwarn com.appnext.**
 
 ```
- __Note:__ Proguard only works with __Release__ builds (i.e `cocos run -m release`) debug builds do not invoke Proguard rules.
+ __注意:__ 混淆只在 __Release__ 编译模式下有效 (i.e `cocos run -m release`) debug 编译下不会调用到混淆规则。

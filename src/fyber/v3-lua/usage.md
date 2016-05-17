@@ -1,17 +1,17 @@
 ### 初始化 Fyber
-修改你的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在你要想使用 Fyber 的功能之前.
+修改您的lua代码用 `init()` 初始化插件. 这个可以在任何地方调用,但是必须在您要想使用 Fyber 的功能之前.
 ```lua
 sdkbox.PluginFyber:init();
 ```
 
 ### 使用 Fyber
 #### Offer Wall
-显示 Offer Wall 
+显示 Offer Wall
 ```lua
 sdkbox.PluginFyber:showOfferWall();
 ```
 
-使用自定义的 __placementId__ 显示 Offer Wall 
+使用自定义的 __placementId__ 显示 Offer Wall
 ```lua
 sdkbox.PluginFyber:showOfferWall("coins");
 ```
