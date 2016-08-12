@@ -1,3 +1,10 @@
+## 从 China 服务器下载
+如果你在中国, 并且下载插件的速度比较慢, 可以尝试使用位于中国的服务器来下载, 查询插件, 使用方法为在你的 `sdkbox import` 后加 `--server china` 及可, 比如:
+```bash
+sdkbox import xxx  --server china
+```
+xxx 为你的插件名字
+
 ## 重点注意事项
 如果您升级到了 Xcode7, 则需要以下额外步骤来确保插件工作正常:
 
