@@ -703,14 +703,14 @@ AppDelegate::applicationDidFinishLaunching()
 </pre>
 
 <h4 id="_4">使用</h4>
-<p>调用 <code>sdkbox::SdkboxAds::init()</code> 将完成 SdkboxAds 实例化并且开始管理所有的定义在配置文件里的 AdUnit 。</p>
+<p>调用 <code>sdkbox::PluginSdkboxAds::init()</code> 将完成 SdkboxAds 实例化并且开始管理所有的定义在配置文件里的 AdUnit 。</p>
 <p>请求显示一个在默认的 AdUnit 中的默认广告，并以此完成一次简单的集成测试：</p>
-<pre><code class="cpp">sdkbox::SdkboxAds::playAd()
+<pre><code class="cpp">sdkbox::PluginSdkboxAds::playAd()
 </code></pre>
 
 <p>请求显示默认 AdUnit 中的广告：</p>
-<pre><code class="cpp">sdkbox::SdkboxAds::playAd( const std::string&amp; zone_place_location );
-sdkbox::SdkboxAds::playAd( const std::string&amp; zone_place_location, const AdUnitParams&amp; params );
+<pre><code class="cpp">sdkbox::PluginSdkboxAds::playAd( const std::string&amp; zone_place_location );
+sdkbox::PluginSdkboxAds::playAd( const std::string&amp; zone_place_location, const AdUnitParams&amp; params );
 
 // AdUnitParams is a typedef for std::map&lt;std::string,std::string&gt;
 </code></pre>
@@ -719,22 +719,22 @@ sdkbox::SdkboxAds::playAd( const std::string&amp; zone_place_location, const AdU
 <p>提示：每一个 AdUnit 都有自己的参数，可以参考每一个插件的文档。</p>
 </blockquote>
 <p>请求显示一个指定的 AdUnit 中的广告：</p>
-<pre><code class="cpp">sdkbox::SdkboxAds::playAd(
+<pre><code class="cpp">sdkbox::PluginSdkboxAds::playAd(
         const std::string&amp; ad_unit_name,
         const std::string&amp; zone_place_location );
 
-sdkbox::SdkboxAds::playAd(
+sdkbox::PluginSdkboxAds::playAd(
         const std::string&amp; ad_unit_name,
         const std::string&amp; zone_place_location,
         const AdUnitParams&amp; params );
 </code></pre>
 
 <p>请求显示定义在 sdkbox_config.json 的 Placement 中的广告：</p>
-<pre><code class="cpp">sdkbox::SdkboxAds::placement( const str::string&amp; placement );
+<pre><code class="cpp">sdkbox::PluginSdkboxAds::placement( const str::string&amp; placement );
 </code></pre>
 
 <p>更好的控制广告数据缓冲：</p>
-<pre><code class="cpp">sdkbox::SdkboxAds::cacheControl(
+<pre><code class="cpp">sdkbox::PluginSdkboxAds::cacheControl(
         const std::string&amp; ad_unit,
         const std::map&lt;std::string, std::string&gt;&amp; cacheOpts );
 </code></pre>

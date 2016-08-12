@@ -504,6 +504,9 @@
         <li class="main active"><a href="#_1">集成</a></li>
         
     
+        <li class="main "><a href="#china">从 China 服务器下载</a></li>
+        
+    
         <li class="main "><a href="#_2">重点注意事项</a></li>
         
             <li><a href="#_3">禁用应用程序安全传输策略</a></li>
@@ -521,13 +524,13 @@
         
             <li><a href="#admob">初始化 AdMob</a></li>
         
-            <li><a href="#_5">缓存广告数据</a></li>
+            <li><a href="#_7">缓存广告数据</a></li>
         
-            <li><a href="#_6">显示广告</a></li>
+            <li><a href="#_8">显示广告</a></li>
         
-            <li><a href="#_7">隐藏广告</a></li>
+            <li><a href="#_9">隐藏广告</a></li>
         
-            <li><a href="#_8">检查广告数据可用性</a></li>
+            <li><a href="#_10">检查广告数据可用性</a></li>
         
             <li><a href="#admoblistener">实现 AdMobListener</a></li>
         
@@ -539,7 +542,7 @@
             <li><a href="#listeners">Listeners</a></li>
         
     
-        <li class="main "><a href="#_9">手动集成</a></li>
+        <li class="main "><a href="#_11">手动集成</a></li>
         
     
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
@@ -547,7 +550,7 @@
     
         <li class="main "><a href="#android">Android 手动集成</a></li>
         
-            <li><a href="#_10">拷贝文件</a></li>
+            <li><a href="#_12">拷贝文件</a></li>
         
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
         
@@ -577,6 +580,12 @@
 </code></pre>
 
 <p>最后，请您仔细阅读官方的 <a href="https://developers.google.com/admob/ios/quick-start#faq">iOS FAQ</a> 以及 <a href="https://developers.google.com/admob/android/quick-start#faq">Android FAQ</a> 。</p>
+<h2 id="china">从 China 服务器下载</h2>
+<p>如果你在中国, 并且下载插件的速度比较慢, 可以尝试使用位于中国的服务器来下载, 查询插件, 使用方法为在你的 <code>sdkbox import</code> 后加 <code>--server china</code> 及可, 比如:</p>
+<pre><code class="bash">sdkbox import xxx  --server china
+</code></pre>
+
+<p>xxx 为你的插件名字</p>
 <h2 id="_2">重点注意事项</h2>
 <p>如果您升级到了 Xcode7, 则需要以下额外步骤来确保插件工作正常:</p>
 <h4 id="_3">禁用应用程序安全传输策略</h4>
@@ -609,7 +618,7 @@ Registering the applications’ allows for on-the-fly update of its plugin’s c
 
 To enable this cloud service in your applications is as easy as calling a single __init()__ function and passing in your __application token__ and __application secret__ that were provided when you created the app in the previous section.
 
-wzxhzdk:2
+wzxhzdk:3
 
   __Note__: each application will have it’s own __application token__ and each configuration for each game will have it’s own __application secret__. The __application secret__ is the actual encryption key used to decipher the remote configuration.
 
@@ -620,6 +629,14 @@ To ensure security, during normal execution the new configuration is locally sav
 
 <h3 id="json">JSON 配置</h3>
 <p>SDKBOX Installer 将会自动在您的 <code>sdkbox_config.json</code> 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。</p>
+<h4 id="_5">智能横幅</h4>
+<p>设置 width 和 height 的值为 0</p>
+<pre><code>    &quot;width&quot;:0,
+    &quot;height&quot;:0
+</code></pre>
+
+<h4 id="_6">自动缓存</h4>
+<p>不需要配置，该插件会自动缓存广告类型中的广告。当 插屏广告 关闭时，也会自动缓存它。</p>
 <p>type:</p>
 <pre><code>- "banner"
 - "interstitial"
@@ -693,22 +710,22 @@ To ensure security, during normal execution the new configuration is locally sav
 <pre><code class="lua">sdkbox.PluginAdMob:init()
 </code></pre>
 
-<h3 id="_5">缓存广告数据</h3>
+<h3 id="_7">缓存广告数据</h3>
 <pre><code class="lua">sdkbox.PluginAdMob:cache(&quot;home&quot;)
 sdkbox.PluginAdMob:cache(&quot;gameover&quot;)
 </code></pre>
 
-<h3 id="_6">显示广告</h3>
+<h3 id="_8">显示广告</h3>
 <pre><code class="lua">sdkbox.PluginAdMob:show(&quot;home&quot;)
 sdkbox.PluginAdMob:show(&quot;gameover&quot;)
 </code></pre>
 
-<h3 id="_7">隐藏广告</h3>
+<h3 id="_9">隐藏广告</h3>
 <p>You can not hide an interstitial ad</p>
 <pre><code class="lua">sdkbox.PluginAdMob:hide(&quot;home&quot;)
 </code></pre>
 
-<h3 id="_8">检查广告数据可用性</h3>
+<h3 id="_10">检查广告数据可用性</h3>
 <pre><code class="lua">sdkbox.PluginAdMob:isAvailable(&quot;home&quot;)
 sdkbox.PluginAdMob:isAvailable(&quot;gameover&quot;)
 </code></pre>
@@ -813,7 +830,7 @@ end)
 <pre><code class="lua">adViewWillLeaveApplication(name)
 </code></pre>
 
-<h2 id="_9">手动集成</h2>
+<h2 id="_11">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -847,7 +864,7 @@ end)
 <li><strong>command-line</strong> 和 <strong>eclipse</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android</code> .</li>
 <li><strong>Android Studio</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android-studio</code> .</li>
 </ul>
-<h3 id="_10">拷贝文件</h3>
+<h3 id="_12">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝所有文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <ul>
 <li>如果您使用 cocos2d-x 源码，拷贝 <strong>jar</strong> 文件到：</li>

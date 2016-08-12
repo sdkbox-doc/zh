@@ -639,11 +639,11 @@ To ensure security, during normal execution the new configuration is locally sav
 
 <h3 id="sdkboxads_1">使用 SdkboxAds</h3>
 <p>请求显示一个在默认的 AdUnit 中的默认广告，并以此完成一次简单的集成测试：</p>
-<pre><code class="javascript">sdkbox.SdkboxAds:play()
+<pre><code class="javascript">sdkbox.PluginSdkboxAds:play()
 </code></pre>
 
 <p>请求显示默认 AdUnit 中的广告：</p>
-<pre><code class="lua">sdkbox.SdkboxAds:play( zone_place_location, params );
+<pre><code class="lua">sdkbox.PluginSdkboxAds:play( zone_place_location, params );
 
 // params is an object with string keys and values.
 </code></pre>
@@ -652,15 +652,15 @@ To ensure security, during normal execution the new configuration is locally sav
 <p>提示：每一个 AdUnit 都有自己的参数，可以参考每一个插件的文档。</p>
 </blockquote>
 <p>请求显示一个指定的 AdUnit 中的广告：</p>
-<pre><code class="lua">sdkbox.SdkboxAds:play( ad_unit_name, zone_place_location, params );
+<pre><code class="lua">sdkbox.PluginSdkboxAds:play( ad_unit_name, zone_place_location, params );
 </code></pre>
 
 <p>请求显示定义在 sdkbox_config.json 的 Placement 中的广告：</p>
-<pre><code class="lua">sdkbox.SdkboxAds:placement( placement_name );
+<pre><code class="lua">sdkbox.PluginSdkboxAds:placement( placement_name );
 </code></pre>
 
 <p>更好的控制广告数据缓冲：</p>
-<pre><code class="lua">sdkbox.SdkboxAds:cacheControl( ad_unit, cacheOpts );
+<pre><code class="lua">sdkbox.PluginSdkboxAds:cacheControl( ad_unit, cacheOpts );
 
 // cacheOpts is an object with keys and values as strings.
 </code></pre>

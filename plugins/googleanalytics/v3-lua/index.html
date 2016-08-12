@@ -504,6 +504,9 @@
         <li class="main active"><a href="#_1">集成</a></li>
         
     
+        <li class="main "><a href="#china">从 China 服务器下载</a></li>
+        
+    
         <li class="main "><a href="#_2">重点注意事项</a></li>
         
             <li><a href="#_3">禁用应用程序安全传输策略</a></li>
@@ -570,6 +573,12 @@
 <pre><code class="bash">sdkbox import googleanalytics
 </code></pre>
 
+<h2 id="china">从 China 服务器下载</h2>
+<p>如果你在中国, 并且下载插件的速度比较慢, 可以尝试使用位于中国的服务器来下载, 查询插件, 使用方法为在你的 <code>sdkbox import</code> 后加 <code>--server china</code> 及可, 比如:</p>
+<pre><code class="bash">sdkbox import xxx  --server china
+</code></pre>
+
+<p>xxx 为你的插件名字</p>
 <h2 id="_2">重点注意事项</h2>
 <p>如果您升级到了 Xcode7, 则需要以下额外步骤来确保插件工作正常:</p>
 <h4 id="_3">禁用应用程序安全传输策略</h4>
@@ -602,7 +611,7 @@ Registering the applications’ allows for on-the-fly update of its plugin’s c
 
 To enable this cloud service in your applications is as easy as calling a single __init()__ function and passing in your __application token__ and __application secret__ that were provided when you created the app in the previous section.
 
-wzxhzdk:2
+wzxhzdk:3
 
   __Note__: each application will have it’s own __application token__ and each configuration for each game will have it’s own __application secret__. The __application secret__ is the actual encryption key used to decipher the remote configuration.
 
