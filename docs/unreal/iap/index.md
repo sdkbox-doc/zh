@@ -19,7 +19,7 @@ The most important thing is setting the identifier used to identify the applicat
 
 ## 安装 UE4 SDKBOX IAP 插件
 
-从 [SDKBOX UE4](http://unreal.sdkbox.com) 页面下载 SDKBOX IAP 插件。
+从 [SDKBOX UE4](http://www.sdkbox.com/unreal) 页面下载 SDKBOX IAP 插件。
 
 ### 在您的引擎中
 
