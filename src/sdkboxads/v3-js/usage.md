@@ -24,12 +24,12 @@ sdkbox.PluginSdkboxAds.init();
 
 请求显示一个在默认的 AdUnit 中的默认广告，并以此完成一次简单的集成测试：
 ```javascript
-sdkbox.SdkboxAds.play()
+sdkbox.PluginSdkboxAds.play()
 ```
 
 请求显示默认 AdUnit 中的广告：
 ```javascript
-sdkbox.SdkboxAds.play( zone_place_location, params );
+sdkbox.PluginSdkboxAds.play( zone_place_location, params );
 
 // params is an object with string keys and values.
 ```
@@ -37,17 +37,17 @@ sdkbox.SdkboxAds.play( zone_place_location, params );
 
 请求显示一个指定的 AdUnit 中的广告：
 ```javascript
-sdkbox.SdkboxAds.play( ad_unit_name, zone_place_location, params );
+sdkbox.PluginSdkboxAds.play( ad_unit_name, zone_place_location, params );
 ```
 
 请求显示定义在 sdkbox\_config.json 的 Placement 中的广告：
 ```javascript
-sdkbox.SdkboxAds.placement( placement_name );
+sdkbox.PluginSdkboxAds.placement( placement_name );
 ```
 
 更好的控制广告数据缓冲：
 ```javascript
-sdkbox.SdkboxAds.cacheControl( ad_unit, cacheOpts );
+sdkbox.PluginSdkboxAds.cacheControl( ad_unit, cacheOpts );
 
 // cacheOpts is an object with keys and values as strings.
 ```

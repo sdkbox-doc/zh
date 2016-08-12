@@ -75,17 +75,17 @@ Placement 则设定了对于某一个给定的 AdUnit 将会被显示的广告�
 
 #### 使用
 
-调用 `sdkbox::SdkboxAds::init()` 将完成 SdkboxAds 实例化并且开始管理所有的定义在配置文件里的 AdUnit 。
+调用 `sdkbox::PluginSdkboxAds::init()` 将完成 SdkboxAds 实例化并且开始管理所有的定义在配置文件里的 AdUnit 。
 
 请求显示一个在默认的 AdUnit 中的默认广告，并以此完成一次简单的集成测试：
 ```cpp
-sdkbox::SdkboxAds::playAd()
+sdkbox::PluginSdkboxAds::playAd()
 ```
 
 请求显示默认 AdUnit 中的广告：
 ```cpp
-sdkbox::SdkboxAds::playAd( const std::string& zone_place_location );
-sdkbox::SdkboxAds::playAd( const std::string& zone_place_location, const AdUnitParams& params );
+sdkbox::PluginSdkboxAds::playAd( const std::string& zone_place_location );
+sdkbox::PluginSdkboxAds::playAd( const std::string& zone_place_location, const AdUnitParams& params );
 
 // AdUnitParams is a typedef for std::map<std::string,std::string>
 ```
@@ -93,11 +93,11 @@ sdkbox::SdkboxAds::playAd( const std::string& zone_place_location, const AdUnitP
 
 请求显示一个指定的 AdUnit 中的广告：
 ```cpp
-sdkbox::SdkboxAds::playAd(
+sdkbox::PluginSdkboxAds::playAd(
         const std::string& ad_unit_name,
         const std::string& zone_place_location );
 
-sdkbox::SdkboxAds::playAd(
+sdkbox::PluginSdkboxAds::playAd(
         const std::string& ad_unit_name,
         const std::string& zone_place_location,
         const AdUnitParams& params );
@@ -105,12 +105,12 @@ sdkbox::SdkboxAds::playAd(
 
 请求显示定义在 sdkbox\_config.json 的 Placement 中的广告：
 ```cpp
-sdkbox::SdkboxAds::placement( const str::string& placement );
+sdkbox::PluginSdkboxAds::placement( const str::string& placement );
 ```
 
 更好的控制广告数据缓冲：
 ```cpp
-sdkbox::SdkboxAds::cacheControl(
+sdkbox::PluginSdkboxAds::cacheControl(
         const std::string& ad_unit,
         const std::map<std::string, std::string>& cacheOpts );
 ```
