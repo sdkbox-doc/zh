@@ -141,8 +141,8 @@ Making a purchase is as simple as invoking the ```purchase``` method on the IAP 
 
 
 1. 从 **Assets/SDKBOX/Assets/Resources** 拷贝文件 *CustomActivity.jar* 到 **Assets/Plugins/Android** 。
-2. 修改您的 AndroidManifest.xml 文件， 用 *CustomActivity.jar* 像下面那样替换 Unity activity 。
-    ```<activity android:name="com.sdkbox.activity.CustomActivity" ...```
+2. 如下图修改您的 AndroidManifest.xml 文件
+  ![](chart-8.png)
 
 ### 添加供应商账单权限
 
