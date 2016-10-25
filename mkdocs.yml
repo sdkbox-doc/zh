@@ -297,6 +297,8 @@ pages:
    - 'Remote Configuration': 'liveops/remote-config.md'
    - 'Server-side IAP receipt verification': 'liveops/receipt-verification.md'
    - 'On-the-fly catalog management': 'liveops/catalog-management.md'
+- Q&A:
+   - 'InstallGooglePlay': 'qa/installgoogleplaystore/index.md'
 - About: 'release-note.md'
 
 theme: mkdocs
