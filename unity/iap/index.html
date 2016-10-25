@@ -464,6 +464,21 @@
                 
                 
                 
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Q&A <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../qa/installgoogleplaystore/">InstallGooglePlay</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
                     <li >
                         <a href="../../release-note/">About</a>
                     </li>
@@ -632,8 +647,8 @@
 <p>为了能使 IAP 插件工作，我们必须能够在账单代码中使用确切的 activity 方法。在 Unity 中我们需要替换主 activity。如果您没有自己定义的 activity， 并且也没有提供您自己的 AndroidManifest.xml ， 那么插件包将会自动拷贝 activity 和 manifest 文件到正确的位置。如果已经有一个 manifest 文件了，那么将会弹出一个对话框提示阅读本节的内容并且执行下面的步骤。</p>
 <ol>
 <li>从 <strong>Assets/SDKBOX/Assets/Resources</strong> 拷贝文件 <em>CustomActivity.jar</em> 到 <strong>Assets/Plugins/Android</strong> 。</li>
-<li>修改您的 AndroidManifest.xml 文件， 用 <em>CustomActivity.jar</em> 像下面那样替换 Unity activity 。
-    <code>&lt;activity android:name="com.sdkbox.activity.CustomActivity" ...</code></li>
+<li>如下图修改您的 AndroidManifest.xml 文件
+  <img alt="" src="./chart-8.png" /></li>
 </ol>
 <h3 id="_3">添加供应商账单权限</h3>
 <p>为了使 IAP 能够在 Android 平台上工作，需要添加下列权限。</p>
