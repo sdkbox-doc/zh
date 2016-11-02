@@ -14,11 +14,15 @@
             {% endif %}
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png">Docs</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+
+
             {% if include_nav %}
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
@@ -34,19 +38,20 @@
                     </li>
                 {% else %}
                     <li {% if nav_item.active %}class="active"{% endif %}>
-                        <a href="{{ nav_item.url }}">{{ nav_item.title }}</a>
+                        <a href="{{ nav_item.url }}">{{ nav_item.title.strip() }}</a>
                     </li>
                 {% endif %}
                 {% endfor %}
 
-                    <!-- new add for language button -->
-                    <li>
-                        <a href="http://sdkbox-doc.github.io/en/">English</a>
-                    </li>
+                <li style="margin-left:30px">
+ <a href="http://sdkbox-doc.github.io/en/">English</a>
+                </li>
+                
                 </ul>
             {% endif %}
 
-            <ul class="nav navbar-nav navbar-right">
+
+{#
                 {% if include_next_prev %}
                     <li {% if not previous_page %}class="disabled"{% endif %}>
                         <a rel="next" {% if previous_page %}href="{{ previous_page.url }}"{% endif %}>
@@ -71,6 +76,8 @@
                         </a>
                     </li>
                 {% endif %}
+#}
+
             </ul>
         </div>
     </div>
