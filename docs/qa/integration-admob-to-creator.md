@@ -74,7 +74,7 @@ cc.Class({
 ![](../imgs/ccc_tutorial_console_compile_result.png)
 
 
-### 安装 AdMob 到 CocosCreate 工程中
+### 安装 AdMob 到 Cocos Creator 工程中
 
 * 打开命令行
 * 运行命令 `cd SDKBoxTutorial` 进入到工程根目录
