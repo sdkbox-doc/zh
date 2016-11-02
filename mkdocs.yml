@@ -299,6 +299,7 @@ pages:
    - 'On-the-fly catalog management': 'liveops/catalog-management.md'
 - Q&A:
    - 'InstallGooglePlay': 'qa/installgoogleplaystore/index.md'
+   - 'IntegrationAdmobToCreator': 'qa/integration-admob-to-creator.md'
 - About: 'release-note.md'
 
 theme: mkdocs
