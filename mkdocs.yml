@@ -292,14 +292,16 @@ pages:
    - 'Google Analytics': 'unity/googleanalytics/documentation.md'
 - Unreal:
    - 'In-App Purchase': 'unreal/iap/index.md'
+- CocosCreator:
+    - '集成指南': 'qa/integration-admob-to-creator.md'
 - LiveOps:
    - 'Setup': 'liveops/index.md'
    - 'Remote Configuration': 'liveops/remote-config.md'
    - 'Server-side IAP receipt verification': 'liveops/receipt-verification.md'
    - 'On-the-fly catalog management': 'liveops/catalog-management.md'
 - Q&A:
-   - 'InstallGooglePlay': 'qa/installgoogleplaystore/index.md'
-   - 'IntegrationAdmobToCreator': 'qa/integration-admob-to-creator.md'
+   - 'GooglePlay安装指南': 'qa/installgoogleplaystore/index.md'
+   - 'CocosCreator集成指南': 'qa/integration-admob-to-creator.md'
 - About: 'release-note.md'
 
 theme: mkdocs
