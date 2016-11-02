@@ -9,14 +9,14 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>Remote Configuration - SDKBOX</title>
-
+	<title>远程配置 - SDKBOX</title>
+        
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../css/base.css?2" rel="stylesheet">
         <link rel="stylesheet" href="../../css/highlight.css">
         <link href="../../css/custom.css" rel="stylesheet">
-
+        
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -24,17 +24,6 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-70044300-2', 'auto');
-            ga('send', 'pageview');
-        </script>
-        
     </head>
 
     <body>
@@ -55,18 +44,22 @@
             
 
             <!-- Main title -->
-            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png"></a>
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png">Docs</a>
         </div>
 
         <!-- Expanded navigation -->
         <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+
+
             
                 <!-- Main navigation -->
                 <ul class="nav navbar-nav">
                 
                 
                     <li >
-                        <a href="../..">Overview</a>
+                        <a href="../..">简介</a>
                     </li>
                 
                 
@@ -77,20 +70,26 @@
                         
                             
 <li >
-    <a href="../../cocos/">Cocos Integration</a>
+    <a href="../../cocos/">安装方式</a>
 </li>
 
                         
                             
 <li >
-    <a href="../../installer/">Installer</a>
+    <a href="../../installer/">命令行工具</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../qa/integration-admob-to-creator/">Creator集成</a>
 </li>
 
                         
                             
   
   <li class="dropdown-submenu">
-    <a tabindex="-1" class="non-link">Plugins</a>
+    <a tabindex="-1" class="non-link">SDK插件</a>
     <ul class="dropdown-menu">
         
             
@@ -431,46 +430,31 @@
                 
                 
                 
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CocosCreator <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                        
-                            
-<li >
-    <a href="../../qa/integration-admob-to-creator/">集成指南</a>
-</li>
-
-                        
-                        </ul>
-                    </li>
-                
-                
-                
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">LiveOps <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
 <li >
-    <a href="../">Setup</a>
+    <a href="../">使用介绍</a>
 </li>
 
                         
                             
 <li class="active">
-    <a href="./">Remote Configuration</a>
+    <a href="./">远程配置</a>
 </li>
 
                         
                             
 <li >
-    <a href="../receipt-verification/">Server-side IAP receipt verification</a>
+    <a href="../receipt-verification/">服务器端IAP订单校验</a>
 </li>
 
                         
                             
 <li >
-    <a href="../catalog-management/">On-the-fly catalog management</a>
+    <a href="../catalog-management/">即时可购买项目管理</a>
 </li>
 
                         
@@ -480,7 +464,7 @@
                 
                 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Q&A <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">指南 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         
                             
@@ -491,7 +475,7 @@
                         
                             
 <li >
-    <a href="../../qa/integration-admob-to-creator/">CocosCreator集成指南</a>
+    <a href="../../qa/integration-admob-to-creator/">AdMob集成指南</a>
 </li>
 
                         
@@ -499,34 +483,17 @@
                     </li>
                 
                 
-                
-                    <li >
-                        <a href="../../release-note/">About</a>
-                    </li>
-                
-                
 
-                    <!-- new add for language button -->
-                    <li>
-                        <a href="http://sdkbox-doc.github.io/en/">English</a>
-                    </li>
+                <li style="margin-left:30px">
+ <a href="http://sdkbox-doc.github.io/en/">English</a>
+                </li>
+                
                 </ul>
             
 
-            <ul class="nav navbar-nav navbar-right">
-                
-                    <li >
-                        <a rel="next" href="../">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../receipt-verification/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-                
-                
+
+
+
             </ul>
         </div>
     </div>
@@ -613,12 +580,25 @@
             <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
+        
         <script src="../../js/jquery-1.10.2.min.js"></script>
         <script src="../../js/bootstrap-3.0.3.min.js"></script>
         <script src="../../js/highlight.pack.js"></script>
         <script>var base_url = '../..';</script>
         <script src="../../js/base.js"></script>
+        
 
+ 
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+            ga('create', 'UA-70044300-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
     </body>
 </html>

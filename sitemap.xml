@@ -24,6 +24,12 @@
     </url>
         
     <url>
+     <loc>None/qa/integration-admob-to-creator/</loc>
+     <lastmod>2016-11-02</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
      <loc>None</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
@@ -72,16 +78,6 @@
     
         
     <url>
-     <loc>None/qa/integration-admob-to-creator/</loc>
-     <lastmod>2016-11-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
      <loc>None/liveops/</loc>
      <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
@@ -121,14 +117,6 @@
      <changefreq>daily</changefreq>
     </url>
         
-    
-
-    
-    <url>
-     <loc>None/release-note/</loc>
-     <lastmod>2016-11-02</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
     
 
 </urlset>
