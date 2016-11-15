@@ -146,6 +146,12 @@ pages:
                 - 'Google Analytics with C++': 'plugins/googleanalytics/v2-cpp.md'
                 - 'Google Analytics with Javascript': 'plugins/googleanalytics/v2-js.md'
                 - 'Google Analytics with Lua': 'plugins/googleanalytics/v2-lua.md'
+        - 'Google Play Game': 'plugins/googleplay/index.md'
+        - '_Google Play Game':
+            - 'Cocos2d-x v3.x':
+                - 'Google Play Game with C++': 'plugins/googleplay/v3-cpp.md'
+                - 'Google Play Game with Javascript': 'plugins/googleplay/v3-js.md'
+                - 'Google Play Game with Lua': 'plugins/googleplay/v3-lua.md'
         - 'In-App Purchase': 'plugins/iap/index.md'
         - '_IAP':
             - 'Cocos2d-x v3.x':
