@@ -25,9 +25,11 @@ plugin:share(shareInfo)
 - Platform_Unknow
 - Platform_Twitter
 - Platform_Facebook
+- Platform_SMS
+- Platform_Mail
+- Platform_Native
 - Platform_Select
 - Platform_All
-
 
 所有 sdkbox.SocialShareState 的可用值如下：
 
@@ -41,6 +43,27 @@ plugin:share(shareInfo)
 - SocialShareStateSelected
 - SocialShareStateSelectCancelled
 
+### 系统分享
+
+你也可以使用 ios/android 系统自带提供的分享功能:
+```lua
+local shareInfo = {}
+shareInfo.text = "#sdkbox(www.sdkbox.com) - the cure for sdk fatigue ";
+shareInfo.title = "sdkbox";
+//shareInfo.image = "path/to/image"
+shareInfo.link = "http://www.sdkbox.com";
+
+// 使用系统分享，以下两个属性无效
+//shareInfo.showDialog = false;
+//shareInfo.platform = sdkbox.SocialPlatform.Platform_Select;
+
+sdkbox.PluginShare:nativeShare(info);
+```
+
+*注意*:
+
+* IOS: 分享成功后，会收到分享成功事件，具体分享对应的操作会在 sdkbox::SocialShareResponse 的 error 属性中
+* Android: 能收到分享成功事件，但是这个不是真正意义的分享成功, 只是把分享的对话框显示出来了, 因为在 android 上, 无法收到分享成功的事件
 
 ### 捕获 Share 事件（可选）
 该插件允许您捕获 `Share` 事件以帮助您根据返回的内容进行相应的操作。一个简单的例子如下：
