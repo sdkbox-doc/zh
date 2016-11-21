@@ -57,6 +57,13 @@ sdkbox import facebook
 }
 ```
 
+在 Xcode8 iOS10 模拟器上，不能登录：
+```
+Go to the `Project Target` and then `Capabilities` and switch `Keychain Sharing ON`.
+```
+http://stackoverflow.com/a/39788102/5443510
+
+
 #### Android的步骤
 * 确保您的 `java -version` >= 1.7
 * 依[Android快速指导](https://developers.facebook.com/quickstarts/?platform=android) 来配置您的 __APP__
