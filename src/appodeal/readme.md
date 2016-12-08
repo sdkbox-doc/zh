@@ -11,6 +11,18 @@ $ sdkbox import appodeal
 
 <<[../../shared/notice.md]
 
+如果你用到相关的函数，请添加如下项到你的工程中的 Info.plist 中
+```plist
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>Advertising</string>
+<key>NSCalendarsUsageDescription</key>
+<string>Advertising</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Advertising</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Advertising</string>
+```
+
 <!--## Configuration
 <<[../../shared/sdkbox_cloud.md]
 <<[../../shared/remote_application_config.md]-->
