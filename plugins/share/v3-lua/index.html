@@ -542,6 +542,8 @@
         
             <li><a href="#_7">分享</a></li>
         
+            <li><a href="#_8">系统分享</a></li>
+        
             <li><a href="#share_1">捕获 Share 事件（可选）</a></li>
         
     
@@ -552,7 +554,7 @@
             <li><a href="#listeners">Listeners</a></li>
         
     
-        <li class="main "><a href="#_8">手动集成</a></li>
+        <li class="main "><a href="#_9">手动集成</a></li>
         
     
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
@@ -560,7 +562,7 @@
     
         <li class="main "><a href="#android">Android 手动集成</a></li>
         
-            <li><a href="#_9">拷贝文件</a></li>
+            <li><a href="#_10">拷贝文件</a></li>
         
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
         
@@ -726,6 +728,9 @@ plugin:share(shareInfo)
 <li>Platform_Unknow</li>
 <li>Platform_Twitter</li>
 <li>Platform_Facebook</li>
+<li>Platform_SMS</li>
+<li>Platform_Mail</li>
+<li>Platform_Native</li>
 <li>Platform_Select</li>
 <li>Platform_All</li>
 </ul>
@@ -740,6 +745,26 @@ plugin:share(shareInfo)
 <li>SocialShareStateSelectShow</li>
 <li>SocialShareStateSelected</li>
 <li>SocialShareStateSelectCancelled</li>
+</ul>
+<h3 id="_8">系统分享</h3>
+<p>你也可以使用 ios/android 系统自带提供的分享功能:</p>
+<pre><code class="lua">local shareInfo = {}
+shareInfo.text = &quot;#sdkbox(www.sdkbox.com) - the cure for sdk fatigue &quot;;
+shareInfo.title = &quot;sdkbox&quot;;
+//shareInfo.image = &quot;path/to/image&quot;
+shareInfo.link = &quot;http://www.sdkbox.com&quot;;
+
+// 使用系统分享，以下两个属性无效
+//shareInfo.showDialog = false;
+//shareInfo.platform = sdkbox.SocialPlatform.Platform_Select;
+
+sdkbox.PluginShare:nativeShare(info);
+</code></pre>
+
+<p><em>注意</em>:</p>
+<ul>
+<li>IOS: 分享成功后，会收到分享成功事件，具体分享对应的操作会在 sdkbox::SocialShareResponse 的 error 属性中</li>
+<li>Android: 能收到分享成功事件，但是这个不是真正意义的分享成功, 只是把分享的对话框显示出来了, 因为在 android 上, 无法收到分享成功的事件</li>
 </ul>
 <h3 id="share_1">捕获 Share 事件（可选）</h3>
 <p>该插件允许您捕获 <code>Share</code> 事件以帮助您根据返回的内容进行相应的操作。一个简单的例子如下：</p>
@@ -777,7 +802,7 @@ plugin:init()
 <blockquote>
 <p>Notifies the delegate that share completion</p>
 </blockquote>
-<h2 id="_8">手动集成</h2>
+<h2 id="_9">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -807,7 +832,7 @@ plugin:init()
 <li><strong>command-line</strong> 和 <strong>eclipse</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android</code> .</li>
 <li><strong>Android Studio</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android-studio</code> .</li>
 </ul>
-<h3 id="_9">拷贝文件</h3>
+<h3 id="_10">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>android-support-v4.jar</p>

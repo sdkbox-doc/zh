@@ -676,6 +676,11 @@ To ensure security, during normal execution the new configuration is locally sav
 }
 </code></pre>
 
+<p>在 Xcode8 iOS10 模拟器上，不能登录：</p>
+<pre><code>Go to the `Project Target` and then `Capabilities` and switch `Keychain Sharing ON`.
+</code></pre>
+
+<p>http://stackoverflow.com/a/39788102/5443510</p>
 <h4 id="android">Android的步骤</h4>
 <ul>
 <li>确保您的 <code>java -version</code> &gt;= 1.7</li>
