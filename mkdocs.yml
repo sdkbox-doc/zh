@@ -4,7 +4,7 @@ pages:
 - Cocos:
     - '安装方式': 'cocos.md'
     - '命令行工具': 'installer.md'
-    - 'Creator集成': 'qa/integration-admob-to-creator.md'
+    - 'Creator集成': 'qa/cocos_creator.md'
     - 'SDK插件':
         - 'Achievements': 'plugins/achievement/index.md'
         - '_Achievements':
