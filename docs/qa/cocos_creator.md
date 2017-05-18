@@ -6,7 +6,10 @@
 
 <iframe src='https://gfycat.com/ifr/ConsciousSomberGerenuk' frameborder='0' scrolling='no' width='640' height='360' allowfullscreen></iframe>
 
-当 SDKBOX 插件安装成功之后，可以从系统菜单里面选择 ”SDKBOX“ 这个选项
+
+当 SDKBOX 插件安装成功之后，就可以在系统菜单里面找到 "SDKBOX"
+
+![](../imgs/ccc_tutorial_sdkbox_menu.png)
 
 ##集成SDK
 
@@ -68,9 +71,7 @@ cc.Class({
 
 ### 配置AdMob
 
-* 根据Admob账号修改以下文件 `./build/jsb-default/res/sdkbox_config.json` 
-
-`提示`: 请注意备份 `sdkbox_config.json`, Cocos Creator 有可能会清除此文件
+* 根据Admob账号修改以下文件 `./build/jsb-default/res/sdkbox_config.json`
 
 ### 完整的 AdMob.js 代码
 
@@ -125,11 +126,8 @@ cc.Class({
 
 ### 重新编译项目
 
-* iOS: 使用Xcode打开 `./build/jsb-default/frameworks/runtime-src/proj.ios_mac/SDKBoxTutorial.xcodeproj` 
+* iOS: 使用Xcode打开 `./build/jsb-default/frameworks/runtime-src/proj.ios_mac/SDKBoxTutorial.xcodeproj`
 * Android: 在 `./build/jsb-default` 目录下运行 `cocos run -p android `
 
 ![](../imgs/ccc_tutorial_admob_intistial_show.png)
 
-### 重要提示
-
-`提示`: 请注意备份 `sdkbox_config.json`, Cocos Creator 有可能会清除此文件
