@@ -307,6 +307,7 @@ pages:
 - 指南:
    - 'GooglePlay安装指南': 'qa/installgoogleplaystore/index.md'
    - 'AdMob集成指南': 'qa/integration-admob-to-creator.md'
+   - 'SDKBoxGUI For Creator介绍': 'qa/sdkbox-for-create-usage.md'
 
 theme: mkdocs
 theme_dir: 'custom_theme'

@@ -88,8 +88,6 @@ cc.Class({
 
 * 在 `./build/jsb-default/res/sdkbox_config.json` 中填入自己的 AdMob 广告id
 
-`重要提示`: 一定要备份好这个 `sdkbox_config.json` 文件，因为在你每次 `构建` 时，creator 都会把 `./build/jsb-default/res` 目录清空， 再把 creator 编辑器中的资源拷贝到这个文件夹, 所以每次 `构建` 后，`sdkbox_config.json` 都会被删除. 需要手动还原.
-
 ### 修改 AdMob.js 中的空函数
 
 在空函数中加入对应的函数调用
@@ -162,7 +160,3 @@ cc.Class({
 * 编译 运行
 
 ![](../imgs/ccc_tutorial_admob_intistial_show.png)
-
-### 重要提示
-
-一定要备份好 `sdkbox_config.json` 文件，每次构建后，`sdkbox_config.json` 文件都会被删除。

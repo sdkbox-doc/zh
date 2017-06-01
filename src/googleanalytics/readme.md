@@ -22,7 +22,8 @@ SDKBOX Installer 将会自动在您的 `res/sdkbox_config.json` 中插入一份�
 对于一个 Google Analytics 插件的配置样例，您需要将其中的 `<TRACKING_CODE>` 替换成您特定的 [__Google Analytics__](https://support.google.com/analytics/answer/1008080?hl=en) 帐号中的信息。
 ```json
 "GoogleAnalytics" : {
-    "trackingCode" : "<TRACKING_CODE>"
+    "trackingCode" : "<TRACKING_CODE>",
+    "anonymizeIp": true
 }
 ```
 
