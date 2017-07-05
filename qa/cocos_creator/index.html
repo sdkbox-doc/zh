@@ -204,6 +204,16 @@
         
             
 <li >
+    <a href="../../plugins/firebase/">Firebase</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../plugins/flurryanalytics/">Flurry Analytics</a>
 </li>
 
@@ -489,6 +499,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../sdkbox-for-create-usage/">SDKBoxGUI For Creator介绍</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -513,10 +529,16 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+    
         <li class="main active"><a href="#sdkbox-cocos-creator">SDKBOX Cocos Creator 插件使用指南</a></li>
+        
             <li><a href="#_1">安装</a></li>
+        
             <li><a href="#sdk">集成SDK</a></li>
+        
             <li><a href="#_2">使用指南</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -526,7 +548,8 @@
 <p>自 Cocos Creator 1.4 版本以后，Cocos用户可以直接从插件商店安装SDKBOX插件</p>
 <iframe src='https://gfycat.com/ifr/ConsciousSomberGerenuk' frameborder='0' scrolling='no' width='640' height='360' allowfullscreen></iframe>
 
-<p>当 SDKBOX 插件安装成功之后，可以从系统菜单里面选择 ”SDKBOX“ 这个选项</p>
+<p>当 SDKBOX 插件安装成功之后，就可以在系统菜单里面找到 "SDKBOX"</p>
+<p><img alt="" src="../../imgs/ccc_tutorial_sdkbox_menu.png" /></p>
 <h2 id="sdk">集成SDK</h2>
 <p>在开始集成 SDKBOX 插件之前，必须先用 Cocos Creator 生成iOS/Android项目</p>
 <iframe src='https://gfycat.com/ifr/EntireLinearBeetle' frameborder='0' scrolling='no' width='640' height='360' allowfullscreen></iframe>
@@ -573,9 +596,8 @@
 <img alt="" src="../../imgs/ccc_tutorial_btn_show_script.png" /></p>
 <h3 id="admob">配置AdMob</h3>
 <ul>
-<li>根据Admob账号修改以下文件 <code>./build/jsb-default/res/sdkbox_config.json</code> </li>
+<li>根据Admob账号修改以下文件 <code>./build/jsb-default/res/sdkbox_config.json</code></li>
 </ul>
-<p><code>提示</code>: 请注意备份 <code>sdkbox_config.json</code>, Cocos Creator 有可能会清除此文件</p>
 <h3 id="admobjs">完整的 AdMob.js 代码</h3>
 <pre><code class="js">cc.Class({
 
@@ -627,12 +649,10 @@
 
 <h3 id="_6">重新编译项目</h3>
 <ul>
-<li>iOS: 使用Xcode打开 <code>./build/jsb-default/frameworks/runtime-src/proj.ios_mac/SDKBoxTutorial.xcodeproj</code> </li>
+<li>iOS: 使用Xcode打开 <code>./build/jsb-default/frameworks/runtime-src/proj.ios_mac/SDKBoxTutorial.xcodeproj</code></li>
 <li>Android: 在 <code>./build/jsb-default</code> 目录下运行 <code>cocos run -p android</code></li>
 </ul>
-<p><img alt="" src="../../imgs/ccc_tutorial_admob_intistial_show.png" /></p>
-<h3 id="_7">重要提示</h3>
-<p><code>提示</code>: 请注意备份 <code>sdkbox_config.json</code>, Cocos Creator 有可能会清除此文件</p></div>
+<p><img alt="" src="../../imgs/ccc_tutorial_admob_intistial_show.png" /></p></div>
             
         </div>
 

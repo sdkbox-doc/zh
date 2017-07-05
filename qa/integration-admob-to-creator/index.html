@@ -204,6 +204,16 @@
         
             
 <li >
+    <a href="../../plugins/firebase/">Firebase</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../plugins/flurryanalytics/">Flurry Analytics</a>
 </li>
 
@@ -489,6 +499,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../sdkbox-for-create-usage/">SDKBoxGUI For Creator介绍</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -513,21 +529,36 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+    
         <li class="main active"><a href="#cocos-creator-sdkbox">在 Cocos Creator 工程上集成 SDKBox 插件</a></li>
+        
             <li><a href="#_1">环境</a></li>
+        
             <li><a href="#cocos-creator">创建一个 Cocos Creator 新的空白工程</a></li>
+        
             <li><a href="#_2">添加控件</a></li>
+        
             <li><a href="#javascript">创建 JavaScript 的组件</a></li>
+        
             <li><a href="#admobjs-canvas">绑定 AdMob.js 到 Canvas</a></li>
+        
             <li><a href="#admobjs">关联按下事件到 AdMob.js</a></li>
+        
             <li><a href="#_3">在模拟器中运行</a></li>
+        
             <li><a href="#_4">编译工程</a></li>
+        
             <li><a href="#admob-cocos-creator">安装 AdMob 到 Cocos Creator 工程中</a></li>
+        
             <li><a href="#admob">配置 AdMob</a></li>
+        
             <li><a href="#admobjs_1">修改 AdMob.js 中的空函数</a></li>
+        
             <li><a href="#creator">再次构建编译 Creator 工程</a></li>
+        
             <li><a href="#xcode">用Xcode来编译运行</a></li>
-            <li><a href="#_5">重要提示</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -598,7 +629,6 @@
 <ul>
 <li>在 <code>./build/jsb-default/res/sdkbox_config.json</code> 中填入自己的 AdMob 广告id</li>
 </ul>
-<p><code>重要提示</code>: 一定要备份好这个 <code>sdkbox_config.json</code> 文件，因为在你每次 <code>构建</code> 时，creator 都会把 <code>./build/jsb-default/res</code> 目录清空， 再把 creator 编辑器中的资源拷贝到这个文件夹, 所以每次 <code>构建</code> 后，<code>sdkbox_config.json</code> 都会被删除. 需要手动还原.</p>
 <h3 id="admobjs_1">修改 AdMob.js 中的空函数</h3>
 <p>在空函数中加入对应的函数调用</p>
 <p>对应的 API 文档可以在<a href="http://docs.sdkbox.com/zh/plugins/admob/v3-js/#api-reference">这里</a>看,就是在 import 成功后，自动打的网页</p>
@@ -665,9 +695,7 @@
 <li>用Xcode打开 <code>./build/jsb-default/frameworks/runtime-src/proj.ios_mac/SDKBoxTutorial.xcodeproj</code></li>
 <li>编译 运行</li>
 </ul>
-<p><img alt="" src="../../imgs/ccc_tutorial_admob_intistial_show.png" /></p>
-<h3 id="_5">重要提示</h3>
-<p>一定要备份好 <code>sdkbox_config.json</code> 文件，每次构建后，<code>sdkbox_config.json</code> 文件都会被删除。</p></div>
+<p><img alt="" src="../../imgs/ccc_tutorial_admob_intistial_show.png" /></p></div>
             
         </div>
 

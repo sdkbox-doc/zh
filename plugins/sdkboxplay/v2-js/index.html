@@ -204,6 +204,16 @@
         
             
 <li >
+    <a href="../../firebase/">Firebase</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../flurryanalytics/">Flurry Analytics</a>
 </li>
 
@@ -489,6 +499,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../../../qa/sdkbox-for-create-usage/">SDKBoxGUI For Creator介绍</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -513,28 +529,66 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+    
         <li class="main active"><a href="#_1">前提条件</a></li>
+        
             <li><a href="#google-play">Google play</a></li>
+        
             <li><a href="#game-center">Game Center</a></li>
+        
+    
         <li class="main "><a href="#_2">集成</a></li>
+        
             <li><a href="#json">JSON 配置</a></li>
+        
+    
         <li class="main "><a href="#_3">使用</a></li>
+        
             <li><a href="#javascript">注册 Javascript 函数</a></li>
+        
             <li><a href="#sdkboxplay">初始化 SdkboxPlay</a></li>
+        
             <li><a href="#sdkboxplay_1">使用 SdkboxPlay</a></li>
+        
             <li><a href="#sdkboxplay_2">SdkboxPlay 事件</a></li>
+        
+    
         <li class="main "><a href="#api-reference">API Reference</a></li>
+        
             <li><a href="#methods">Methods</a></li>
+        
             <li><a href="#listeners">Listeners</a></li>
+        
+    
         <li class="main "><a href="#_6">手动集成</a></li>
+        
+    
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
+        
+    
         <li class="main "><a href="#android">Android 手动集成</a></li>
+        
             <li><a href="#_7">拷贝文件</a></li>
+        
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
+        
             <li><a href="#androidmk">编辑 Android.mk</a></li>
+        
             <li><a href="#applicationmk">编辑 Application.mk</a></li>
+        
             <li><a href="#yourgamenamejava">修改 &lt;YourGameName&gt;.java</a></li>
+        
+    
         <li class="main "><a href="#proguard-release">使用 Proguard （release模式下可选）</a></li>
+        
+    
+        <li class="main "><a href="#_8">游戏存档</a></li>
+        
+            <li><a href="#ios_1">iOS 云存储</a></li>
+        
+            <li><a href="#_9">用法</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1080,7 +1134,29 @@ import com.sdkbox.plugin.SDKBox;
 }
 </code></pre>
 
-<p><strong>Note:</strong> Proguard 只能工作在 <strong>Release</strong> 模式下 （比如： <code>cocos run -m release</code>） debug 模式下不会触发 Proguard 。</p></div>
+<p><strong>Note:</strong> Proguard 只能工作在 <strong>Release</strong> 模式下 （比如： <code>cocos run -m release</code>） debug 模式下不会触发 Proguard 。</p>
+<h2 id="_8">游戏存档</h2>
+<p>SDKBoxPlay 支持 iOS/Google的游戏云存档功能. 开发者可以使用此接口存储用户的游戏数据.</p>
+<h3 id="ios_1">iOS 云存储</h3>
+<ul>
+<li>玩家自己的 iCloud 帐号必须是开启状态</li>
+<li>开发者在对应的工程的必须把 iCloud <a href="https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EnablingiCloudandConfiguringCloudKit/EnablingiCloudandConfiguringCloudKit.html#//apple_ref/doc/uid/TP40014987-CH2-SW2">打开</a></li>
+</ul>
+<h3 id="_9">用法</h3>
+<h4 id="_10">加载所有的游戏数据</h4>
+<pre><code class="cpp">sdkbox::PluginSdkboxPlay::loadAllData();
+</code></pre>
+
+<h4 id="_11">加载某一项游戏数据</h4>
+<pre><code class="cpp">sdkbox::PluginSdkboxPlay::loadGameData(&quot;key2&quot;);
+</code></pre>
+
+<h4 id="_12">保持数据</h4>
+<pre><code class="cpp">sdkbox::PluginSdkboxPlay::saveGameData(&quot;key1&quot;, &quot;{\&quot;game_name\&quot;: \&quot;sdkbox go\&quot;, \&quot;stage\&quot;: 3}&quot;);
+</code></pre>
+
+<p>iOS 存档<a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/GameKit_Guide/SavedGames/SavedGames.html">官方文档</a></p>
+<p>Android 存档<a href="https://developers.google.com/games/services/common/concepts/savedgames">官方文档</a></p></div>
             
         </div>
 
