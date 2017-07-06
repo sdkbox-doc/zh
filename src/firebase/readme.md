@@ -58,3 +58,5 @@ python -c 'import urllib; import sys; sys.argv = ["transpy", "-i", "./google-ser
 <<[extra-step.md]
 
 <<[proguard.md]
+
+<<[../shared/debug.md]
