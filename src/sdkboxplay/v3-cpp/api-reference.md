@@ -13,11 +13,11 @@ static void init ( ) ;
 >     "debug"            : boolean,
 >     "enabled"          : boolean
 > }
-> debug: 
+> debug:
 >    is a common value to all plugins which enables debug info to be sent to the console. Useful when developing.
-> enabled: 
+> enabled:
 >    is a common value to all plugins, which enables or disables the plugin. If enabled is false, the plugin methods > will do nothing.
-> connect_on_start: 
+> connect_on_start:
 >    tells the plugin to make an automatic connection to Google Play Services on application startup.
 > leaderboards:
 >    a collection of objects of the form:
@@ -86,13 +86,52 @@ static bool isConnected();
 static void signin();
 ```
 > Request connection to the platform-specific services backend.
-> This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.   
+> This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.
 
 ```cpp
 static void signout();
 ```
 > Request disconnection from the GooglePlay/Game Center backend.
 > This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.
+
+```cpp
+static void loadAllData();
+```
+> **DEPRECATED** Please use loadAllGameData to replace
+load all saved user game data in clound
+will trigger onGameData callback
+
+```cpp
+static void loadGameData(const std::string& save_name);
+```
+> **DEPRECATED** Please use loadAllGameData to replace
+load one saved user game data in clound
+will trigger onGameData callback
+
+```cpp
+static void saveGameData(const std::string& save_name, const std::string& data);
+```
+> **DEPRECATED**
+
+Please use saveGameDataBinary(name, data, length) to replace, save user game data in cloud, will trigger onGameData callback
+
+```cpp
+static void loadAllGameData();
+```
+> load all saved game data
+
+will trigger onLoadGameData callback
+
+```cpp
+static void saveGameDataBinary(const std::string& name, const void* data, int length);
+```
+> save user game data, will trigger onSaveGameData callback
+
+- @param name: saved data name
+- @param data: data pointer
+- @param length: data length in byte
+
+Note: if you want to save string, please translate to void*
 
 ### Listeners
 ```cpp
@@ -105,11 +144,11 @@ void onConnectionStatusChanged( int status );
 >   + GPS_CONNECTION_ERROR:error with google play services connection.
 
 ```cpp
-void onScoreSubmitted( 
-        const std::string& leaderboard_name, 
-        int score, 
-        bool maxScoreAllTime, 
-        bool maxScoreWeek, 
+void onScoreSubmitted(
+        const std::string& leaderboard_name,
+        int score,
+        bool maxScoreAllTime,
+        bool maxScoreWeek,
         bool maxScoreToday )
 ```
 > Callback method invoked when an score has been successfully submitted to a leaderboard.
@@ -120,7 +159,7 @@ void onScoreSubmitted(
 ```cpp
 void onIncrementalAchievementUnlocked( const std::string& achievement_name );
 ```
-> Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value. 
+> Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value.
 > Maximum step count for an incremental achievement is defined in the google play developer console.
 
 ```cpp
@@ -134,3 +173,31 @@ void onAchievementUnlocked( const std::string& achievement_name, bool newlyUnloc
 ```
 > Call method invoked when the request call to unlock a non-incremental achievement is successful.
 > If this is the first time the achievement is unlocked, newUnlocked will be true.
+
+```cpp
+void onGameData(const std::string& action,
+                const std::string& name,
+                const std::string& data,
+                const std::string& error)
+```
+> **DEPRECATED**
+
+- @param action std::string save, load
+- @param name std::string
+- @param data std::string
+- @param error std::string if load/save success, error will be empty
+
+```cpp
+void onSaveGameData(bool success, const std::string& error)
+```
+>
+- @param success bool
+- @param error std::string if success, error will be empty
+
+```cpp
+void onLoadGameData(const SavedGameData* savedData, const std::string& error)
+```
+>
+- @param savedData SavedGameData*
+- @param error std::string if success, error will be empty
+

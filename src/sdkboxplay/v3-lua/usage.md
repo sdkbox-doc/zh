@@ -103,6 +103,20 @@ sdkbox.PluginSdkboxPlay:showAchievements( );
 
 这个方法显示默认的成就视图。这个视图将只显示公开的成就。针对不同的平台显示特定的信息。比如该成就是否解锁，剩余的解锁步骤（仅适用于 Google Play ）平台，总共获得的经验值等等。
 
+##### 游戏数据云保存
+
+```cpp
+sdkbox.PluginSdkboxPlay:loadAllGameData();
+```
+
+加载所有保存在云中的数据(iOS中用iCloud, Android中用Google Drive 来存储).
+
+```cpp
+sdkbox.PluginSdkboxPlay:saveGameDataBinary(name, data, length);
+```
+
+保存 Lua string.
+
 
 ### SdkboxPlay 事件
 该插件允许您捕捉事件。
