@@ -13,11 +13,11 @@ sdkbox.SdkboxPlay:init ( ) ;
 >     "debug"            : boolean,
 >     "enabled"          : boolean
 > }
-> debug: 
+> debug:
 >    is a common value to all plugins which enables debug info to be sent to the console. Useful when developing.
-> enabled: 
+> enabled:
 >    is a common value to all plugins, which enables or disables the plugin. If enabled is false, the plugin methods > will do nothing.
-> connect_on_start: 
+> connect_on_start:
 >    tells the plugin to make an automatic connection to Google Play Services on application startup.
 > leaderboards:
 >    a collection of objects of the form:
@@ -86,13 +86,47 @@ sdkbox.SdkboxPlay:isConnected();
 sdkbox.SdkboxPlay:signin();
 ```
 > Request connection to the platform-specific services backend.
-> This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.   
+> This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.
 
 ```lua
 sdkbox.SdkboxPlay:signout();
 ```
 > Request disconnection from the GooglePlay/Game Center backend.
 > This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.
+
+```lua
+sdkbox.PluginSdkboxPlay:loadAllData()
+```
+> **DEPRECATED**
+Please use loadAllGameData to replace, load all saved user game data in clound, will trigger onGameData callback
+
+```lua
+sdkbox.PluginSdkboxPlay:loadGameData(save_name)
+```
+> **DEPRECATED**
+Please use loadAllGameData to replace, load one saved user game data in clound, will trigger onGameData callback
+
+```lua
+sdkbox.PluginSdkboxPlay:saveGameData(save_name, data)
+```
+> **DEPRECATED**
+
+Please use saveGameDataBinary(name, data, length) to replace, save user game data in cloud, will trigger onGameData callback
+
+```lua
+sdkbox.PluginSdkboxPlay:loadAllGameData()
+```
+> load all saved game data
+will trigger onLoadGameData callback
+
+```lua
+sdkbox.PluginSdkboxPlay:saveGameDataBinary(name, data, length)
+```
+> save user game data, will trigger onSaveGameData callback
+
+- @param name: saved data name
+- @param data: data pointer
+- @param length: data length in byte
 
 
 ### Listeners
@@ -106,11 +140,11 @@ onConnectionStatusChanged( status );
 >   + 1002:     error with google play services connection.
 
 ```lua
-onScoreSubmitted( 
-        leaderboard_name, 
-        score, 
-        maxScoreAllTime, 
-        maxScoreWeek, 
+onScoreSubmitted(
+        leaderboard_name,
+        score,
+        maxScoreAllTime,
+        maxScoreWeek,
         maxScoreToday )
 ```
 > Callback method invoked when an score has been successfully submitted to a leaderboard.
@@ -121,7 +155,7 @@ onScoreSubmitted(
 ```lua
 onIncrementalAchievementUnlocked( achievement_name );
 ```
-> Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value. 
+> Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value.
 > Maximum step count for an incremental achievement is defined in the google play developer console.
 
 ```lua
@@ -135,3 +169,28 @@ onAchievementUnlocked( achievement_name, newlyUnlocked );
 ```
 > Call method invoked when the request call to unlock a non-incremental achievement is successful.
 > If this is the first time the achievement is unlocked, newUnlocked will be true.
+
+```lua
+onGameData(action, name, data, error)
+```
+> **DEPRECATED**
+
+- @param action string save, load
+- @param name string
+- @param data string
+- @param error string if load/save success, error will be empty
+
+```lua
+onSaveGameData(success, error)
+```
+>
+- @param success bool
+- @param error string if success, error will be empty
+
+```lua
+onLoadGameData(savedData, error)
+```
+>
+- @param savedData SavedGameData
+- @param error string if success, error will be empty
+
