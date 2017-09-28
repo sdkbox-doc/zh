@@ -364,6 +364,16 @@
         
             
 <li >
+    <a href="../../unityads/">UnityAds</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../valuepotion/">Valuepotion</a>
 </li>
 
@@ -558,7 +568,7 @@
             <li><a href="#listeners">Listeners</a></li>
         
     
-        <li class="main "><a href="#_5">手动集成</a></li>
+        <li class="main "><a href="#_6">手动集成</a></li>
         
     
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
@@ -566,7 +576,7 @@
     
         <li class="main "><a href="#android">Android 手动集成</a></li>
         
-            <li><a href="#_6">拷贝文件</a></li>
+            <li><a href="#_7">拷贝文件</a></li>
         
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
         
@@ -580,11 +590,11 @@
         <li class="main "><a href="#proguard-release">使用 Proguard （release模式下可选）</a></li>
         
     
-        <li class="main "><a href="#_7">游戏存档</a></li>
+        <li class="main "><a href="#_8">游戏存档</a></li>
         
             <li><a href="#ios_1">iOS 云存储</a></li>
         
-            <li><a href="#_8">用法</a></li>
+            <li><a href="#_9">用法</a></li>
         
     
     </ul>
@@ -753,6 +763,15 @@ AppDelegate::applicationDidFinishLaunching()
 </code></pre>
 
 <p>这个方法显示默认的成就视图。这个视图将只显示公开的成就。针对不同的平台显示特定的信息。比如该成就是否解锁，剩余的解锁步骤（仅适用于 Google Play ）平台，总共获得的经验值等等。</p>
+<h5 id="_5">游戏数据云保存</h5>
+<pre><code class="cpp">void loadAllGameData();
+</code></pre>
+
+<p>加载所有保存在云中的数据(iOS中用iCloud, Android中用Google Drive 来存储).</p>
+<pre><code class="cpp">void saveGameDataBinary(const std::string&amp; name, const void* data, int length);
+</code></pre>
+
+<p>保存二进制数据. 字符串也是看成二进制数据来存储.</p>
 <h3 id="sdkboxplay_2">SdkboxPlay 事件</h3>
 <p>该插件允许您捕捉事件。</p>
 <ul>
@@ -821,11 +840,11 @@ The plugin initializes from the sdkbox_config.json file, and reads a configurati
     "debug"            : boolean,
     "enabled"          : boolean
 }
-debug: 
+debug:
    is a common value to all plugins which enables debug info to be sent to the console. Useful when developing.
-enabled: 
+enabled:
    is a common value to all plugins, which enables or disables the plugin. If enabled is false, the plugin methods &gt; will do nothing.
-connect_on_start: 
+connect_on_start:
    tells the plugin to make an automatic connection to Google Play Services on application startup.
 leaderboards:
    a collection of objects of the form:
@@ -902,7 +921,7 @@ Total experience count is measured as well.</p>
 
 <blockquote>
 <p>Request connection to the platform-specific services backend.
-This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.   </p>
+This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.</p>
 </blockquote>
 <pre><code class="cpp">static void signout();
 </code></pre>
@@ -911,6 +930,48 @@ This method will invoke plugin's listener <code>onConnectionStatusChanged</code>
 <p>Request disconnection from the GooglePlay/Game Center backend.
 This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.</p>
 </blockquote>
+<pre><code class="cpp">static void loadAllData();
+</code></pre>
+
+<blockquote>
+<p><strong>DEPRECATED</strong> Please use loadAllGameData to replace
+load all saved user game data in clound
+will trigger onGameData callback</p>
+</blockquote>
+<pre><code class="cpp">static void loadGameData(const std::string&amp; save_name);
+</code></pre>
+
+<blockquote>
+<p><strong>DEPRECATED</strong> Please use loadAllGameData to replace
+load one saved user game data in clound
+will trigger onGameData callback</p>
+</blockquote>
+<pre><code class="cpp">static void saveGameData(const std::string&amp; save_name, const std::string&amp; data);
+</code></pre>
+
+<blockquote>
+<p><strong>DEPRECATED</strong></p>
+</blockquote>
+<p>Please use saveGameDataBinary(name, data, length) to replace, save user game data in cloud, will trigger onGameData callback</p>
+<pre><code class="cpp">static void loadAllGameData();
+</code></pre>
+
+<blockquote>
+<p>load all saved game data</p>
+</blockquote>
+<p>will trigger onLoadGameData callback</p>
+<pre><code class="cpp">static void saveGameDataBinary(const std::string&amp; name, const void* data, int length);
+</code></pre>
+
+<blockquote>
+<p>save user game data, will trigger onSaveGameData callback</p>
+</blockquote>
+<ul>
+<li>@param name: saved data name</li>
+<li>@param data: data pointer</li>
+<li>@param length: data length in byte</li>
+</ul>
+<p>Note: if you want to save string, please translate to void*</p>
 <h3 id="listeners">Listeners</h3>
 <pre><code class="cpp">void onConnectionStatusChanged( int status );
 </code></pre>
@@ -922,11 +983,11 @@ Values are as follows:
   + GPS_DISCONNECTED:    successfully disconnected.
   + GPS_CONNECTION_ERROR:error with google play services connection.</p>
 </blockquote>
-<pre><code class="cpp">void onScoreSubmitted( 
-        const std::string&amp; leaderboard_name, 
-        int score, 
-        bool maxScoreAllTime, 
-        bool maxScoreWeek, 
+<pre><code class="cpp">void onScoreSubmitted(
+        const std::string&amp; leaderboard_name,
+        int score,
+        bool maxScoreAllTime,
+        bool maxScoreWeek,
         bool maxScoreToday )
 </code></pre>
 
@@ -940,7 +1001,7 @@ Since Game center can't determine if submitted score is maximum, it will send th
 </code></pre>
 
 <blockquote>
-<p>Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value. 
+<p>Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value.
 Maximum step count for an incremental achievement is defined in the google play developer console.</p>
 </blockquote>
 <pre><code class="cpp">void onIncrementalAchievementStep( const std::string&amp; achievement_name, int step );
@@ -957,7 +1018,40 @@ If possible (Google play only) it notifies back with the current achievement ste
 <p>Call method invoked when the request call to unlock a non-incremental achievement is successful.
 If this is the first time the achievement is unlocked, newUnlocked will be true.</p>
 </blockquote>
-<h2 id="_5">手动集成</h2>
+<pre><code class="cpp">void onGameData(const std::string&amp; action,
+                const std::string&amp; name,
+                const std::string&amp; data,
+                const std::string&amp; error)
+</code></pre>
+
+<blockquote>
+<p><strong>DEPRECATED</strong></p>
+</blockquote>
+<ul>
+<li>@param action std::string save, load</li>
+<li>@param name std::string</li>
+<li>@param data std::string</li>
+<li>@param error std::string if load/save success, error will be empty</li>
+</ul>
+<pre><code class="cpp">void onSaveGameData(bool success, const std::string&amp; error)
+</code></pre>
+
+<blockquote>
+<ul>
+<li>@param success bool</li>
+<li>@param error std::string if success, error will be empty</li>
+</ul>
+</blockquote>
+<pre><code class="cpp">void onLoadGameData(const SavedGameData* savedData, const std::string&amp; error)
+</code></pre>
+
+<blockquote>
+<ul>
+<li>@param savedData SavedGameData*</li>
+<li>@param error std::string if success, error will be empty</li>
+</ul>
+</blockquote>
+<h2 id="_6">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -977,7 +1071,7 @@ If this is the first time the achievement is unlocked, newUnlocked will be true.
 <li><strong>command-line</strong> 和 <strong>eclipse</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android</code> .</li>
 <li><strong>Android Studio</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android-studio</code> .</li>
 </ul>
-<h3 id="_6">拷贝文件</h3>
+<h3 id="_7">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>PluginSdkboxPlay.jar</p>
@@ -1160,23 +1254,23 @@ SDKBox.init(this);
 </code></pre>
 
 <p><strong>Note:</strong> Proguard 只能工作在 <strong>Release</strong> 模式下 （比如： <code>cocos run -m release</code>） debug 模式下不会触发 Proguard 。</p>
-<h2 id="_7">游戏存档</h2>
+<h2 id="_8">游戏存档</h2>
 <p>SDKBoxPlay 支持 iOS/Google的游戏云存档功能. 开发者可以使用此接口存储用户的游戏数据.</p>
 <h3 id="ios_1">iOS 云存储</h3>
 <ul>
 <li>玩家自己的 iCloud 帐号必须是开启状态</li>
 <li>开发者在对应的工程的必须把 iCloud <a href="https://developer.apple.com/library/content/documentation/DataManagement/Conceptual/CloudKitQuickStart/EnablingiCloudandConfiguringCloudKit/EnablingiCloudandConfiguringCloudKit.html#//apple_ref/doc/uid/TP40014987-CH2-SW2">打开</a></li>
 </ul>
-<h3 id="_8">用法</h3>
-<h4 id="_9">加载所有的游戏数据</h4>
+<h3 id="_9">用法</h3>
+<h4 id="_10">加载所有的游戏数据</h4>
 <pre><code class="cpp">sdkbox::PluginSdkboxPlay::loadAllData();
 </code></pre>
 
-<h4 id="_10">加载某一项游戏数据</h4>
+<h4 id="_11">加载某一项游戏数据</h4>
 <pre><code class="cpp">sdkbox::PluginSdkboxPlay::loadGameData(&quot;key2&quot;);
 </code></pre>
 
-<h4 id="_11">保持数据</h4>
+<h4 id="_12">保持数据</h4>
 <pre><code class="cpp">sdkbox::PluginSdkboxPlay::saveGameData(&quot;key1&quot;, &quot;{\&quot;game_name\&quot;: \&quot;sdkbox go\&quot;, \&quot;stage\&quot;: 3}&quot;);
 </code></pre>
 
