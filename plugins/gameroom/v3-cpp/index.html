@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+
+	<title>Facebook Gameroom with C++ - SDKBOX</title>
+        
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome-4.0.3.css" rel="stylesheet">
+        <link href="../../../css/base.css?2" rel="stylesheet">
+        <link rel="stylesheet" href="../../../css/highlight.css">
+        <link href="../../../css/custom.css" rel="stylesheet">
+        
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+
+            <!-- Main title -->
+            <a class="navbar-brand" href="http://sdkbox.com"><img src="http://www.cocos2d-x.org/s/sdkbox/SDKBOX_logo.png">Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+
+            <ul class="nav navbar-nav navbar-right">
+
+
+            
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                
+                
+                    <li >
+                        <a href="../../..">简介</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cocos <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../cocos/">安装方式</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../installer/">命令行工具</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../qa/cocos_creator/">Creator集成</a>
+</li>
+
+                        
+                            
+  
+  <li class="dropdown-submenu">
+    <a tabindex="-1" class="non-link">SDK插件</a>
+    <ul class="dropdown-menu">
+        
+            
+<li >
+    <a href="../../achievement/">Achievements</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../adcolony/">AdColony</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../admob/">AdMob</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../agecheq/">AgeCheq</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../appnext/">Appnext</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../appodeal/">Appodeal</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../amazon/">Amazon</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../apteligent/">Apteligent</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../bee7/">Bee7</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../chartboost/">Chartboost</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../facebook/">Facebook</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../">Facebook Gameroom</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../firebase/">Firebase</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../flurryanalytics/">Flurry Analytics</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../fyber/">Fyber</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../googleanalytics/">Google Analytics</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../googleplay/">Google Play Game</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../iap/">In-App Purchase</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../inmobi/">InMobi</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../kochava/">Kochava</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../leadbolt/">LeadBolt</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../leaderboard/">Leaderboard</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../playphone/">Playphone</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../review/">Ratings & Reviews</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../sdkboxads/">SDKBOX Ads</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../sdkboxplay/">SDKBOX Play</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../share/">Social Sharing</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../tune/">Tune</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../unityads/">UnityAds</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../valuepotion/">Valuepotion</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../vungle/">Vungle</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
+    <a href="../../youtube/">Youtube</a>
+</li>
+
+        
+            
+  
+
+        
+    </ul>
+  </li>
+  
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unity <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../unity/iap/">In-App Purchase</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../unity/review/">Ratings & Reviews</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../unity/socialshare/">SocialShare</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../unity/googleanalytics/documentation/">Google Analytics</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Unreal <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../unreal/iap/">In-App Purchase</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">LiveOps <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../liveops/">使用介绍</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../liveops/remote-config/">远程配置</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../liveops/receipt-verification/">服务器端IAP订单校验</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../liveops/catalog-management/">即时可购买项目管理</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">指南 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../../../qa/installgoogleplaystore/">GooglePlay安装指南</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../qa/integration-admob-to-creator/">AdMob集成指南</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../../../qa/sdkbox-for-create-usage/">SDKBoxGUI For Creator介绍</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
+
+                <li style="margin-left:30px">
+ <a href="http://sdkbox-doc.github.io/en/">English</a>
+                </li>
+                
+                </ul>
+            
+
+
+
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+            
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#_1">预备条件</a></li>
+        <li class="main "><a href="#cocos">与 Cocos 工程集成</a></li>
+            <li><a href="#sdkbox-installer">使用 SDKBOX Installer （推荐）</a></li>
+            <li><a href="#_2">手动集成</a></li>
+        <li class="main "><a href="#_3">用法</a></li>
+            <li><a href="#gameroom">初始化 Gameroom 插件</a></li>
+            <li><a href="#listener">设置 Listener</a></li>
+            <li><a href="#_4">用户登录</a></li>
+            <li><a href="#facebook">分享至 Facebook</a></li>
+            <li><a href="#iap">IAP</a></li>
+            <li><a href="#app">发送 App 日志事件</a></li>
+            <li><a href="#_5">发送游戏请求</a></li>
+        <li class="main "><a href="#api-reference">API Reference</a></li>
+            <li><a href="#methods">Methods</a></li>
+            <li><a href="#listener-callbacks">Listener Callbacks</a></li>
+            <li><a href="#methods-in-listener-callbacks">Methods in Listener Callbacks</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<p><a href="../">&#8249; Facebook Gameroom Doc Home</a></p>
+<h1>Facebook Gameroom 集成指南</h1>
+
+<h4><em><b>For the C++ version of cocos2d-x v3.x</b> - (<a href="./../">all other versions</a>)</em></h4>
+
+<h2 id="_1">预备条件</h2>
+<p>请参考 Facebook 的<a href="https://developers.facebook.com/docs/games/gameroom">官方文档</a>，在你的 Facebook Application 中设置 Gameroom 相关的配置。</p>
+<h2 id="cocos">与 Cocos 工程集成</h2>
+<h3 id="sdkbox-installer">使用 SDKBOX Installer （推荐）</h3>
+<ul>
+<li>
+<p>使用 SDKBOX Installer，你可以非常方便的在 <strong>Windows</strong> 下安装插件。你可以访问 <a href="http://www.skdbox.com">SDKBOX 官方网站</a> 获取更多信息安装 SDKBOX Installer。</p>
+</li>
+<li>
+<p>在下载 SDKBOX Installer 之后，你可以用它在线直接安装 Gaemroom 插件：</p>
+</li>
+</ul>
+<pre><code>sdkbox import gameroom
+</code></pre>
+
+<ul>
+<li>或者，如果你的 Gameroom 插件是在本地的，你也可以离线安装它：</li>
+</ul>
+<pre><code>sdkbox import -b c:\the_path_to_gameroom_plugin\sdkbox-gameroom_v0.01
+</code></pre>
+
+<h3 id="_2">手动集成</h3>
+<p>如果你想手动集成 Gameroom 插件，你需要一步步的完成下列多种配置。这些步骤比较复杂，我们并不推荐你手动集成插件。</p>
+<ol>
+<li>
+<p>找到 Visual Studio Solution 文件并且打开它。对于被 <code>cocos</code> 创建的 Cpp 工程，你可以在 <code>./proj.win32</code> 子目录下找到这个文件。为了便于下面的描述，我们将 <code>proj.win32</code> 这个目录命名为<strong>项目目录</strong>。</p>
+</li>
+<li>
+<p>解压 Gameroom 插件包，你会得到一个目录，我们把这个目录称作<strong>插件目录</strong>。</p>
+</li>
+<li>
+<p>拷贝头文件。对于 Cpp 工程，你需要拷贝<strong>插件目录</strong>下的 <code>win32/include/*.h</code> 文件到<strong>项目目录</strong>的 <code>include</code> 文件夹下。</p>
+</li>
+<li>
+<p>拷贝<strong>插件目录</strong>下的 <code>win32/libs/*.lib</code> 库文件到<strong>项目目录</strong>下的 <code>libs</code> 文件夹下。 </p>
+</li>
+<li>
+<p>部署 Facebook Gameroom SDK 文件。</p>
+<p>a.  拷贝<strong>插件目录</strong>下的 <code>sdk/fbg</code> 头文件目录到你的<strong>项目目录</strong>下的 <code>include</code> 子文件夹下。 </p>
+<p>b.  拷贝<strong>插件目录</strong>下的 <code>sdk/libs/*.lib</code> 库文件到你的<strong>项目目录</strong>下的 <code>libs</code> 子文件夹下。</p>
+</li>
+<li>
+<p>修改 Visual Studio 配置：</p>
+<p>a.  为编译器添加头文件目录，依次单击：项目 -&gt; 属性 -&gt; 配置属性 -&gt; VC++ 目录 -&gt; 包含目录 （单击编辑，添加新项）。</p>
+<p>然后添加 <code>$(solutiondir)include</code> 。</p>
+<p>b.  添加库文件目录，依次单击：项目 -&gt; 属性 -&gt; 配置属性 -&gt; VC++ 目录 -&gt; 库目录（单击编辑，添加新项）。</p>
+<p>然后添加 <code>$(solutiondir)libs</code> 。</p>
+<p>c.  链接库文件，依次单击：项目 -&gt; 属性 -&gt; 配置属性 -&gt; 链接器 -&gt; 输入 -&gt; 附加依赖项 （单击编辑，添加新项）。</p>
+<p>然后添加 <code>GameroomPlugin32.lib</code> 以及 <code>LibFBGPlatform32.lib</code> 。</p>
+<p><strong>对于 <code>debug</code> 版本，请添加 <code>GamerommPlugin32.debug.lib</code></strong> 。</p>
+</li>
+<li>
+<p>打开<strong>项目目录</strong>子文件夹 <code>/Classes</code> 中的 <code>AppDelegate.cpp</code> 文件，准备为其打代码补丁。</p>
+</li>
+<li>
+<p><strong>接下来打补丁的步骤也可以使用 <code>patch</code> 工具完成</strong>。对于 Cpp 工程，请使用<strong>插件目录</strong>下的 <code>AppDelegate.cpp3.15.patch</code> 文件。</p>
+</li>
+</ol>
+<pre><code>patch AppDelegate.cpp ./plugin-dir/path/AppDelegate.cpp3.15.patch
+</code></pre>
+
+<ul>
+<li>在 <code>USING_NS_CC</code> 之前，添加 SDKBOX 头文件：</li>
+</ul>
+<pre><code>#ifdef SDKBOX_ENABLED
+#include &quot;PluginGameroom.h&quot;
+#endif
+</code></pre>
+
+<ul>
+<li>在 <code>AppDelegate</code> 类的构造与析构函数里，重定向 STDOUT 至一个文件，因为 Facebook SDK 没有提供任何 log API 。 </li>
+</ul>
+<pre><code>AppDelegate::AppDelegate()
+{
+    freopen(&quot;fbg.log&quot;, &quot;w&quot;, stdout);
+}
+AppDelegate::~AppDelegate()
+{
+    ...
+    fclose(stdout);
+}
+</code></pre>
+
+<ul>
+<li>在函数 <code>applicationDidFinishLaunching</code> 开始，初始化 SDKBOX Gameroom 插件：</li>
+</ul>
+<pre><code>#ifdef SDKBOX_ENABLED
+    sdkbox::PluginGameroom::init(&quot;your_app_id&quot;);
+#endif
+</code></pre>
+
+<ul>
+<li>在条件语句 <code>if (!glview)</code> 之后，添加以下代码：</li>
+</ul>
+<pre><code>#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
+    const wchar_t title[]{ L&quot;Facebook Gameroom&quot; };
+    auto parentWin = FindWindow(NULL, title);
+
+    // set dpi for app.
+    auto res_dpi = SetProcessDPIAware();
+
+    RECT rect;
+    GetWindowRect(parentWin, &amp;rect);
+    glview = GLViewImpl::createWithRect(&quot;cocos_sample_cpp&quot;, Rect(0, 0, rect.right - rect.left - 20, rect.bottom - rect.top - 100), 1.0f, true);
+    director-&gt;setOpenGLView(glview);
+    auto currentWin = Director::getInstance()-&gt;getOpenGLView()-&gt;getWin32Window();
+    SetParent(currentWin, parentWin);
+#else
+    glview = GLViewImpl::create(&quot;cocos_sample_cpp&quot;);
+    director-&gt;setOpenGLView(glview);
+#endif
+</code></pre>
+
+<h2 id="_3">用法</h2>
+<p>关于本章下面提到的方法的细节，你可以访问 <a href="#api_reference">API Reference</a> 一节。并且如果你想进一步了解这些方法在 Facebook Gameroom SDK 中对应的细节，你可以参考 <a href="https://developers.facebook.com/docs/games/gameroom/sdk">Facebook Gameroom SDK 官方网页</a> 。</p>
+<h3 id="gameroom">初始化 Gameroom 插件</h3>
+<p>在你调用其他 API 之前，你应该初始化插件。我们建议你在 <code>AppDelegate::applicationDidFinishLaunching()</code> 或者 <code>AppController:didFinishLaunchingWithOptions()</code> 函数中调用初始化语句。并且确保你包含了正确的头文件：</p>
+<pre><code>#ifdef SDKBOX_ENABLED
+#include &quot;PluginGameroom.h&quot;
+#endif
+
+
+bool AppDelegate::applicationDidFinishLaunching() {
+#ifdef SDKBOX_ENABLED
+    // fill your Facebook Application ID
+    sdkbox::PluginGameroom::init(&quot;1234567890&quot;);
+#endif
+}
+</code></pre>
+
+<h3 id="listener">设置 Listener</h3>
+<p>与其他 SDKBOX 的插件一样，你需要设置一个 listener 类去处理回调事件。</p>
+<pre><code>sdkbox::PluginGameroom::setListener(pointer_to_listener_class);
+</code></pre>
+
+<p>这个 listener 类应该继承至 <code>sdkbox::GameroomListener</code> 。</p>
+<pre><code>class HelloWorldListener : public sdkbox::GameroomListener
+{
+    public:
+        // ...
+
+        virtual void onLoginAccessTokenMsg(sdkbox::AccessTokenHandle);
+        virtual void onFeedShareMsg(sdkbox::FeedShareHandle);
+        virtual void onPurchaseIAPMsg(sdkbox::PurchaseHandle);
+        virtual void onHasLicenseMsg(sdkbox::HasLicenseHandle);
+        virtual void onAppRequestMsg(sdkbox::AppRequestHandle);
+
+};
+</code></pre>
+
+<p>这个类中的每一个回调函数将在下面的小节中解释。</p>
+<h3 id="_4">用户登录</h3>
+<p>在插件初始化之后，当你的游戏在 Gameroom 运行时，你应该让玩家登录你的游戏并且获取玩家的信息。你可以使用简单的 <code>login()</code> 方法或者另一个稍复杂的 <code>loginWithScopes()</code> 方法去完成这一功能。</p>
+<p>这两个方法的不同之处在于 <code>login()</code> 方法在完成用户登录时总是申请使用以下3种权限: <code>user_friends</code>，<code>email</code> 以及 <code>public_profile</code> 。</p>
+<pre><code>SDKBOX::PluginGameroom::login();
+</code></pre>
+
+<p>而使用另一个方法 <code>loginWithScopes()</code> ，你可以在玩家登录时指定申请的权限。在下面的例子里，<code>user_friends</code> 和 <code>email</code> 权限将被申请使用。</p>
+<pre><code>std::vector&lt;std::string&gt; loginScopes{ &quot;user_friends&quot;, &quot;email&quot; };
+sdkbox::PluginGameroom::loginWithScopes(2, loginScopes);
+</code></pre>
+
+<p>你也可以像下面的例子那样来检测用户是否已经完成登录：</p>
+<pre><code>auto ret = sdkbox::PluginGameroom::isLoggedIn();
+if (!ret) {
+    // do something
+}
+</code></pre>
+
+<p>玩家登录将会触发 listener 类中的 <code>onLoginAccessTokenMsg</code> 回调。你可以通过使用下面例子中的一些方法从回调函数的参数 <code>accessTokenHandle</code> 中取得玩家的信息。</p>
+<pre><code>void HelloWorld::onLoginAccessTokenMsg(sdkbox::AccessTokenHandle accessTokenHandle) {
+    auto isValid = sdkbox::PluginGameroom::accessTokenIsValid(accessTokenHandle);
+    if (!isValid) {
+        // user not logged in
+        return;
+    }
+    auto userid = sdkbox::PluginGameroom::accessTokenGetUserID(accessTokenHandle);
+
+    char token_string[512];
+    auto size = sdkbox::PluginGameroom::accessTokenGetTokenString(accessTokenHandle, token_string, 512);
+    auto expiration_timestamp = sdkbox::PluginGameroom::accessTokenGetExpirationTimestamp(accessTokenHandle);
+
+    fbgLoginScope permissions[512];
+    auto permission_size = sdkbox::PluginGameroom::accessTokenGetPermissions(accessTokenHandle, permissions, 512);
+
+    ::CCLOG(
+        &quot;OnLoginAccessTokenMsg, User ID: %lld\nAccess Token: %s\nExpiration Timestamp: %lld, Permission Count: %zu\nPermissions: &quot;,
+        (long long)userid,
+        token_string,
+        (long long)expiration_timestamp,
+        permission_size
+    );
+
+    for (size_t i = 0; i &lt; permission_size; i++) {
+        ::CCLOG(&quot;%s&quot;, sdkbox::PluginGameroom::loginScopeToString(permissions[i]));
+    }
+    ::CCLOG(&quot;\n&quot;);
+}
+</code></pre>
+
+<h3 id="facebook">分享至 Facebook</h3>
+<p>在你的游戏中，你可以给玩家提供分享功能：</p>
+<pre><code>sdkbox::PluginGameroom::feedShare(
+    nullptr,
+    &quot;https://www.facebook.com&quot;,
+    &quot;Testing Link Name&quot;,
+    &quot;Testing Link Caption&quot;,
+    &quot;Testing Link Description&quot;,
+    &quot;http://www.pamperedpetz.net/wp-content/uploads/2015/09/Puppy1.jpg&quot;,
+    nullptr
+);
+
+</code></pre>
+
+<p>上面的例子将会分享一个图片到玩家的 Facebook 。</p>
+<p>在分享发生之后，listener 类里的 <code>onFeedShareMsg</code> 回调将会被调用。你可以通过 <code>feedShareGetPostID()</code> 方法从它的参数 <code>feedShareHandle</code> 中取到 <code>Post ID</code> 。</p>
+<pre><code>void HelloWorld::onFeedShareMsg(sdkbox::FeedShareHandle feedShareHandle) {
+    auto postId = sdkbox::PluginGameroom::feedShareGetPostID(feedShareHandle);
+    ::CCLOG(
+        &quot;onFeedShareMsg, Feed Share Post ID: %ld\n&quot;,
+        (long)postId
+    );
+}
+</code></pre>
+
+<h3 id="iap">IAP</h3>
+<p>插件的 IAP 功能包括以下3种类型：</p>
+<ul>
+<li>IAP with a product ID configured in your Facebook App.</li>
+<li>通过配置在 Facebook App 中的 product ID 进行 IAP 。</li>
+</ul>
+<pre><code>sdkbox::PluginGameroom::purchaseIAP(
+    &quot;sdkbox_product_2&quot;,
+    1,
+    1,
+    1,
+    nullptr,
+    nullptr,
+    nullptr
+);
+</code></pre>
+
+<ul>
+<li>通过一个商品的 url 进行 IAP 。</li>
+</ul>
+<pre><code>sdkbox::PluginGameroom::purchaseIAPWithProductURL(
+    &quot;https://friendsmash-unity.herokuapp.com/payments/100coins.php&quot;,
+    1,
+    1,
+    1,
+    nullptr,
+    nullptr,
+    nullptr
+);
+</code></pre>
+
+<ul>
+<li>购买付费版本或者许可证。</li>
+</ul>
+<pre><code>sdkbox::PluginGameroom::payPremium();
+</code></pre>
+
+<p>这3种类型的 IAP 都会触发 <code>onPurchaseIAPMsg</code> 回调。这里有一个例子说明了如何在这个回调中通过 <code>handle</code> 对象的属性得到 IAP 相关的结果。</p>
+<pre><code>void HelloWorld::onPurchaseIAPMsg(sdkbox::PurchaseHandle payHandle) {
+    size_t size;
+    char paymentId[512];
+    size = sdkbox::PluginGameroom::purchaseGetPaymentID(payHandle, paymentId, 512);
+
+    auto amount = sdkbox::PluginGameroom::purchaseGetAmount(payHandle);
+
+    char currency[512];
+    size = sdkbox::PluginGameroom::purchaseGetCurrency(payHandle, currency, 512);
+
+    auto purchaseTime = sdkbox::PluginGameroom::purchaseGetPurchaseTime(payHandle);
+
+    char productId[512];
+    size = sdkbox::PluginGameroom::purchaseGetProductID(payHandle, productId, 512);
+
+    char purchaseToken[512];
+    size = sdkbox::PluginGameroom::purchaseGetPurchaseToken(payHandle, purchaseToken, 512);
+
+    auto quantity = sdkbox::PluginGameroom::purchaseGetQuantity(payHandle);
+
+    char requestId[512];
+    size = sdkbox::PluginGameroom::purchaseGetRequestID(payHandle, requestId, 512);
+
+    char status[512];
+    size = sdkbox::PluginGameroom::purchaseGetStatus(payHandle, status, 512);
+
+    char signedRequest[512];
+    size = sdkbox::PluginGameroom::purchaseGetSignedRequest(payHandle, signedRequest, 512);
+
+    auto errorCode = sdkbox::PluginGameroom::purchaseGetErrorCode(payHandle);
+
+    char errorMessage[512];
+    size = sdkbox::PluginGameroom::purchaseGetErrorMessage(payHandle, errorMessage, 512);
+
+    ::CCLOG(
+        &quot;onPurchaseIAPMsg, Purchase Handle: %s\nAmount: %d\nCurrency: %s\nPurchase Time: %lld\n&quot;
+        &quot;Product Id:%s\nPurchase Token: %s\nQuantity: %d\nRequest Id: %s\n&quot;
+        &quot;Status: %s\nSignedRequest: %s\nError Code: %lld\nErrorMessage: %s\n&quot;,
+        paymentId,
+        (int)amount,
+        currency,
+        (long long)purchaseTime,
+        productId,
+        purchaseToken,
+        (int)quantity,
+        requestId,
+        status,
+        signedRequest,
+        (long long)errorCode,
+        errorMessage
+    );
+}
+</code></pre>
+
+<p>另外，你可以调用 <code>hasLicense()</code> 方法去检测该玩家是否购买了许可证或者付费版。</p>
+<pre><code>sdkbox::PluginGameroom::hasLicense();
+</code></pre>
+
+<p>值得注意的是，这个方法将会触发 <code>onHasLicenseMsg</code> 回调。奇怪之处在于，你必须在这个回调中用 <code>purchaseGetLicense()</code> 方法去取得许可证或者付费版的 ID 。（Facebook Gameroom SDK 要求这样做）</p>
+<pre><code>void HelloWorld::onHasLicenseMsg(sdkbox::HasLicenseHandle hasLicenseHandle) {
+    auto hasLicense = sdkbox::PluginGameroom::purchaseGetLicense(hasLicenseHandle);
+    ::CCLOG(
+            &quot;onHasLicenseMsg, Has License: %llu&quot;,
+            hasLicense
+    );
+}
+</code></pre>
+
+<h3 id="app">发送 App 日志事件</h3>
+<p>你可以通过下面的方法将你的游戏事件日志记录到 Facebook Analytics：</p>
+<pre><code>auto formData = sdkbox::PluginGameroom::formDataCreateNew();
+char key[sdkbox::FBG_BUFFER_SIZE]{&quot;sdkbox_key&quot;};
+char value[sdkbox::FBG_BUFFER_SIZE]{&quot;3.1415&quot;};
+sdkbox::PluginGameroom::formDataSet(formData, key, sdkbox::FBG_BUFFER_SIZE, value, sdkbox::FBG_BUFFER_SIZE);
+sdkbox::PluginGameroom::logAppEvent(&quot;test_event&quot;, formData);
+
+::CCLOG(&quot;Gameroom Send App Event with sum value&quot;);
+sdkbox::PluginGameroom::logAppEventWithValueToSum(&quot;test_event&quot;, formData, 1024.2);
+sdkbox::PluginGameroom::formDataDispose(formData);
+</code></pre>
+
+<p>键值对数据存储在 <code>FormData</code> 结构中。如果你想在事件中提供额外的值，你应该使用 <code>logAppEventWithValueToSum()</code> 方法。</p>
+<h3 id="_5">发送游戏请求</h3>
+<p>你可以使用下面的方法触发一个对话框以在你的游戏内发送游戏请求：</p>
+<pre><code>sdkbox::PluginGameroom::appRequest(
+    &quot;hello world, try this gameroom sdk demo.&quot;,
+    nullptr,
+    nullptr,
+    &quot;faceboo_user_id_1,facebook_user_id_2&quot;,
+    nullptr,
+    nullptr,
+    20,
+    nullptr,
+    &quot;hello&quot;
+);
+</code></pre>
+
+<p>通常情况下，你不需要设置用户 ID ，这样就可以让玩家在对话框里选择他想发送请求的朋友。</p>
+<pre><code>sdkbox::PluginGameroom::appRequest(
+    &quot;hello world, try this gameroom sdk demo.&quot;,
+    nullptr,
+    nullptr,
+    nullptr,
+    nullptr,
+    nullptr,
+    20,
+    nullptr,
+    &quot;hello&quot;
+);
+</code></pre>
+
+<p>在游戏请求的回调里，你可以像下面这样得到请求的相关属性和结果：</p>
+<pre><code>void HelloWorld::onAppRequestMsg(fbgAppRequestHandle appRequestHandle) {
+    char objectID[sdkbox::FBG_BUFFER_SIZE];
+    //auto size = sdkbox::PluginGameroom::appRequestGetRequestObjectID(appRequestHandle, objectID, sdkbox::FBG_BUFFER_SIZE);
+    auto size = fbg_AppRequest_GetRequestObjectId(appRequestHandle, objectID, sdkbox::FBG_BUFFER_SIZE);
+    ::CCLOG(&quot;onAppRequestMsg&quot;);
+    ::CCLOG(&quot;size = %lu\n&quot;, size);  // return 0 here, indicating that appRequestHandle is invalid.
+
+    char toUser[sdkbox::FBG_BUFFER_SIZE];
+    size = sdkbox::PluginGameroom::appRequestGetTo(appRequestHandle, toUser, sdkbox::FBG_BUFFER_SIZE);
+    ::CCLOG(&quot;size = %lu\n&quot;, size);
+
+    ::CCLOG(
+        &quot;object id: %s, to user: %s&quot;,
+        objectID,
+        toUser
+    );
+}
+</code></pre>
+
+<h2 id="api-reference">API Reference</h2>
+<p>Although you can use these methods anywhere, some methods need Gameroom <code>handle</code> object in practice. So this document distinguishes the common <code>Methods</code> and the <code>Methods in Listener Callbacks</code>.
+虽然理论上你可以在任何地方使用这些方法，但是有一些方法需要 <code>handle</code> 对象作为参数。所以本文档区分普通的方法以及在 Listener 类的回调函数中使用的方法。</p>
+<h3 id="methods">Methods</h3>
+<pre><code>static int init(const char* appID);
+</code></pre>
+
+<blockquote>
+<p>Initialize the Gameroom Plugin. <code>appID</code> is your Facebook Application ID. The method will return 0 if the plugin is Initialized successfully.</p>
+</blockquote>
+<pre><code>static std::string login();
+</code></pre>
+
+<blockquote>
+<p>Player login. It will return a string representing <code>GameroomReq</code>.
+  用户登录。这个方法将返回一串表示 <code>GameroomReq</code> 的字符串。</p>
+</blockquote>
+<pre><code>static std::string loginWithScopes(uint32_t scopeCount, const std::vector&lt;std::string&gt;&amp; loginScopes);
+</code></pre>
+
+<blockquote>
+<p>Player login with some permissions. <code>scopeCount</code> is the total of the permissions. <code>loginScopes</code> is a vector which can include these values: <code>public_profile</code>, <code>email</code>, <code>user_friends</code> and <code>publish_actions</code>. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static bool isLoggedIn();
+</code></pre>
+
+<blockquote>
+<p>Check whether the player has logged in.</p>
+</blockquote>
+<pre><code>static std::string feedShare(
+    const char* toId,
+    const char* link,
+    const char* linkName,
+    const char* linkCaption,
+    const char* linkDescription,
+    const char* pictureLink,
+    const char* mediaSource
+);
+</code></pre>
+
+<blockquote>
+<p>Share to Facebook. The meaning of each parameters is as its name. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static std::string purchaseIAP(
+    const char* product,
+    uint32_t quantity,
+    uint32_t quantityMin,
+    uint32_t quantityMax,
+    const char* requestId,
+    const char* pricePointId,
+    const char* testCurrency
+);
+</code></pre>
+
+<blockquote>
+<p>Purchase a product with a prouduct ID. <code>quantity</code> is the number of product, <code>quantityMin</code> is the minimum number of quantity of product, <code>quantityMax</code> is the maximum of quantity of product. For other parameters, you can refer to <a href="https://developers.facebook.com/docs/games/gameroom/sdk">Facebook Gameroom SDK</a> and <a href="https://github.com/sdkbox/sdkbox-sample-gameroom">SDKBOX Gameroom Plugin Sample</a>. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static std::string purchaseIAPWithProductURL(
+    const char* product,
+    uint32_t quantity,
+    uint32_t quantityMin,
+    uint32_t quantityMax,
+    const char* requestId,
+    const char* pricePointId,
+    const char* testCurrency
+);
+</code></pre>
+
+<blockquote>
+<p>Purchase a product with a prouduct url link. <code>quantity</code> is the number of product, <code>quantityMin</code> is the minimum number of quantity of product, <code>quantityMax</code> is the maximum of quantity of product. For other parameters, you can refer to <a href="https://developers.facebook.com/docs/games/gameroom/sdk">Facebook Gameroom SDK</a>. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static std::string payPremium();
+</code></pre>
+
+<blockquote>
+<p>Purchase a premium version or license. It will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static std::string hasLicense();
+</code></pre>
+
+<blockquote>
+<p>Check whether the player has license or premium version. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static std::string logAppEvent(const char* eventName, const FormDataHandle formData);
+</code></pre>
+
+<blockquote>
+<p>Send an event to Facebook Analytics. <code>FormDataHandle</code> is created and set by other APIs. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static std::string logAppEventWithValueToSum(const char* eventName, const FormDataHandle formData, float valueToSum);
+</code></pre>
+
+<blockquote>
+<p>Send an event to Facebook Analytics with an extra value <code>valueToSum</code>. <code>FormDataHandle</code> is created and set by other APIs. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<pre><code>static const FormDataHandle formDataCreateNew();
+</code></pre>
+
+<blockquote>
+<p>Create a <code>FormDataHandle</code> object to store key-value pairs in an app event.</p>
+</blockquote>
+<pre><code>static void formDataSet(
+    const FormDataHandle obj,
+    char *fieldNameBuffer,
+    size_t fieldNameBufferLen,
+    char *valueBuffer,
+    size_t valueBufferLen
+);
+</code></pre>
+
+<blockquote>
+<p>Store a key-value pair into <code>FormDataHandle</code> object.</p>
+</blockquote>
+<pre><code>static size_t formDataGet(
+    const FormDataHandle obj,
+    char *fieldNameBuffer,
+    size_t fieldNameBufferLen,
+    char *valueBuffer,
+    size_t valueBufferLen
+);
+</code></pre>
+
+<blockquote>
+<p>Get a key-value pair from <code>FormDataHandle</code> object.</p>
+</blockquote>
+<pre><code>static void formDataDelete(const FormDataHandle obj, char *fieldNameBuffer, size_t fieldNameBufferLen);
+</code></pre>
+
+<blockquote>
+<p>Delete a key-value pair from <code>FormDataHandle</code> object.</p>
+</blockquote>
+<pre><code>static bool formDataHas(const FormDataHandle obj, char* fieldNameBuffer, size_t fieldNameBufferLen);
+</code></pre>
+
+<blockquote>
+<p>Check whether the <code>FormDataHandle</code> object has a specified key-value pair.</p>
+</blockquote>
+<pre><code>static void formDataDispose(const FormDataHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Destory <code>FormDataHandle</code> object.</p>
+</blockquote>
+<pre><code>static std::string appRequest(
+    const char* message,
+    const char* actionType,
+    const char* objectID,
+    const char* to,
+    const char* filters,
+    const char* excludeIDs,
+    uint32_t maxRecipients,
+    const char* data,
+    const char* title
+);
+</code></pre>
+
+<blockquote>
+<p>Send an app request to some users. if parameter <code>to</code> is <code>nullptr</code>, this method will let player to choose which users he want to send the request. For other parameters, please refer to <a href="https://developers.facebook.com/docs/games/services/gamerequests">Facebook Game Service Requests</a> and <a href="https://github.com/sdkbox/sdkbox-sample-gameroom">SDKBOX Gameroom Plugin Sample</a>. The method will return a string representing <code>GameroomReq</code>.</p>
+</blockquote>
+<h3 id="listener-callbacks">Listener Callbacks</h3>
+<pre><code>virtual void onLoginAccessTokenMsg(sdkbox::AccessTokenHandle);
+</code></pre>
+
+<blockquote>
+<p>Triggered by <code>login()</code> or <code>loginWithScopes()</code>.</p>
+</blockquote>
+<pre><code>virtual void onFeedShareMsg(sdkbox::FeedShareHandle);
+</code></pre>
+
+<blockquote>
+<p>Triggered by <code>feedShare()</code>.</p>
+</blockquote>
+<pre><code>virtual void onPurchaseIAPMsg(sdkbox::PurchaseHandle);
+</code></pre>
+
+<blockquote>
+<p>Triggered by <code>purchaseIAP()</code>, <code>purchaseIAPWithProductURL()</code> or <code>payPremium()</code>.</p>
+</blockquote>
+<pre><code>virtual void onHasLicenseMsg(sdkbox::HasLicenseHandle);
+</code></pre>
+
+<blockquote>
+<p>Triggered by <code>hasLicense()</code>.</p>
+</blockquote>
+<pre><code>virtual void onAppRequestMsg(sdkbox::AppRequestHandle);
+</code></pre>
+
+<blockquote>
+<p>Triggered by <code>appRequest()</code>.</p>
+</blockquote>
+<pre><code>static int setListener(GameroomListener *);
+</code></pre>
+
+<blockquote>
+<p>Set a pointer to listener object.</p>
+</blockquote>
+<pre><code>static GameroomListener* removeListener();
+</code></pre>
+
+<blockquote>
+<p>Delete current listener object, return the pointer to it.</p>
+</blockquote>
+<pre><code>static GameroomListener* listener();
+</code></pre>
+
+<blockquote>
+<p>Return the pointer to current listener object.</p>
+</blockquote>
+<h3 id="methods-in-listener-callbacks">Methods in Listener Callbacks</h3>
+<h4 id="these-methods-can-be-called-in-onloginaccesstokenmsg-to-get-some-information-from-the-accesstokenhandle-object">These methods can be called in <code>onLoginAccessTokenMsg</code> to get some information from the <code>AccessTokenHandle</code> object.</h4>
+<pre><code>static bool accessTokenIsValid(AccessTokenHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Check the access token is valid.</p>
+</blockquote>
+<pre><code>static FacebookID accessTokenGetUserID(AccessTokenHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the Facebook User ID.</p>
+</blockquote>
+<pre><code>static size_t accessTokenGetTokenString(AccessTokenHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the access token string.</p>
+</blockquote>
+<pre><code>static uint64_t accessTokenGetExpirationTimestamp(AccessTokenHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the expired time of access Token.</p>
+</blockquote>
+<pre><code>static size_t accessTokenGetPermissions(AccessTokenHandle obj, LoginScope* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the applied permissions.</p>
+</blockquote>
+<pre><code>static const char* loginScopeToString(LoginScope loginScope);
+</code></pre>
+
+<blockquote>
+<p>Get the string name of applied permission.</p>
+</blockquote>
+<h4 id="this-method-can-be-called-in-onfeedsharemsg-to-get-the-post-id">This method can be called in <code>onFeedShareMsg</code> to get the post ID.</h4>
+<pre><code>static FacebookID feedShareGetPostID(FeedShareHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the post ID.</p>
+</blockquote>
+<h4 id="these-methods-can-be-called-in-onpurchaseiapmsg-to-get-some-information-from-the-purchasehandle-object">These methods can be called in <code>onPurchaseIAPMsg</code> to get some information from the <code>PurchaseHandle</code> object.</h4>
+<pre><code>static size_t purchaseGetPaymentID(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the payment ID.</p>
+</blockquote>
+<pre><code>static uint32_t purchaseGetAmount(PurchaseHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the of purchasing.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetCurrency(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the currency of purchasing.</p>
+</blockquote>
+<pre><code>static uint64_t purchaseGetPurchaseTime(PurchaseHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the time of purchasing.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetProductID(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the product ID.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetPurchaseToken(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the token of purchasing.</p>
+</blockquote>
+<pre><code>static uint32_t purchaseGetQuantity(PurchaseHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the quantity of purchasing.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetRequestID(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the request ID of purchasing.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetStatus(PurchaseHandle obj, char* buffer, size_t bufferLen);
+
+</code></pre>
+
+<blockquote>
+<p>Get the status of purchasing.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetSignedRequest(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the signed request.</p>
+</blockquote>
+<pre><code>static uint64_t purchaseGetErrorCode(PurchaseHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the error code of purchasing.</p>
+</blockquote>
+<pre><code>static size_t purchaseGetErrorMessage(PurchaseHandle obj, char* buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the error message of purchasing.</p>
+</blockquote>
+<h4 id="this-method-can-be-called-on-onhaslicensemsg-to-get-license-id">This method can be called on <code>onHasLicenseMsg</code> to get license ID.</h4>
+<pre><code>static FacebookID purchaseGetLicense(HasLicenseHandle obj);
+</code></pre>
+
+<blockquote>
+<p>Get the license ID.</p>
+</blockquote>
+<h4 id="this-methods-can-be-called-on-onapprequestmsg-to-get-some-information-of-app-request">This methods can be called on <code>onAppRequestMsg</code> to get some information of app request.</h4>
+<pre><code>static size_t appRequestGetRequestObjectID(const AppRequestHandle obj, char *buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the request ID of app request.</p>
+</blockquote>
+<pre><code>static size_t appRequestGetTo(const AppRequestHandle obj, char *buffer, size_t bufferLen);
+</code></pre>
+
+<blockquote>
+<p>Get the receivers of app request.</p>
+</blockquote></div>
+            
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+
+        
+        <script src="../../../js/jquery-1.10.2.min.js"></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../../../js/highlight.pack.js"></script>
+        <script>var base_url = '../../..';</script>
+        <script src="../../../js/base.js"></script>
+        
+
+ 
+        
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-70044300-2', 'auto');
+            ga('send', 'pageview');
+        </script>
+        
+    </body>
+</html>
