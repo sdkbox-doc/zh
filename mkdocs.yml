@@ -116,6 +116,11 @@ pages:
                 - 'Facebook with C++': 'plugins/facebook/v2-cpp.md'
                 - 'Facebook with Javascript': 'plugins/facebook/v2-js.md'
                 - 'Facebook with Lua': 'plugins/facebook/v2-lua.md'
+        - 'Facebook Gameroom': 'plugins/gameroom/index.md'
+        - '_Facebook Gameroom':
+            - 'Cocos2d-x v3.x':
+                - 'Facebook Gameroom with C++': 'plugins/gameroom/v3-cpp.md'
+                - 'Facebook Gameroom with Javascript': 'plugins/gameroom/v3-js.md'
         - 'Firebase': 'plugins/firebase/index.md'
         - '_Firebase':
             - 'Cocos2d-x v3.x':
