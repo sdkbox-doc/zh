@@ -8,6 +8,16 @@
 
 <<[../shared/guides.md]
 
+##支持的广告商列表
+
+* AdColony
+* AdMob
+* Chartboost
+* InMobi
+* Vungle
+* LeadBolt
+* Appnext
+* UnityAds
 
 ## 样例工程
 
