@@ -10,7 +10,7 @@
 !!!提示
     使用这一功能您需要
     1. 使用 IAP 的 [远程配置](./remote-confg) 功能。
-    2. 调用 sdkbox:PluginIAP:enableUserSideVerification(false);
+    2. 在 sdkbox:IAP:init(); 之后调用 sdkbox:IAP:enableUserSideVerification(false);
 
 
 ## 远程校验流程
