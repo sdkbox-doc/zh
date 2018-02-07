@@ -8,7 +8,9 @@
 当远程订单校验失败，系统会自动回滚使用本地订单校验。比如当超时或者网络通信故障的时候。
 
 !!!提示
-    使用这一功能您需要使用 IAP 的 [远程配置](./remote-confg) 功能。
+    使用这一功能您需要
+    1. 使用 IAP 的 [远程配置](./remote-confg) 功能。
+    2. 调用 sdkbox:PluginIAP:enableUserSideVerification(false);
 
 
 ## 远程校验流程
