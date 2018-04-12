@@ -11,7 +11,7 @@ Apple's AppStore 以及 Google‘s Play 都允许移动开发者通过 web 开�
 
 ## 远程配置
 * 打开 AppDelegate.cpp 文件， 您能找到如下的代码：`sdkbox::init(...)` 。这句代码的函数调用可以实现让 app 使用远程配置。现在它是使用本地配置的。
-* 访问 [sdkbox.com](http://sdkbox.com)，创建一个 application，并且从您本地的示例工程，上传 `sdkbox_config.json`。记住在上传后将其发布到云端。
+* 访问 [sdkbox.com](https://www.sdkbox.com)，创建一个 application，并且从您本地的示例工程，上传 `sdkbox_config.json`。记住在上传后将其发布到云端。
 * Overwrite the token and secret in the AppDelegate.cpp the yours which were generated with the new application on sdkbox.com
 * 将 sdkbox.com 上生成 application 的 token 和 secret 写到 AppDelegate.cpp 文件中。
 * [学习更多关于远程实施配置更新的细节](./remote-config)

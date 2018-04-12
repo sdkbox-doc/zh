@@ -7,8 +7,8 @@ __SDKBOX LiveOps__ 能让开发者利用云端的服务进行 [远程配置](./r
     当您使用 SDKBOX 集成插件的时候， LiveOps 是一个可选的步骤。所有的 SDBOX 插件均可以在不使用 Liveops 功能的情况下, 在本地正常使用。
 
 ## 使用 LiveOps
-1. 登录 SDKBOX 官方网站 [SDKBOX.com](http://sdkbox.com) 。
-2. 使用 [installer](/installer) 自动为您的 app 集成插件，或者您可以通过在 [这里](http://sdkbox.com/integrations) 下载插件包并手动集成。
+1. 登录 SDKBOX 官方网站 [SDKBOX.com](https://www.sdkbox.com) 。
+2. 使用 [installer](/installer) 自动为您的 app 集成插件，或者您可以通过在 [这里](https://www.sdkbox.com/integrations) 下载插件包并手动集成。
 3. 单击页面右上角您的登录名字或头像 -> 选择 “My Application” -> 单击 “New application"，填入 app 名字以及其他信息创建一个 Application 。
 ![](../imgs/login.png)
 4. 利用页面的 "__Import__" 功能从您的工程中上传 `sdkbox_config.json` 文件。这将会为每一个平台的 app store 创建一个 __configuration set__ 。
