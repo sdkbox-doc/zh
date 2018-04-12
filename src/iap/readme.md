@@ -66,6 +66,8 @@ SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox
 
 <<[usage.md]
 
+<<[promoting_iap.md]
+
 <<[api-reference.md]
 
 <<[manual_integration.md]
