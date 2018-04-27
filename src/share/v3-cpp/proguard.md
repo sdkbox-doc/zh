@@ -24,7 +24,6 @@ proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.
 
 #twitter
 -keep public com.twitter.sdk.android.** { *; }
--keep public io.fabric.sdk.android.** { *; }
 ```
 
 __Note:__ Proguard 只能工作在 __Release__ 模式下 （比如： `cocos run -m release`） debug 模式下不会触发 Proguard 。

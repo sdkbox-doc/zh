@@ -5,11 +5,13 @@
 
 > PluginShare.framework
 
-> Fabric.framework
-
 > TwitterCore.framework
 
 > TwitterKit.framework
+
+> TwitterKitResources.bundle -> TwitterKit.framework/TwitterKitResources.bundle
+
+> TwitterShareExtensionUIResources.bundle -> TwitterKit.framework/TwitterShareExtensionUIResources.bundle
 
 如果您没有添加下面这些系统库，您有需要添加它们：
 
@@ -26,6 +28,14 @@
 > GameController.framework
 
 > SystemConfiguration.framework
+
+> MediaPlayer.framework
+
+> MessageUI.framework
+
+> CoreMotion.framework
+
+> SafariServices.framework
 
 
 
