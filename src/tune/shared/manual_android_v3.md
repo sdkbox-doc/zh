@@ -10,23 +10,7 @@
 > MobileAppTracker-3.9.jar
 
 
-* 如果您使用 cocos2d-x 源码，拷贝 __jar__ 文件到：
-
-  ```
-  cocos2d/cocos/platform/android/java/libs
-  ```
-
-* 如果您使用 cocos2d-js 或者 lua ，拷贝 __jar__ 文件到:
-
-  ```
-  frameworks/cocos2d-x/cocos/platform/android/java/libs
-  ```
-
-* 如果您使用 cocos2d-x 预编译包，拷贝 __jar__ 文件到：
-
-  ```
-  proj.android/libs
-  ```
+<<[../../shared/copy_jars.md]
 
 从 `plugin/android/jni` 目录拷贝 `plugintune` 以及 `sdkbox` 目录到您的工程的 `proj.android/jni` 目录。如果 `sdkbox` 目录在工程中已经存在，请覆盖它。
 

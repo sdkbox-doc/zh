@@ -2,41 +2,7 @@
 
 把安装包中的 `plugin/android/libs` 目录下的如下 __jar__ 文件拷贝到你的工程中的 __<project_root>/libs__ 目录下.
 
-> PluginGoogleAnalytics.jar
-
-> sdkbox.jar
-
-
-* 如果你使用的是 cocos2d-x 源码工程, 拷贝 __jar__ 文件到如下目录:
-
-	Android Eclipse 工程:
-	```
-	cocos2d/cocos/platform/android/java/libs
-	```
-
-	Android Studio 工程:
-	```
-	cocos2d/cocos/platform/android/libcocos2dx/libs
-	```
-
-* 如果你使用的是 cocos2d-js 或 lua，拷贝 __jar__ 到如下目录:
-
-	Android Eclipse 工程:
-	```
-	frameworks/cocos2d-x/cocos/platform/android/java/libs
-	```
-
-	Android Studio 工程:
-	```
-	frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/libs
-	```
-
-* 如果你使用预编译工程，拷贝 __jar__ 文件到如下目录:
-
-	Android Eclipse 工程:
-	```
-	<project_root>/libs
-	```
+<<[../../shared/copy_jars.md]
 
 <<[../../shared/copy_jni_lib.md]
 

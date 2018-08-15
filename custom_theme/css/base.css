@@ -286,5 +286,12 @@ h1:hover .headerlink, h2:hover .headerlink, h3:hover .headerlink, h4:hover .head
 
 .dropdown-menu .dropdown-menu {
  max-height: 360px;
-  overflow: auto; 
+  overflow: auto;
 }
+
+/* SDKBox start */
+.bs-sidebar {
+    height: 80%;
+    overflow: scroll;
+}
+/* SDKBox end */

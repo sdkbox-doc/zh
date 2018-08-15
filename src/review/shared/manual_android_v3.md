@@ -8,23 +8,7 @@
 > sdkbox.jar
 
 
-* 如果您用的是 cocos2d-x源码 工程, 拷贝 __jar__ 文件到这里:
-
-  ```
-  cocos2d/cocos/platform/android/java/libs
-  ```
-
-* 如果您用的是 cocos2d-js 或 lua, 拷贝 __jar__ 文件到这里:
-
-  ```
-  frameworks/cocos2d-x/cocos/platform/android/java/libs
-  ```
-
-* 如果您用的是预编译的 cocos2d-x ，那拷贝 __jar__ 到这里:
-
-  ```
-  proj.android/libs
-  ```
+<<[../../shared/copy_jars.md]
 
 从 `plugin/android/jni` 拷贝 `pluginreview` 和 `sdkbox` 目录到您的工程的 `proj.android/jni/` 目录.如果 `sdkbox` 目录已存在，覆盖它.
 

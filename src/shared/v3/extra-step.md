@@ -1,4 +1,34 @@
-### 修改 `Cocos2dxActivity.java`
+### 修改 `AppActivity.java`
+
+#### 插件版本 >= 2.4.0.3
+
+1. 找到 __AppActivity.java__ 文件
+```bash
+find . -name "AppActivity.java"
+```
+
+2. 把 `extends Cocos2dxActivity` 替换为 `extends com.sdkbox.plugin.SDKBoxActivity`
+
+以下是 __AppActivity.java__ 不同版本的引擎所在的目录：
+
+```
+cpp
+  - proj.android/src/org/cocos2dx/cpp/AppActivity.java
+  - proj.android-studio/app/src/org/cocos2dx/cpp/AppActivity.java
+  - proj.android/app/src/org/cocos2dx/cpp/AppActivity.java ( from cocos2d-x 3.17)
+
+lua
+  - frameworks/runtime-src/proj.android/src/org/cocos2dx/lua/AppActivity.java
+  - frameworks/runtime-src/proj.android-studio/app/src/org/cocos2dx/lua/AppActivity.java
+  - frameworks/runtime-src/proj.android/app/src/org/cocos2dx/lua/AppActivity.java (from cocos2d-x 3.17)
+
+js
+  - frameworks/runtime-src/proj.android/src/org/cocos2dx/javascript/AppActivity.java
+  - frameworks/runtime-src/proj.android/app/src/org/cocos2dx/javascript/AppActivity.java ( from cocos2d-x 3.17)
+```
+
+#### 插件版本 < 2.4.0.3
+
 * 如果您使用 cocos2d-x 源代码，假设您在 `proj.android` 目录下，那么您可以在如下位置找到 `Cocos2dxActivity.java` 文件：
 
     ```

@@ -3,7 +3,7 @@
 # 在 Cocos 引擎中使用 SDKBOX
 
 ## 介绍
-SDKBOX 支持近期所有版本（v2.2.6+）的 Cocos/Cocos2d-x 游戏引擎，包括 C++， Javascript 以及 Lua 语言版本。
+SDKBOX 支持近期所有版本（v3.0 +）的 Cocos/Cocos2d-x 游戏引擎，包括 C++， Javascript 以及 Lua 语言版本。
 
 
 ## 集成
@@ -15,7 +15,7 @@ SDKBOX 支持近期所有版本（v2.2.6+）的 Cocos/Cocos2d-x 游戏引擎，�
 
 
 ### 使用 SDKBOX Installer
-SDKBOX Installer 是一个针对任何版本 cocos2d-x 工程可选的命令行插件安装工具，支持 v2.x 以及 v3.x 版本的 cocos2d-x 引擎。它使您通过一个简单的命令行就能集成插件。[了解更多](./installer.md)
+SDKBOX Installer 是一个针对任何版本 cocos2d-x 工程可选的命令行插件安装工具，支持 v3.x 版本的 cocos2d-x 引擎。它使您通过一个简单的命令行就能集成插件。[了解更多](./installer.md)
 
 
 ### 手动安装
