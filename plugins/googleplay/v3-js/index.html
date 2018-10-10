@@ -194,6 +194,12 @@
         
             
 <li >
+    <a href="../../ethwallet/">EthWallet</a>
+</li>
+
+        
+            
+<li >
     <a href="../../facebook/">Facebook</a>
 </li>
 
@@ -525,6 +531,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../../../qa/crypt-sdkbox-config/">保护 sdkbox_config.json</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -549,89 +561,42 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#_1">安装</a></li>
-        
-    
         <li class="main "><a href="#_2">安装后</a></li>
-        
             <li><a href="#android">Android</a></li>
-        
             <li><a href="#ios">iOS</a></li>
-        
-    
         <li class="main "><a href="#china">从 China 服务器下载</a></li>
-        
-    
         <li class="main "><a href="#_4">重点注意事项</a></li>
-        
             <li><a href="#_5">禁用应用程序安全传输策略</a></li>
-        
             <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
-        
             <li><a href="#_6">游戏全屏配置</a></li>
-        
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
-        
-    
         <li class="main "><a href="#_7">用法</a></li>
-        
             <li><a href="#_8">前期准备</a></li>
-        
             <li><a href="#javascript">注册 Javascript 功能</a></li>
-        
             <li><a href="#google-play-games">初始化 Google Play Games</a></li>
-        
             <li><a href="#_9">初始化</a></li>
-        
             <li><a href="#authorization_1">Authorization</a></li>
-        
             <li><a href="#achievements">Achievements</a></li>
-        
             <li><a href="#leaderboards">Leaderboards</a></li>
-        
             <li><a href="#saved-games">Saved Games</a></li>
-        
             <li><a href="#real-time-multiplayer">Real-time multiplayer</a></li>
-        
             <li><a href="#turn-based-multiplayer">Turn-based multiplayer</a></li>
-        
             <li><a href="#player-statistics">Player Statistics</a></li>
-        
             <li><a href="#events-and-quests">Events and Quests</a></li>
-        
             <li><a href="#nearby-connections">Nearby Connections</a></li>
-        
-    
         <li class="main "><a href="#api">API 文档</a></li>
-        
-    
         <li class="main "><a href="#_11">手动集成</a></li>
-        
-    
         <li class="main "><a href="#ios_1">iOS手动集成步骤</a></li>
-        
             <li><a href="#_12">代码修改</a></li>
-        
-    
         <li class="main "><a href="#android_1">Android 手动集成</a></li>
-        
             <li><a href="#_14">拷贝文件</a></li>
-        
             <li><a href="#androidmanifestxml_1">修改 AndroidManifest.xml</a></li>
-        
             <li><a href="#androidmk">修改 Android.mk</a></li>
-        
             <li><a href="#applicationmk-cocos2d-x-v30-to-v32">修改 Application.mk (只适用于 Cocos2d-x v3.0 to v3.2)</a></li>
-        
-            <li><a href="#cocos2dxactivityjava">修改 Cocos2dxActivity.java</a></li>
-        
+            <li><a href="#appactivityjava">修改 AppActivity.java</a></li>
             <li><a href="#projectproperties">修改 project.properties</a></li>
-        
-    
         <li class="main "><a href="#proguard-optional">Proguard (optional)</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -988,37 +953,29 @@ GPG的交互都通过 <code>gpg.GameServices</code> 类来操作. 如果一切�
 </ul>
 <h3 id="_14">拷贝文件</h3>
 <p>把安装包中的 <code>plugin/android/libs</code> 目录下的如下 <strong>jar</strong> 文件拷贝到你的工程中的 <strong><project_root>/libs</strong> 目录下.</p>
-<blockquote>
-<p>PluginGoogleAnalytics.jar</p>
-<p>sdkbox.jar</p>
-</blockquote>
 <ul>
 <li>
-<p>如果你使用的是 cocos2d-x 源码工程, 拷贝 <strong>jar</strong> 文件到如下目录:</p>
-<p>Android Eclipse 工程:
+<p>如果你使用 cocos2d-x 源码，拷贝 <strong>jar</strong> 文件到：</p>
+<p>Android command-line:
 <code>cocos2d/cocos/platform/android/java/libs</code></p>
-<p>Android Studio 工程:
+<p>Android Studio:
 <code>cocos2d/cocos/platform/android/libcocos2dx/libs</code></p>
 </li>
 <li>
-<p>如果你使用的是 cocos2d-js 或 lua，拷贝 <strong>jar</strong> 到如下目录:</p>
-<p>Android Eclipse 工程:
+<p>如果你使用 cocos2d-js 或者 lua ，拷贝 <strong>jar</strong> 文件到:</p>
+<p>Android command-line:
 <code>frameworks/cocos2d-x/cocos/platform/android/java/libs</code></p>
-<p>Android Studio 工程:
+<p>Android Studio:
 <code>frameworks/cocos2d-x/cocos/platform/android/libcocos2dx/libs</code></p>
 </li>
 <li>
-<p>如果你使用预编译工程，拷贝 <strong>jar</strong> 文件到如下目录:</p>
-<p>Android Eclipse 工程:
-<code>&lt;project_root&gt;/libs</code></p>
+<p>如果你使用 cocos2d-x 预编译包，拷贝 <strong>jar</strong> 文件到：</p>
+<p>Android command-line:
+<code>proj.android/libs</code></p>
 </li>
 </ul>
 <h4 id="jni">拷贝 jni 库</h4>
 <p>从 <code>plugin/android/jni/</code> 拷贝并覆盖 <code>&lt;your_project_root&gt;/jni/</code> 目录.</p>
-<blockquote>
-<p>注意: sdkbox 默认使用 <code>gnustl</code> 链接, 如果您的项目使用 <code>c++_static</code> 链接, 请把
-<code>&lt;project_root&gt;/jni/&lt;plugin_name&gt;/libs</code> 目录下的文件夹替换成 <code>&lt;project_root&gt;/jni/&lt;plugin_name&gt;/libs_c++_static</code> 里面的</p>
-</blockquote>
 <h3 id="androidmanifestxml_1">修改 <code>AndroidManifest.xml</code></h3>
 <p>添加如下 meta-data :</p>
 <pre><code class="xml">&lt;meta-data android:name=&quot;com.google.android.gms.version&quot;
@@ -1067,7 +1024,34 @@ $(call import-module, ./plugingpg)
                                     ../../Classes/NewSourceFile.cpp
 </code></pre>
 
-<h3 id="cocos2dxactivityjava">修改 <code>Cocos2dxActivity.java</code></h3>
+<h3 id="appactivityjava">修改 <code>AppActivity.java</code></h3>
+<h4 id="2403">插件版本 &gt;= 2.4.0.3</h4>
+<ol>
+<li>找到 <strong>AppActivity.java</strong> 文件</li>
+</ol>
+<pre><code class="bash">find . -name &quot;AppActivity.java&quot;
+</code></pre>
+
+<ol>
+<li>把 <code>extends Cocos2dxActivity</code> 替换为 <code>extends com.sdkbox.plugin.SDKBoxActivity</code></li>
+</ol>
+<p>以下是 <strong>AppActivity.java</strong> 不同版本的引擎所在的目录：</p>
+<pre><code>cpp
+  - proj.android/src/org/cocos2dx/cpp/AppActivity.java
+  - proj.android-studio/app/src/org/cocos2dx/cpp/AppActivity.java
+  - proj.android/app/src/org/cocos2dx/cpp/AppActivity.java ( from cocos2d-x 3.17)
+
+lua
+  - frameworks/runtime-src/proj.android/src/org/cocos2dx/lua/AppActivity.java
+  - frameworks/runtime-src/proj.android-studio/app/src/org/cocos2dx/lua/AppActivity.java
+  - frameworks/runtime-src/proj.android/app/src/org/cocos2dx/lua/AppActivity.java (from cocos2d-x 3.17)
+
+js
+  - frameworks/runtime-src/proj.android/src/org/cocos2dx/javascript/AppActivity.java
+  - frameworks/runtime-src/proj.android/app/src/org/cocos2dx/javascript/AppActivity.java ( from cocos2d-x 3.17)
+</code></pre>
+
+<h4 id="2403_1">插件版本 &lt; 2.4.0.3</h4>
 <ul>
 <li>
 <p>如果您使用 cocos2d-x 源代码，假设您在 <code>proj.android</code> 目录下，那么您可以在如下位置找到 <code>Cocos2dxActivity.java</code> 文件：</p>

@@ -194,6 +194,12 @@
         
             
 <li >
+    <a href="../../plugins/ethwallet/">EthWallet</a>
+</li>
+
+        
+            
+<li >
     <a href="../../plugins/facebook/">Facebook</a>
 </li>
 
@@ -525,6 +531,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../../qa/crypt-sdkbox-config/">保护 sdkbox_config.json</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -549,24 +561,13 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#_1">介绍</a></li>
-        
-    
         <li class="main "><a href="#_2">远程校验流程</a></li>
-        
             <li><a href="#ios">iOS 平台流程</a></li>
-        
             <li><a href="#android">Android 平台流程</a></li>
-        
-    
         <li class="main "><a href="#_3">安装</a></li>
-        
             <li><a href="#android-play">Android Play</a></li>
-        
             <li><a href="#apple-app-store">Apple App Store</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -578,7 +579,9 @@
 <p>一旦使用了这一功能，当发生购买时，它会自动判断使用 Google 或者 Apple 平台服务进行校验。不需要客户端或者开发者作任何代码的改动，这个购买收据将会被安全的校验。就和本地校验一样，会有两个公开的插件接口（回调）：<code>onSuccess()</code> 以及 <code>onFailure()</code> 。它们将被用于通知校验结果。</p>
 <p>当远程订单校验失败，系统会自动回滚使用本地订单校验。比如当超时或者网络通信故障的时候。</p>
 <p>!!!提示
-    使用这一功能您需要使用 IAP 的 <a href="../remote-confg">远程配置</a> 功能。</p>
+    使用这一功能您需要
+    1. 使用 IAP 的 <a href="../remote-confg">远程配置</a> 功能。
+    2. 在 sdkbox:IAP:init(); 之后调用 sdkbox:IAP:enableUserSideVerification(false);</p>
 <h2 id="_2">远程校验流程</h2>
 <h3 id="ios">iOS 平台流程</h3>
 <ol>
