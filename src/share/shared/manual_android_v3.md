@@ -1,59 +1,46 @@
 ### 拷贝文件
 从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
-> android-support-v4.jar
-
-> fabric.jar
-
-> retrofit-1.8.0.jar
-
-> twitter.jar
+> sdkbox.jar
 
 > PluginShare.jar
 
-> sdkbox.jar
+> converter-gson-2.1.0.jar
 
-> digits
+> gson-2.7.jar
 
-> tweetcomposer
+> okhttp-3.4.2.jar
 
-> tweetui
+> okio-1.9.0.jar
 
-> twittercore
+> picasso-2.5.2.jar
+
+> retrofit-2.1.0.jar
+
+> twitter-text-1.14.3.jar
+
+> tweet-composer
+
+> twitter-core
 
 
 <<[../../shared/copy_jars.md]
 
 * 如果您使用 android-stdio, 请编辑 `proj.android-studio/app/build.gradle` 文件， 如下所示：
 
-    在文件 `proj.android-stdio/app/build.gradle` 的开头：
-
-``` gradle
-    buildscript {
-        repositories {
-            maven {
-                url 'https://maven.fabric.io/public'
-            }
-        }
-        dependencies {
-            classpath 'io.fabric.tools:gradle:1.+'
-        }
-    }
-    apply plugin: 'com.android.application'
-    apply plugin: 'io.fabric'
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
-```
-
 文件 `proj.android-studio/app/build.gradle` 中 __dependencies tag__ 的内容：
 
 
 ``` gradle
     dependencies {
-        compile('com.twitter.sdk.android:twitter:+@aar') {
-            transitive = true; exclude module: 'support-v4'
-        }
+
+        ...
+
+        implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+        implementation 'com.twitter.sdk.android:tweet-composer:3.1.1'
+
+        ...
+
     }
 ```
 
@@ -72,10 +59,6 @@
 * 在标签 __application tag__ 上包含以下内容：
 
 ```xml
-<meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="your fabric id(0673fbd412c9b67c9ac2182659839d92b93f2f65)" />
-
 <activity
     android:name="com.twitter.sdk.android.core.identity.OAuthActivity"
     android:configChanges="orientation|screenSize"

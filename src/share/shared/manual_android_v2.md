@@ -1,25 +1,27 @@
 ### 拷贝文件
 从插件安装包中的 `plugin/android/libs` 目录拷贝下列 __jar__ 文件到您的工程的 __proj.android/libs__ 目录。
 
-> android-support-v4.jar
-
-> fabric.jar
-
-> retrofit-1.8.0.jar
-
-> twitter.jar
+> sdkbox.jar
 
 > PluginShare.jar
 
-> sdkbox.jar
+> converter-gson-2.1.0.jar
 
-> digits
+> gson-2.7.jar
 
-> tweetcomposer
+> okhttp-3.4.2.jar
 
-> tweetui
+> okio-1.9.0.jar
 
-> twittercore
+> picasso-2.5.2.jar
+
+> retrofit-2.1.0.jar
+
+> twitter-text-1.14.3.jar
+
+> tweet-composer
+
+> twitter-core
 
 
 <<[../../shared/copy_jni_lib.md]
@@ -37,10 +39,6 @@
 * 并且在标签 __application tag__ 上添加添加下列内容：
 
 ```xml
-<meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="your fabric id(0673fbd412c9b67c9ac2182659839d92b93f2f65)" />
-
 <activity
     android:name="com.twitter.sdk.android.core.identity.OAuthActivity"
     android:configChanges="orientation|screenSize"
