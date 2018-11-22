@@ -36,29 +36,26 @@ SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox
     "iap":{
         "key":"<put your googleplay key here>",
         "items":{
-          "remove_ads":{
-              "id":"<put the product id for android here>"
-          }
+            "coins":{ // 这是可消耗商品
+                "id":"<put the product id for android here>"
+            },
+            "remove_ads":{
+                "id":"<put the product id for android here>",
+                "type":"non_consumable" // 这是不可消耗商品
+            },
+            "subscription_item":{
+                "id":"<put the product id for android here>",
+                "type":"subs" // 这是订阅商品
+            }
         }
     }
 }
 ```
 
-如果您有 IAP 条目是 __non-consumable__ 的，需要在您的 `sdkbox_config.json` 里注明这些条目。只有 __Android__ 平台需要这一步骤。*json* 格式看起来如下：
-```json
-"android":
-{
-    "iap":{
-        "key":"<put your googleplay key here>",
-        "items":{
-          "remove_ads":{
-              "id":"<put the product id for android here>",
-              "type":"non_consumable"
-          }
-        }
-    }
-}
-```
+__注意__: sdkbox_config.json 中的 Goolge IAP key 是从 `Google Play Console` 中取到的, 请看如下截图:
+
+![](../../imgs/google_licensing_iab.png)
+
 
 <<[sdkbox-config-encrypt.md]
 

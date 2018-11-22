@@ -1,16 +1,17 @@
 ## 使用 Proguard （release模式下可选）
 * 编辑 `project.properties` 文件， 指定一个 `Proguard` 配置文件。比如：
 ```
-proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.txt
+proguard.config=proguard.cfg
 ```
 
 * 编辑这个配置文件，加入如下内容：
-
 ```
-# share
--keep class com.share.** { *; }
--dontwarn com.share.**
-
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
 
 # cocos2d-x
 -keep public class org.cocos2dx.** { *; }
@@ -22,8 +23,5 @@ proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.
 -keep public class com.sdkbox.** { *; }
 -dontwarn com.sdkbox.**
 
-#twitter
--keep public com.twitter.sdk.android.** { *; }
 ```
-
 __Note:__ Proguard 只能工作在 __Release__ 模式下 （比如： `cocos run -m release`） debug 模式下不会触发 Proguard 。
