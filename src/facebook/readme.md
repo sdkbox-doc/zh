@@ -85,6 +85,13 @@ SDKBOX 安装器会为您自动生成一个 `sdkbox_config.json` 配置文件
 
 <<[sdkbox-config-encrypt.md]
 
+### ~~邀请朋友~~
+- http://discuss.cocos2d-x.org/t/solved-invite-friends-with-using-cocos2dx-layer/34450
+
+https://developers.facebook.com/docs/ios/change-log-4x/
+
+> The App Invites feature has been deprecated. (4.28.0 - November 7, 2017)
+
 ## 使用
 
 <<[usage.md]
