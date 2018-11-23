@@ -320,6 +320,16 @@
         
             
 <li >
+    <a href="../../misc/">Misc</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../playphone/">Playphone</a>
 </li>
 
@@ -537,6 +547,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../../../qa/sdkboxplay_troubleshoot/">SDKBoxPlay相关问题</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -561,33 +577,73 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+    
         <li class="main active"><a href="#_1">简介</a></li>
+        
+    
         <li class="main "><a href="#_2">集成</a></li>
+        
+    
         <li class="main "><a href="#china">从 China 服务器下载</a></li>
+        
+    
         <li class="main "><a href="#_3">重点注意事项</a></li>
+        
             <li><a href="#_4">禁用应用程序安全传输策略</a></li>
+        
             <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
+        
             <li><a href="#_5">游戏全屏配置</a></li>
+        
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
+        
             <li><a href="#json">JSON 配置</a></li>
+        
+            <li><a href="#ios">iOS 配置</a></li>
+        
+    
         <li class="main "><a href="#_6">使用</a></li>
+        
             <li><a href="#javascript">注册 Javascript 函数</a></li>
+        
             <li><a href="#share">初始化 Share</a></li>
+        
             <li><a href="#_7">分享</a></li>
+        
             <li><a href="#_8">系统分享</a></li>
+        
             <li><a href="#share_1">捕获 Share 事件（可选）</a></li>
+        
+    
         <li class="main "><a href="#api-reference">API Reference</a></li>
+        
             <li><a href="#methods">Methods</a></li>
+        
             <li><a href="#listeners">Listeners</a></li>
+        
+    
         <li class="main "><a href="#_9">手动集成</a></li>
-        <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
+        
+    
+        <li class="main "><a href="#ios_1">iOS 平台手动集成</a></li>
+        
+    
         <li class="main "><a href="#android">Android 手动集成</a></li>
+        
             <li><a href="#_10">拷贝文件</a></li>
+        
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
+        
             <li><a href="#androidmk">编辑 Android.mk</a></li>
+        
             <li><a href="#applicationmk-cocos2d-x-v30-v32">编辑 Application.mk （只限 Cocos2d-x v3.0 到 v3.2 版本）</a></li>
+        
             <li><a href="#appactivityjava">修改 AppActivity.java</a></li>
+        
+    
         <li class="main "><a href="#proguard-release">使用 Proguard （release模式下可选）</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -603,7 +659,7 @@
 <p>在使用前，请确保您已经在下面两个平台创建了开发者帐号。</p>
 <ul>
 <li><a href="http://developers.facebook.com/">Facebook</a></li>
-<li><a href="http://apps.twitter.com/">Twitter</a> (For twitter you'll also need <a href="https://fabric.io">Fabric</a>)</li>
+<li><a href="http://apps.twitter.com/">Twitter</a></li>
 </ul>
 <h2 id="_2">集成</h2>
 <p>在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX Share 插件。</p>
@@ -702,16 +758,67 @@ To ensure security, during normal execution the new configuration is locally sav
 <p><strong>Twitter 配置</strong></p>
 <p>you need to replace <code>&lt;key&gt;</code>, <code>&lt;secret&gt;</code> item with your specific <a href="http://apps.twitter.com/">Twitter</a> account.
 您需要用您自己的 Twitter 开发者帐号信息替换配置文中所有的 <code>&lt;key&gt;</code>，<code>&lt;secret&gt;</code> 项。</p>
-<p>您还需要用您自己的 <a href="https://fabric.io/settings/organizations">fabric organization</a> 中的 api_key 替换 <code>AndroidManifest.xml</code> 中的 api_key 。</p>
-<pre><code class="xml">&lt;meta-data
-            android:name=&quot;io.fabric.ApiKey&quot;
-            android:value=&quot;api_key&quot; /&gt;
-</code></pre>
-
-<p>你可以从 Fabric organization 页面找到 api_key 。
-<img alt="" src="../../../imgs/share_twitter_organization_info.png" /></p>
 <p><strong>Facebook 配置</strong></p>
 <p>您需要添加 <code>Facebook</code> 相关配置到配置文件中。</p>
+<h3 id="ios">iOS 配置</h3>
+<ul>
+<li><code>Twitter</code> 支持的 iOS 版本为 9.0+</li>
+<li>在 <code>AppController.mm</code> 中做如下修改</li>
+</ul>
+<pre><code class="object-c">#import &lt;TwitterKit/TWTRKit.h&gt;
+
+- (BOOL)application:(UIApplication *)app
+            openURL:(NSURL *)url
+            options:(NSDictionary&lt;UIApplicationOpenURLOptionsKey, id&gt; *)options {
+    return [[Twitter sharedInstance] application:app openURL:url options:options];
+}
+</code></pre>
+
+<ul>
+<li>在 <code>Info.plist</code> 中增加如下内容</li>
+</ul>
+<pre><code class="xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+
+    ...
+
+    &lt;key&gt;CFBundleURLTypes&lt;/key&gt;
+    &lt;array&gt;
+
+        ...
+
+        &lt;dict&gt;
+            &lt;key&gt;CFBundleURLSchemes&lt;/key&gt;
+            &lt;array&gt;
+                &lt;string&gt;twitterkit-(your-appkey)&lt;/string&gt;
+            &lt;/array&gt;
+        &lt;/dict&gt;
+
+        ...
+
+    &lt;/array&gt;
+
+    &lt;key&gt;LSApplicationQueriesSchemes&lt;/key&gt;
+    &lt;array&gt;
+
+        ...
+
+        &lt;string&gt;twitter&lt;/string&gt;
+        &lt;string&gt;twitterauth&lt;/string&gt;
+
+        ...
+
+    &lt;/array&gt;
+
+    ...
+
+&lt;/dict&gt;
+&lt;/plist&gt;
+
+</code></pre>
+
 <!---->
 
 <h2 id="_6">使用</h2>
@@ -833,14 +940,15 @@ plugin.init();
 <h2 id="_9">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
-<h2 id="ios">iOS 平台手动集成</h2>
+<h2 id="ios_1">iOS 平台手动集成</h2>
 <p>拖拽下列 framework 从 <code>Share</code> 插件包的 <strong>plugins/ios</strong> 目录到您的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
 <blockquote>
 <p>sdkbox.framework</p>
 <p>PluginShare.framework</p>
-<p>Fabric.framework</p>
 <p>TwitterCore.framework</p>
 <p>TwitterKit.framework</p>
+<p>TwitterKitResources.bundle -&gt; TwitterKit.framework/TwitterKitResources.bundle</p>
+<p>TwitterShareExtensionUIResources.bundle -&gt; TwitterKit.framework/TwitterShareExtensionUIResources.bundle</p>
 </blockquote>
 <p>如果您没有添加下面这些系统库，您有需要添加它们：</p>
 <blockquote>
@@ -851,6 +959,10 @@ plugin.init();
 <p>Social.framework</p>
 <p>GameController.framework</p>
 <p>SystemConfiguration.framework</p>
+<p>MediaPlayer.framework</p>
+<p>MessageUI.framework</p>
+<p>CoreMotion.framework</p>
+<p>SafariServices.framework</p>
 </blockquote>
 <p>把 <code>plugin/jsbindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
@@ -863,16 +975,17 @@ plugin.init();
 <h3 id="_10">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
-<p>android-support-v4.jar</p>
-<p>fabric.jar</p>
-<p>retrofit-1.8.0.jar</p>
-<p>twitter.jar</p>
-<p>PluginShare.jar</p>
 <p>sdkbox.jar</p>
-<p>digits</p>
-<p>tweetcomposer</p>
-<p>tweetui</p>
-<p>twittercore</p>
+<p>PluginShare.jar</p>
+<p>converter-gson-2.1.0.jar</p>
+<p>gson-2.7.jar</p>
+<p>okhttp-3.4.2.jar</p>
+<p>okio-1.9.0.jar</p>
+<p>picasso-2.5.2.jar</p>
+<p>retrofit-2.1.0.jar</p>
+<p>twitter-text-1.14.3.jar</p>
+<p>tweet-composer</p>
+<p>twitter-core</p>
 </blockquote>
 <ul>
 <li>
@@ -896,31 +1009,18 @@ plugin.init();
 </li>
 <li>
 <p>如果您使用 android-stdio, 请编辑 <code>proj.android-studio/app/build.gradle</code> 文件， 如下所示：</p>
-<p>在文件 <code>proj.android-stdio/app/build.gradle</code> 的开头：</p>
 </li>
 </ul>
-<pre><code class="gradle">    buildscript {
-        repositories {
-            maven {
-                url 'https://maven.fabric.io/public'
-            }
-        }
-        dependencies {
-            classpath 'io.fabric.tools:gradle:1.+'
-        }
-    }
-    apply plugin: 'com.android.application'
-    apply plugin: 'io.fabric'
-    repositories {
-        maven { url 'https://maven.fabric.io/public' }
-    }
-</code></pre>
-
 <p>文件 <code>proj.android-studio/app/build.gradle</code> 中 <strong>dependencies tag</strong> 的内容：</p>
 <pre><code class="gradle">    dependencies {
-        compile('com.twitter.sdk.android:twitter:+@aar') {
-            transitive = true; exclude module: 'support-v4'
-        }
+
+        ...
+
+        implementation 'com.twitter.sdk.android:twitter-core:3.1.1'
+        implementation 'com.twitter.sdk.android:tweet-composer:3.1.1'
+
+        ...
+
     }
 </code></pre>
 
@@ -935,11 +1035,7 @@ plugin.init();
 <ul>
 <li>在标签 <strong>application tag</strong> 上包含以下内容：</li>
 </ul>
-<pre><code class="xml">&lt;meta-data
-            android:name=&quot;io.fabric.ApiKey&quot;
-            android:value=&quot;your fabric id(0673fbd412c9b67c9ac2182659839d92b93f2f65)&quot; /&gt;
-
-&lt;activity
+<pre><code class="xml">&lt;activity
     android:name=&quot;com.twitter.sdk.android.core.identity.OAuthActivity&quot;
     android:configChanges=&quot;orientation|screenSize&quot;
     android:excludeFromRecents=&quot;true&quot;
@@ -1053,10 +1149,10 @@ SDKBox.init(this);
 <p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
 <ul>
 <li>
-<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么__定义它__。</p>
 </li>
 <li>
-<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的__同名方法__。</p>
 </li>
 </ul>
 </li>
@@ -1122,7 +1218,6 @@ SDKBox.init(this);
 
 #twitter
 -keep public com.twitter.sdk.android.** { *; }
--keep public io.fabric.sdk.android.** { *; }
 </code></pre>
 
 <p><strong>Note:</strong> Proguard 只能工作在 <strong>Release</strong> 模式下 （比如： <code>cocos run -m release</code>） debug 模式下不会触发 Proguard 。</p></div>
@@ -1132,7 +1227,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2018-10-10 02:44:22, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2018-11-23 07:36:30.233967, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

@@ -3,8 +3,8 @@
 
     
     <url>
-     <loc>/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,25 +12,25 @@
     
         
     <url>
-     <loc>/cocos/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/cocos/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/installer/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/installer/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/qa/cocos_creator/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/qa/cocos_creator/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc></loc>
+     <loc>None</loc>
      <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -40,36 +40,26 @@
     
         
     <url>
-     <loc>/unity/iap/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/unity/iap/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/unity/review/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/unity/review/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/unity/socialshare/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/unity/socialshare/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/unity/googleanalytics/documentation/</loc>
-     <lastmod>2018-10-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>/unreal/iap/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/unity/googleanalytics/documentation/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -78,26 +68,8 @@
     
         
     <url>
-     <loc>/liveops/</loc>
-     <lastmod>2018-10-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/liveops/remote-config/</loc>
-     <lastmod>2018-10-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/liveops/receipt-verification/</loc>
-     <lastmod>2018-10-10</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>/liveops/catalog-management/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/unreal/iap/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -106,26 +78,60 @@
     
         
     <url>
-     <loc>/qa/installgoogleplaystore/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/liveops/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/qa/integration-admob-to-creator/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/liveops/remote-config/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/qa/sdkbox-for-create-usage/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/liveops/receipt-verification/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>/qa/crypt-sdkbox-config/</loc>
-     <lastmod>2018-10-10</lastmod>
+     <loc>None/liveops/catalog-management/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/qa/installgoogleplaystore/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/qa/integration-admob-to-creator/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/qa/sdkbox-for-create-usage/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/qa/crypt-sdkbox-config/</loc>
+     <lastmod>2018-11-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/qa/sdkboxplay_troubleshoot/</loc>
+     <lastmod>2018-11-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

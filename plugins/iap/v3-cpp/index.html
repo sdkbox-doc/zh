@@ -320,6 +320,16 @@
         
             
 <li >
+    <a href="../../misc/">Misc</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../playphone/">Playphone</a>
 </li>
 
@@ -537,6 +547,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../../../qa/sdkboxplay_troubleshoot/">SDKBoxPlay相关问题</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -561,34 +577,72 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
+    
         <li class="main active"><a href="#_1">集成</a></li>
+        
+    
         <li class="main "><a href="#china">从 China 服务器下载</a></li>
+        
+    
         <li class="main "><a href="#_2">重点注意事项</a></li>
+        
             <li><a href="#_3">禁用应用程序安全传输策略</a></li>
+        
             <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
+        
             <li><a href="#_4">游戏全屏配置</a></li>
+        
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
+        
             <li><a href="#json">JSON 配置</a></li>
+        
+    
         <li class="main "><a href="#_5">使用</a></li>
+        
             <li><a href="#iap">初始化 IAP</a></li>
+        
             <li><a href="#_6">获取最新的价格</a></li>
+        
             <li><a href="#_7">购买</a></li>
+        
             <li><a href="#_8">恢复购买</a></li>
+        
             <li><a href="#_9">处理付费事件</a></li>
+        
+    
         <li class="main "><a href="#promotion-iap">Promotion IAP</a></li>
+        
             <li><a href="#promotion-iap_1">启用 Promotion IAP</a></li>
+        
             <li><a href="#promotion-iap_2">Promotion IAP 设置</a></li>
+        
+    
         <li class="main "><a href="#api-reference">API Reference</a></li>
+        
             <li><a href="#methods">Methods</a></li>
+        
             <li><a href="#listeners">Listeners</a></li>
+        
+    
         <li class="main "><a href="#_10">手动集成</a></li>
+        
+    
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
+        
+    
         <li class="main "><a href="#android">Android 平台手动集成</a></li>
+        
             <li><a href="#_11">拷贝文件</a></li>
+        
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
+        
             <li><a href="#androidmk">编辑 Android.mk</a></li>
+        
             <li><a href="#applicationmk-cocos2d-x-v30-v32">编辑 Application.mk （只限 Cocos2d-x v3.0 到 v3.2 版本）</a></li>
+        
             <li><a href="#appactivityjava">修改 AppActivity.java</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -668,29 +722,24 @@ To ensure security, during normal execution the new configuration is locally sav
     &quot;iap&quot;:{
         &quot;key&quot;:&quot;&lt;put your googleplay key here&gt;&quot;,
         &quot;items&quot;:{
-          &quot;remove_ads&quot;:{
-              &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;
-          }
+            &quot;coins&quot;:{ // 这是可消耗商品
+                &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;
+            },
+            &quot;remove_ads&quot;:{
+                &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;,
+                &quot;type&quot;:&quot;non_consumable&quot; // 这是不可消耗商品
+            },
+            &quot;subscription_item&quot;:{
+                &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;,
+                &quot;type&quot;:&quot;subs&quot; // 这是订阅商品
+            }
         }
     }
 }
 </code></pre>
 
-<p>如果您有 IAP 条目是 <strong>non-consumable</strong> 的，需要在您的 <code>sdkbox_config.json</code> 里注明这些条目。只有 <strong>Android</strong> 平台需要这一步骤。<em>json</em> 格式看起来如下：</p>
-<pre><code class="json">&quot;android&quot;:
-{
-    &quot;iap&quot;:{
-        &quot;key&quot;:&quot;&lt;put your googleplay key here&gt;&quot;,
-        &quot;items&quot;:{
-          &quot;remove_ads&quot;:{
-              &quot;id&quot;:&quot;&lt;put the product id for android here&gt;&quot;,
-              &quot;type&quot;:&quot;non_consumable&quot;
-          }
-        }
-    }
-}
-</code></pre>
-
+<p><strong>注意</strong>: sdkbox_config.json 中的 Goolge IAP key 是从 <code>Google Play Console</code> 中取到的, 请看如下截图:</p>
+<p><img alt="" src="../../../imgs/google_licensing_iab.png" /></p>
 <h2 id="_5">使用</h2>
 <h3 id="iap">初始化 IAP</h3>
 <p>在您的工程中合适的地方初始化插件.我们推荐在 <code>AppDelegate::applicationDidFinishLaunching()</code> or <code>AppController:didFinishLaunchingWithOptions()</code> 中.确保包含了相关的头文件:</p>
@@ -1007,10 +1056,10 @@ SDKBox.init(this);
 <p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
 <ul>
 <li>
-<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么__定义它__。</p>
 </li>
 <li>
-<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的__同名方法__。</p>
 </li>
 </ul>
 </li>
@@ -1054,7 +1103,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2018-10-10 02:44:21, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2018-11-23 07:36:28.658236, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
