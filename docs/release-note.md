@@ -1,6 +1,302 @@
 # Release Notes
 ---
 
+# 2.4.3.0 (?)
+
+## Add
+## Upgrade
+## Bugfix
+
+1. Review [android.view.WindowManager$BadTokenException crash](https://discuss.cocos2d-x.org/t/unsatisfiedlinkerror-on-released-game/44190/17?u=yinjimmy)
+
+
+# 2.4.2.0 (20181129)
+
+## Add
+1.  Misc Plugin
+    1. LocalNotify， [docs here](http://docs.sdkbox.com/en/plugins/misc/v3-cpp/)
+2.  Review:
+    1. `rateInAppstore` api:
+
+        >use SKStoreReviewController to review, this is default behavior
+        >
+        >disable will use SKStoreProductViewController to review
+        >if use SKStoreReviewController, `onDeclineToRate`, `onRate`,
+        >`onRemindLater` will not trigger
+
+3. Share:
+    1. `logoutTwitter` api for [this](https://discuss.cocos2d-x.org/t/need-help-twitter-share-why-onsharestate-socialsharestatecancelled-called-right-after-socialsharestatebegin/43754)
+
+## Upgrade
+1.  AdMob: iOS 7.35.1 SDK
+2.  Documentation:
+    1. IAP
+    2. SDKBoxPlay
+    3. [encrypt and decrypt sdkbox_config.json](http://docs.sdkbox.com/en/qa/crypt-sdkbox-config/)
+
+## Bugfix
+1.  AdMob:
+    1. fix [`adViewDidDismissScreen` is called twice](https://discuss.cocos2d-x.org/t/admob-android-bug/44621)
+2.  IAP-Amazone:
+    1.  fix add
+        ```
+        <receiver android:name="com.amazon.device.iap.ResponseReceiver">
+           <intent-filter>
+               <action android:name="com.amazon.inapp.purchasing.NOTIFY"  android:permission="com.amazon.inapp.purchasing.Permission.NOTIFY" />
+           </intent-filter>
+        </receiver>
+        ```
+        to AndroidManifest.xml again when update plugin.
+    2.  fix `enableUserSideVerification`, `isAutoConsume`, `setAutoConsume`,
+       `consumeProduct` crash
+3.  Review:
+    1. Amazon, try market first, then webview
+4.  SDKBox-core:
+    1. fix android armeabi/armeabi-v7a arch. In pre-release, armeabi folder
+       contains armeabi-v7a files, armeabi-v7a folder contains armeabi, maybe fix [UnsatisfiedLinkError on Released Game](https://discuss.cocos2d-x.org/t/unsatisfiedlinkerror-on-released-game/44190)
+5.  Facebook:
+    1. fix [share callback for iOS](https://developers.facebook.com/docs/ios/troubleshooting#faq_1045833585509347). Follow Facebook's development
+      documentation and no longer use postId to determine if sharing is successful.
+6.  Appodeal:
+    1. fix installer `'android:theme=@@android:style/Theme.Translucent.NoTitleBar.Fullscreen'])`
+       should be `'android:theme=@android:style/Theme.Translucent.NoTitleBar.Fullscreen'])`
+
+# 2.4.1.1 Release Notes (20180920)
+
+## Add
+
+1. Android case sensitive folder, `#include "PluginIAP/PluginIAP.h" warning with folder pluginiap/Plugin.h path.`
+2. SDKBoxAds: use `cache` instead of `cacheControl`:
+    ```
+    static void cache(const std::string& ad_unit, const std::string& ad_name);
+    static void cacheControl( const std::string& ad_unit, const std::map<std::string, std::string>& cacheOpts );
+    ```
+3. support creator >= 2.0
+
+## Upgrade
+
+## Bugfix
+
+1.  Amazon:
+    1. fix `receipt` and `receiptCipheredPayload`, now `receipt` is json string and  `receiptCipheredPayload` is empty string.
+2.  Appodeal:
+    1. fix package installer for cocos2d-x 3.17
+3.  IAP:
+    1. fix [crash issue](https://discuss.cocos2d-x.org/t/sdkbox-iap-problem/43513)
+4.  SDKBoxAds:
+    1. fix AdMob send load event to SDKBoxAds
+5.  Facebook:
+    1. fix package installer for cocos2d-x 3.17 and cocos creator 2.0
+6.  Google Play Services (GPS):
+    1. fix failed on jsb-link creator 2.0, [1](https://discuss.cocos2d-x.org/t/cocos-creator-v2-0-released/43287/48?u=yinjimmy), [2](https://discuss.cocos2d-x.org/t/unable-to-compile-cocoscreator-2-project-android-with-sdkbox-admob/43417)
+7.  Fyber:
+    1. update [doc](https://discuss.cocos2d-x.org/t/solved-sdkbox-fyber-plugin-issue/43361)
+8.  IAP:
+    1. android "item already owned"
+    2. [android price value](https://discuss.cocos2d-x.org/t/iap-v2-4-0-3-price-value-problem/43319?u=yinjimmy)
+9.  Chartboost:
+    1. fix cache ad which's not in sdkbox_config.json
+
+## Remove
+
+1. cocos2d-x v2 support
+
+# 2.4.0.3 Release Notes (20180806)
+
+## Add
+
+1. auto add proguard code
+2. use gradle when cocos2d-x >= 3.17
+3. add `sdkbox::getConfig` and `sdkbox::setConfig`  for [this](http://www.sdkbox.com/answers/question/how-to-get-content-sdkbox_config-is-using/)
+4. store sdkbox-gui standalone with [repo](https://github.com/sdkbox/misc), fix [issue1](https://discuss.cocos2d-x.org/t/sdkbox-network-failure-fatal-error/42885/3?u=yinjimmy) [issue2](https://discuss.cocos2d-x.org/t/sdkbox-network-failure-fatal-error/42885/17?u=yinjimmy)
+5. unity: add [`setserverid` api](http://www.sdkbox.com/answers/question/unityads-how-to-set-serverid/)
+
+## Upgrade
+
+1. GPG: update android c++ lib to v3.0.1
+2. Appodeal: [update to iOS 2.4.4.2-Beta](https://discuss.cocos2d-x.org/t/app-store-rejected-app-because-of-old-yandex-sdk-in-appodeal-plugin/43072)
+3. Facebook: [Android 4.34.0](https://discuss.cocos2d-x.org/t/android-facebook-2-4-0-2-dialog-share-error/43003)
+
+## Bugfix
+
+1. IAP:
+    1. send init event on Android
+    2. fixed [JNI crash](https://discuss.cocos2d-x.org/t/sdkbox-iap-jni-error/37570/15?u=yinjimmy)
+    3. fix [purchase subscription on Android](http://www.sdkbox.com/answers/question/error-when-purchasing-recurrent-subscription-android/)
+
+2. Google Play Services (GPS):
+    1. fix [multidex](https://discuss.cocos2d-x.org/t/sdkbox-issue-with-gps-services-multidex/42644)
+
+3. SDKBoxPlay:
+    1. fix [login error](https://discuss.cocos2d-x.org/t/sdkbox-login-error/42978)
+    2. export [`saveGameDataBinary` api to javascript/Lua](https://discuss.cocos2d-x.org/t/sdkboxplay-savegamedatabinary-is-not-a-function/43045)
+
+4. Facebook:
+    1. fix [dialog share error](https://discuss.cocos2d-x.org/t/android-facebook-2-4-0-2-dialog-share-error/43003)
+
+5. sdkbox installer:
+    1. fix [`update` command generate folder n/a with cocos2d-x 3.17](https://discuss.cocos2d-x.org/t/command-sdkbox-update-generates-folder-n-a-for-cocos2dx-v3-17/42965)
+
+6. GPG:
+    1. fix [gpg.d.ts](https://discuss.cocos2d-x.org/t/question-about-gpg-d-ts/42886)
+
+
+# 2.4.0.2 Release Notes (20180626)
+
+## Add
+
+1. GDPR api:
+    1. Chartboost `restrictDataCollection`
+    2. UnityAds `setGDPR`
+    3. AdColony `setGDPR`
+    4. Firebase `resetAnalyticsData` and `setAnalyticsCollectionEnabled`
+    5. AdMob `setGDPR`
+
+## Upgrade
+
+1. AdMob: update iOS SDK to 7.31.0
+
+## Bugfix
+
+1. fix installer for cocos2d-lua/Js 3.17
+2. remove all std::stringstream
+
+
+# 2.4.0.1 Release Notes (20180522)
+
+## Upgrade
+1. Chartboost SDK to 7.2.0, [issue](https://discuss.cocos2d-x.org/t/sdkbox-2-4-0-0-release-with-gdpr-support/42557/2?u=yinjimmy)
+
+## Bugfix
+1. Unity share
+2. SDKBoxPlay save games, [issue](https://discuss.cocos2d-x.org/t/loadallgamedata-callback/41750/28?u=yinjimmy)
+3. Fix installer for cocos2d-x 3.17, [issue](https://discuss.cocos2d-x.org/t/sdkbox-plugins-failing-import-in-cocos2d-x-3-17-projects/42542)
+4. Fix patch for cocos2d-lua >= 3.10
+5. AdMob patch creator 1.9 failed, [issue](https://discuss.cocos2d-x.org/t/admob-error-in-cocos-creator-1-9-1/42592)
+
+
+# 2.4.0.0 Release Notes (20180508)
+
+It's ready for [https://www.eugdpr.org/](https://www.eugdpr.org/)
+
+## Add
+
+1. Ethereum pay (for cocos creator)
+
+## Upgrade
+
+1. AdMob: iOS SDK to 7.30.0
+2. Appnext: iOS SDK to 1.9.0
+3. Facebook: iOS SDK to 4.32.0
+4. UnityAds: iOS SDK to 2.2.0, Android 2.2.1
+5. Tune: iOS SDK to 5.1.0, Android 4.9.0
+6. Firebase: iOS SDK to 4.13.0
+7. Chartboost: iOS SDK to 7.1.2, Android 7.1.0
+8. Twitter: iOS SDK to 3.3.0, Android SDK to 3.3.0
+9. Apteligent: iOS SDK to 5.7.3, Android SDK to 5.8.10
+10. Google Play Service: 12.0.1
+
+# 2.3.17.9 Release Notes (20180410)
+
+## Bugfix
+
+1. Tapcore: fix [intigration](http://discuss.cocos2d-x.org/t/tapcore-intigration-error/42148)
+
+# 2.3.17.8 Release Notes (20180403)
+
+## Add
+
+1. Firebase: add WAKE_LOCK permission
+2. Firebase: add SystemConfiguration.framework
+3. SDKBoxPlay: add new event onLoadGameData(nullptr, "") as load finish event
+4. SDKBoxPlay: add `fetchNames` api
+
+## Bugfix
+
+1. Firebase: fix patch
+2. Unity: fix pause and resume event
+3. YouTuBe: fix patch for creator jsb2 (from 1.8 version)
+4. SDKBoxPlay: fix crash when nothing store in cloud on Android
+5. SDKBoxAds: fix `AppDelegate.cpp` patch
+6. sdkbox installer: fix jsb-link projec for cocos creator (from 1.8 version)
+7. IAP won't consume and it will throw error "item already own" on Android
+
+## Upgrade
+
+1. Facebook: upgrade iOS SDK to 4.31.0
+
+# 2.3.17.7 Release Notes (20180206)
+
+## Highlights
+
+1. Support [Tapcore](http://tapcore.com/?refid=Y3DgX)
+2. Upgrade AdColony iOS SDK to 3.3.0 and Android SDK to 3.3.0
+3. Upgrade Firebase iOS SDK to 4.8.0
+4. Upgrade UnityAds iOS SDK to 2.1.2 and Android SDK to 2.1.2
+5. Facebook support [set web login](http://discuss.cocos2d-x.org/t/how-to-set-the-facebook-loginbehavior-fbsdkloginbehaviorweb/40952) with `PluginFacebook::setLoginBehavior(sdkbox::FBSDKLoginBehaviorBrowser);` api
+6. We recommend Plugin SDKBoxAds to show ads, and other plugin AdMob, UnityAds etc as its mediation.
+   So when you import Plugin AdMob or UnityAds, SDKBoxAds will be import too.
+
+## Bugfix
+1. Fix [`requestAllAds` for AdColony Android](http://discuss.cocos2d-x.org/t/adcolony-force-reload-ads-if-internet-gets-enabled/39957)
+2. Fix Plugin Facebook callback for creator 1.7+, [issue1](http://discuss.cocos2d-x.org/t/solved-crash-sdkbox-pluginfacebook-after-login-successful-creatorv1-7-android/40849/18), [issue2](http://discuss.cocos2d-x.org/t/solved-crash-sdkbox-pluginfacebook-after-login-successful-creatorv1-7-android/40849), [issue3](http://discuss.cocos2d-x.org/t/solved-facebook-login-logout-game-crash/40912)
+3. Fix [SDKBoxPlay apiclient is null](https://github.com/sdkbox/issues/issues/42)
+4. Fix [SDKBox crash when call cc.game.restart](https://github.com/sdkbox/sdkbox-core/issues/2664)
+5. Fix Appodeal `FailToPresent` event
+6. Fix Unity user agreement window
+
+# 2.3.17.6 Release Notes (20171218)
+
+## Highlights
+
+1. Fix [IAP payload is empty when restore on](iOS http://www.sdkbox.com/answers/question/iap-restore-receiptcipheredpayload-is-empty-ios/)
+2. Appodeal upgrade Android SDK to 2.1.7
+3. Fix [review no callback when click Android *BACK* button or click outside of review UI](http://discuss.cocos2d-x.org/t/sdkbox-review-ratings-android-callbacks/40429)
+
+# 2.3.17.5 Release Notes (20171208)
+
+## Highlights
+
+1. Support Cocos Creator 1.7
+2. AdColony supports load all ads again with `requestAllAds` api
+3. Appodeal upgrade iOS SDK to 2.1.7
+
+
+
+# 2.3.17.3 Release Notes (20171124)
+## Highlights
+
+* AdMob upgrade to GoogleMobileAdsSdkiOS-7.26.0, support iPhone X
+* iOS suport Promotion IAP
+* Installer support 3.16 and Cocos Creator 1.6.2
+
+## Bugfix
+* Fix receiptCipheredPayload always null on unity
+* Fix IAP price encoding
+* Fix IAP clean [iOS system clipboard](http://discuss.cocos2d-x.org/t/sdkbox-iap-remove-clipboard/37087)
+* Fix SDKBoxPlay fetch auth code
+
+
+# 2.3.17 Release Notes (20170926)
+
+## Highlights
+
+* Support Facebook GameRoom
+* Unity Review support Amazon Store
+* SDKBoxPlay support save binary data
+* Upgrade Amazon IAP SDK
+* [IAP support finish transaction functionality](https://github.com/sdkbox/issues/issues/21#issuecomment-318951394)
+* UnityAds Plugin support SDKBoxAds
+* [Chartboost Unreal Plugin support 4.12 - 4.16](https://www.unrealengine.com/marketplace/chartboost-plugin)
+
+## Bugfix
+
+* [Add receipt data when restore products](http://discuss.cocos2d-x.org/t/sdkbox-2-3-11-release-new-push-notification/35658/28)
+* SDKBox UI stuck with 404 [issue1](http://forum.cocos.com/t/cocoscreator-macos-sdkbox/49752), [issue2](http://www.sdkbox.com/answers/question/while-trying-to-open-sdkbox-plugin-extension-sdkbox-launch-plugin-try-to-update-itself-and-received-404-error-whats-wrong/)
+* [SDKBoxPlay JS submit core crash](http://www.sdkbox.com/answers/question/sdkboxplay-crash-2-3-16-1/)
+* [YouTube crash sometimes with nullpointerexception](http://discuss.cocos2d-x.org/t/sdkbox-youtube-crashes-sometimes-with-nullpointerexception-cocos2djs/39091)
+
+
 2.3.16 Release Notes (20170811)
 ===
 
