@@ -3,6 +3,11 @@
 <h1>IAP 集成指南</h1>
 <<[../../shared/-VERSION-/version.md]
 
+## 新手 《iOS内购 - 账户信息填写》
+1. [https://www.jianshu.com/p/4f5f0b45b083](https://www.jianshu.com/p/4f5f0b45b083)
+2. [http://xiaovv.me/2018/05/03/My-iOS-In-App-Purchase-Summarize/](http://xiaovv.me/2018/05/03/My-iOS-In-App-Purchase-Summarize/)
+
+
 ## 集成
 用如下命令来集成 SDKBOX IAP 插件,请确保您可以正常执行的 SDKBOX 安装器.
 ```bash

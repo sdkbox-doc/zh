@@ -1,4 +1,4 @@
-## 从 China 服务器下载
+## ~~从 China 服务器下载~~ 服务器已停止
 如果你在中国, 并且下载插件的速度比较慢, 可以尝试使用位于中国的服务器来下载, 查询插件, 使用方法为在你的 `sdkbox import` 后加 `--server china` 及可, 比如:
 ```bash
 sdkbox import xxx  --server china
