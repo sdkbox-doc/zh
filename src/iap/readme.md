@@ -4,6 +4,7 @@
 <<[../../shared/-VERSION-/version.md]
 
 ## 新手 《iOS内购 - 账户信息填写》
+0. [App Store Connect 帮助 - App 内购买项目配置流程](https://help.apple.com/app-store-connect/?lang=zh-cn/#/devb57be10e7)
 1. [https://www.jianshu.com/p/4f5f0b45b083](https://www.jianshu.com/p/4f5f0b45b083)
 2. [http://xiaovv.me/2018/05/03/My-iOS-In-App-Purchase-Summarize/](http://xiaovv.me/2018/05/03/My-iOS-In-App-Purchase-Summarize/)
 
