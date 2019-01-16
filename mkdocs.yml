@@ -222,6 +222,7 @@ pages:
    - 'SDKBoxGUI For Creator介绍': 'qa/sdkbox-for-create-usage.md'
    - '保护 sdkbox_config.json': 'qa/crypt-sdkbox-config.md'
    - 'SDKBoxPlay相关问题': 'qa/sdkboxplay_troubleshoot.md'
+   - 'IAP相关问题': 'qa/iap_troubleshoot.md'
 
 theme: mkdocs
 theme_dir: 'custom_theme'
