@@ -63,6 +63,25 @@ __注意__: sdkbox_config.json 中的 Goolge IAP key 是从 `Google Play Console
 ![](../../imgs/google_licensing_iab.png)
 
 
+### `SKPaymentTransactionStateDeferred` 测试
+
+`SKPaymentTransactionStateDeferred` 是 iOS IAP 订单的一个中间状态. 对于大部数开发者而言, 不用关心这个中间状态.
+
+如果你需要测试 `SKPaymentTransactionStateDeferred` 的话，可以在 `sdkbox_config.json` 中添加 `simulatesAskToBuyInSandbox` 项, 如下:
+
+```json
+"ios":
+{
+    "iap": {
+        "simulatesAskToBuyInSandbox": true,
+        "items": { ... }
+    }
+}
+```
+
+更多关于 [SKPaymentTransactionStateDeferred](https://stackoverflow.com/questions/25510678/how-to-test-skpaymenttransactionstatedeferred)
+
+
 <<[sdkbox-config-encrypt.md]
 
 ## 使用
