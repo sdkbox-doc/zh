@@ -553,6 +553,12 @@
 </li>
 
                         
+                            
+<li >
+    <a href="../../../qa/iap_troubleshoot/">IAP相关问题</a>
+</li>
+
+                        
                         </ul>
                     </li>
                 
@@ -598,6 +604,8 @@
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
         
             <li><a href="#json">JSON 配置</a></li>
+        
+            <li><a href="#skpaymenttransactionstatedeferred">SKPaymentTransactionStateDeferred 测试</a></li>
         
     
         <li class="main "><a href="#_5">使用</a></li>
@@ -749,6 +757,19 @@ To ensure security, during normal execution the new configuration is locally sav
 
 <p><strong>注意</strong>: sdkbox_config.json 中的 Goolge IAP key 是从 <code>Google Play Console</code> 中取到的, 请看如下截图:</p>
 <p><img alt="" src="../../../imgs/google_licensing_iab.png" /></p>
+<h3 id="skpaymenttransactionstatedeferred"><code>SKPaymentTransactionStateDeferred</code> 测试</h3>
+<p><code>SKPaymentTransactionStateDeferred</code> 是 iOS IAP 订单的一个中间状态. 对于大部数开发者而言, 不用关心这个中间状态.</p>
+<p>如果你需要测试 <code>SKPaymentTransactionStateDeferred</code> 的话，可以在 <code>sdkbox_config.json</code> 中添加 <code>simulatesAskToBuyInSandbox</code> 项, 如下:</p>
+<pre><code class="json">&quot;ios&quot;:
+{
+    &quot;iap&quot;: {
+        &quot;simulatesAskToBuyInSandbox&quot;: true,
+        &quot;items&quot;: { ... }
+    }
+}
+</code></pre>
+
+<p>更多关于 <a href="https://stackoverflow.com/questions/25510678/how-to-test-skpaymenttransactionstatedeferred">SKPaymentTransactionStateDeferred</a></p>
 <h2 id="_5">使用</h2>
 <h3 id="iap">初始化 IAP</h3>
 <ul>
@@ -841,7 +862,7 @@ sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 <p>更多详情见<a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/StoreKitGuide/PromotingIn-AppPurchases/PromotingIn-AppPurchases.html">Promoting IAP 官方文档</a></p>
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="javascript">sdkbox.IAP.init();
+<pre><code class="javascript">sdkbox.IAP.init(jsonconfig);
 </code></pre>
 
 <blockquote>
@@ -859,6 +880,10 @@ sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 <blockquote>
 <p>Make a purchase request</p>
 </blockquote>
+<pre>
+@Param name is the name of the item specified in sdkbox_config.json
+</pre>
+
 <pre><code class="javascript">sdkbox.IAP.refresh();
 </code></pre>
 
@@ -883,8 +908,64 @@ sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 <blockquote>
 <p>Remove listener for IAP</p>
 </blockquote>
+<pre><code class="javascript">sdkbox.IAP.enableUserSideVerification();
+</code></pre>
+
+<pre><code class="javascript">sdkbox.IAP.isAutoFinishTransaction();
+</code></pre>
+
+<blockquote>
+<p>get auto invoke finishTransaction flag</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.IAP.setAutoFinishTransaction(b);
+</code></pre>
+
+<blockquote>
+<p>set auto invoke finishTransaction flag</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.IAP.finishTransaction(productid);
+</code></pre>
+
+<blockquote>
+<p>to invoke ios finishTransaction api</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.IAP.fetchStorePromotionOrder();
+</code></pre>
+
+<pre><code class="javascript">sdkbox.IAP.updateStorePromotionOrder(productNames);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.IAP.fetchStorePromotionVisibility(productName);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.IAP.updateStorePromotionVisibility(productName, visibility);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.IAP.getPurchaseHistory();
+</code></pre>
+
+<blockquote>
+<p>get all purchase history, include cancelled, expired</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.IAP.getInitializedErrMsg();
+</code></pre>
+
+<blockquote>
+<p>get initialized error message</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.IAP.requestUpdateTransaction();
+</code></pre>
+
+<blockquote>
+<p>request all unfinish transaction, and retrigger onSuccess, onFailed or onCancel event with corresponding transaction.</p>
+<p>just valid on iOS</p>
+<p>e.g. if there have two transaction (one is success, on is canceled) havn't been finish,
+     after invoke requestUpdateTransaction, onSuccess will trigger with the success transaction, onCancelled will trigger with the cancelled transaction.</p>
+<p>Note: for most developer, this api is needn't, onSuccess, onFailed or onCancel will auto trigger when transaction updated.
+</p>
+</blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="javascript">onInitialized(ok);
+<pre><code class="javascript">onInitialized(success);
 </code></pre>
 
 <blockquote>
@@ -932,6 +1013,36 @@ sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 
 <blockquote>
 <p>Called when the restore completed</p>
+</blockquote>
+<pre><code class="javascript">onShouldAddStorePayment(productName);
+</code></pre>
+
+<pre><code class="javascript">onFetchStorePromotionOrder(productNames, error);
+</code></pre>
+
+<pre><code class="javascript">onFetchStorePromotionVisibility(productName, visibility, error);
+</code></pre>
+
+<pre><code class="javascript">onUpdateStorePromotionOrder(error);
+</code></pre>
+
+<pre><code class="javascript">onUpdateStorePromotionVisibility(error);
+</code></pre>
+
+<pre><code class="javascript">onPurchaseHistory(purchases);
+</code></pre>
+
+<pre><code class="javascript">onConsumed(product, error);
+</code></pre>
+
+<pre><code class="javascript">onDeferred(product);
+</code></pre>
+
+<blockquote>
+<p>Called when IAP pay deferred</p>
+<p>Note: Pay deferred status is a middle status, for most developer, needn't case this status
+this status will change to success or failed or cancel, its final status is pending external action.</p>
+<p>Please DO NOT finishTransaction when status is deferred.</p>
 </blockquote>
 <h2 id="_10">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
@@ -1137,7 +1248,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2018-12-20 09:24:47.683106, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-01-30 02:13:47.992730, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
