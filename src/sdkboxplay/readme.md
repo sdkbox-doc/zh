@@ -79,3 +79,5 @@ SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配�
 <<[proguard.md]
 
 <<[../shared/cloud_save.md]
+
+<<[../shared/thrid_server_authenticate.md]
