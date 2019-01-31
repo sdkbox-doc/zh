@@ -643,6 +643,13 @@
             <li><a href="#_9">用法</a></li>
         
     
+        <li class="main "><a href="#_13">服务器认证</a></li>
+        
+            <li><a href="#ios_2">iOS</a></li>
+        
+            <li><a href="#android_1">Android</a></li>
+        
+    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -863,7 +870,7 @@ sc-&gt;addRegisterCallback(register_all_PluginSdkboxPlayJS_helper);
 
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="js">sdkbox.SdkboxPlay.init ( ) ;
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.init();
 </code></pre>
 
 <blockquote>
@@ -875,12 +882,14 @@ The plugin initializes from the sdkbox_config.json file, and reads a configurati
     "connect_on_start" : boolean,
     "debug"            : boolean,
     "enabled"          : boolean
-}
-debug: 
+}</p>
+</blockquote>
+<pre>
+debug:
    is a common value to all plugins which enables debug info to be sent to the console. Useful when developing.
-enabled: 
-   is a common value to all plugins, which enables or disables the plugin. If enabled is false, the plugin methods &gt; will do nothing.
-connect_on_start: 
+enabled:
+   is a common value to all plugins, which enables or disables the plugin. If enabled is false, the plugin methods will do nothing.
+connect_on_start:
    tells the plugin to make an automatic connection to Google Play Services on application startup.
 leaderboards:
    a collection of objects of the form:
@@ -894,50 +903,142 @@ achievements:
        "id"          : // google play's assigned achievement id.
        "name"        : // human readable achievement name. You'll request achievement actions with this name.
        "incremental" : // boolean
-   }</p>
-</blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.setListener ( listener ) ;
+   }
+</pre>
+
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.setListener(listener);
 </code></pre>
 
 <blockquote>
 <p>Set SdkboxPlay plugin listener.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.submitScore( leaderboard_name, score );
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.removeListener();
+</code></pre>
+
+<blockquote>
+<p>Remove the listener.
+This plugin allows only for one listener which will be disabled after calling this method.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.getVersion();
+</code></pre>
+
+<blockquote>
+<p>Use this to get the version of the SDK.
+@return The version of the SDK.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.submitScore(leaderboard_name, score);
 </code></pre>
 
 <blockquote>
 <p>Request submission of an score value to a leaderboard name defined in sdkbox_config.json file.
-If the leaderboard name does not exists, or the id associated is not defined in the Developer Console for the application, the call will silently fail.
+If the leaderboard name does not exists, or the id associated is not defined in the Developer Console for the application,
+the call will silently fail.
 If everything's right, it will notify the method <code>onScoreSubmitted</code>.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.showLeaderboard( leaderboard_name );
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.showAllLeaderboards();
+</code></pre>
+
+<blockquote>
+<p>Request to show all leaderboards.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.showLeaderboard(leaderboard_name);
 </code></pre>
 
 <blockquote>
 <p>Request to show the default Leaderboard view.
-In this view you'll be able to interactively select between daily, weekly or all-time leaderboard time frames and the scope to global or you google play's friends results.</p>
+In this view you'll be able to interactively select between daily, weekly or all-time leaderboard time frames and the scope
+to global or you google play's friends results.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.unlockAchievement( achievement_name );
+<pre>
+Android only:
+ if empty string or __ALL__ is used as leaderboard_name, sdkbox play will invoke an activity
+ with all game-defined leader boards.
+</pre>
+
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.getMyScore(leaderboard_name, time_span, collection_type);
+</code></pre>
+
+<blockquote>
+<p>Get The signed-in user score for an specified leaderboard.
+This method notifies its result in a call to SdkboxPlay's listener <code>onMyScore</code> method.
+<code>time_span</code> offers the abbility to filter leaderboard for one of the three time spans each
+leaderboard offers. Values are:
+ + 0 : daily time span
+ + 1 : weekly time span
+ + any other value : all time time span.
+<code>collection_type</code> is to filter the leaderboard between social or global scopes.
+Values are:
+ + 1 : social collection type
+ + any other value : global collection type</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.getPlayerCenteredScores(leaderboard_name,
+                                                 time_span,
+                                                 collection_type,
+                                                 number_of_entries);
+</code></pre>
+
+<blockquote>
+<p>Get leaderboard information.
+This method notifies its result in a call to SdkboxPlay's listener <code>onPlayerCenteredScores</code> method.
+The information supplied is a json array encoded string.
+Each json element contains the following information:</p>
+</blockquote>
+<pre><code class="json">  {
+     &quot;display_rank&quot;          : string,
+     &quot;display_score&quot;         : string,
+     &quot;rank&quot;                  : number,   // long
+     &quot;score&quot;                 : number,   // long,
+     &quot;holder_display_name&quot;   : string,
+     &quot;hires_imageuri&quot;        : string,    // content:// protocol
+     &quot;lowres_imageuri&quot;       : string,
+     &quot;tag&quot;                   : string,
+     &quot;timestamp_millis&quot;      : long
+   }
+</code></pre>
+
+<p><code>time_span</code> offers the abbility to filter leaderboard for one of the three time spans each
+leaderboard offers. Values are:
+ + 0 : daily time span
+ + 1 : weekly time span
+ + any other value : all time time span.
+<code>collection_type</code> is to filter the leaderboard between social or global scopes.
+Values are:
+ + 1 : social collection type
+ + any other value : global collection type</p>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.loadAchievements(force_reload);
+</code></pre>
+
+<blockquote>
+<p>Load achievements metadata.
+A forece reload will force a cloud-side requery of the achievements information.
+See <code>onAchievementsLoaded</code> for a description on the returned information.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.unlockAchievement(achievement_name);
 </code></pre>
 
 <blockquote>
 <p>Request to unlock an achievement defined by its name.
 This method assumes the achievement is non incremental.
-If the achievement type is incorrectly defined in the configuration file, or the play services determines it is of the wrong type, this method will fail silently.
+If the achievement type is incorrectly defined in the configuration file, or the play services determines it is of the wrong type,
+this method will fail silently.
 Otherwise, if everything is right, the method <code>onAchievementUnlocked</code> will be invoked on the plugin listener.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.incrementAchievement( achievement_name, increment );
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.incrementAchievement(achievement_name, increment);
 </code></pre>
 
 <blockquote>
 <p>Request to increment the step count of an incremental achievement by the specified number of steps.
 This method assumes the achievement is incremental.
-If the achievement type is incorrectly defined in the configuration file, or the play services determines it is of the wrong type, this method will fail silently.
+If the achievement type is incorrectly defined in the configuration file, or the play services determines it is of the wrong type,
+this method will fail silently.
 If the call is successful, this method may invoke two different methods:
- + <code>onIncrementalAchievementStep</code> if the achievement is not unlocked.
- + <code>onIncrementalAchievementUnlocked</code> the first time it's been newly unlocked.</p>
+  + <code>onIncrementalAchievementStep</code> if the achievement is not unlocked.
+  + <code>onIncrementalAchievementUnlocked</code> the first time it's been newly unlocked.
+On Android, the achievement is set to a fixed number of incremental steps. On iOS, the achievment is set as
+a percentage value (0..100). In either case, the <code>increment</code> value will be added to the current achievement's
+value.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.showAchievements( );
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.showAchievements();
 </code></pre>
 
 <blockquote>
@@ -946,43 +1047,197 @@ In this view, you'll only see public achievements.
 It will show wether or not achievements are unlocked, and the steps towards unlocking it for incremental achievements.
 Total experience count is measured as well.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.isConnected();
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.reveal(achievement_name);
 </code></pre>
 
 <blockquote>
-<p>Fast method to know plugin's connection status to the play services.</p>
+<p>Reveal a hidden achievement.
+This method will notify on plugin's listener <code>onReveal</code> or <code>onRevelError</code> methods.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.signin();
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.setSteps(achievement_name, steps);
+</code></pre>
+
+<blockquote>
+<p>Set an incremental achievement to the given amount of steps.
+If achievement's current steps are already equal or bigger the specified steps, nothing will happen.
+This method will  notify on plugin's listener <code>onSetSteps</code> or <code>onSetStepsError</code> methods.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.isConnected();
+</code></pre>
+
+<blockquote>
+<p>Fast method to know plugin's connection status.
+@deprecated</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.isSignedIn();
+</code></pre>
+
+<blockquote>
+<p>Same as isConnected (deprecated) but more consistent with naming.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.signin(showLoginUI);
 </code></pre>
 
 <blockquote>
 <p>Request connection to the platform-specific services backend.
-This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.   </p>
+This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.</p>
 </blockquote>
-<pre><code class="js">sdkbox.SdkboxPlay.signout();
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.signout();
 </code></pre>
 
 <blockquote>
 <p>Request disconnection from the GooglePlay/Game Center backend.
 This method will invoke plugin's listener <code>onConnectionStatusChanged</code> method.</p>
 </blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.getPlayerId();
+</code></pre>
+
+<blockquote>
+<p>Get the currently logged in player's id.</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.getPlayerAccountField(field);
+</code></pre>
+
+<blockquote>
+<p>Get a field from the user account's info obtained after authentication.
+Current values are:
+iOS/Android</p>
+</blockquote>
+<hr />
+<ul>
+<li>display_name</li>
+<li>name</li>
+<li>player_id
+Android only:</li>
+</ul>
+<hr />
+<ul>
+<li>title</li>
+<li>icon_image_uri</li>
+<li>hires_image_uri</li>
+<li>last_play_timestamp</li>
+<li>retrieved_timestamp</li>
+<li>server_auth_code
+If a field not valid is queried an empty string will be returned.</li>
+</ul>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.resetAchievements();
+</code></pre>
+
+<blockquote>
+<p>Calling this class method deletes all progress towards achievements
+previously reported for the local player. Hidden achievements that
+were previously visible are now hidden again.</p>
+</blockquote>
+<pre>
+iOS Only
+</pre>
+
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.loadAllData();
+</code></pre>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>DEPRECATED &gt;&gt;&gt;&gt;&gt;&gt; Please use loadAllGameData to replace
+load all saved user game data in clound
+will trigger onGameData callback</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.loadGameData(save_name);
+</code></pre>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>DEPRECATED &gt;&gt;&gt;&gt;&gt;&gt; Please use loadAllGameData to replace
+load one saved user game data in clound
+will trigger onGameData callback</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.saveGameData(save_name, data);
+</code></pre>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>DEPRECATED &gt;&gt;&gt;&gt;&gt;&gt; Please use saveGameDataBinary(name, data, length) to replace
+save user game data in cloud
+will trigger onGameData callback</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.fetchGameDataNames();
+</code></pre>
+
+<blockquote>
+<p>fetch game data names
+will trigger onGameDataNames</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.loadOneGameData(name);
+</code></pre>
+
+<blockquote>
+<p>load game data item
+will trigger onLoadGameData</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.loadAllGameData();
+</code></pre>
+
+<blockquote>
+<p>load all saved game data
+will trigger onLoadGameData callback</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginSdkboxPlay.generateIdentityVerificationSignature();
+</code></pre>
+
+<blockquote>
+<p>Generates a signature that allows a third party server to authenticate the local player.</p>
+<p>just vaild on iOS</p>
+<p><a href="https://developer.apple.com/documentation/gamekit/gklocalplayer/1515407-generateidentityverificationsign">iOS Ref Document</a></p>
+<p>Note: on Android, you can get server_auth_code from getPlayerAccountField</p>
+</blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="js">onConnectionStatusChanged( status );
+<pre><code class="javascript">onConnectionStatusChanged(status);
 </code></pre>
 
 <blockquote>
 <p>Call method invoked when the Plugin connection changes its status.
 Values are as follows:
-  + 1000:     successfully connected.
-  + 1001:     successfully disconnected.
-  + 1002:     error with google play services connection.</p>
+  + GPS_CONNECTED:       successfully connected.
+  + GPS_DISCONNECTED:    successfully disconnected.
+  + GPS_CONNECTION_ERROR:error with google play services connection.</p>
 </blockquote>
-<pre><code class="js">onScoreSubmitted( 
-        leaderboard_name, 
-        score, 
-        maxScoreAllTime, 
-        maxScoreWeek, 
-        maxScoreToday )
+<pre><code class="javascript">onScoreSubmitted(leaderboard_name,
+                  score,
+                  maxScoreAllTime,
+                  maxScoreWeek,
+                  maxScoreToday);
 </code></pre>
 
 <blockquote>
@@ -991,27 +1246,183 @@ It notifies back with the leaderboard_name (not id, see the sdkbox_config.json f
 subbmited score, as well as whether the score is the daily, weekly, or all time best score.
 Since Game center can't determine if submitted score is maximum, it will send the max score flags as false.</p>
 </blockquote>
-<pre><code class="js">onIncrementalAchievementUnlocked( achievement_name );
+<pre><code class="javascript">onMyScore(leaderboard_name, time_span, collection_type, score);
 </code></pre>
 
 <blockquote>
-<p>Callback method invoked when the request call to increment an achievement is succeessful and that achievement gets unlocked. This happens when the incremental step count reaches its maximum value. 
+<p>Callback method invoked from a call to <code>getMyScore</code> method.
+<code>time_span</code> and <code>collection_type</code> are the supplied values to <code>getMyScore</code> method call.</p>
+</blockquote>
+<pre><code class="javascript">onMyScoreError(leaderboard_name,
+                time_span,
+                collection_type,
+                error_code,
+                error_description);
+</code></pre>
+
+<blockquote>
+<p>Callback method invoked from a call to <code>getMyScore</code> method and the method was errored.
+<code>time_span</code> and <code>collection_type</code> are the supplied values to <code>getMyScore</code> method call.
+<code>error_code</code> and <code>error_description</code> give extended info about the error.</p>
+</blockquote>
+<pre><code class="javascript">onPlayerCenteredScores(leaderboard_name,
+                        time_span,
+                        collection_type,
+                        json_with_score_entries);
+</code></pre>
+
+<blockquote>
+<p>Callback method invoked from a call to <code>getPlayerCenteredScores</code> method.
+<code>json_with_score_entries</code> is an json array enconded string, each of which elements is of the form:
+Each json element contains the following information:</p>
+</blockquote>
+<pre><code class="json">  {
+     &quot;display_rank&quot;          : string,
+     &quot;display_score&quot;         : string,
+     &quot;rank&quot;                  : number,   // long
+     &quot;score&quot;                 : number,   // long,
+     &quot;holder_display_name&quot;   : string,
+     &quot;hires_imageuri&quot;        : string,    // content:// protocol
+     &quot;lowres_imageuri&quot;       : string,
+     &quot;tag&quot;                   : string,
+     &quot;timestamp_millis&quot;      : long
+   }
+</code></pre>
+
+<p><code>time_span</code> and <code>collection_type</code> are the values supplied to <code>getPlayerCenteredScores</code> method.</p>
+<pre><code class="javascript">onPlayerCenteredScoresError(leaderboard_name,
+                             time_span,
+                             collection_type,
+                             error_code,
+                             error_description);
+</code></pre>
+
+<blockquote>
+<p>Callback method invoked from a call to <code>getPlayerCenteredScores</code> method was errored.
+<code>time_span</code> and <code>collection_type</code> are the values supplied to <code>getPlayerCenteredScores</code> method.
+<code>error_code</code> and <code>error_description</code> give extended info about the error.</p>
+</blockquote>
+<pre><code class="javascript">onIncrementalAchievementUnlocked(achievement_name);
+</code></pre>
+
+<blockquote>
+<p>Callback method invoked when the request call to increment an achievement is succeessful and
+that achievement gets unlocked. This happens when the incremental step count reaches its maximum value.
 Maximum step count for an incremental achievement is defined in the google play developer console.</p>
 </blockquote>
-<pre><code class="js">onIncrementalAchievementStep( achievement_name, step );
+<pre><code class="javascript">onIncrementalAchievementStep(achievement_name, step);
 </code></pre>
 
 <blockquote>
 <p>Callback method invoked when the request call to increment an achievement is successful.
 If possible (Google play only) it notifies back with the current achievement step count.</p>
 </blockquote>
-<pre><code class="js">onAchievementUnlocked( achievement_name, newlyUnlocked );
+<pre><code class="javascript">onIncrementalAchievementStepError(name, steps, error_code, error_description);
+</code></pre>
+
+<pre><code class="javascript">onAchievementUnlocked(achievement_name, newlyUnlocked);
 </code></pre>
 
 <blockquote>
 <p>Call method invoked when the request call to unlock a non-incremental achievement is successful.
 If this is the first time the achievement is unlocked, newUnlocked will be true.</p>
 </blockquote>
+<pre><code class="javascript">onAchievementUnlockError(achievement_name, error_code, error_description);
+</code></pre>
+
+<pre><code class="javascript">onAchievementsLoaded(reload_forced, json_achievements_info);
+</code></pre>
+
+<blockquote>
+<p>Method invoked after calling plugin's <code>loadAchievements</code> method.
+The <code>json_achievements_info</code> parameter is a json array encoded string.</p>
+</blockquote>
+<h4 id="android-fields">Android fields:</h4>
+<p>each array element is of the form:</p>
+<pre><code class="json">  {
+     &quot;id&quot;                        : string,
+     &quot;name&quot;                      : string,
+     &quot;xp_value&quot;                  : string,   // experience value
+     &quot;last_updated_timestamp&quot;    : number,
+     &quot;description&quot;               : string,
+     &quot;type&quot;                      : number,   // 0 = standard, 1 = incremental
+     &quot;state&quot;                     : number,   // 0 = unlocked, 1 = revealed,   2 = hidden
+     &quot;unlocked_image_uri&quot;        : string,   // content:// protocol
+     &quot;revealed_image_uri&quot;        : string,   // content:// protocol
+  }
+</code></pre>
+
+<p>If the achievement is incremental, these fileds will also be available:</p>
+<pre><code class="json">  {
+     &quot;formatted_current_steps&quot;   : string,
+     &quot;formatted_total_steps&quot;     : string,
+     current_steps&quot;              : number,
+     &quot;total_steps&quot;               : number
+  }
+</code></pre>
+
+<h4 id="ios-fields">IOS fields:</h4>
+<pre><code class="json">  {
+     &quot;id&quot;                        : string,
+     &quot;name&quot;                      : string,
+     &quot;xp_value&quot;                  : number, int
+     &quot;last_updated_timestamp&quot;    : number,
+     &quot;description&quot;               : string,   // maybe empty if no achievemnt submission happened before.
+     &quot;state&quot;                     : number,   // 0 = unlocked, 1 = revealed,   2 = hidden
+     &quot;type&quot;                      : 1,        // on ios all achievemtns are incremental.
+     &quot;current_steps&quot;             : number,   // double value. percentage 0.0 .. 100.0
+     &quot;total_steps&quot;               : number,   // 100.0
+  }
+ ```
+ iOS only fields:
+```json
+  {
+     &quot;replayable&quot;                : boolean,
+  }
+</code></pre>
+
+<pre><code class="javascript">onSetSteps(name, steps);
+</code></pre>
+
+<pre><code class="javascript">onSetStepsError(name, steps, error_code, error_description);
+</code></pre>
+
+<pre><code class="javascript">onReveal(name);
+</code></pre>
+
+<pre><code class="javascript">onRevealError(name, error_code, error_description);
+</code></pre>
+
+<pre><code class="javascript">onGameData(action, name, data, error);
+</code></pre>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>DEPRECATED &gt;&gt;&gt;&gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code class="javascript">onSaveGameData(success, error);
+</code></pre>
+
+<blockquote></blockquote>
+<pre><code class="javascript">onLoadGameData(savedData, error);
+</code></pre>
+
+<blockquote></blockquote>
+<pre><code class="javascript">onGameDataNames(names, error);
+</code></pre>
+
+<blockquote></blockquote>
 <h2 id="_6">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
@@ -1269,14 +1680,35 @@ SDKBox.init(this);
 </code></pre>
 
 <p>iOS 存档<a href="https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/GameKit_Guide/SavedGames/SavedGames.html">官方文档</a></p>
-<p>Android 存档<a href="https://developers.google.com/games/services/common/concepts/savedgames">官方文档</a></p></div>
+<p>Android 存档<a href="https://developers.google.com/games/services/common/concepts/savedgames">官方文档</a></p>
+<h2 id="_13">服务器认证</h2>
+<p>如果需要用开发者自己的服务器来作认证，可以按下面的步骤</p>
+<h3 id="ios_2">iOS</h3>
+<ol>
+<li>实现 <code>SdkboxPlayListener</code> 中的 <code>onGenerateIdentityVerificationSignature</code></li>
+<li>调用 <code>sdkbox::PluginSdkboxPlay::generateIdentityVerificationSignature();</code></li>
+</ol>
+<h3 id="android_1">Android</h3>
+<ul>
+<li>在 <code>sdkbox_config.json</code> 中添加 <code>web_client_id</code></li>
+</ul>
+<pre><code class="json">    &quot;sdkboxplay&quot; : {
+        &quot;web_client_id&quot;: &quot;.......&quot;
+    }
+</code></pre>
+
+<p>web_client_id的生成可以参见这个<a href="https://developers.google.com/identity/protocols/OAuth2WebServer">文档</a></p>
+<ul>
+<li>登录</li>
+<li>调用 <code>sdkbox::PluginSdkboxPlay::getPlayerAccountField("server_auth_code")</code> 以获取 google server auth code</li>
+</ul></div>
             
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-01-30 02:13:49.261036, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-01-31 03:35:06.215097, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
