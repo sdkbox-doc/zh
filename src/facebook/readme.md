@@ -15,6 +15,9 @@ sdkbox import facebook
 <<[../../shared/sdkbox_cloud.md]
 <<[../../shared/remote_application_config.md]-->
 
+##FAQ
+1. 切换 Facebook 登录方式，使用应用、浏览器方式登录, [清理 Safari Cookie](https://support.apple.com/en-us/HT201265)
+2. 切换 Facebook 登录账号, [清理 Safari Cookie](https://support.apple.com/en-us/HT201265)
 
 ### 额外的步骤
 
