@@ -40,21 +40,39 @@ sdkbox import facebook
   // 在 app->run() 前调用
   // [[FBSDKApplicationDelegate sharedInstance] application:didFinishLaunchingWithOptions
 
-  BOOL ret = [[FBSDKApplicationDelegate sharedInstance] application:application
+  [[FBSDKApplicationDelegate sharedInstance] application:application
                                       didFinishLaunchingWithOptions:launchOptions];
   app->run();
-  return ret;
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+
+  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+    openURL:url
+    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+    annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+  ];
+  // Add any custom logic here.
+  return handled;
 }
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                         openURL:url
-                                               sourceApplication:sourceApplication
-                                                      annotation:annotation];
+
+  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+    openURL:url
+    sourceApplication:sourceApplication
+    annotation:annotation
+  ];
+  // Add any custom logic here.
+  return handled;
 }
+
 ```
 
 在 Xcode8 iOS10 模拟器上，不能登录：
