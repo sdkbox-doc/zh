@@ -600,6 +600,9 @@
         
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
         
+    
+        <li class="main "><a href="#faq">FAQ</a></li>
+        
             <li><a href="#_5">额外的步骤</a></li>
         
             <li><a href="#json">JSON 配置</a></li>
@@ -711,6 +714,11 @@ When the developer updates a __Remote Application Configuration__ the applicatio
 To ensure security, during normal execution the new configuration is locally saved in the applications’s private folder, and the next time it restarts it is applied. Also, configurations are cyphered and its contents are not exposed, even if your application runs on a rooted/jailbroken device.
 -->
 
+<h2 id="faq">FAQ</h2>
+<ol>
+<li>切换 Facebook 登录方式，使用应用、浏览器方式登录, <a href="https://support.apple.com/en-us/HT201265">清理 Safari Cookie</a></li>
+<li>切换 Facebook 登录账号, <a href="https://support.apple.com/en-us/HT201265">清理 Safari Cookie</a></li>
+</ol>
 <h3 id="_5">额外的步骤</h3>
 <p>下面的步骤假定您已经注册为 Facbbook 开发者，并创建了一个 <strong>APP</strong></p>
 <h4 id="ios">iOS的步骤</h4>
@@ -733,21 +741,39 @@ To ensure security, during normal execution the new configuration is locally sav
   // 在 app-&gt;run() 前调用
   // [[FBSDKApplicationDelegate sharedInstance] application:didFinishLaunchingWithOptions
 
-  BOOL ret = [[FBSDKApplicationDelegate sharedInstance] application:application
+  [[FBSDKApplicationDelegate sharedInstance] application:application
                                       didFinishLaunchingWithOptions:launchOptions];
   app-&gt;run();
-  return ret;
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary&lt;UIApplicationOpenURLOptionsKey,id&gt; *)options {
+
+  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+    openURL:url
+    sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+    annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+  ];
+  // Add any custom logic here.
+  return handled;
 }
 
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-  return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                                         openURL:url
-                                               sourceApplication:sourceApplication
-                                                      annotation:annotation];
+
+  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+    openURL:url
+    sourceApplication:sourceApplication
+    annotation:annotation
+  ];
+  // Add any custom logic here.
+  return handled;
 }
+
 </code></pre>
 
 <p>在 Xcode8 iOS10 模拟器上，不能登录：</p>
@@ -1289,7 +1315,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-01-31 03:35:03.656065, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-02-01 08:18:53.350668, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
