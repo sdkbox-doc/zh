@@ -43,9 +43,30 @@ sdkbox::PluginAdMob::init();
 
 ## 使用 Cocos Creator 的保存措施
 
-基本思路: `Cocos Crator` 本身是提供 JS 源码的加密支持的. 但是对 Cocos2dx 引擎的 Res 目录并没有加密, 而 sdkbox_config.json 就是放在不会加密的 Res 目录下的. 所以我们需要把 sdkbox_config.json 移到 Creator 工程的 assert 目录, 并把 sdkbox_config.json 变为一个 js 文件. 然后在开发代码中 require 这个 js 文件, 再把它传给插件的 init 接口. (插件的 init 接口, 默认是不需要传参的.)
+基本思路: `Cocos Crator` 本身是提供 JS 源码的加密支持的. 但是对 Cocos2dx 引擎的 Res 目录并没有加密, 而 sdkbox_config.json 就是放在不会加密的 Res 目录下的. 所以我们需要把 sdkbox_config.json 移到 Creator 工程的 assert 目录, 并把 sdkbox_config.json 变为一个 js 文件. 然后在开发代码中 require 这个 js 文件, 再把它传给 sdkbox .
 
 具体步骤如下:
+
+* 修改 `AppDelegate.cpp` , 如下:
+
+```cpp
+...
+#include "SDKBoxJSHelper.h"
+...
+
+bool AppDelegate::applicationDidFinishLaunching()
+{
+    ...
+
+    jsb_register_all_modules();
+    se->addRegisterCallback(register_all_SDKBoxJS_helper);
+
+    ...
+
+    return true;
+}
+
+```
 
 * 把 `jsb-link/res/sdkbox_config.json` 移动并改名为 `assets/SDKBox/sdkbox_config.js`.
 * 在 `assets/SDKBox/sdkbox_config.js` 第一行加入 `module.exports =` 语句
@@ -69,15 +90,13 @@ module.exports =
 
 ```
 
-* 在开发代码中加载 sdkbox_config.js , 并把值传给插件的 init 接口
+* 在开发代码中加载 sdkbox_config.js , 并把值传给sdkbox
 
 ```js
 const sdkbox_config = require('../SDKBox/sdkbox_config')
 ...
-sdkbox.IAP.init(JSON.stringify(sdkbox_config));
+sdkbox.setConfig(JSON.stringify(sdkbox_config)); // 在插件初始化之前调用
+...
+sdkbox.PluginXXX.init();
 ...
 ```
-
-这是一个在 creator IAP sample 应用 creator 加密的[commit](https://github.com/sdkbox/sdkbox-sample-ccc200/commit/c59a76fecd680de832a45d60e4e88c8ba96c78fa);
-
-注意: 从以上步骤可知，当有多个插件时，其实只需要在第一个插件 init 时, 把 config 传入, 其它插件一样可以取到对应的值.
