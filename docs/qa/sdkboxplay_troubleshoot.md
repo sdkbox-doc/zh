@@ -54,11 +54,11 @@ Certificate fingerprints:
     * 点击 'Game services' -> app
     * 到相庆的 Google API Console
 
-    ![](../../imgs/sdkboxplay_game_services.png)
+    ![](../imgs/sdkboxplay_game_services.png)
 
     * 检查其中 Android Client 中配置的 SHA-1
 
-    ![](../../imgs/sdkbox_android_client.png)
+    ![](../imgs/sdkbox_android_client.png)
 
 
 __注意: 这上面的三个 SHA-1 应该是一样的.__
@@ -87,7 +87,7 @@ __注意: 这上面的三个 SHA-1 应该是一样的.__
 
 注意，`web_client_id`是从这里得到的:
 
-![](../../imgs/sdkboxplay_webclientid.png)
+![](../imgs/sdkboxplay_webclientid.png)
 
 
 如果你需要 server auth code 的话，请移除掉 `web_client_id`.
