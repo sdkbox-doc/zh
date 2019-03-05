@@ -597,28 +597,36 @@
 
 <h1 id="sdkboxplay">SDKBoxPlay 疑问</h1>
 <h2 id="keystore">Keystore</h2>
-<p>SDKBox经常会出现登录失败, 其中比较常见的原因就是 Keystore , 以下介绍怎么检查 Keystore.</p>
-<p>其实主要就是要保证以下三个地方的 Keystore 的 SHA-1 是一样的.</p>
+<p>SDKBox经常会出现登录失败, 其中比较常见的原因就是 Keystore .</p>
+<p>主要是三个地方的 Keystore:</p>
+<ol>
+<li>Google Play Console 中配置的 Keystore 的 SHA-1</li>
+<li>真实用户下载的 APK 的 Keystore 的 SHA-1 应与 1 项的值保持一致</li>
+<li>开发者调试时的 APK 的 Keystore 的 SHA-1 应与 1 项的值保持一致(如果不需要调试SDKBoxPlay相关功能，可以不一致)</li>
+</ol>
+<p>具体介绍:</p>
 <ul>
-<li>你的调试工程中所用到的 keystore's SHA-1</li>
-</ul>
-<p>运行命令 <code>keytool -list -v -keystore your.keystore</code> , 可以得到类型的如下结果, 请注意其中的 SHA1 :</p>
-<pre><code class="bash">
-...
-
-Certificate fingerprints:
-     MD5:  09:F2:CA:99:6A:EF:8D:B7:17:B8:25:AE:36:40:9F:E2
-     SHA1: C7:4F:9C:6C:54:67:BC:81:27:25:40:EA:24:3D:B7:AA:1E:7A:7B:7D
-     SHA256: 92:51:09:9D:4A:A0:E5:4B:A8:6D:62:8B:3A:1B:F0:96:02:55:B9:1A:05:E4:68:32:0D:E1:F5:8A:A2:66:24:B1
-
-...
-
-</code></pre>
-
+<li>
+<p>Google Game services 中的 SHA-1</p>
 <ul>
-<li>APK中的 SHA-1</li>
+<li>打开 <a href="https://play.google.com/apps/publish">Google Play Console</a></li>
+<li>点击 'Game services' -&gt; app</li>
+<li>到相应的 Google API Console</li>
 </ul>
-<p>从 GooglePlay 中下载下来当前活跃的包</p>
+<p><img alt="" src="../../imgs/sdkboxplay_game_services.png" /></p>
+<ul>
+<li>检查其中 Android Client 中配置的 SHA-1</li>
+</ul>
+<p><img alt="" src="../../imgs/sdkbox_android_client.png" /></p>
+</li>
+<li>
+<p>真实用户下载的 APK 的 SHA-1</p>
+</li>
+</ul>
+<p>现在 GooglePlay 提供了两种 APK 签名方式:</p>
+<p>第一种用户下载的 APK 就是开发者上传的 APK, GooglePlay不会重新签名, 这种方式下, 需要保证开发者上传的 APK 的 Keystore 与 Google Play Console 一致.</p>
+<p>第二种是 GooglePlay 提供 App signing 这种方式，如果开发者使用了 App signing, 那么这种方式下, 需要保证 App Signing 与 Google Play Console 一致. 关于 App signing 的<a href="https://support.google.com/googleplay/android-developer/answer/7384423">说明</a></p>
+<p>不管使用的是第一种还是第二种, 最终都是一个目的，保证真实用户下载到的 APK 的 Keystore 与 Google Play Console 一致.</p>
 <p>获取 APK 的 SHA-1 可以运行以下命令:</p>
 <pre><code class="bash">
 unzip download.apk -d apk
@@ -636,23 +644,27 @@ Certificate fingerprints:
 </code></pre>
 
 <ul>
-<li>
-<p>Google Game services 中的 SHA-1</p>
-<ul>
-<li>打开 <a href="https://play.google.com/apps/publish">Google Play Console</a></li>
-<li>点击 'Game services' -&gt; app</li>
-<li>到相庆的 Google API Console</li>
+<li>开发者本地调试工程时所用到的 keystore's SHA-1</li>
 </ul>
-<p><img alt="" src="../../imgs/sdkboxplay_game_services.png" /></p>
-<ul>
-<li>检查其中 Android Client 中配置的 SHA-1</li>
-</ul>
-<p><img alt="" src="../../imgs/sdkbox_android_client.png" /></p>
-</li>
-</ul>
-<p><strong>注意: 这上面的三个 SHA-1 应该是一样的.</strong></p>
+<p>如果开发者需要在本地调试 SDKBoxPlay 相关的功能, 一样需要使用与 Google Play Console 相同的 Keystore.</p>
+<p>如果不需要在本地调试，可以忽略此项.</p>
+<p>运行命令 <code>keytool -list -v -keystore your.keystore</code> , 可以得到类型的如下结果, 请注意其中的 SHA1 :</p>
+<pre><code class="bash">
+...
+
+Certificate fingerprints:
+     MD5:  09:F2:CA:99:6A:EF:8D:B7:17:B8:25:AE:36:40:9F:E2
+     SHA1: C7:4F:9C:6C:54:67:BC:81:27:25:40:EA:24:3D:B7:AA:1E:7A:7B:7D
+     SHA256: 92:51:09:9D:4A:A0:E5:4B:A8:6D:62:8B:3A:1B:F0:96:02:55:B9:1A:05:E4:68:32:0D:E1:F5:8A:A2:66:24:B1
+
+...
+
+</code></pre>
+
 <h2 id="server-auth-code">Server Auth Code</h2>
-<p>如果你需要 Goolge 登录的 server auth code的话，你需要在 <code>sdkbox_config.json</code> 配置 <code>web_client_id</code>.</p>
+<p><code>web_client_id</code> 不是必须配置项</p>
+<p>如果你想通过自己的服务器直接去访问 Google API, 你需要取得用户登录后的 Server Auth Code, 那么请在 <code>sdkbox_config.json</code> 中配置 <code>web_client_id</code>.</p>
+<p>如果不需要, 可以忽略 <code>web_client_id</code>.</p>
 <pre><code class="json">{
     &quot;android&quot;: {
         &quot;sdkboxplay&quot;: {
@@ -671,14 +683,15 @@ Certificate fingerprints:
 
 <p>注意，<code>web_client_id</code>是从这里得到的:</p>
 <p><img alt="" src="../../imgs/sdkboxplay_webclientid.png" /></p>
-<p>如果你需要 server auth code 的话，请移除掉 <code>web_client_id</code>.</p></div>
+<p>如果你不需要 server auth code 的话，请移除掉 <code>web_client_id</code>.</p>
+<p>关于ServerAuthCode的<a href="https://developers.google.cn/identity/sign-in/android/offline-access">说明</a></p></div>
             
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-02-11 07:56:34.129821, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-03-05 13:40:24.096342, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
