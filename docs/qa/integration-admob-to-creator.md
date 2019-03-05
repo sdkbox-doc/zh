@@ -127,9 +127,7 @@ cc.Class({
 
         // just for test
         let plugin = sdkbox.PluginAdMob
-        if ("undefined" != typeof(plugin.deviceid) && plugin.deviceid.length > 0) {
-            this.showInfo('deviceid=' + plugin.deviceid);
-            // plugin.setTestDevices(plugin.deviceid);
+        if ("undefined" != typeof(plugin.deviceid)) {
         }
     },
 
