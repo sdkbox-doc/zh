@@ -58,7 +58,7 @@ SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox
 }
 ```
 
-__注意__: sdkbox_config.json 中的 Goolge IAP key 是从 `Google Play Console` 中取到的, 请看如下截图:
+__注意__: sdkbox_config.json 中的 Goolge IAP key 是从 `Google Play Console` 中取到的, Google Console->Developer Tools->Services & APIs, 请看如下截图:
 
 ![](../../imgs/google_licensing_iab.png)
 
