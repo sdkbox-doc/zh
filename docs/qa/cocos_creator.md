@@ -2,25 +2,20 @@
 
 ##安装
 
-自 Cocos Creator 1.4 版本以后，Cocos用户可以直接从插件商店安装SDKBOX插件
-
-<iframe src='https://gfycat.com/ifr/ConsciousSomberGerenuk' frameborder='0' scrolling='no' width='640' height='360' allowfullscreen></iframe>
-
-
-当 SDKBOX 插件安装成功之后，就可以在系统菜单里面找到 "SDKBOX"
+目前，Cocos Creator 新版本中自带了 SDKBox 插件，可以在系统菜单里面找到 "SDKBox"
 
 ![](../imgs/ccc_tutorial_sdkbox_menu.png)
 
 ##集成SDK
 
-在开始集成 SDKBOX 插件之前，必须先用 Cocos Creator 生成iOS/Android项目
+在开始集成 SDKBox 插件之前，必须先用 Cocos Creator 生成 iOS/Android 项目
 
 <iframe src='https://gfycat.com/ifr/EntireLinearBeetle' frameborder='0' scrolling='no' width='640' height='360' allowfullscreen></iframe>
 
 
 ##使用指南
 
-当SDKBOX集成完成之后，你就可以开始使用SDK的API了，这里将以Admob作为示例
+当 SDKBox 集成完成之后，你就可以开始使用 SDK 的 API 了，这里将以 Admob 作为示例
 
 ### 添加按钮控件
 
@@ -29,7 +24,7 @@
 
 ### 添加JS脚本
 
-创建一个名为 “Admob.js” 的脚本，并且添加以下函数，记得要在“onLoad”函数中初始化Admob
+创建一个名为 "Admob.js" 的脚本，并且添加以下函数，记得要在 "onLoad" 函数中初始化 Admob
 
 ```js
 cc.Class({
@@ -69,7 +64,7 @@ cc.Class({
 ![](../imgs/ccc_tutorial_btn_cache_script.png)
 ![](../imgs/ccc_tutorial_btn_show_script.png)
 
-### 配置AdMob
+### 配置 AdMob
 
 * 根据Admob账号修改以下文件 `./build/jsb-default/res/sdkbox_config.json`
 
