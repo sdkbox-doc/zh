@@ -242,3 +242,14 @@ cc.Class({
 
 然后, 确保只是关闭了测试模式 , 就得到了 No Ad Filled 错误. 那应该是 AdMob 本身的填充率问题, 就是在当前, AdMob 没有广告可供展示.
 
+* SDKBox For Creator 第一次启动，一直卡在进度条界面
+
+可能有两个原因, 如果是运行在 Windows 上, 请确保 Python 2.7 已安装, 并且加到 Path 中, 也就是在命令行中任意路径下可以直接运行 python. (Mac 系统已经内置了 Python 2.7)
+
+第二个原因可能是网络问题, 这时, 可以关闭界面, 重来尝试下 (关闭 VPN 之类).
+如果还是不行, 下面是一个用脚本来更新 SDKBox For Creator 的方式, 也可以尝试下这种方式:
+
+```bash
+python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.com/sdkbox-doc/en/master/install/updateguiforcreator.py').read(); exec(s)"""
+```
+
