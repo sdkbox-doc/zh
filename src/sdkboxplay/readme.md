@@ -11,8 +11,8 @@
 
 ### Game Center
  * 在 XCode 上打开 Game Center 选项。
- * 使用开发者平台配置 Leaderboards 以及 Achievements 。
-
+ * 使用开发者平台配置 Leaderboards 以及 Achievements，必须要至少添加一条。
+ * Game Center需要登录你设置ITunesconnect设置过的测试帐号（不用有些资料说的必需新建帐号）。
 
 ## 集成
 在您确保正确安装了 SDKBOX installer 的情况下，运行下面的命令来集成 SDKBOX Youtube 插件。
