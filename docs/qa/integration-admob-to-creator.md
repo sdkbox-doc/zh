@@ -230,6 +230,24 @@ cc.Class({
 ![](../imgs/ccc_tutorial_admob_intistial_show.png)
 
 
+## AdMob 广告测试
+
+### 功能测试
+
+1. sdkbox_config.json 里设置 test:false , 能显示广告
+2. 使用谷歌的广告测试 ID , https://developers.google.com/admob/unity/test-ads ,区分 Android/iOS, 能显示广告, 就表明功能没有问题
+
+### 没有广告
+
+1. 开发阶段：使用自己的广告 id 很可能没有广告返回，请使用测试ID 或者在 sdkbox_config.json 设置 test: true ；
+2. 正式发布：
+
+2.1 广告填充率问题，可以多接点 中介 或者其他广告 sdk
+
+2.2 查看一下 admob 后台，看看游戏违规没有
+
+2.3 联系 admob 客服
+
 ## AdMob 常见问题
 
 * sdkbox_config.json 中 AdMob 的 test, testdevice 区别
@@ -252,4 +270,12 @@ cc.Class({
 ```bash
 python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.com/sdkbox-doc/en/master/install/updateguiforcreator.py').read(); exec(s)"""
 ```
+
+* 运行时，如果遇到 `Can't find variable: sdkbox` , 可能会是什么原因
+
+原因应该是安装插件时, 将 sdkbox 注册到 js 中失败了. 简单来说，在工程的的 AppDelegate.cpp 中调用相应的 sdkbox 代码, 把 sdkbox 注册到 js 环境, 然后在 js 代码中就可以直接访问 sdkbox , 而此时就是在 AppDelegate.cpp 添加 sdkbox 相关的调用失败了. 
+
+AppDelegate.cpp 本生是源码, 开发者肯定会有修改, 为了最少影响 AppDelegate.cpp 中的程序逻辑, 所以当 AppDelegate.cpp 有过修改时，很有可能会注册失败.
+
+这时开发者可以参见这个[文件](https://github.com/sdkbox/sdkbox-sample-ccc200/blob/admob/build/jsb-link/frameworks/runtime-src/Classes/AppDelegate.cpp) , 按这个文件中的 sdkbox 相关部分同步到你的 AppDelegate.cpp 文件中, 就可以完成将 sdkbox 注册到js 中.
 
