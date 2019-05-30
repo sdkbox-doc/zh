@@ -230,6 +230,24 @@ cc.Class({
 ![](../imgs/ccc_tutorial_admob_intistial_show.png)
 
 
+## AdMob 广告测试
+
+### 功能测试
+
+1. sdkbox_config.json 里设置 test:false , 能显示广告
+2. 使用谷歌的广告测试 ID , https://developers.google.com/admob/unity/test-ads ,区分 Android/iOS, 能显示广告, 就表明功能没有问题
+
+### 没有广告
+
+1. 开发阶段：使用自己的广告 id 很可能没有广告返回，请使用测试ID 或者在 sdkbox_config.json 设置 test: true ；
+2. 正式发布：
+
+2.1 广告填充率问题，可以多接点 中介 或者其他广告 sdk
+
+2.2 查看一下 admob 后台，看看游戏违规没有
+
+2.3 联系 admob 客服
+
 ## AdMob 常见问题
 
 * sdkbox_config.json 中 AdMob 的 test, testdevice 区别
@@ -241,4 +259,23 @@ cc.Class({
 这时，首先要确保在测试模式下, 广告是可以显示出来的 (在测试模式下可以显示广告, 说明集成本身是没有问题的)
 
 然后, 确保只是关闭了测试模式 , 就得到了 No Ad Filled 错误. 那应该是 AdMob 本身的填充率问题, 就是在当前, AdMob 没有广告可供展示.
+
+* SDKBox For Creator 第一次启动，一直卡在进度条界面
+
+可能有两个原因, 如果是运行在 Windows 上, 请确保 Python 2.7 已安装, 并且加到 Path 中, 也就是在命令行中任意路径下可以直接运行 python. (Mac 系统已经内置了 Python 2.7)
+
+第二个原因可能是网络问题, 这时, 可以关闭界面, 重来尝试下 (关闭 VPN 之类).
+如果还是不行, 下面是一个用脚本来更新 SDKBox For Creator 的方式, 也可以尝试下这种方式:
+
+```bash
+python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.com/sdkbox-doc/en/master/install/updateguiforcreator.py').read(); exec(s)"""
+```
+
+* 运行时，如果遇到 `Can't find variable: sdkbox` , 可能会是什么原因
+
+原因应该是安装插件时, 将 sdkbox 注册到 js 中失败了. 简单来说，在工程的的 AppDelegate.cpp 中调用相应的 sdkbox 代码, 把 sdkbox 注册到 js 环境, 然后在 js 代码中就可以直接访问 sdkbox , 而此时就是在 AppDelegate.cpp 添加 sdkbox 相关的调用失败了. 
+
+AppDelegate.cpp 本生是源码, 开发者肯定会有修改, 为了最少影响 AppDelegate.cpp 中的程序逻辑, 所以当 AppDelegate.cpp 有过修改时，很有可能会注册失败.
+
+这时开发者可以参见这个[文件](https://github.com/sdkbox/sdkbox-sample-ccc200/blob/admob/build/jsb-link/frameworks/runtime-src/Classes/AppDelegate.cpp) , 按这个文件中的 sdkbox 相关部分同步到你的 AppDelegate.cpp 文件中, 就可以完成将 sdkbox 注册到js 中.
 
