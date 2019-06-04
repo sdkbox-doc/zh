@@ -1,13 +1,14 @@
 
 # 手动安装更新 SDKBox
 
-如果你想安装 SDKBox Installer,
+如果你遇到以下几种情况:
 
-如果你想手动更新 SDKBox GUI,
+* 安装 SDKBox Installer
+* 手动更新 SDKBox GUI
+* 在 SDKBox GUI 的加载界面被卡住
+* SDKBox GUI 显示白屏
 
-如果你在 SDKBox GUI 的加载界面被卡住,
-
-可以参见以下步骤
+可以尝试以下步骤
 
 ## Python 安装
 
@@ -34,7 +35,7 @@ python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.co
 
 如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 url , 将 install.py 下载到你本机, 然后在命令行中运行 `python install.py`
 
-安装完成后, 请重新打开终端(有此情况下, 可能还需要重启电脑), 运行 `sdkbox` 命令, 应该可以看到 SDKBOX 相关的信息.
+安装完成后, 请重新打开终端(有些情况下, 可能还需要重启电脑), 运行 `sdkbox` 命令, 应该可以看到 SDKBOX 相关的信息.
 
 ## 安装 SDKBox GUI For Creator
 
