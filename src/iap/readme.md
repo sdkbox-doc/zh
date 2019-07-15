@@ -81,6 +81,14 @@ __注意__: sdkbox_config.json 中的 Goolge IAP key 是从 `Google Play Console
 
 更多关于 [SKPaymentTransactionStateDeferred](https://stackoverflow.com/questions/25510678/how-to-test-skpaymenttransactionstatedeferred)
 
+### 初始化时机
+
+IAP 的初始化, 请注意以下几点:
+
+1. App 启动后, 尽量早地初始化 IAP .
+2. 请先 setListener , 再 init .
+3. 如果有多个插件, IAP 的 init 应首先调用.
+
 
 <<[sdkbox-config-encrypt.md]
 
