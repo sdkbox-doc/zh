@@ -38,11 +38,18 @@
 
 * 将 Xcode -> Capablities -> In-App Purchase 打开
 
-## iOS requestUpdateTransaction 没有回调
+## 关于 IAP 的初始化
 
-尽早初始化 IAP 
+IAP 的初始化, 请注意以下几点:
 
-```
+1. App 启动后, 尽量早地初始化 IAP .
+2. 请先 setListener , 再 init .
+3. 如果有多个插件, IAP 的 init 应首先调用.
+
+以 javascript 为例
+
+```javascript
 sdkbox::IAP::setListener(new your_iap_listener());
 sdkbox::IAP::init();
-``` 
+sdkbox::OtherPlugin::init();
+```
