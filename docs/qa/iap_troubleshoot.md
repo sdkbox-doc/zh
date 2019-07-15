@@ -38,3 +38,11 @@
 
 * 将 Xcode -> Capablities -> In-App Purchase 打开
 
+## iOS requestUpdateTransaction 没有回调
+
+尽早初始化 IAP 
+
+```
+sdkbox::IAP::setListener(new your_iap_listener());
+sdkbox::IAP::init();
+``` 

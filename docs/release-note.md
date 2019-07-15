@@ -1,22 +1,127 @@
 # Release Notes
----
 
-# 2.4.3.0 (?)
+# 2.5.0.0 (20190627)
 
 ## Add
+
+1. Misc: add `keychain` for iOS
+2. Misc: add `SystemVersion` for Android
+3. IAP: add `generateIdentityVerificationSignature` for iOS
+4. `setGDPR`: Some plugins invoke 3rd SDK (AdMob,Unity) api, some not yet.
+    - PluginAdMob: AdMob & sdkbox-core
+    - PluginUnity: Unity & sdkbox-core
+    - PluginChartboost: Chartboost & sdkbox-core
+    - PluginAdColony: sdkbox-core
+    - PluginAgeCheq: sdkbox-core
+    - PluginAppnext: sdkbox-core
+    - PluginAppodeal: sdkbox-core
+    - PluginApteligent: sdkbox-core
+    - PluginBee7: sdkbox-core
+    - PluginFacebook: sdkbox-core
+    - PluginFirebaseAnalytics: sdkbox-core
+    - PluginFlurryAnalytics: sdkbox-core
+    - PluginFyber: sdkbox-core
+    - PluginGoogleAnalytics: sdkbox-core
+    - PluginGPG: sdkbox-core
+    - PluginInMobi: sdkbox-core
+    - IAP: sdkbox-core
+    - PluginKochava: sdkbox-core
+    - PluginLeadBolt: sdkbox-core
+    - PluginMisc: sdkbox-core
+    - PluginOneSignal: sdkbox-core
+    - PluginPhunwareAds: sdkbox-core
+    - PluginPhunwareMessaging: sdkbox-core
+    - PluginSdkbox-coreAds: sdkbox-core
+    - PluginSdkbox-corePlay: sdkbox-core
+    - PluginShare: sdkbox-core
+    - PluginTapcore: sdkbox-core
+    - PluginTune: sdkbox-core
+    - PluginValuePotion: sdkbox-core
+    - PluginYoutube: sdkbox-core
+5. AdMob: output ad request extra argument for debug
+6. AdMob: auto cache failed AD by `setAutoCacheDelay`
+7. AdMob: support do not cache ad when init / AD closed by `setAutoCache`
+8. CMake: fix Lua/JS, gpg
+9. Support CMake when cocos >= 3.16
+10. Facebook: `gameRequest` api
+11. Facebook: `onInviteFriendsWithInviteIdsResult` return uids `[]`
+12. Firebase: `setScreenName` api for Android
+13. Firebase: export constants to Lua
+    - sdkbox.FB_PERM_READ_PUBLIC_PROFILE
+    - sdkbox.FB_PERM_READ_EMAIL
+    - sdkbox.FB_PERM_READ_USER_FRIENDS
+    - sdkbox.FB_PERM_PUBLISH_POST
+    - sdkbox.FBSDKLoginBehaviorNative
+    - sdkbox.FBSDKLoginBehaviorBrowser
+    - sdkbox.FBSDKLoginBehaviorSystemAccount
+14. export sdkbox api to JS/Lua
+    - sdkbox::init
+    - sdkbox::setConfig
+    - sdkbox::getConfig
+
+## Upgrade
+
+1. Firebase update iOS SDK 6.2.0
+2. AdColony android 3.3.8
+3. play-services-ads android 17.2.0
+4. Facebook iOS SDK to V5
+5. AdMob iOS SDK 7.44.0
+
+## Bugfix
+
+1. Fixed SDKBoxPlay login: using `getGoogleSignInOptions()` not `GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN` on Android
+2. Fixed Facebook iOS12 login
+3. Fixed AdMob smart banner for iOS
+4. Fixed share proguard
+5. [Fixed sdkbox-core iOS memory leak](https://discuss.cocos2d-x.org/t/sdkboxreachability-memory-leaks/46791)
+6. Fixed IAP `getPurchaseHistory`
+7. Fixed AdMob banner position: on `top` when config `bottom`
+
+# 2.4.3.3 (20190127)
+
+## Add
+
+1. AdMob support application id, `appid` field in `sdkbox_config.json` file
+2. AdMob support testdevice, `testdevice` field in `sdkbox_config.json` file
+2. IAP add iOS `paydeferred` status
+3. OneSignal support GDPR with api `setRequiresUserPrivacyConsent`, `consentGranted`, `requiresUserPrivacyConsent`
+4. Facebook check com.facebook.sdk.ApplicationId and com.facebook.FacebookContentProvider when `sdkbox::PluginFacebook:init`
+5. Support CMake from cocos2d-x 3.17.1
+6. Binding `sdkbox::init` and `sdkbox::setProject` to Lua and JavaScript
+
+## Upgrade
+
+1. AdMob update iOS SDK 7.30.0
+2. OngSignal update iOS SDK 2.9.5, Android 3.10.6
+
+## Bugfix
+
+1. Fixed failed to patch appactivity.java with Cocos Creator 1.9.3
+1. Fixed JSB2: fix JSListenerBase::invokeJSFun crash for all plugins
+2. Fixed IAP:    add `getInitializedErrMsg` api for [this issue](https://discuss.cocos2d-x.org/t/sdkbox-ideas-requests/23838/74?u=yinjimmy)
+3. Fixed `Case Sensitive` with imoprt module in `Android.mk` file. Such as `$(call import-module, ./PluginOneSignal)`
+
+# 2.4.3.0 (20181214)
+
+## Add
+
+1. IAP: `getPurchaseHistory` api for Android, `onPurchaseHistory(const std::string& purchasesJson)` for result.
+
 ## Upgrade
 ## Bugfix
 
+0. **Core: fix Android crash bug**, [unsatisfiedlinkerror-on-released-game](https://discuss.cocos2d-x.org/t/unsatisfiedlinkerror-on-released-game/44190), [issue2](https://discuss.cocos2d-x.org/t/unsatisfiedlinkerror-on-released-game/44190/34?u=yinjimmy), [issue3](https://discuss.cocos2d-x.org/t/no-implementation-found-for-void-com-sdkbox-plugin-sdkbox-nativeinit/34272/30?u=yinjimmy)
 1. Review: [android.view.WindowManager$BadTokenException crash](https://discuss.cocos2d-x.org/t/unsatisfiedlinkerror-on-released-game/44190/17?u=yinjimmy)
 2. JSB2: JSListenerBase::invokeJSFun crash
-3. SDKBoxPlay: 
-   -   [sign in crash](https://discuss.cocos2d-x.org/t/too-many-crash-on-sdkboxplay-sign-in-flow/44801)
-   -   [no onIncrementalAchievementUnlocked callback](https://discuss.cocos2d-x.org/t/incremental-achievement-unlock-callback-not-called/44675)
-   -   [IllegalStateException: Must include Drive.SCOPE_APPFOLDER to use snapshots!](https://discuss.cocos2d-x.org/t/too-many-crash-on-sdkboxplay-sign-in-flow/44801)
+3.  SDKBoxPlay:
+    -   [sign in crash](https://discuss.cocos2d-x.org/t/too-many-crash-on-sdkboxplay-sign-in-flow/44801)
+    -   [no onIncrementalAchievementUnlocked callback](https://discuss.cocos2d-x.org/t/incremental-achievement-unlock-callback-not-called/44675)
+    -   IllegalStateException: Must include Drive.SCOPE_APPFOLDER to use snapshots!](https://discuss.cocos2d-x.org/t/too-many-crash-on-sdkboxplay-sign-in-flow/44801)
+
 4. Facebook: [logpurcase crash on Android](https://discuss.cocos2d-x.org/t/sdkbox-facebook-sigabrt-after-logpurchase-on-android/44763/2?u=yinjimmy)
 5. IAP: [recover restore a subscription on Android](https://discuss.cocos2d-x.org/t/sdkbox-iap-google-play-recover-restore-a-subscription/44742)
-
-
+6. IAP: fixed [java.util.concurrentmodificationexception](https://discuss.cocos2d-x.org/t/sdkbox-facebook-sigabrt-after-logpurchase-on-android/44763/12?u=yinjimmy)
+7. IAP Unreal: [compile error with unreal 4.20](http://www.sdkbox.com/answers/question/problem-with-packaging-the-project-on-ios/) with [commit](https://github.com/yinjimmy/sdkbox_iap_unreal4_sample/commit/1f0a1f02eb3d2dfa732dd199f35d89be2d5d6c7a#diff-a2146cd689db5f88fee48f04e5e4580fR84)
 
 
 # 2.4.2.0 (20181129)
