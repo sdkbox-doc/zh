@@ -596,7 +596,7 @@
         
             <li><a href="#ios-in-app-purchase">iOS In-App Purchase</a></li>
         
-            <li><a href="#ios-requestupdatetransaction">iOS requestUpdateTransaction 没有回调</a></li>
+            <li><a href="#iap_1">关于 IAP 的初始化</a></li>
         
     
     </ul>
@@ -642,10 +642,17 @@
 <ul>
 <li>将 Xcode -&gt; Capablities -&gt; In-App Purchase 打开</li>
 </ul>
-<h2 id="ios-requestupdatetransaction">iOS requestUpdateTransaction 没有回调</h2>
-<p>尽早初始化 IAP </p>
-<pre><code>sdkbox::IAP::setListener(new your_iap_listener());
+<h2 id="iap_1">关于 IAP 的初始化</h2>
+<p>IAP 的初始化, 请注意以下几点:</p>
+<ol>
+<li>App 启动后, 尽量早地初始化 IAP .</li>
+<li>请先 setListener , 再 init .</li>
+<li>如果有多个插件, IAP 的 init 应首先调用.</li>
+</ol>
+<p>以 javascript 为例</p>
+<pre><code class="javascript">sdkbox::IAP::setListener(new your_iap_listener());
 sdkbox::IAP::init();
+sdkbox::OtherPlugin::init();
 </code></pre></div>
             
         </div>
@@ -653,7 +660,7 @@ sdkbox::IAP::init();
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-07-14 03:53:37.595977, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-07-16 17:20:26.523764, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

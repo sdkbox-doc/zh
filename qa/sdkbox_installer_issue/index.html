@@ -600,7 +600,9 @@
         
             <li><a href="#sdkbox-gui-for-creator_1">更新 SDKBox GUI For Creator</a></li>
         
-            <li><a href="#_1">联系我们</a></li>
+            <li><a href="#_1">安装插件问题</a></li>
+        
+            <li><a href="#_2">联系我们</a></li>
         
     
     </ul>
@@ -615,7 +617,7 @@
 <li>在 SDKBox GUI 的加载界面被卡住</li>
 <li>SDKBox GUI 显示白屏</li>
 </ul>
-<p>可以尝试以下步骤</p>
+<p>可以尝试以下步骤, 依次检查, 验证</p>
 <h2 id="python">Python 安装</h2>
 <p>SDKBox 是基于 Python 2.7, 请确保你本机已安装 Python 2.7, 并且在命令行中运行 <code>python --version</code> , 可以返回 <code>Python 2.7.10</code> 类似的字符.</p>
 <pre><code class="bash">$ python --version
@@ -641,7 +643,14 @@ Python 2.7.10
 <p>更新完成后, 会在终端中显示更新完成的信息.</p>
 <p>如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 url , 将 updateguiforcreator.py 下载到你本机, 然后在命令行中运行 <code>python updateguiforcreator.py</code></p>
 <p>这时重新打开 Creator , 启动 SDKBox GUI, 应该可以顺利完成加载.</p>
-<h2 id="_1">联系我们</h2>
+<h2 id="_1">安装插件问题</h2>
+<ul>
+<li>在安装插件时, 如果遇到 <code>ping</code> 找不到的错误(一般发生在 Windows 系统中), 如下:</li>
+</ul>
+<p><img alt="" src="../../imgs/install_issue_ping_1.png" /></p>
+<p><img alt="" src="../../imgs/install_issue_ping_2.png" /></p>
+<p>需要将 <code>C:\windows\system32\</code> 加到环境变量 <code>path</code> 中, 修改后，请在命令行中运行 ping , 验证修改结果.</p>
+<h2 id="_2">联系我们</h2>
 <p>如果有问题反馈给我们, 可以加 SDKBox QQ群(489182678), 论坛: https://discuss.cocos2d-x.org/</p></div>
             
         </div>
@@ -649,7 +658,7 @@ Python 2.7.10
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-07-14 03:53:37.605476, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-07-16 17:20:26.536170, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

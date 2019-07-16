@@ -613,18 +613,20 @@
         
             <li><a href="#skpaymenttransactionstatedeferred">SKPaymentTransactionStateDeferred 测试</a></li>
         
+            <li><a href="#_5">初始化时机</a></li>
+        
     
-        <li class="main "><a href="#_5">使用</a></li>
+        <li class="main "><a href="#_6">使用</a></li>
         
             <li><a href="#iap">初始化 IAP</a></li>
         
-            <li><a href="#_6">获取最新的价格</a></li>
+            <li><a href="#_7">获取最新的价格</a></li>
         
-            <li><a href="#_7">购买</a></li>
+            <li><a href="#_8">购买</a></li>
         
-            <li><a href="#_8">恢复购买</a></li>
+            <li><a href="#_9">恢复购买</a></li>
         
-            <li><a href="#_9">处理付费事件</a></li>
+            <li><a href="#_10">处理付费事件</a></li>
         
     
         <li class="main "><a href="#promotion-iap">Promotion IAP</a></li>
@@ -641,7 +643,7 @@
             <li><a href="#listeners">Listeners</a></li>
         
     
-        <li class="main "><a href="#_10">手动集成</a></li>
+        <li class="main "><a href="#_11">手动集成</a></li>
         
     
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
@@ -649,7 +651,7 @@
     
         <li class="main "><a href="#android">Android 平台手动集成</a></li>
         
-            <li><a href="#_11">拷贝文件</a></li>
+            <li><a href="#_12">拷贝文件</a></li>
         
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
         
@@ -776,7 +778,14 @@ To ensure security, during normal execution the new configuration is locally sav
 </code></pre>
 
 <p>更多关于 <a href="https://stackoverflow.com/questions/25510678/how-to-test-skpaymenttransactionstatedeferred">SKPaymentTransactionStateDeferred</a></p>
-<h2 id="_5">使用</h2>
+<h3 id="_5">初始化时机</h3>
+<p>IAP 的初始化, 请注意以下几点:</p>
+<ol>
+<li>App 启动后, 尽量早地初始化 IAP .</li>
+<li>请先 setListener , 再 init .</li>
+<li>如果有多个插件, IAP 的 init 应首先调用.</li>
+</ol>
+<h2 id="_6">使用</h2>
 <h3 id="iap">初始化 IAP</h3>
 <ul>
 <li>在您的代码合适的地方调用 <code>init()</code> 完成初始化. 我们推荐在 <code>app.js</code> 中完成初始化.比如:</li>
@@ -798,14 +807,14 @@ To ensure security, during normal execution the new configuration is locally sav
 sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 </code></pre>
 
-<h3 id="_6">获取最新的价格</h3>
+<h3 id="_7">获取最新的价格</h3>
 <p>在您的游戏开始时,最好先从商店中取最新的商品价格信息.</p>
 <p>要获取最新的 IAP 数据,只需要简单地调用 <code>sdkbox.IAP.refresh()</code>.</p>
 <blockquote>
 <p><code>onProductRequestSuccess</code> 购买成功会收到这个事件.</p>
 <p><code>onProductRequestFailure</code> 购买失败事件.</p>
 </blockquote>
-<h3 id="_7">购买</h3>
+<h3 id="_8">购买</h3>
 <p>购买调用 <code>sdkbox.IAP.purchase(name)</code></p>
 <p><strong>注意:</strong> <strong>name</strong> 是在您的配置文件中 <code>items</code> 项的名字,不是您在 iTunes 或 GooglePlay Store中的产品id.</p>
 <blockquote>
@@ -813,13 +822,13 @@ sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 <p><code>onFailure</code> 购买失败事件.</p>
 <p><code>onCanceled</code> 用户取消购买会触发这个事件.</p>
 </blockquote>
-<h3 id="_8">恢复购买</h3>
+<h3 id="_9">恢复购买</h3>
 <p>恢复购买调用 <code>sdkbox.IAP.restore()</code>.</p>
 <blockquote>
 <p><code>onRestored</code> 恢复购买成功.</p>
 </blockquote>
 <p><strong>注意:</strong> <code>onRestored</code> 可能会触发多次</p>
-<h3 id="_9">处理付费事件</h3>
+<h3 id="_10">处理付费事件</h3>
 <p>您可以接收 <code>IAP</code> 事件, 不同事件对您的用户及 IAP 服务器做不同的处理.</p>
 <pre><code class="Javascript">sdkbox.IAP.setListener({
     onSuccess : function (product) {
@@ -1050,7 +1059,7 @@ sc-&gt;addRegisterCallback(register_all_PluginIAPJS_helper);
 this status will change to success or failed or cancel, its final status is pending external action.</p>
 <p>Please DO NOT finishTransaction when status is deferred.</p>
 </blockquote>
-<h2 id="_10">手动集成</h2>
+<h2 id="_11">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -1069,7 +1078,7 @@ this status will change to success or failed or cancel, its final status is pend
 <p>把 <code>plugin/jsbindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
 <h2 id="android">Android 平台手动集成</h2>
-<h3 id="_11">拷贝文件</h3>
+<h3 id="_12">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>PluginGooglePlay.jar</p>
@@ -1207,10 +1216,10 @@ SDKBox.init(this);
 <p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
 <ul>
 <li>
-<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么__定义它__。</p>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
 </li>
 <li>
-<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的__同名方法__。</p>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
 </li>
 </ul>
 </li>
@@ -1254,7 +1263,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-07-14 03:53:35.071453, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-07-16 17:20:23.502739, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
