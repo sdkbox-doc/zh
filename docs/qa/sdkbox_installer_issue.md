@@ -8,7 +8,7 @@
 * 在 SDKBox GUI 的加载界面被卡住
 * SDKBox GUI 显示白屏
 
-可以尝试以下步骤
+可以尝试以下步骤, 依次检查, 验证
 
 ## Python 安装
 
@@ -54,6 +54,17 @@ python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.co
 如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 url , 将 updateguiforcreator.py 下载到你本机, 然后在命令行中运行 `python updateguiforcreator.py`
 
 这时重新打开 Creator , 启动 SDKBox GUI, 应该可以顺利完成加载.
+
+## 安装插件问题
+
+* 在安装插件时, 如果遇到 `ping` 找不到的错误(一般发生在 Windows 系统中), 如下:
+
+![](../imgs/install_issue_ping_1.png)
+
+
+![](../imgs/install_issue_ping_2.png)
+
+需要将 `C:\windows\system32\` 加到环境变量 `path` 中, 修改后，请在命令行中运行 ping , 验证修改结果.
 
 ## 联系我们
 
