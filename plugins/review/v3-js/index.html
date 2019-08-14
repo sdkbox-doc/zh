@@ -620,6 +620,12 @@
             <li><a href="#review_1">接收 Review 的事件 (可选)</a></li>
         
     
+        <li class="main "><a href="#_6">本地化字符</a></li>
+        
+    
+        <li class="main "><a href="#amazon-market">Amazon Market</a></li>
+        
+    
         <li class="main "><a href="#api-reference">API Reference</a></li>
         
             <li><a href="#methods">Methods</a></li>
@@ -627,7 +633,7 @@
             <li><a href="#listeners">Listeners</a></li>
         
     
-        <li class="main "><a href="#_6">手动集成</a></li>
+        <li class="main "><a href="#_7">手动集成</a></li>
         
     
         <li class="main "><a href="#ios">iOS 手动集成步骤</a></li>
@@ -635,7 +641,7 @@
     
         <li class="main "><a href="#android">Android 手动集成步骤.</a></li>
         
-            <li><a href="#_7">拷贝文件</a></li>
+            <li><a href="#_8">拷贝文件</a></li>
         
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
         
@@ -770,11 +776,11 @@ sdkbox.PluginReview.setCustomPromptRateLaterButtonTitle(&quot;custom rate later&
 
 <p>如果您的 <code>sdkbox.config</code> 中把 <code>tryPromptWhenInit</code> 项为 false, 那您可以调用 <code>tryToShowPrompt</code> 尝试提示用户评价您的应用,
 如果所有的限制条件都满足,那提示框就会显示</p>
-<pre><code class="cpp">sdkbox.PluginReview.tryToShowPrompt();
+<pre><code class="cpp">sdkbox.PluginReview.show();
 </code></pre>
 
 <p>您也可以强制显示评价提示框</p>
-<pre><code class="cpp">sdkbox.PluginReview.forceToShowPrompt();
+<pre><code class="cpp">sdkbox.PluginReview.show(true);
 </code></pre>
 
 <p>如果您的 <code>sdkbox.config</code> 中的 <code>UserEventLimit</code> 项大于0的话，那您需要自已增加用户事件记数</p>
@@ -785,17 +791,63 @@ sdkbox.PluginReview.setCustomPromptRateLaterButtonTitle(&quot;custom rate later&
 <p>您可以接收 Review 事件,然后对不同的事件，做不同的处理.一个的简单的用法可能会像这样:</p>
 <pre><code class="javascript">var plugin = sdkbox.PluginReview
 plugin.setListener({
-  didDisplayAlert: function(data) {cc.log(&quot;didDisplayAlert&quot;)},
-  didDeclineToRate: function(data) { cc.log(&quot;didDeclineToRate&quot;) },
-  didToRate: function(data) { cc.log(&quot;didToRate&quot;) },
-  didToRemindLater: function(data) { cc.log(&quot;didToRemindLater&quot;) }
+  onDisplayAlert: function(data) {cc.log(&quot;didDisplayAlert&quot;)},
+  onDeclineToRate: function(data) { cc.log(&quot;didDeclineToRate&quot;) },
+  onRate: function(data) { cc.log(&quot;didToRate&quot;) },
+  onRemindLater: function(data) { cc.log(&quot;didToRemindLater&quot;) }
 })
 plugin.init()
 </code></pre>
 
+<h2 id="_6">本地化字符</h2>
+<p>如果你想要在弹出框中显示定制的字符, 有以下两种方式:</p>
+<ul>
+<li>
+<p>修改 <code>plugin_review_res_project</code> 工程中的资源 (强烈推荐使用这种)</p>
+</li>
+<li>
+<p>也可以在 <code>sdkbox_config.json</code> 中配置字符串, 如下</p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;ios&quot;: {
+        &quot;Review&quot;:{
+            ...
+            &quot;promptTitle&quot;:&quot;cutom tile&quot;,
+            &quot;promptMessage&quot;:&quot;this is custom message&quot;,
+            &quot;promptCancel&quot;:&quot;取消&quot;,
+            &quot;promptRate&quot;:&quot;rate打分&quot;,
+            &quot;promptRateLater&quot;:&quot;稍后later&quot;
+            ...
+        }
+    }
+}
+</code></pre>
+
+<p>在 <code>sdkbox_config.json</code> 中配置会关掉字符串本地化, 只有你不需要本地化时，可以使用这种方式.</p>
+<h2 id="amazon-market">Amazon Market</h2>
+<p>如果你的 App 是针对 Amazon 市场, 请用如下配置:</p>
+<pre><code>&quot;Review&quot;:{
+    &quot;android&quot;: {
+        &quot;Review&quot;:{
+
+            ...
+
+            &quot;market&quot;: &quot;amazon&quot;
+        }
+    }
+}
+</code></pre>
+
 <h2 id="api-reference">API Reference</h2>
 <h3 id="methods">Methods</h3>
-<pre><code class="javascript">sdkbox.PluginReview.init();
+<pre><code class="javascript">sdkbox.PluginReview.setGDPR(enabled);
+</code></pre>
+
+<blockquote>
+<p>Set GDPR</p>
+</blockquote>
+<pre><code class="javascript">sdkbox.PluginReview.init(jsonconfig);
 </code></pre>
 
 <blockquote>
@@ -807,55 +859,37 @@ plugin.init()
 <blockquote>
 <p>Set listener to listen for adcolony events</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginReview.getListener();
+<pre><code class="javascript">sdkbox.PluginReview.show(force);
 </code></pre>
 
 <blockquote>
-<p>Get the listener</p>
+<p>Tells 'SDKBox review plugin' to try and show the prompt (a rating alert).
+if you call <code>show</code> with <code>false</code> or null params,
+the prompt will be showed if there is connection available,
+the user hasn't declined to rate or hasn't rated current version.
+if the item <code>tryPromptWhenInit</code> in sdkbox.config is false, you can call this try to show prompt
+if you call <code>show</code> with <code>true</code> params
+the prompt will be showed without checks (the prompt is always displayed).
+The case where you should call this is if your app has an
+explicit "Rate this app" command somewhere. This is similar to rateApp,
+but instead of jumping to the review directly, an intermediary prompt is displayed.
+another case is for debug</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginReview.removeListener();
+<pre><code class="javascript">sdkbox.PluginReview.rate();
 </code></pre>
 
 <blockquote>
-<p>Remove the listener, and can't listen to events anymore</p>
+<p>goto rating page directly</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginReview.tryToShowPrompt();
+<pre><code class="javascript">sdkbox.PluginReview.userDidSignificantEvent(canPromptForRating);
 </code></pre>
 
-<blockquote>
-<p>Tells PluginReview to try and show the prompt (a rating alert). The prompt will be showed
-  if there is connection available, the user hasn't declined to rate
-  or hasn't rated current version.
-  if the item <code>tryPromptWhenInit</code> in sdkbox.config is false, you can call this try to show prompt</p>
-</blockquote>
-<pre><code class="javascript">sdkbox.PluginReview.forceToShowPrompt();
+<pre><code class="javascript">sdkbox.PluginReview.rateInAppstore(yes);
 </code></pre>
 
-<blockquote>
-<p>Tells PluginReview to show the prompt (a rating alert).
-  Similar to tryToShowPrompt, but without checks (the prompt is always displayed).
-  Passing false will hide the rate later button on the prompt.</p>
-</blockquote>
-<p>The case where you should call this is if your app has an
-  explicit "Rate this app" command somewhere. This is similar to rateApp,
-  but instead of jumping to the review directly, an intermediary prompt is displayed.</p>
-<p>another case is for debug</p>
-<pre><code class="javascript">sdkbox.PluginReview.userDidSignificantEvent(false);
+<pre><code class="javascript">sdkbox.PluginReview.SDKBOX_DEPRECATED(setTitle(conststd::string&amp;title);
 </code></pre>
 
-<blockquote>
-<p>Tells PluginReview that the user performed a significant event. A significant
-  event is whatever you want it to be. If you're app is used to make VoIP
-  calls, then you might want to call this method whenever the user places
-  a call. If it's a game, you might want to call this whenever the user
-  beats a level boss.</p>
-</blockquote>
-<p>If the user has performed enough significant events and used the app enough,
-  you can suppress the rating alert by passing NO for canPromptForRating. The
-  rating alert will simply be postponed until it is called again with YES for
-  canPromptForRating. The rating alert can also be triggered by appLaunched:
-  and appEnteredForeground: (as long as you pass YES for canPromptForRating
-  in those methods).</p>
 <pre><code class="javascript">sdkbox.PluginReview.setCustomPromptTitle(title);
 </code></pre>
 
@@ -887,31 +921,31 @@ plugin.init()
 <p>Set customized rate later button title for alert view.</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="javascript">didDisplayAlert();
+<pre><code class="javascript">onDisplayAlert();
 </code></pre>
 
 <blockquote>
-<p>trigger when rate prompt display</p>
+<p>trigger when alert prompt show</p>
 </blockquote>
-<pre><code class="javascript">didDeclineToRate();
+<pre><code class="javascript">onDeclineToRate();
 </code></pre>
 
 <blockquote>
 <p>trigger when user refuse to rate</p>
 </blockquote>
-<pre><code class="javascript">didToRate();
+<pre><code class="javascript">onRate();
 </code></pre>
 
 <blockquote>
 <p>trigger when user want to rate</p>
 </blockquote>
-<pre><code class="javascript">didToRemindLater();
+<pre><code class="javascript">onRemindLater();
 </code></pre>
 
 <blockquote>
 <p>trigger when user want to remind later</p>
 </blockquote>
-<h2 id="_6">手动集成</h2>
+<h2 id="_7">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 手动集成步骤</h2>
@@ -924,7 +958,7 @@ plugin.init()
 <p>把 <code>plugin/jsbindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
 <h2 id="android">Android 手动集成步骤.</h2>
-<h3 id="_7">拷贝文件</h3>
+<h3 id="_8">拷贝文件</h3>
 <p>从安装包中的 <code>plugin/android/libs</code> 文件夹下拷贝下面的 <strong>jar</strong> 文件到您的工程中的 <strong>proj.android/libs</strong> 文件夹.</p>
 <blockquote>
 <p>PluginReview.jar</p>
@@ -1118,6 +1152,41 @@ SDKBox.init(this);
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+# cocos2d-x
+-keep public class org.cocos2dx.** { *; }
+-dontwarn org.cocos2dx.**
+-keep public class com.chukong.** { *; }
+-dontwarn com.chukong.**
+
+# google play service
+-keep public class com.google.android.gms.** { public *; }
+-dontwarn com.google.android.gms.**
+
+-keep class com.google.protobuf.** { *; }
+-dontwarn com.google.protobuf.**
+
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
+
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+    @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keepnames class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+#sdkbox
+-keep public class com.sdkbox.** { *; }
+-dontwarn com.sdkbox.**
+
 </code></pre>
 
 <p><strong>注意:</strong> 混淆只在 <strong>Release</strong> 模式下有效 (例如 <code>cocos run -m release</code>) ,在 debug 模式下不会调用混淆配置文件.</p></div>
@@ -1127,7 +1196,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-07-16 17:20:24.536260, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-08-14 14:31:42.537213, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
