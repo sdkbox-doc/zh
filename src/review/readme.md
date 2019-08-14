@@ -51,6 +51,49 @@ SDKBOX 安装器会为您自动生成一个配置文件 `res/sdkbox_config.json`
 ## 使用
 <<[usage.md]
 
+##本地化字符
+
+如果你想要在弹出框中显示定制的字符, 有以下两种方式:
+
+ - 修改 `plugin_review_res_project` 工程中的资源 (强烈推荐使用这种)
+
+ - 也可以在 `sdkbox_config.json` 中配置字符串, 如下
+
+```json
+{
+    "ios": {
+        "Review":{
+            ...
+            "promptTitle":"cutom tile",
+            "promptMessage":"this is custom message",
+            "promptCancel":"取消",
+            "promptRate":"rate打分",
+            "promptRateLater":"稍后later"
+            ...
+        }
+    }
+}
+```
+
+在 `sdkbox_config.json` 中配置会关掉字符串本地化, 只有你不需要本地化时，可以使用这种方式.
+
+## Amazon Market
+
+如果你的 App 是针对 Amazon 市场, 请用如下配置:
+
+```
+"Review":{
+    "android": {
+        "Review":{
+
+            ...
+
+            "market": "amazon"
+        }
+    }
+}
+```
+
 <<[api-reference.md]
 
 <<[manual_integration.md]

@@ -35,12 +35,12 @@ sdkbox.PluginReview.setCustomPromptRateLaterButtonTitle("custom rate later");
 如果您的 `sdkbox.config` 中把 `tryPromptWhenInit` 项为 false, 那您可以调用 `tryToShowPrompt` 尝试提示用户评价您的应用,
 如果所有的限制条件都满足,那提示框就会显示
 ```cpp
-sdkbox.PluginReview.tryToShowPrompt();
+sdkbox.PluginReview.show();
 ```
 
 您也可以强制显示评价提示框
 ```cpp
-sdkbox.PluginReview.forceToShowPrompt();
+sdkbox.PluginReview.show(true);
 ```
 
 如果您的 `sdkbox.config` 中的 `UserEventLimit` 项大于0的话，那您需要自已增加用户事件记数
@@ -53,10 +53,10 @@ sdkbox.PluginReview.userDidSignificantEvent(true);
 ```javascript
 var plugin = sdkbox.PluginReview
 plugin.setListener({
-  didDisplayAlert: function(data) {cc.log("didDisplayAlert")},
-  didDeclineToRate: function(data) { cc.log("didDeclineToRate") },
-  didToRate: function(data) { cc.log("didToRate") },
-  didToRemindLater: function(data) { cc.log("didToRemindLater") }
+  onDisplayAlert: function(data) {cc.log("didDisplayAlert")},
+  onDeclineToRate: function(data) { cc.log("didDeclineToRate") },
+  onRate: function(data) { cc.log("didToRate") },
+  onRemindLater: function(data) { cc.log("didToRemindLater") }
 })
 plugin.init()
 ```
