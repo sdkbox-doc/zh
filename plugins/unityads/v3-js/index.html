@@ -719,9 +719,23 @@ To ensure security, during normal execution the new configuration is locally sav
 <pre><code class="json">&quot;UnityAds&quot;:{
     &quot;gameId&quot;: &quot;1493045&quot;,
     &quot;testMode&quot;: true,
+    &quot;ads&quot;: {
+        &quot;banner&quot;: {
+            &quot;placement&quot;: &quot;banner&quot;,
+            &quot;type&quot;:&quot;banner&quot;
+        },
+        &quot;interstitial1&quot;: {
+            &quot;placement&quot;: &quot;video&quot;
+        },
+        &quot;interstitial2&quot;: {
+            &quot;placement&quot;: &quot;rewarded_video&quot;
+        },
+    }
 }
 </code></pre>
 
+<p>如果你想显示 banner , 那么你需要在 sdkbox_config.json 中的 ads 下配置 banner 信息.
+同时在 ads 下也可以配置弹出广告, 弹出广告不是必须要配置, 但是推荐采用.</p>
 <!---->
 
 <h2 id="_5">使用</h2>
@@ -1140,7 +1154,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-08-14 14:31:43.674814, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-08-31 17:54:51.444578, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
