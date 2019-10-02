@@ -62,6 +62,16 @@ __注意__: sdkbox_config.json 中的 Goolge IAP key 是从 `Google Play Console
 
 ![](../../imgs/google_licensing_iab.png)
 
+### iOS 测试
+
+-   iOS 模拟器不支持购买测试，请使用物理设备进行购买测试
+-   您需要用 iTunesConnect 账户创建一个测试 IAP 的测试账号
+
+### Android 测试
+
+1.  编译 release 版本，并在谷歌发布 alpha 或者 beta 渠道
+2.  必须是 alpha 或者 beta 渠道的测试者
+4.  使用您的 `秘钥` 替换 `sdkbox_config.json` 中的 `IAP` -> `Android` ->  `key` 字段. 登录 [https://play.google.com/apps/publish/](https://play.google.com/apps/publish/), 打开对应的游戏, 菜单 "Development tools -> Services & APIs -> in-app billing"
 
 ### `SKPaymentTransactionStateDeferred` 测试
 
