@@ -33,7 +33,7 @@ __注意__:
  * 运行如下命令
 
 ```python
-python -c 'import urllib; import sys; sys.argv = ["transpy", "-i", "./google-services.json", "-o", "./googleservices.xml"]; s = urllib.urlopen("https://raw.githubusercontent.com/hugohuang1111/sdkbox-doc-en/firebase/tools/generate_xml_from_google_services_json.py").read(); exec(s);'
+python -c """import urllib; import sys; sys.argv = ['transpy', '-i', './google-services.json', '-o', './googleservices.xml']; s = urllib.urlopen('https://raw.githubusercontent.com/sdkbox-doc/en/master/tools/generate_xml_from_google_services_json.py').read(); exec(s);"""
 ```
 
  * 命令运行完成后, 会有一个 `googleservices.xml` 生成, 把它放到你的 Android 工程中的 `res/values/googleservices.xml` 就可以了
