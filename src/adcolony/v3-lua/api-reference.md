@@ -99,23 +99,27 @@ as well as those triggered by AdColony’s IAP Promo (IAPP) advertisements and w
 
 ### Listeners
 ```lua
-onAdColonyChange(info, available)
+adColonyInterstitialDidLoad(adName);
 ```
-> called when AdColony is finished loading.
+> called when AdColony interstitial has loaded.
 
 ```lua
-onAdColonyReward(info, currencyName, amount, success)
+adColonyInterstitialDidFailToLoad(error);
+```
+> called when AdColony interstitial loaded failed.
+
+```lua
+adColonyAdViewDidLoad(adName);
+```
+> called when AdColony banner has loaded.
+
+```lua
+adColonyAdViewDidFailToLoad(error);
+```
+> called when AdColony banner loaded failed.
+
+```lua
+adColonyReward(name, currencyName, amount, success);
 ```
 > reward was received.
-
-```lua
-onAdColonyStarted(info)
-```
-> showing an ad has started.
-
-```lua
-onAdColonyFinished(info)
-```
-> showing an ad has finished.
-
 

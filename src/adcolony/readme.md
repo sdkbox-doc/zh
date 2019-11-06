@@ -35,10 +35,42 @@ SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配�
             "v4vc": true,
             "pre_popup" : true,
             "post_popup": true
+        },
+        "banner": {
+            "zone": "<zone id>",
+            "type":"banner",
+            "alignment":"bottom",
+            "width": 320,
+            "height": 50
         }
     }
 }
 ```
+
+banner.width: banner.width 小于 10 为特殊值. 这时会解释为创建AdColony内置的类型, 目前仅用到以下四个值
+
+* 0: kAdColonyAdSizeBanner(standard,320*50)
+* 1: kAdColonyAdSizeMediumRectangle(medium,300x250)
+* 2: kAdColonyAdSizeLeaderboard(Leaderboard,728x90)
+* 3: kAdColonyAdSizeSkyscraper(Skyscraper,160x600)
+
+如上, 如果设置 banner.width 为0, 则会创建一个 standard(320X250) 的 banner, 如果设置 banner.width 为1, 则会创建一个 medium(300x250) 的 banner, 当 banner.width 为特殊值时, banner.height请设置为 0.
+
+banner.alignment: 可用值: 
+
+* center
+* top
+* bottom
+* left
+* right
+* top_left
+* top_right
+* bottom_left
+* bottom_right
+* left_top
+* left_bottom
+* right_top
+* right_bottom
 
 <<[sdkbox-config-encrypt.md]
 

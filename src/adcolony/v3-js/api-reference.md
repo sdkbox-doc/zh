@@ -99,23 +99,28 @@ as well as those triggered by AdColony’s IAP Promo (IAPP) advertisements and w
 
 ### Listeners
 ```javascript
-onAdColonyChange(info, available);
+adColonyInterstitialDidLoad(adName);
 ```
-> called when AdColony is finished loading.
+> called when AdColony interstitial has loaded.
 
 ```javascript
-onAdColonyReward(info, currencyName, amount, success);
+adColonyInterstitialDidFailToLoad(error);
+```
+> called when AdColony interstitial loaded failed.
+
+```javascript
+adColonyAdViewDidLoad(adName);
+```
+> called when AdColony banner has loaded.
+
+```javascript
+adColonyAdViewDidFailToLoad(error);
+```
+> called when AdColony banner loaded failed.
+
+```javascript
+adColonyReward(name, currencyName, amount, success);
 ```
 > reward was received.
-
-```javascript
-onAdColonyStarted(info);
-```
-> showing an ad has started.
-
-```javascript
-onAdColonyFinished(info);
-```
-> showing an ad has finished.
 
 
