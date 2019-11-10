@@ -43,17 +43,35 @@ sdkbox.PluginAdColony.show("v4vc");
  */
 
 sdkbox.PluginAdColony.setListener({
-		onAdColonyChange : function (data, available) {
-				// 当AdColony完成加载调用
-		},
-		onAdColonyReward : function (data, currencyName, amount, success) {
-				// 当AdColony的 v4vc 广告播放完毕后调用
-		},
-		onAdColonyStarted : function (data) {
-				// 当广告开始播放调用
-		},
-		onAdColonyFinished : function (data) {
-				// 当广告显示完毕后调用
-		}
+	adColonyInterstitialDidLoad: function(interstitial) {
+    },
+    adColonyInterstitialDidFailToLoad: function(error) {
+    },
+    adColonyInterstitialWillOpen: function(interstitial) {
+    },
+    adColonyInterstitialDidClose: function(interstitial) {
+    },
+    adColonyInterstitialExpired: function(interstitial) {
+    },
+    adColonyInterstitialWillLeaveApplication: function(interstitial) {
+    },
+    adColonyInterstitialDidReceiveClick: function(interstitial) {
+    },
+    adColonyInterstitialIapOpportunity: function(interstitial, iapProductID, engagement) {
+    },
+    adColonyAdViewDidLoad: function(adView) {
+    },
+    adColonyAdViewDidFailToLoad: function(error) {
+    },
+    adColonyAdViewWillLeaveApplication: function(adView) {
+    },
+    adColonyAdViewWillOpen: function(adView) {
+    },
+    adColonyAdViewDidClose: function(adView) {
+    },
+    adColonyAdViewDidReceiveClick: function(adView) {
+    },
+    adColonyReward: function(name, currencyName, amount, success) {
+    }
 });
 ```
