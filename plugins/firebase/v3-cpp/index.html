@@ -724,7 +724,7 @@ To ensure security, during normal execution the new configuration is locally sav
 <li>进入到 <code>google-services.json</code> 文件所在目录</li>
 <li>运行如下命令</li>
 </ul>
-<pre><code class="python">python -c 'import urllib; import sys; sys.argv = [&quot;transpy&quot;, &quot;-i&quot;, &quot;./google-services.json&quot;, &quot;-o&quot;, &quot;./googleservices.xml&quot;]; s = urllib.urlopen(&quot;https://raw.githubusercontent.com/hugohuang1111/sdkbox-doc-en/firebase/tools/generate_xml_from_google_services_json.py&quot;).read(); exec(s);'
+<pre><code class="python">python -c &quot;&quot;&quot;import urllib; import sys; sys.argv = ['transpy', '-i', './google-services.json', '-o', './googleservices.xml']; s = urllib.urlopen('https://raw.githubusercontent.com/sdkbox-doc/en/master/tools/generate_xml_from_google_services_json.py').read(); exec(s);&quot;&quot;&quot;
 </code></pre>
 
 <ul>
@@ -1062,7 +1062,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-08-31 17:54:48.202222, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-11-10 13:42:24.560550, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

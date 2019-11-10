@@ -723,11 +723,42 @@ To ensure security, during normal execution the new configuration is locally sav
             &quot;v4vc&quot;: true,
             &quot;pre_popup&quot; : true,
             &quot;post_popup&quot;: true
+        },
+        &quot;banner&quot;: {
+            &quot;zone&quot;: &quot;&lt;zone id&gt;&quot;,
+            &quot;type&quot;:&quot;banner&quot;,
+            &quot;alignment&quot;:&quot;bottom&quot;,
+            &quot;width&quot;: 320,
+            &quot;height&quot;: 50
         }
     }
 }
 </code></pre>
 
+<p>banner.width: banner.width 小于 10 为特殊值. 这时会解释为创建AdColony内置的类型, 目前仅用到以下四个值</p>
+<ul>
+<li>0: kAdColonyAdSizeBanner(standard,320*50)</li>
+<li>1: kAdColonyAdSizeMediumRectangle(medium,300x250)</li>
+<li>2: kAdColonyAdSizeLeaderboard(Leaderboard,728x90)</li>
+<li>3: kAdColonyAdSizeSkyscraper(Skyscraper,160x600)</li>
+</ul>
+<p>如上, 如果设置 banner.width 为0, 则会创建一个 standard(320X250) 的 banner, 如果设置 banner.width 为1, 则会创建一个 medium(300x250) 的 banner, 当 banner.width 为特殊值时, banner.height请设置为 0.</p>
+<p>banner.alignment: 可用值: </p>
+<ul>
+<li>center</li>
+<li>top</li>
+<li>bottom</li>
+<li>left</li>
+<li>right</li>
+<li>top_left</li>
+<li>top_right</li>
+<li>bottom_left</li>
+<li>bottom_right</li>
+<li>left_top</li>
+<li>left_bottom</li>
+<li>right_top</li>
+<li>right_bottom</li>
+</ul>
 <h2 id="_5">用法</h2>
 <h3 id="adcolony">初始化 AdColony</h3>
 <ul>
@@ -776,18 +807,36 @@ sc-&gt;addRegisterCallback(register_all_PluginAdColonyJS_helper);
  */
 
 sdkbox.PluginAdColony.setListener({
-        onAdColonyChange : function (data, available) {
-                // 当AdColony完成加载调用
-        },
-        onAdColonyReward : function (data, currencyName, amount, success) {
-                // 当AdColony的 v4vc 广告播放完毕后调用
-        },
-        onAdColonyStarted : function (data) {
-                // 当广告开始播放调用
-        },
-        onAdColonyFinished : function (data) {
-                // 当广告显示完毕后调用
-        }
+    adColonyInterstitialDidLoad: function(interstitial) {
+    },
+    adColonyInterstitialDidFailToLoad: function(error) {
+    },
+    adColonyInterstitialWillOpen: function(interstitial) {
+    },
+    adColonyInterstitialDidClose: function(interstitial) {
+    },
+    adColonyInterstitialExpired: function(interstitial) {
+    },
+    adColonyInterstitialWillLeaveApplication: function(interstitial) {
+    },
+    adColonyInterstitialDidReceiveClick: function(interstitial) {
+    },
+    adColonyInterstitialIapOpportunity: function(interstitial, iapProductID, engagement) {
+    },
+    adColonyAdViewDidLoad: function(adView) {
+    },
+    adColonyAdViewDidFailToLoad: function(error) {
+    },
+    adColonyAdViewWillLeaveApplication: function(adView) {
+    },
+    adColonyAdViewWillOpen: function(adView) {
+    },
+    adColonyAdViewDidClose: function(adView) {
+    },
+    adColonyAdViewDidReceiveClick: function(adView) {
+    },
+    adColonyReward: function(name, currencyName, amount, success) {
+    }
 });
 </code></pre>
 
@@ -907,29 +956,35 @@ sdkbox.PluginAdColony.setListener({
 as well as those triggered by AdColony’s IAP Promo (IAPP) advertisements and will improve overall ad targeting.</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="javascript">onAdColonyChange(info, available);
+<pre><code class="javascript">adColonyInterstitialDidLoad(adName);
 </code></pre>
 
 <blockquote>
-<p>called when AdColony is finished loading.</p>
+<p>called when AdColony interstitial has loaded.</p>
 </blockquote>
-<pre><code class="javascript">onAdColonyReward(info, currencyName, amount, success);
+<pre><code class="javascript">adColonyInterstitialDidFailToLoad(error);
+</code></pre>
+
+<blockquote>
+<p>called when AdColony interstitial loaded failed.</p>
+</blockquote>
+<pre><code class="javascript">adColonyAdViewDidLoad(adName);
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner has loaded.</p>
+</blockquote>
+<pre><code class="javascript">adColonyAdViewDidFailToLoad(error);
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner loaded failed.</p>
+</blockquote>
+<pre><code class="javascript">adColonyReward(name, currencyName, amount, success);
 </code></pre>
 
 <blockquote>
 <p>reward was received.</p>
-</blockquote>
-<pre><code class="javascript">onAdColonyStarted(info);
-</code></pre>
-
-<blockquote>
-<p>showing an ad has started.</p>
-</blockquote>
-<pre><code class="javascript">onAdColonyFinished(info);
-</code></pre>
-
-<blockquote>
-<p>showing an ad has finished.</p>
 </blockquote>
 <h2 id="_7">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
@@ -1189,7 +1244,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-08-31 17:54:46.354761, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-11-10 13:42:22.651315, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

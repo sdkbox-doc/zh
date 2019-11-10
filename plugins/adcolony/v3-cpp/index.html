@@ -723,11 +723,42 @@ To ensure security, during normal execution the new configuration is locally sav
             &quot;v4vc&quot;: true,
             &quot;pre_popup&quot; : true,
             &quot;post_popup&quot;: true
+        },
+        &quot;banner&quot;: {
+            &quot;zone&quot;: &quot;&lt;zone id&gt;&quot;,
+            &quot;type&quot;:&quot;banner&quot;,
+            &quot;alignment&quot;:&quot;bottom&quot;,
+            &quot;width&quot;: 320,
+            &quot;height&quot;: 50
         }
     }
 }
 </code></pre>
 
+<p>banner.width: banner.width 小于 10 为特殊值. 这时会解释为创建AdColony内置的类型, 目前仅用到以下四个值</p>
+<ul>
+<li>0: kAdColonyAdSizeBanner(standard,320*50)</li>
+<li>1: kAdColonyAdSizeMediumRectangle(medium,300x250)</li>
+<li>2: kAdColonyAdSizeLeaderboard(Leaderboard,728x90)</li>
+<li>3: kAdColonyAdSizeSkyscraper(Skyscraper,160x600)</li>
+</ul>
+<p>如上, 如果设置 banner.width 为0, 则会创建一个 standard(320X250) 的 banner, 如果设置 banner.width 为1, 则会创建一个 medium(300x250) 的 banner, 当 banner.width 为特殊值时, banner.height请设置为 0.</p>
+<p>banner.alignment: 可用值: </p>
+<ul>
+<li>center</li>
+<li>top</li>
+<li>bottom</li>
+<li>left</li>
+<li>right</li>
+<li>top_left</li>
+<li>top_right</li>
+<li>bottom_left</li>
+<li>bottom_right</li>
+<li>left_top</li>
+<li>left_bottom</li>
+<li>right_top</li>
+<li>right_bottom</li>
+</ul>
 <h2 id="_5">用法</h2>
 <h3 id="adcolony">初始化 AdColony</h3>
 <ul>
@@ -758,11 +789,34 @@ AppDelegate::applicationDidFinishLaunching()
 class MyClass : public sdkbox::AdColonyListener
 {
 private:
-  void onAdColonyChange(const sdkbox::AdColonyAdInfo&amp; info, bool available);
-  void onAdColonyReward(const sdkbox::AdColonyAdInfo&amp; info,
-        const std::string&amp; currencyName, int amount, bool success);
-  void onAdColonyStarted(const sdkbox::AdColonyAdInfo&amp; info);
-  void onAdColonyFinished(const sdkbox::AdColonyAdInfo&amp; info);
+
+    /*
+     * Interstitial Callback
+     */
+    void adColonyInterstitialDidLoad(const std::string&amp; interstitial);
+    void adColonyInterstitialDidFailToLoad(const std::string&amp; error);
+    void adColonyInterstitialWillOpen(const std::string&amp; interstitial);
+    void adColonyInterstitialDidClose(const std::string&amp; interstitial);
+    void adColonyInterstitialExpired(const std::string&amp; interstitial);
+    void adColonyInterstitialWillLeaveApplication(const std::string&amp; interstitial);
+    void adColonyInterstitialDidReceiveClick(const std::string&amp; interstitial);
+    void adColonyInterstitialIapOpportunity(const std::string&amp; interstitial, const std::string&amp; iapProductID, int engagement);
+
+    /*
+     * Banner Callback
+     */
+    void adColonyAdViewDidLoad(const std::string&amp; adView);
+    void adColonyAdViewDidFailToLoad(const std::string&amp; error);
+    void adColonyAdViewWillLeaveApplication(const std::string&amp; adView);
+    void adColonyAdViewWillOpen(const std::string&amp; adView);
+    void adColonyAdViewDidClose(const std::string&amp; adView);
+    void adColonyAdViewDidReceiveClick(const std::string&amp; adView);
+
+    /*
+     * Rewards Callback
+     */
+    void adColonyReward(const std::string name, const std::string&amp; currencyName, int amount, bool success);
+
 };
 </code></pre>
 
@@ -901,32 +955,93 @@ private:
 as well as those triggered by AdColony’s IAP Promo (IAPP) advertisements and will improve overall ad targeting.</p>
 </blockquote>
 <h3 id="listeners">Listeners</h3>
-<pre><code class="cpp">void onAdColonyChange ( const AdColonyAdInfo &amp; info , bool available );
+<pre><code class="cpp">void adColonyInterstitialDidLoad(const std::string&amp; interstitial) = 0;
 </code></pre>
 
 <blockquote>
-<p>called when AdColony is finished loading.</p>
+<p>called when AdColony interstitial is loaded</p>
 </blockquote>
-<pre><code class="cpp">void onAdColonyReward ( const AdColonyAdInfo &amp; info ,
-                        const std::string &amp; currencyName ,
-                        int amount ,
-                        bool success );
+<pre><code class="cpp">void adColonyInterstitialDidFailToLoad(const std::string&amp; error) = 0;
 </code></pre>
 
 <blockquote>
-<p>reward was received.</p>
+<p>called when AdColony interstitial fails to load</p>
 </blockquote>
-<pre><code class="cpp">void onAdColonyStarted ( const AdColonyAdInfo &amp; info );
+<pre><code class="cpp">void adColonyInterstitialWillOpen(const std::string&amp; interstitial) {};
 </code></pre>
 
 <blockquote>
-<p>showing an ad has started.</p>
+<p>called when AdColony interstitial will open</p>
 </blockquote>
-<pre><code class="cpp">void onAdColonyFinished ( const AdColonyAdInfo &amp; info );
+<pre><code class="cpp">void adColonyInterstitialDidClose(const std::string&amp; interstitial) {};
 </code></pre>
 
 <blockquote>
-<p>showing an ad has finished.</p>
+<p>called when AdColony interstitial did close</p>
+</blockquote>
+<pre><code class="cpp">void adColonyInterstitialExpired(const std::string&amp; interstitial) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony interstitial expired</p>
+</blockquote>
+<pre><code class="cpp">void adColonyInterstitialWillLeaveApplication(const std::string&amp; interstitial) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony interstitial will leave application</p>
+</blockquote>
+<pre><code class="cpp">void adColonyInterstitialDidReceiveClick(const std::string&amp; interstitial) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony interstitial did receive click</p>
+</blockquote>
+<pre><code class="cpp">void adColonyInterstitialIapOpportunity(const std::string&amp; interstitial, const std::string&amp; iapProductID, int 
+engagement) {};
+</code></pre>
+
+<pre><code class="cpp">void adColonyAdViewDidLoad(const std::string&amp; adView) = 0;
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner is loaded</p>
+</blockquote>
+<pre><code class="cpp">void adColonyAdViewDidFailToLoad(const std::string&amp; error) = 0;
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner fails to load</p>
+</blockquote>
+<pre><code class="cpp">void adColonyAdViewWillLeaveApplication(const std::string&amp; adView) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner will leave application</p>
+</blockquote>
+<pre><code class="cpp">void adColonyAdViewWillOpen(const std::string&amp; adView) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner will open</p>
+</blockquote>
+<pre><code class="cpp">void adColonyAdViewDidClose(const std::string&amp; adView) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner did close</p>
+</blockquote>
+<pre><code class="cpp">void adColonyAdViewDidReceiveClick(const std::string&amp; adView) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner did receive click</p>
+</blockquote>
+<pre><code class="cpp">void adColonyReward(const std::string&amp; name, const std::string&amp; currencyName, int amount, bool success) {};
+</code></pre>
+
+<blockquote>
+<p>called when AdColony banner reward</p>
 </blockquote>
 <h2 id="_7">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
@@ -1176,7 +1291,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-08-31 17:54:46.295933, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-11-10 13:42:22.585811, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

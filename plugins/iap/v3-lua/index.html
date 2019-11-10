@@ -611,6 +611,10 @@
         
             <li><a href="#json">JSON 配置</a></li>
         
+            <li><a href="#ios">iOS 测试</a></li>
+        
+            <li><a href="#android">Android 测试</a></li>
+        
             <li><a href="#skpaymenttransactionstatedeferred">SKPaymentTransactionStateDeferred 测试</a></li>
         
             <li><a href="#_5">初始化时机</a></li>
@@ -648,10 +652,10 @@
         <li class="main "><a href="#_11">手动集成</a></li>
         
     
-        <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
+        <li class="main "><a href="#ios_1">iOS 平台手动集成</a></li>
         
     
-        <li class="main "><a href="#android">Android 平台手动集成</a></li>
+        <li class="main "><a href="#android_1">Android 平台手动集成</a></li>
         
             <li><a href="#_12">拷贝文件</a></li>
         
@@ -767,6 +771,17 @@ To ensure security, during normal execution the new configuration is locally sav
 
 <p><strong>注意</strong>: sdkbox_config.json 中的 Goolge IAP key 是从 <code>Google Play Console</code> 中取到的, Google Console-&gt;Developer Tools-&gt;Services &amp; APIs, 请看如下截图:</p>
 <p><img alt="" src="../../../imgs/google_licensing_iab.png" /></p>
+<h3 id="ios">iOS 测试</h3>
+<ul>
+<li>iOS 模拟器不支持购买测试，请使用物理设备进行购买测试</li>
+<li>您需要用 iTunesConnect 账户创建一个测试 IAP 的测试账号</li>
+</ul>
+<h3 id="android">Android 测试</h3>
+<ol>
+<li>编译 release 版本，并在谷歌发布 alpha 或者 beta 渠道</li>
+<li>必须是 alpha 或者 beta 渠道的测试者</li>
+<li>使用您的 <code>秘钥</code> 替换 <code>sdkbox_config.json</code> 中的 <code>IAP</code> -&gt; <code>Android</code> -&gt;  <code>key</code> 字段. 登录 <a href="https://play.google.com/apps/publish/">https://play.google.com/apps/publish/</a>, 打开对应的游戏, 菜单 "Development tools -&gt; Services &amp; APIs -&gt; in-app billing"</li>
+</ol>
 <h3 id="skpaymenttransactionstatedeferred"><code>SKPaymentTransactionStateDeferred</code> 测试</h3>
 <p><code>SKPaymentTransactionStateDeferred</code> 是 iOS IAP 订单的一个中间状态. 对于大部数开发者而言, 不用关心这个中间状态.</p>
 <p>如果你需要测试 <code>SKPaymentTransactionStateDeferred</code> 的话，可以在 <code>sdkbox_config.json</code> 中添加 <code>simulatesAskToBuyInSandbox</code> 项, 如下:</p>
@@ -1060,7 +1075,7 @@ this status will change to success or failed or cancel, its final status is pend
 <h2 id="_11">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
-<h2 id="ios">iOS 平台手动集成</h2>
+<h2 id="ios_1">iOS 平台手动集成</h2>
 <p>Drag and drop the following frameworks from the <strong>plugins/ios</strong> folder of the <code>IAP</code> bundle into your Xcode project, check <code>Copy items if needed</code> when adding frameworks:
 拖拽下列 framework 从 <code>IAP</code> 插件包的 <strong>plugins/ios</strong> 目录到您的 Xcode 工程中，在添加 frameworks 的时候，请勾选 <code>Copy items if needed</code> 。</p>
 <blockquote>
@@ -1075,7 +1090,7 @@ this status will change to success or failed or cancel, its final status is pend
 </blockquote>
 <p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
-<h2 id="android">Android 平台手动集成</h2>
+<h2 id="android_1">Android 平台手动集成</h2>
 <h3 id="_12">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
@@ -1261,7 +1276,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2019-08-31 17:54:49.368775, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2019-11-10 13:42:25.759712, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
