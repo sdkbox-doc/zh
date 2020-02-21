@@ -33,7 +33,9 @@ python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.co
 
 如果 SDKBox Installer 已安装, 此脚本会返回 `SDKBox installer have been installed`
 
-如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 url , 将 install.py 下载到你本机, 然后在命令行中运行 `python install.py`
+如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 [URL](https://raw.githubusercontent.com/sdkbox-doc/en/master/install/install.py) , 将 install.py 下载到你本机, 然后在命令行中运行 `python install.py`
+
+(如果你访问 GitHub 有困难, 那可以通过 Gitee 镜像来下载 install.py , [下载](https://gitee.com/SDKBox/sdkbox-doc-en/raw/master/install/install.py) )
 
 安装完成后, 请重新打开终端(有些情况下, 可能还需要重启电脑), 运行 `sdkbox` 命令, 应该可以看到 SDKBOX 相关的信息.
 
@@ -51,7 +53,9 @@ python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.co
 
 更新完成后, 会在终端中显示更新完成的信息.
 
-如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 url , 将 updateguiforcreator.py 下载到你本机, 然后在命令行中运行 `python updateguiforcreator.py`
+如果运行以上脚本, 直接结束，没有任何返回, 那你需要根据脚本中的 [URL](https://raw.githubusercontent.com/sdkbox-doc/en/master/install/updateguiforcreator.py) , 将 updateguiforcreator.py 下载到你本机, 然后在命令行中运行 `python updateguiforcreator.py`
+
+(如果你访问 GitHub 有困难, 那可以通过 Gitee 镜像来下载 updateguiforcreator.py , [下载](https://gitee.com/SDKBox/sdkbox-doc-en/raw/master/install/updateguiforcreator.py) )
 
 这时重新打开 Creator , 启动 SDKBox GUI, 应该可以顺利完成加载.
 
