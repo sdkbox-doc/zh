@@ -22,7 +22,7 @@ $ sdkbox import admob
 ### JSON 配置
 SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。
 
-#### 智能横幅
+#### 智能横幅(smart banner)
 
 设置 width 和 height 的值为 0
 ```
@@ -30,6 +30,12 @@ SDKBOX Installer 将会自动在您的 `sdkbox_config.json` 中插入一份配�
     "height":0
 ```
 
+#### 自适应横幅(adaptive banner)
+
+```
+    "width":-1,
+    "height":-1
+```
 #### 自动缓存
 
 不需要配置，该插件会自动缓存广告类型中的广告。当 插屏广告/视频广告 关闭时，也会自动缓存它。
