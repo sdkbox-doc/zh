@@ -1,5 +1,95 @@
 # Release Notes
 
+# next (?)
+
+# 2.6.0.0 (2020.03.06)
+
+## Add
+
+1.  china server
+2.  support cocos2d-x v4
+3.  support cocos creator 2.3.0
+4.  AdMob: support adaptive banner (width=-1, height=-1)
+5.  SDKBoxPlay: getTopPlayerScores
+
+## Upgrade
+
+1.  OneSignal: iOS 2.12.3 SDK, Android 3.11.2
+2.  IAP: billingclient to 2.1.0
+3.  Firebase: android 17.2.1
+4.  Update Unity IAP plugin
+
+## Bugfix
+
+1.  SDKBoxPlay:
+    -   [process snapshot conflict](https://discuss.cocos2d-x.org/t/sdkboxplay-savedgame-crash-case/49382)
+    -   getplayerscores
+    -   js/lua binding
+2.  GoogleAnalytics: add JS/Lua helper
+3.  IAP: [catch exception](https://discuss.cocos2d-x.org/t/sdkbox-2-5-1-2-crash-on-some-android-devices/48770)
+
+# 2.5.1.0 (2019.12.03)
+
+## Add
+
+1.  AdMob: add `onAdViewWillPresentScreen` event for RewardVideo
+
+## Upgrade
+
+1.  Facebook:
+    1.  iOS SDK 5.7.0
+    2.  facebook-android-sdk:5.+
+2.  Misc:
+    1.  fix notification on `Android O` system
+3.  AdMob:
+    1.  iOS SDK 7.50
+4.  AdColony:
+    1.  iOS SDK 4.1.0
+    2.  Android SDK 4.1.0
+
+## Bugfix
+
+1.  IAP: fix query subs product info for Android
+2.  Chartboost: fix installer for XCode project
+3.  JS callback crash with Cocos Creator 2.2
+4.  SDKBoxAds: fix `sdkbox.PluginSdkboxAds.playAd("UnityAds", "zone")`
+
+# 2.5.0.5 (20190920)
+
+## Add
+1. AdMob:
+    - setAppMuted
+    - setAppVolume
+2. Share: support file provider
+
+    ```
+    info.image = this->_captureFilename;
+    ```
+3. Misc: support local notification title
+4. UnityAds: support banner
+
+## Upgrade
+1. IAP: update Android SDK to billing-2.0.1
+
+## Bugfix
+1. SDKBoxPlay: fix [crash](https://discuss.cocos2d-x.org/t/crash-in-gpg-sdkboxgpgauthentication/47226/2?u=yinjimmy)
+2. AdMob: fix case sensitive with installer
+3. fix [cant-run-or-compile-game-on-android-because-of-admob](http://discuss.cocos2d-x.org/t/cant-run-or-compile-game-on-android-because-of-admob/47177)
+4. fix [how-can-i-show-a-screenshot-of-the-game-through-the-native-share-menu](http://discuss.cocos2d-x.org/t/how-can-i-show-a-screenshot-of-the-game-through-the-native-share-menu/47064)
+5. Firebase:
+    - call api on main thread
+    - fix crash when invoke init multi times
+6. SDKBoxCore: fix can not load encrypted sdkbox_config.json on Android
+7. Review: fix crash when res not found
+8. ALL Plugins: fix setGDPR logic, true=disable tracking
+
+# 2.5.0.1 (20190717)
+
+## Bugfix
+
+1. https://discuss.cocos2d-x.org/t/after-update-sdkbox-to-2-5-0-0-the-game-crashes-immediately-after-turn-off-wifi/
+
+
 # 2.5.0.0 (20190627)
 
 ## Add
