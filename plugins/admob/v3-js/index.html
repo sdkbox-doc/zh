@@ -617,13 +617,13 @@
         
             <li><a href="#admob">初始化 AdMob</a></li>
         
-            <li><a href="#_7">缓存广告数据</a></li>
+            <li><a href="#_6">缓存广告数据</a></li>
         
-            <li><a href="#_8">显示广告</a></li>
+            <li><a href="#_7">显示广告</a></li>
         
-            <li><a href="#_9">隐藏广告</a></li>
+            <li><a href="#_8">隐藏广告</a></li>
         
-            <li><a href="#_10">检查广告数据可用性</a></li>
+            <li><a href="#_9">检查广告数据可用性</a></li>
         
             <li><a href="#admoblistener">实现 AdMobListener</a></li>
         
@@ -635,7 +635,7 @@
             <li><a href="#listeners">Listeners</a></li>
         
     
-        <li class="main "><a href="#_11">手动集成</a></li>
+        <li class="main "><a href="#_10">手动集成</a></li>
         
     
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
@@ -643,7 +643,7 @@
     
         <li class="main "><a href="#android">Android 手动集成</a></li>
         
-            <li><a href="#_12">拷贝文件</a></li>
+            <li><a href="#_11">拷贝文件</a></li>
         
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
         
@@ -722,13 +722,18 @@ To ensure security, during normal execution the new configuration is locally sav
 
 <h3 id="json">JSON 配置</h3>
 <p>SDKBOX Installer 将会自动在您的 <code>sdkbox_config.json</code> 中插入一份配置样例。请修改这份配置样例，使其能用于您自己的 app 。</p>
-<h4 id="_5">智能横幅</h4>
+<h4 id="smart-banner">智能横幅(smart banner)</h4>
 <p>设置 width 和 height 的值为 0</p>
 <pre><code>    &quot;width&quot;:0,
     &quot;height&quot;:0
 </code></pre>
 
-<h4 id="_6">自动缓存</h4>
+<h4 id="adaptive-banner">自适应横幅(adaptive banner)</h4>
+<pre><code>    &quot;width&quot;:-1,
+    &quot;height&quot;:-1
+</code></pre>
+
+<h4 id="_5">自动缓存</h4>
 <p>不需要配置，该插件会自动缓存广告类型中的广告。当 插屏广告/视频广告 关闭时，也会自动缓存它。
 失败时，需要开发者调用 <code>cache</code> 接口去缓存。</p>
 <p>type:</p>
@@ -875,22 +880,22 @@ sc-&gt;addRegisterCallback(register_all_PluginAdMobJS_helper);
 <pre><code class="javascript">sdkbox.PluginAdMob.init();
 </code></pre>
 
-<h3 id="_7">缓存广告数据</h3>
+<h3 id="_6">缓存广告数据</h3>
 <pre><code class="javascript">sdkbox.PluginAdMob.cache(&quot;home&quot;);
 sdkbox.PluginAdMob.cache(&quot;gameover&quot;);
 </code></pre>
 
-<h3 id="_8">显示广告</h3>
+<h3 id="_7">显示广告</h3>
 <pre><code class="javascript">sdkbox.PluginAdMob.show(&quot;home&quot;);
 sdkbox.PluginAdMob.show(&quot;gameover&quot;);
 </code></pre>
 
-<h3 id="_9">隐藏广告</h3>
+<h3 id="_8">隐藏广告</h3>
 <p>您不能隐藏插播式广告。</p>
 <pre><code class="javascript">sdkbox.PluginAdMob.hide(&quot;home&quot;);
 </code></pre>
 
-<h3 id="_10">检查广告数据可用性</h3>
+<h3 id="_9">检查广告数据可用性</h3>
 <pre><code class="javascript">sdkbox.PluginAdMob.isAvailable(&quot;home&quot;);
 sdkbox.PluginAdMob.isAvailable(&quot;gameover&quot;);
 </code></pre>
@@ -994,7 +999,7 @@ sdkbox.PluginAdMob.setListener({
 <pre><code class="javascript">adViewWillLeaveApplication(name);
 </code></pre>
 
-<h2 id="_11">手动集成</h2>
+<h2 id="_10">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios">iOS 平台手动集成</h2>
@@ -1028,7 +1033,7 @@ sdkbox.PluginAdMob.setListener({
 <li><strong>command-line</strong> 和 <strong>eclipse</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android</code> .</li>
 <li><strong>Android Studio</strong> 类型的项目, <code>&lt;project_root&gt;</code> 指代 <code>proj.android-studio</code> .</li>
 </ul>
-<h3 id="_12">拷贝文件</h3>
+<h3 id="_11">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝所有文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <ul>
 <li>
@@ -1260,7 +1265,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-03-06 02:23:19.776673, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-03-06 02:28:48.376986, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
