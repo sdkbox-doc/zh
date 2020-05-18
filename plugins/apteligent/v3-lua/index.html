@@ -270,6 +270,16 @@
         
             
 <li >
+    <a href="../../hms/">Huawei Mobile Services</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../iap/">In-App Purchase</a>
 </li>
 
@@ -589,78 +599,37 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#_1">集成</a></li>
-        
-    
         <li class="main "><a href="#china">~~从 China 服务器下载~~ 服务器已停止</a></li>
-        
-    
         <li class="main "><a href="#_2">重点注意事项</a></li>
-        
             <li><a href="#_3">禁用应用程序安全传输策略</a></li>
-        
             <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
-        
             <li><a href="#_4">游戏全屏配置</a></li>
-        
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
-        
             <li><a href="#json">JSON 配置</a></li>
-        
-    
         <li class="main "><a href="#_6">使用</a></li>
-        
             <li><a href="#apteligent">初始化 Apteligent</a></li>
-        
             <li><a href="#breadcrumbs">注册追踪器 Breadcrumbs</a></li>
-        
             <li><a href="#_7">注册用户元数据</a></li>
-        
             <li><a href="#_8">注册用户流</a></li>
-        
             <li><a href="#_9">修改用户流的值</a></li>
-        
             <li><a href="#_10">注册网络请求</a></li>
-        
             <li><a href="#_11">过滤截获数据</a></li>
-        
             <li><a href="#_12">配置位置坐标</a></li>
-        
             <li><a href="#_13">其他任务</a></li>
-        
             <li><a href="#apteligentlistener">实现 ApteligentListener</a></li>
-        
-    
         <li class="main "><a href="#api-reference">API Reference</a></li>
-        
             <li><a href="#methods">Methods</a></li>
-        
             <li><a href="#listeners">Listeners</a></li>
-        
-    
         <li class="main "><a href="#_14">手动集成</a></li>
-        
-    
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
-        
-    
         <li class="main "><a href="#android">Android 手动集成</a></li>
-        
             <li><a href="#_15">拷贝文件</a></li>
-        
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
-        
             <li><a href="#androidmk">编辑 Android.mk</a></li>
-        
             <li><a href="#applicationmk-cocos2d-x-v30-v32">编辑 Application.mk （只限 Cocos2d-x v3.0 到 v3.2 版本）</a></li>
-        
             <li><a href="#appactivityjava">修改 AppActivity.java</a></li>
-        
-    
         <li class="main "><a href="#proguard-release">使用 Proguard （release模式下可选）</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -714,7 +683,8 @@ Registering the applications’ allows for on-the-fly update of its plugin’s c
 
 To enable this cloud service in your applications is as easy as calling a single __init()__ function and passing in your __application token__ and __application secret__ that were provided when you created the app in the previous section.
 
-wzxhzdk:3
+<pre><code>sdkbox::init( &lt;application token&gt;, &lt;application secret&gt; );
+</code></pre>
 
   __Note__: each application will have it’s own __application token__ and each configuration for each game will have it’s own __application secret__. The __application secret__ is the actual encryption key used to decipher the remote configuration.
 
@@ -1263,10 +1233,10 @@ SDKBox.init(this);
 <p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
 <ul>
 <li>
-<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么__定义它__。</p>
 </li>
 <li>
-<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的__同名方法__。</p>
 </li>
 </ul>
 </li>
@@ -1371,7 +1341,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-03-08 09:51:32.047962, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-05-18 11:26:39, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         

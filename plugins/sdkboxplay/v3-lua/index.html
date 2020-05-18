@@ -270,6 +270,16 @@
         
             
 <li >
+    <a href="../../hms/">Huawei Mobile Services</a>
+</li>
+
+        
+            
+  
+
+        
+            
+<li >
     <a href="../../iap/">In-App Purchase</a>
 </li>
 
@@ -589,71 +599,33 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-    
         <li class="main active"><a href="#_1">前提条件</a></li>
-        
             <li><a href="#google-play">Google play</a></li>
-        
             <li><a href="#game-center">Game Center</a></li>
-        
-    
         <li class="main "><a href="#_2">集成</a></li>
-        
             <li><a href="#json">JSON 配置</a></li>
-        
-    
         <li class="main "><a href="#_3">使用</a></li>
-        
             <li><a href="#sdkboxads">初始化 SdkboxAds</a></li>
-        
             <li><a href="#sdkboxplay">使用 SdkboxPlay</a></li>
-        
             <li><a href="#sdkboxplay_1">SdkboxPlay 事件</a></li>
-        
-    
         <li class="main "><a href="#api-reference">API Reference</a></li>
-        
             <li><a href="#methods">Methods</a></li>
-        
             <li><a href="#listeners">Listeners</a></li>
-        
-    
         <li class="main "><a href="#_7">手动集成</a></li>
-        
-    
         <li class="main "><a href="#ios">iOS 平台手动集成</a></li>
-        
-    
         <li class="main "><a href="#android">Android 手动集成</a></li>
-        
             <li><a href="#_8">拷贝文件</a></li>
-        
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
-        
             <li><a href="#androidmk">编辑 Android.mk</a></li>
-        
             <li><a href="#applicationmk">编辑 Application.mk</a></li>
-        
             <li><a href="#appactivityjava">修改 AppActivity.java</a></li>
-        
-    
         <li class="main "><a href="#proguard-release">使用 Proguard （release模式下可选）</a></li>
-        
-    
         <li class="main "><a href="#_9">游戏存档</a></li>
-        
             <li><a href="#ios_1">iOS 云存储</a></li>
-        
             <li><a href="#_10">用法</a></li>
-        
-    
         <li class="main "><a href="#_14">服务器认证</a></li>
-        
             <li><a href="#ios_2">iOS</a></li>
-        
             <li><a href="#android_1">Android</a></li>
-        
-    
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -693,7 +665,8 @@ Registering the applications’ allows for on-the-fly update of its plugin’s c
 
 To enable this cloud service in your applications is as easy as calling a single __init()__ function and passing in your __application token__ and __application secret__ that were provided when you created the app in the previous section.
 
-wzxhzdk:1
+<pre><code>sdkbox::init( &lt;application token&gt;, &lt;application secret&gt; );
+</code></pre>
 
   __Note__: each application will have it’s own __application token__ and each configuration for each game will have it’s own __application secret__. The __application secret__ is the actual encryption key used to decipher the remote configuration.
 
@@ -750,8 +723,8 @@ To ensure security, during normal execution the new configuration is locally sav
 <h5 id="achievements">Achievements</h5>
 <p>Achievements 插件在不同的开发者平台上有不同的定义。
 以下是在 GooglePlay 以及 GameCenter 下 Achievements 插件一些概念上的不同：
-<em> Google Play 区分普通成就以及可累积的成就。Google 保持对可累计成就的进度持续追踪。而普通成就只能达成一次。
-</em> 在 Game Center 下 Achievements 所有的成就都是可累计成就， 但是 Game Center 并不持续跟踪这些成就的进度。这些成就将在游戏过程中被达成。并且这些成就可以被重复解锁多次。
+* Google Play 区分普通成就以及可累积的成就。Google 保持对可累计成就的进度持续追踪。而普通成就只能达成一次。
+* 在 Game Center 下 Achievements 所有的成就都是可累计成就， 但是 Game Center 并不持续跟踪这些成就的进度。这些成就将在游戏过程中被达成。并且这些成就可以被重复解锁多次。
 * Google Play 有新解锁成就的概念（第一次解锁），而Game Center则有可周期性解锁的成就。这两个概念是互补的。</p>
 <p>为了使以上概念统一， SdkboxPlay API 做了如下设计：</p>
 <ul>
@@ -1575,10 +1548,10 @@ SDKBox.init(this);
 <p>最后, 我需要提供合适的 <strong>overrides</strong> 方法的代码。这里有一些约定如下。</p>
 <ul>
 <li>
-<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么<strong>定义它</strong>。</p>
+<p>如果这个被列出的方法没有在 <code>SDKBox</code> 中定义，那么__定义它__。</p>
 </li>
 <li>
-<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的<strong>同名方法</strong>。</p>
+<p>如果这个被列出的方法已经被定义在 <code>SDKBox</code> 中，那么请调用这个在 <code>SDKBox</code> 中的__同名方法__。</p>
 </li>
 </ul>
 </li>
@@ -1694,7 +1667,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-03-08 09:51:35.497880, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-05-18 11:26:44, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
