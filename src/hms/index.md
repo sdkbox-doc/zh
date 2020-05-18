@@ -11,5 +11,5 @@
 
 ## 样例工程
 
-* [github 上的一个使用 cocos2d-x v3.x 版本的样例](https://github.com/sdkbox/sdkbox-sample-hms)
+* [github 上的一个使用 cocos2d-x v3.x 版本的样例](https://github.com/sdkbox/sdkbox-sample-cpp317/tree/hms)
 
