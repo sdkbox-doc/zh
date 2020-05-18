@@ -30,4 +30,4 @@ jobs:
           pip install mkdocs==0.16.3
  
       - name: deploy to gh-pages
-        run: mkdocs -V
+        run: mkdocs gh-deploy --clean
