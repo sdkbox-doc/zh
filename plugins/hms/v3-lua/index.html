@@ -614,14 +614,20 @@
             <li><a href="#hms">初始化 HMS</a></li>
             <li><a href="#_6">登录</a></li>
             <li><a href="#_7">登出</a></li>
-            <li><a href="#hms_1">处理HMS事件</a></li>
+            <li><a href="#hms_1">请求托管在 HMS 的商品</a></li>
+            <li><a href="#_8">购买托管商品</a></li>
+            <li><a href="#_9">购买非托管商品</a></li>
+            <li><a href="#_10">请求拥有的商品</a></li>
+            <li><a href="#_11">消费商品</a></li>
+            <li><a href="#_12">请求所有的消费记录</a></li>
+            <li><a href="#hms_2">处理HMS事件</a></li>
         <li class="main "><a href="#api-reference">API Reference</a></li>
             <li><a href="#methods">Methods</a></li>
             <li><a href="#listeners">Listeners</a></li>
-        <li class="main "><a href="#_8">手动集成</a></li>
+        <li class="main "><a href="#_13">手动集成</a></li>
         <li class="main "><a href="#ios_1">iOS 平台手动集成</a></li>
         <li class="main "><a href="#android_1">Android 平台手动集成</a></li>
-            <li><a href="#_9">拷贝文件</a></li>
+            <li><a href="#_14">拷贝文件</a></li>
             <li><a href="#buildgradle">修改 build.gradle</a></li>
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
             <li><a href="#androidmk">编辑 Android.mk</a></li>
@@ -743,13 +749,78 @@
 <pre><code class="lua">sdkbox.HMS:logout();
 </code></pre>
 
-<h3 id="hms_1">处理HMS事件</h3>
+<h3 id="hms_1">请求托管在 HMS 的商品</h3>
+<p>托管商品是指在 HMS 管理后台配置的商品.</p>
+<pre><code class="lua">sdkbox.HMS:iapRequestProducts();
+</code></pre>
+
+<p>这个方法会触发 Listener 中的 <code>onIAPProducts</code> 方法</p>
+<h3 id="_8">购买托管商品</h3>
+<pre><code class="lua">sdkbox.HMS:iapPurchase(&quot;coin&quot;);
+</code></pre>
+
+<p>这个方法会触发 Listener 中的 <code>onIAPPurchase</code> 方法</p>
+<h3 id="_9">购买非托管商品</h3>
+<p>非托管商品是指未在 HMS 后台配置商品, 但使用 HMS IAP 的来支付.</p>
+<pre><code class="lua">local productInfo = {
+  priceType = 0, -- 0:consumable 1:non-consumable 2:subscription
+  productName = 'product name',
+  productId = 'product id',
+  amount = '1.00',
+  currency = 'CNY',
+  country = 'CN',
+  sdkChannel = '1', -- sdkChannel size must be between 0 and 4
+  serviceCatalog = 'X58',
+  reservedInfor = '{&quot;a&quot;: 1, &quot;b&quot;:&quot;s&quot;}', -- reservedInfor must be json string
+  developerPayload = 'payload1'
+};
+sdkbox.HMS:iapPurchaseWithPrice(JSON:encode(productInfo));
+</code></pre>
+
+<p>这个方法会触发 Listener 中的 <code>onIAPPurchase</code> 方法</p>
+<h3 id="_10">请求拥有的商品</h3>
+<p>请求当前拥有的商品的购买记录, 包括 不可消费，订阅商品 和 非消费的可消费商品.</p>
+<pre><code class="lua">sdkbox.HMS:iapRequestOwnedPurchases();
+</code></pre>
+
+<p>这个方法会触发 Listener 中的 <code>onIAPOwnedPurchases</code> 方法</p>
+<h3 id="_11">消费商品</h3>
+<p>注意: 这里传的是 purchaseToken , 非不是商品名字或id</p>
+<pre><code class="lua">sdkbox.HMS:iapConsume(purchaseToken);
+</code></pre>
+
+<p>这个方法会触发 Listener 中的 <code>onIAPPConsume</code> 方法</p>
+<h3 id="_12">请求所有的消费记录</h3>
+<p>请求用户所有的消费记录</p>
+<pre><code class="lua">sdkbox.HMS:iapRequestOwnedPurchaseRecords(purchaseToken);
+</code></pre>
+
+<p>这个方法会触发 Listener 中的 <code>onIAPOwnedPurchaseRecords</code> 方法</p>
+<h3 id="hms_2">处理HMS事件</h3>
 <p>您可以接收付费过程中的 <code>HMS</code> 事件.</p>
 <pre><code class="lua">sdkbox.HMS:setListener(function(args)
         if &quot;onLogin&quot; == args.event then
                 local code = args.code
                 local msg = args.msg
                 dump(args, &quot;onLogin:&quot;)
+        else if &quot;onIAPReady&quot; == args.event then
+                local code = args.code
+                local msg = args.msg
+        else if &quot;onIAPProducts&quot; == args.event then
+                local code = args.code
+                local msg = args.msg
+        else if &quot;onIAPPurchase&quot; == args.event then
+                local code = args.code
+                local msg = args.msg
+        else if &quot;onIAPPConsume&quot; == args.event then
+                local code = args.code
+                local msg = args.msg
+        else if &quot;onIAPOwnedPurchases&quot; == args.event then
+                local code = args.code
+                local msg = args.msg
+        else if &quot;onIAPOwnedPurchaseRecords&quot; == args.event then
+                local code = args.code
+                local msg = args.msg
         else
                 print(&quot;unknow event &quot;, args.event)
         end
@@ -789,11 +860,47 @@ loginType: 0, slient login 1, login with HuaweiID(ID Token) 2, login with HuaweI
 <blockquote>
 <p>logout HMS</p>
 </blockquote>
+<pre><code class="lua">sdkbox.PluginHMS:iapRequestProducts()
+</code></pre>
+
+<pre><code class="lua">sdkbox.PluginHMS:iapPurchase(name)
+</code></pre>
+
+<pre><code class="lua">sdkbox.PluginHMS:iapPurchaseWithPrice(productJson)
+</code></pre>
+
+<pre><code class="lua">sdkbox.PluginHMS:iapRequestOwnedPurchases()
+</code></pre>
+
+<pre><code class="lua">sdkbox.PluginHMS:iapConsume(purchaseToken)
+</code></pre>
+
+<pre><code class="lua">sdkbox.PluginHMS:iapRequestOwnedPurchaseRecords()
+</code></pre>
+
 <h3 id="listeners">Listeners</h3>
 <pre><code class="lua">onLogin(code, msg)
 </code></pre>
 
-<h2 id="_8">手动集成</h2>
+<pre><code class="lua">onIAPReady(code, msg)
+</code></pre>
+
+<pre><code class="lua">onIAPProducts(code, errorOrJson)
+</code></pre>
+
+<pre><code class="lua">onIAPPurchase(code, errorOrJson)
+</code></pre>
+
+<pre><code class="lua">onIAPPConsume(code, errorOrJson)
+</code></pre>
+
+<pre><code class="lua">onIAPOwnedPurchases(code, errorOrJson)
+</code></pre>
+
+<pre><code class="lua">onIAPOwnedPurchaseRecords(code, errorOrJson)
+</code></pre>
+
+<h2 id="_13">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios_1">iOS 平台手动集成</h2>
@@ -810,7 +917,7 @@ loginType: 0, slient login 1, login with HuaweiID(ID Token) 2, login with HuaweI
 <p>把 <code>plugin/luabindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
 <h2 id="android_1">Android 平台手动集成</h2>
-<h3 id="_9">拷贝文件</h3>
+<h3 id="_14">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>PluginHMS.jar</p>
@@ -873,6 +980,7 @@ apply plugin: 'com.huawei.agconnect' // for hms
 dependencies {
     ...
     implementation 'com.huawei.hms:hwid:4.0.1.301' // for hms
+    implementation 'com.huawei.hms:iap:4.0.2.300' // for hms
 }
 
 </code></pre>
@@ -1033,7 +1141,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-05-18 11:43:38, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-06-02 04:02:17, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
