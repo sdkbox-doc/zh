@@ -11,6 +11,26 @@ sdkbox import hms
 
 <<[../../shared/notice.md]
 
+## 额外步骤
+
+### Android步骤
+
+你应该在 `Application::onCreate` 中添加这一行代码 `com.sdkbox.plugin.PluginHMS.ApplicationInit(this);` .
+如下是一个修改的样例:
+
+```java
+public class YourApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        com.sdkbox.plugin.PluginHMS.ApplicationInit(this); // 添加这一行
+    }
+
+    ...
+}
+```
+
 ### JSON 配置
 SDKBOX 安装器会自动在您的工程中添加一个样例配置文件`sdkbox_config.json`.在您编译工程前,请修改里面的参数,用您自己的应用信息
 
