@@ -298,9 +298,11 @@ sdkbox.PluginHMS:rankingRequestPlayerCenteredScores(rankingName, timeDimension, 
 将会触发 Listener 中的事件 `onArchiveAdd`
 
 ```lua
+local bmBytes -- cover image data
+local dataBytes -- archive binary data
 sdkbox.PluginHMS:archiveAdd(playedTime, progress, description, supportCache,
-                               bmBytes, bmBytesLen, bmBytesType,
-                               dataBytes, dataBytesLen);
+                               bmBytes, bmBytesType,
+                               dataBytes);
 ```
 
 更新存档
@@ -308,10 +310,12 @@ sdkbox.PluginHMS:archiveAdd(playedTime, progress, description, supportCache,
 将会触发 Listener 中的事件 `onArchiveUpdate`
 
 ```lua
+local bmBytes -- cover image data
+local dataBytes -- archive binary data
 sdkbox.PluginHMS:archiveUpdate(archiveId,
                           playedTime, progress, description,
-                          bmBytes, bmBytesLen, bmBytesType,
-                          dataBytes, dataBytesLen);
+                          bmBytes, bmBytesType,
+                          dataBytes);
 ```
 
 读存档

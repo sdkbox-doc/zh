@@ -296,9 +296,12 @@ sdkbox.PluginHMS.rankingRequestPlayerCenteredScores(rankingName, timeDimension, 
 将会触发 Listener 中的函数 `onArchiveAdd`
 
 ```javascript
+const bmBytes; // Uint8Array, cover image data
+const dataBytes; // Uint8Array, archive binary data
+
 sdkbox.PluginHMS.archiveAdd(playedTime, progress, description, supportCache,
-                               bmBytes, bmBytesLen, bmBytesType,
-                               dataBytes, dataBytesLen);
+                               bmBytes, bmBytesType,
+                               dataBytes);
 ```
 
 更新存档
@@ -306,10 +309,13 @@ sdkbox.PluginHMS.archiveAdd(playedTime, progress, description, supportCache,
 将会触发 Listener 中的函数 `onArchiveUpdate`
 
 ```javascript
+const bmBytes; // Uint8Array, cover image data
+const dataBytes; // Uint8Array, archive binary data
+
 sdkbox.PluginHMS.archiveUpdate(archiveId,
                           playedTime, progress, description,
-                          bmBytes, bmBytesLen, bmBytesType,
-                          dataBytes, dataBytesLen);
+                          bmBytes, bmBytesType,
+                          dataBytes);
 ```
 
 读存档
