@@ -606,33 +606,36 @@
             <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
             <li><a href="#_4">游戏全屏配置</a></li>
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
+        <li class="main "><a href="#_5">额外步骤</a></li>
+            <li><a href="#android">Android步骤</a></li>
             <li><a href="#json">JSON 配置</a></li>
             <li><a href="#ios">iOS 测试</a></li>
-            <li><a href="#android">Android 测试</a></li>
-        <li class="main "><a href="#_5">使用</a></li>
+            <li><a href="#android_1">Android 测试</a></li>
+        <li class="main "><a href="#_6">使用</a></li>
             <li><a href="#hms">初始化 HMS</a></li>
-            <li><a href="#_6">登录</a></li>
-            <li><a href="#_7">登出</a></li>
+            <li><a href="#_7">登录</a></li>
+            <li><a href="#_8">登出</a></li>
             <li><a href="#hms_1">请求托管在 HMS 的商品</a></li>
-            <li><a href="#_8">购买托管商品</a></li>
-            <li><a href="#_9">购买非托管商品</a></li>
-            <li><a href="#_10">请求拥有的商品</a></li>
-            <li><a href="#_11">消费商品</a></li>
-            <li><a href="#_12">请求所有的消费记录</a></li>
-            <li><a href="#_13">玩家信息</a></li>
-            <li><a href="#_18">成就</a></li>
-            <li><a href="#_25">事件</a></li>
-            <li><a href="#_27">排行榜</a></li>
-            <li><a href="#_32">存档</a></li>
-            <li><a href="#_33">浮标</a></li>
+            <li><a href="#_9">购买托管商品</a></li>
+            <li><a href="#_10">购买非托管商品</a></li>
+            <li><a href="#_11">请求拥有的商品</a></li>
+            <li><a href="#_12">消费商品</a></li>
+            <li><a href="#_13">请求所有的消费记录</a></li>
+            <li><a href="#_14">玩家信息</a></li>
+            <li><a href="#_19">成就</a></li>
+            <li><a href="#_26">事件</a></li>
+            <li><a href="#_28">排行榜</a></li>
+            <li><a href="#_33">存档</a></li>
+            <li><a href="#_34">浮标</a></li>
+            <li><a href="#_35">广告</a></li>
             <li><a href="#hms_2">处理HMS事件</a></li>
         <li class="main "><a href="#api-reference">API Reference</a></li>
             <li><a href="#methods">Methods</a></li>
             <li><a href="#listeners">Listeners</a></li>
-        <li class="main "><a href="#_34">手动集成</a></li>
+        <li class="main "><a href="#_36">手动集成</a></li>
         <li class="main "><a href="#ios_1">iOS 平台手动集成</a></li>
-        <li class="main "><a href="#android_1">Android 平台手动集成</a></li>
-            <li><a href="#_35">拷贝文件</a></li>
+        <li class="main "><a href="#android_2">Android 平台手动集成</a></li>
+            <li><a href="#_37">拷贝文件</a></li>
             <li><a href="#buildgradle">修改 build.gradle</a></li>
             <li><a href="#androidmanifestxml">编辑 AndroidManifest.xml</a></li>
             <li><a href="#androidmk">编辑 Android.mk</a></li>
@@ -677,6 +680,22 @@
 <p>如果您的游戏不同时支持横竖屏，则必须在 Xcode 中选中 <code>Requires full screen</code>，否则将不会通过 Apple 的审核。</p>
 <h4 id="canopenurl">canOpenURL 白名单</h4>
 <p>取决于您使用哪些插件。需要在 <code>info.plist</code> 的 <code>LSApplicationQueriesSchemes</code> 下添加名单。</p>
+<h2 id="_5">额外步骤</h2>
+<h3 id="android">Android步骤</h3>
+<p>你应该在 <code>Application::onCreate</code> 中添加这一行代码 <code>com.sdkbox.plugin.PluginHMS.ApplicationInit(this);</code> .
+如下是一个修改的样例:</p>
+<pre><code class="java">public class YourApplication extends Application {
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        com.sdkbox.plugin.PluginHMS.ApplicationInit(this); // 添加这一行
+    }
+
+    ...
+}
+</code></pre>
+
 <h3 id="json">JSON 配置</h3>
 <p>SDKBOX 安装器会自动在您的工程中添加一个样例配置文件<code>sdkbox_config.json</code>.在您编译工程前,请修改里面的参数,用您自己的应用信息</p>
 <p>这里HMS的配置样例.</p>
@@ -736,7 +755,7 @@
 <ul>
 <li>HMS 不支持 iOS 平台, 在 iOS 其实是一个空的实现</li>
 </ul>
-<h3 id="android">Android 测试</h3>
+<h3 id="android_1">Android 测试</h3>
 <ol>
 <li>在 AppGallery 中创建一个 app</li>
 <li>启起你想要使用的模块(比如你要使用登录, 就可以启用AccountKit)</li>
@@ -744,12 +763,12 @@
 <li>下载应用的信息文件 <code>agconnect-services.json</code></li>
 </ol>
 <p>HMS 的官方<a href="https://developer.huawei.com/consumer/hms">文档</a></p>
-<h2 id="_5">使用</h2>
+<h2 id="_6">使用</h2>
 <h3 id="hms">初始化 HMS</h3>
 <ul>
 <li>在您的代码合适的地方调用 <code>init()</code> 完成初始化. 我们推荐在 <code>app.js</code> 中完成初始化.比如:</li>
 </ul>
-<pre><code class="javascript">sdkbox.HMS.init();
+<pre><code class="javascript">sdkbox.PluginHMS.init();
 </code></pre>
 
 <ul>
@@ -766,47 +785,47 @@
 sc-&gt;addRegisterCallback(register_all_PluginHMSJS_helper);
 </code></pre>
 
-<h3 id="_6">登录</h3>
+<h3 id="_7">登录</h3>
 <p>HMS 提供了三种登录方式:</p>
 <ul>
 <li>Signing In with HUAWEI ID(ID Token)</li>
 </ul>
-<pre><code class="javascript">sdkbox.HMS.login(1);
+<pre><code class="javascript">sdkbox.PluginHMS.login(1);
 </code></pre>
 
 <ul>
 <li>Signing In with HUAWEI ID(Authorization Code)</li>
 </ul>
-<pre><code class="javascript">sdkbox.HMS.login(2);
+<pre><code class="javascript">sdkbox.PluginHMS.login(2);
 </code></pre>
 
 <ul>
 <li>Silently Signing In With HUAWEI ID</li>
 </ul>
 <p>静默登录只能在上一次使用前两种方式已经登录成功的情况下，才能在静态登录下成功</p>
-<pre><code class="javascript">sdkbox.HMS.login(0);
+<pre><code class="javascript">sdkbox.PluginHMS.login(0);
 </code></pre>
 
 <blockquote>
 <p>以上三种登录方式, 不管成功还是失败, 最终都会触发 <code>onLogin</code> 事件.</p>
 </blockquote>
 <p>HMS 帐号相关的 <a href="https://developer.huawei.com/consumer/en/doc/development/HMS-Guides/account-guide-v4">文档</a></p>
-<h3 id="_7">登出</h3>
-<pre><code class="javascript">sdkbox.HMS.logout();
+<h3 id="_8">登出</h3>
+<pre><code class="javascript">sdkbox.PluginHMS.logout();
 </code></pre>
 
 <h3 id="hms_1">请求托管在 HMS 的商品</h3>
 <p>托管商品是指在 HMS 管理后台配置的商品.</p>
-<pre><code class="javascript">sdkbox.HMS.iapRequestProducts();
+<pre><code class="javascript">sdkbox.PluginHMS.iapRequestProducts();
 </code></pre>
 
 <p>这个方法会触发 Listener 中的 <code>onIAPProducts</code> 方法</p>
-<h3 id="_8">购买托管商品</h3>
-<pre><code class="javascript">sdkbox.HMS.iapPurchase(&quot;coin&quot;);
+<h3 id="_9">购买托管商品</h3>
+<pre><code class="javascript">sdkbox.PluginHMS.iapPurchase(&quot;coin&quot;);
 </code></pre>
 
 <p>这个方法会触发 Listener 中的 <code>onIAPPurchase</code> 方法</p>
-<h3 id="_9">购买非托管商品</h3>
+<h3 id="_10">购买非托管商品</h3>
 <p>非托管商品是指未在 HMS 后台配置商品, 但使用 HMS IAP 的来支付.</p>
 <pre><code class="javascript">let productInfo = {
   priceType: 0, // 0:consumable 1:non-consumable 2:subscription
@@ -820,99 +839,99 @@ sc-&gt;addRegisterCallback(register_all_PluginHMSJS_helper);
   reservedInfor: '{&quot;a&quot;: 1, &quot;b&quot;:&quot;s&quot;}', // reservedInfor must be json string
   developerPayload: 'payload1'
 };
-sdkbox.HMS.iapPurchaseWithPrice(JSON.stringify(productInfo));
+sdkbox.PluginHMS.iapPurchaseWithPrice(JSON.stringify(productInfo));
 </code></pre>
 
 <p>这个方法会触发 Listener 中的 <code>onIAPPurchase</code> 方法</p>
-<h3 id="_10">请求拥有的商品</h3>
+<h3 id="_11">请求拥有的商品</h3>
 <p>请求当前拥有的商品的购买记录, 包括 不可消费，订阅商品 和 非消费的可消费商品.</p>
-<pre><code class="javascript">sdkbox.HMS.iapRequestOwnedPurchases();
+<pre><code class="javascript">sdkbox.PluginHMS.iapRequestOwnedPurchases();
 </code></pre>
 
 <p>这个方法会触发 Listener 中的 <code>onIAPOwnedPurchases</code> 方法</p>
-<h3 id="_11">消费商品</h3>
+<h3 id="_12">消费商品</h3>
 <p>注意: 这里传的是 purchaseToken , 非不是商品名字或id</p>
-<pre><code class="javascript">sdkbox.HMS.iapConsume(purchaseToken);
+<pre><code class="javascript">sdkbox.PluginHMS.iapConsume(purchaseToken);
 </code></pre>
 
 <p>这个方法会触发 Listener 中的 <code>onIAPPConsume</code> 方法</p>
-<h3 id="_12">请求所有的消费记录</h3>
+<h3 id="_13">请求所有的消费记录</h3>
 <p>请求用户所有的消费记录</p>
-<pre><code class="javascript">sdkbox.HMS.iapRequestOwnedPurchaseRecords(purchaseToken);
+<pre><code class="javascript">sdkbox.PluginHMS.iapRequestOwnedPurchaseRecords(purchaseToken);
 </code></pre>
 
 <p>这个方法会触发 Listener 中的 <code>onIAPOwnedPurchaseRecords</code> 方法</p>
-<h3 id="_13">玩家信息</h3>
-<h4 id="_14">获取玩家信息</h4>
+<h3 id="_14">玩家信息</h3>
+<h4 id="_15">获取玩家信息</h4>
 <p>将会触发 Listener 中的函数 <code>onPlayerInfo</code></p>
-<pre><code class="javascript">sdkbox.HMS.playerRequestInfo();
+<pre><code class="javascript">sdkbox.PluginHMS.playerRequestInfo();
 </code></pre>
 
-<h4 id="_15">获取玩家额外信息</h4>
+<h4 id="_16">获取玩家额外信息</h4>
 <p>这里主要是针对 未成年防沉迷 机制, 可以取得玩家是否未成年人，它的游戏时间等信息, 开发者利用这些信息对防沉迷作相应处理.</p>
 <p>将会触发 Listener 中的函数 <code>onPlayerExtraInfo</code></p>
-<pre><code class="javascript">sdkbox.HMS.playerRequestInfo();
+<pre><code class="javascript">sdkbox.PluginHMS.playerRequestInfo();
 </code></pre>
 
-<h4 id="_16">提交游戏开始</h4>
+<h4 id="_17">提交游戏开始</h4>
 <p>提交玩家开始游戏事件</p>
 <p>将会触发 Listener 中的函数 <code>onPlayerGameBegin</code></p>
-<pre><code class="javascript">sdkbox.HMS.playerSubmitGameBegin();
+<pre><code class="javascript">sdkbox.PluginHMS.playerSubmitGameBegin();
 </code></pre>
 
-<h4 id="_17">提交游戏结束</h4>
+<h4 id="_18">提交游戏结束</h4>
 <p>提交玩家结束游戏事件</p>
 <p>将会触发 Listener 中的函数 <code>onPlayerGameEnd</code></p>
-<pre><code class="javascript">sdkbox.HMS.playerSubmitGameEnd();
+<pre><code class="javascript">sdkbox.PluginHMS.playerSubmitGameEnd();
 </code></pre>
 
-<h3 id="_18">成就</h3>
-<h4 id="_19">取成就列表</h4>
+<h3 id="_19">成就</h3>
+<h4 id="_20">取成就列表</h4>
 <p>获取成就列表, 开发者可以使用返回的数据来自行展示</p>
 <p>将会触发 Listener 中的函数 <code>onAchievementList</code></p>
-<pre><code class="javascript">sdkbox.HMS.achievementRequestList();
+<pre><code class="javascript">sdkbox.PluginHMS.achievementRequestList();
 </code></pre>
 
-<h4 id="_20">显示成就</h4>
+<h4 id="_21">显示成就</h4>
 <p>使用华为默认的成就显示列表</p>
 <p>将会触发 Listener 中的函数 <code>onAchievementShow</code></p>
-<pre><code class="javascript">sdkbox.HMS.achievementShow();
+<pre><code class="javascript">sdkbox.PluginHMS.achievementShow();
 </code></pre>
 
-<h4 id="_21">成就可见</h4>
+<h4 id="_22">成就可见</h4>
 <p>将会触发 Listener 中的函数 <code>onAchievementVisualize</code></p>
-<pre><code class="javascript">sdkbox.HMS.achievementVisualize();
+<pre><code class="javascript">sdkbox.PluginHMS.achievementVisualize();
 </code></pre>
 
-<h4 id="_22">增长成就</h4>
+<h4 id="_23">增长成就</h4>
 <p>将会触发 Listener 中的函数 <code>onAchievementGrow</code></p>
-<pre><code class="javascript">sdkbox.HMS.achievementGrow();
+<pre><code class="javascript">sdkbox.PluginHMS.achievementGrow();
 </code></pre>
 
-<h4 id="_23">设置成就步骤</h4>
+<h4 id="_24">设置成就步骤</h4>
 <p>将会触发 Listener 中的函数 <code>onAchievementMakeSteps</code></p>
-<pre><code class="javascript">sdkbox.HMS.achievementMakeSteps();
+<pre><code class="javascript">sdkbox.PluginHMS.achievementMakeSteps();
 </code></pre>
 
-<h4 id="_24">解锁成就</h4>
-<pre><code class="javascript">sdkbox.HMS.achievementReach();
+<h4 id="_25">解锁成就</h4>
+<pre><code class="javascript">sdkbox.PluginHMS.achievementReach();
 </code></pre>
 
-<h3 id="_25">事件</h3>
-<h4 id="_26">增长事件</h4>
-<pre><code class="javascript">sdkbox.HMS.eventGrow(event, amount);
+<h3 id="_26">事件</h3>
+<h4 id="_27">增长事件</h4>
+<pre><code class="javascript">sdkbox.PluginHMS.eventGrow(event, amount);
 </code></pre>
 
 <h4 id="eventrequestlist">eventRequestList</h4>
 <p>将会触发 Listener 中的函数 <code>onEventList</code></p>
-<pre><code class="javascript">sdkbox.HMS.eventRequestList();
+<pre><code class="javascript">sdkbox.PluginHMS.eventRequestList();
 </code></pre>
 
-<h3 id="_27">排行榜</h3>
-<h4 id="_28">检查排行榜状态</h4>
+<h3 id="_28">排行榜</h3>
+<h4 id="_29">检查排行榜状态</h4>
 <p>在进行排行榜相关api前，开发者必检查玩家是否允许上传分数.</p>
 <p>将会触发 Listener 中的函数 <code>onRankingSwitchStatus</code></p>
-<pre><code class="javascript">sdkbox.HMS.rankingRequestSwitchStatus();
+<pre><code class="javascript">sdkbox.PluginHMS.rankingRequestSwitchStatus();
 </code></pre>
 
 <p>将会触发 Listener 中的函数 <code>onRankingSetSwitchStatus</code></p>
@@ -920,55 +939,61 @@ sdkbox.HMS.iapPurchaseWithPrice(JSON.stringify(productInfo));
 // 0: allow open score in ranking
 // 1: not allow open score in ranking
 
-sdkbox.HMS.rankingSetSwitchStatus(int status);
+sdkbox.PluginHMS.rankingSetSwitchStatus(int status);
 </code></pre>
 
-<h4 id="_29">提交分数</h4>
+<h4 id="_30">提交分数</h4>
 <p>将会触发 Listener 中的函数 <code>onRankingSubmitScore</code></p>
-<pre><code class="javascript">sdkbox.HMS.rankingSubmitScore(rankingName, score, score_unit);
+<pre><code class="javascript">sdkbox.PluginHMS.rankingSubmitScore(rankingName, score, score_unit);
 </code></pre>
 
-<h4 id="_30">显示排行榜</h4>
+<h4 id="_31">显示排行榜</h4>
 <p>开发者自行显示</p>
 <p>将会触发 Listener 中的函数 <code>onRankingList</code></p>
 <pre><code class="javascript">bool realtime = true; // true, will request data from hms server; false, will use local cache data
-sdkbox.HMS.rankingRequestList(realtime, rankingName);
+sdkbox.PluginHMS.rankingRequestList(realtime, rankingName);
 </code></pre>
 
 <p>用华为默认列表显示
 (此方式必须保证玩家终端EMUI为9.0及以上版本，且必须安装10.3及以上版本的华为应用助手。)</p>
 <p>将会触发 Listener 中的函数 <code>onRankingShow</code></p>
 <pre><code class="javascript">int timeDimension = 2; // 0-&gt; day, 1-&gt; week, 2-&gt; all time
-sdkbox.HMS.rankingShow(timeDimension, rankingName);
+sdkbox.PluginHMS.rankingShow(timeDimension, rankingName);
 </code></pre>
 
-<h4 id="_31">取分数</h4>
+<h4 id="_32">取分数</h4>
 <p>当前玩家的分数</p>
 <p>将会触发 Listener 中的函数 <code>onRankingCurPlayerScore</code></p>
 <pre><code class="javascript">int timeDimension = 2; // 0-&gt; day, 1-&gt; week, 2-&gt; all time
-sdkbox.HMS.rankingRequestCurPlayerScore(rankingName, timeDimension);
+sdkbox.PluginHMS.rankingRequestCurPlayerScore(rankingName, timeDimension);
 </code></pre>
 
 <p>取以玩家分数为中心的分数列表</p>
 <p>将会触发 Listener 中的函数 <code>onRankingPlayerCenteredScores</code></p>
 <pre><code class="javascript">int timeDimension = 2; // 0-&gt; day, 1-&gt; week, 2-&gt; all time
-sdkbox.HMS.rankingRequestPlayerCenteredScores(rankingName, timeDimension, realtime);
+sdkbox.PluginHMS.rankingRequestPlayerCenteredScores(rankingName, timeDimension, realtime);
 </code></pre>
 
-<h3 id="_32">存档</h3>
+<h3 id="_33">存档</h3>
 <p>新增存档</p>
 <p>将会触发 Listener 中的函数 <code>onArchiveAdd</code></p>
-<pre><code class="javascript">sdkbox.HMS.archiveAdd(playedTime, progress, description, supportCache,
-                               bmBytes, bmBytesLen, bmBytesType,
-                               dataBytes, dataBytesLen);
+<pre><code class="javascript">const bmBytes; // Uint8Array, cover image data
+const dataBytes; // Uint8Array, archive binary data
+
+sdkbox.PluginHMS.archiveAdd(playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes);
 </code></pre>
 
 <p>更新存档</p>
 <p>将会触发 Listener 中的函数 <code>onArchiveUpdate</code></p>
-<pre><code class="javascript">sdkbox.HMS.archiveUpdate(archiveId,
+<pre><code class="javascript">const bmBytes; // Uint8Array, cover image data
+const dataBytes; // Uint8Array, archive binary data
+
+sdkbox.PluginHMS.archiveUpdate(archiveId,
                           playedTime, progress, description,
-                          bmBytes, bmBytesLen, bmBytesType,
-                          dataBytes, dataBytesLen);
+                          bmBytes, bmBytesType,
+                          dataBytes);
 </code></pre>
 
 <p>读存档</p>
@@ -978,14 +1003,73 @@ sdkbox.HMS.rankingRequestPlayerCenteredScores(rankingName, timeDimension, realti
 //1  -&gt; hms will resolved conflict by played time, 
 //2  -&gt; hms will resolved conflict by progress,
 //3  -&gt; hms will resolved conflict by last update time
-sdkbox.HMS.archiveLoad(archiveId, conflictPolicy);
+sdkbox.PluginHMS.archiveLoad(archiveId, conflictPolicy);
 </code></pre>
 
-<h3 id="_33">浮标</h3>
+<h3 id="_34">浮标</h3>
 <p>如果你的游戏将在中国发行，那必须打开游戏浮标</p>
-<pre><code class="javascript">sdkbox.HMS.buoyShow();
+<pre><code class="javascript">sdkbox.PluginHMS.buoyShow();
 //or
-sdkbox.HMS.buoyHide();
+sdkbox.PluginHMS.buoyHide();
+</code></pre>
+
+<h3 id="_35">广告</h3>
+<p>缓存广告</p>
+<pre><code class="javascript">sdkbox.PluginHMS.adCache(adName);
+</code></pre>
+
+<p>显示广告</p>
+<pre><code class="javascript">if (sdkbox.PluginHMS.adIsAvailable(adName)) {
+    sdkbox.PluginHMS.adShow(adName);
+}
+</code></pre>
+
+<p>隐藏广告</p>
+<pre><code class="javascript">sdkbox.PluginHMS.adHide(adName);
+</code></pre>
+
+<p>广告请求参数设置 (可选)</p>
+<pre><code class="javascript">/*
+  * 广告内容类型:
+  *   &quot;W&quot;-&gt;适合幼儿及以上年龄段观众的内容
+  *  &quot;PI&quot;-&gt;适合少儿及以上年龄段观众的内容
+  *   &quot;J&quot;-&gt;适合青少年及以上年龄段观众的内容
+  *   &quot;A&quot;-&gt;仅适合成年观众众的内容
+  *    &quot;&quot;-&gt;未明确广告分级
+  */
+sdkbox.PluginHMS.adSetAdContentClassification(&quot;A&quot;);
+
+/*
+  * 面向未达到法定承诺年龄用户的设置:
+  *  0-&gt;不按面向未达到法定承诺年龄用户的方式来处理广告请求
+  *  1-&gt;按面向未达到法定承诺年龄用户的方式来处理广告请求
+  * -1-&gt;不确定是否按面向未达到法定承诺年龄用户的方式来处理广告请求
+  */
+sdkbox.PluginHMS.adSetTagForUnderAgeOfPromise(0);
+
+/*
+* 面向儿童的设置:
+*  0-&gt;不根据 COPPA 的规定来处理广告请求
+*  1-&gt;根据 COPPA 的规定来处理广告请求
+* -1-&gt;不确定是否根据 COPPA 的规定来处理广告请求
+*/
+sdkbox.PluginHMS.adSetTagForChildProtection(0);
+
+/*
+* 是否只请求非个性化广告
+*  0-&gt;请求个性化广告和非个性化广告（默认）;
+*  1-&gt;只请求非个性化广告;
+*/
+sdkbox.PluginHMS.adSetNonPersonalizedAd(0);
+</code></pre>
+
+<p>奖励广告设置 (可选)</p>
+<p>设置的奖励数据必须要URLEncode, 同时长度不超过1024个字符</p>
+<pre><code class="javascript">// 奖励广告定制数据
+sdkbox.PluginHMS.adSetRewardData(&quot;cdata&quot;);
+
+// 奖励广告用户 id
+sdkbox.PluginHMS.adSetRewardUserId(&quot;uid666&quot;);
 </code></pre>
 
 <h3 id="hms_2">处理HMS事件</h3>
@@ -996,13 +1080,15 @@ sdkbox.HMS.buoyHide();
 <li>https://developer.huawei.com/consumer/cn/doc/development/HMS-References/hms-error-code</li>
 </ul>
 <p>这里单独列出常见的一些值的含义:</p>
-<p>7020: 本地cache中没有数据
-7022: 未实名或未成年人
-7024: 手机中没有安装 "华为应用市场"
-7218: 华为应用市场中的游戏服务未打开，或用户取消
-7204: 需要安装应用助手最新版
-7013: 未登录帐号 或 在调用 Archive 相关接口时报这个错，也可能是 sdkbox_config 中的 archive 未设置为 true</p>
-<pre><code class="javascript">sdkbox.HMS.setListener({
+<ul>
+<li>7020: 本地cache中没有数据</li>
+<li>7022: 未实名或未成年人</li>
+<li>7024: 手机中没有安装 "华为应用市场"</li>
+<li>7218: 华为应用市场中的游戏服务未打开，或用户取消</li>
+<li>7204: 需要安装应用助手最新版</li>
+<li>7013: 未登录帐号 或 在调用 Archive 相关接口时报这个错，也可能是 sdkbox_config 中的 archive 未设置为 true</li>
+</ul>
+<pre><code class="javascript">sdkbox.PluginHMS.setListener({
     // Account
     onLogin: function (code, msg) {
         // login event
@@ -1133,6 +1219,30 @@ sdkbox.HMS.buoyHide();
     onGameSummary(code, errorOrJson) {
     }
 
+    // Ad
+    onAdClose(code, errorOrJson) {
+    }
+
+    onAdFail(code, errorOrJson) {
+    }
+
+    onAdLeave(code, errorOrJson) {
+    }
+
+    onAdOpen(code, errorOrJson) {
+    }
+
+    onAdLoad(code, errorOrJson) {
+    }
+
+    onAdClick(code, errorOrJson) {
+    }
+
+    onAdImpression(code, errorOrJson) {
+    }
+
+    onAdReward(code, errorOrJson) {
+    }
 
 });
 </code></pre>
@@ -1314,19 +1424,15 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 <blockquote>
 <p>get detail max size</p>
 </blockquote>
-<pre><code class="javascript">sdkbox.PluginHMS.archiveAdd(playedTime,
-                             progress,
-                             description,
-                             supportCache,
-                             bmBytes,
-                             bmBytesLen,
-                             bmBytesType,
-                             dataBytes,
-                             dataBytesLen);
+<pre><code class="javascript">sdkbox.PluginHMS.archiveAdd(playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes)
 </code></pre>
 
 <blockquote>
-<p>add archive</p>
+<p>add archive
+bmBytes: Uint8Array, cover image data
+dataBytes: Uint8Array, archive data</p>
 </blockquote>
 <pre><code class="javascript">sdkbox.PluginHMS.archiveShow(title, allowAdd, allowDelete, pageSize);
 </code></pre>
@@ -1347,18 +1453,15 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 <p>request archive cover thumbnail</p>
 </blockquote>
 <pre><code class="javascript">sdkbox.PluginHMS.archiveUpdate(archiveId,
-                                playedTime,
-                                progress,
-                                description,
-                                bmBytes,
-                                bmBytesLen,
-                                bmBytesType,
-                                dataBytes,
-                                dataBytesLen);
+                               playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes)
 </code></pre>
 
 <blockquote>
-<p>update archive</p>
+<p>update archive
+bmBytes: Uint8Array, cover image data
+dataBytes: Uint8Array, archive data</p>
 </blockquote>
 <pre><code class="javascript">sdkbox.PluginHMS.archiveLoad(archiveId, conflictPolicy);
 </code></pre>
@@ -1390,6 +1493,36 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 <pre><code class="javascript">sdkbox.PluginHMS.buoyHide();
 </code></pre>
 
+<pre><code class="javascript">sdkbox.PluginHMS.adCache(name);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adShow(name);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adHide(name);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adIsAvailable(name);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adSetRewardData(custom_data);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adSetRewardUserId(user_id);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adSetAdContentClassification(adContentClassification);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adSetTagForUnderAgeOfPromise(tagForUnderAgeOfPromise);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adSetTagForChildProtection(tagForChildProtection);
+</code></pre>
+
+<pre><code class="javascript">sdkbox.PluginHMS.adSetNonPersonalizedAd(nonPersonalizedAd);
+</code></pre>
+
 <h3 id="listeners">Listeners</h3>
 <pre><code class="javascript">onLogin(code, errorOrJson);
 </code></pre>
@@ -1415,7 +1548,7 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 <pre><code class="javascript">onIAPPurchase(code, errorOrJson);
 </code></pre>
 
-<pre><code class="javascript">onIAPPConsume(code, errorOrJson);
+<pre><code class="javascript">onIAPConsume(code, errorOrJson);
 </code></pre>
 
 <pre><code class="javascript">onIAPOwnedPurchases(code, errorOrJson);
@@ -1437,9 +1570,6 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 </code></pre>
 
 <pre><code class="javascript">onAchievementMakeSteps(code, errorOrJson);
-</code></pre>
-
-<pre><code class="javascript">onAchievementReach(code, errorOrJson);
 </code></pre>
 
 <pre><code class="javascript">onEventList(code, errorOrJson);
@@ -1565,7 +1695,31 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 <blockquote>
 <p>callback for gameSummaryRequest</p>
 </blockquote>
-<h2 id="_34">手动集成</h2>
+<pre><code class="javascript">onAdClose(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdFail(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdLeave(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdOpen(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdLoad(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdClick(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdImpression(code, errorOrJson);
+</code></pre>
+
+<pre><code class="javascript">onAdReward(code, errorOrJson);
+</code></pre>
+
+<h2 id="_36">手动集成</h2>
 <p>如果 <em>SDKBOX 安装器</em> 安装插件失败了，那么需要手动集成插件.如果安装器安装插件成功了,那么不需要，也没必要,按文档再手动集成一次.</p>
 <p>下面列出的的步骤一般很少用到.如果你按下面的步骤完成了集成，请在完成集成后，再按步骤检查一次.</p>
 <h2 id="ios_1">iOS 平台手动集成</h2>
@@ -1581,8 +1735,8 @@ status: 0-&gt;player allow submit score, 1-&gt;player not allow submit score</p>
 </blockquote>
 <p>把 <code>plugin/jsbindings</code> 文件夹中所有的头文件和源文件都拷贝到你的工程的 <code>Classes</code> 文件夹中.</p>
 <p>把刚刚拷贝的文件拖动到 Xcode 中或使用 <strong>File -&gt; Add files to...</strong> 来添加.</p>
-<h2 id="android_1">Android 平台手动集成</h2>
-<h3 id="_35">拷贝文件</h3>
+<h2 id="android_2">Android 平台手动集成</h2>
+<h3 id="_37">拷贝文件</h3>
 <p>从插件安装包中的 <code>plugin/android/libs</code> 目录拷贝下列 <strong>jar</strong> 文件到您的工程的 <strong>proj.android/libs</strong> 目录。</p>
 <blockquote>
 <p>PluginHMS.jar</p>
@@ -1808,7 +1962,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-06-19 04:17:28, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-07-07 04:30:12, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
