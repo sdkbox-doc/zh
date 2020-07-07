@@ -4,7 +4,7 @@
 #include "PluginHMS/PluginHMS.h"
 AppDelegate::applicationDidFinishLaunching()
 {
-     sdkbox::HMS::init();
+     sdkbox::PluginHMS::init();
 }
 ```
 
@@ -15,13 +15,13 @@ HMS 提供了三种登录方式:
 * Signing In with HUAWEI ID(ID Token)
 
 ```cpp
-sdkbox::HMS::login(1);
+sdkbox::PluginHMS::login(1);
 ```
 
 * Signing In with HUAWEI ID(Authorization Code)
 
 ```cpp
-sdkbox::HMS::login(2);
+sdkbox::PluginHMS::login(2);
 ```
 
 * Silently Signing In With HUAWEI ID
@@ -29,7 +29,7 @@ sdkbox::HMS::login(2);
 静默登录只能在上一次使用前两种方式已经登录成功的情况下，才能在静态登录下成功
 
 ```cpp
-sdkbox::HMS::login(0);
+sdkbox::PluginHMS::login(0);
 ```
 
 > 以上三种登录方式, 不管成功还是失败, 最终都会触发 `onLogin` 事件.
@@ -39,7 +39,7 @@ HMS 帐号相关的 [文档](https://developer.huawei.com/consumer/en/doc/develo
 ### 登出
 
 ```cpp
-sdkbox::HMS::logout();
+sdkbox::PluginHMS::logout();
 ```
 
 ### 请求托管在 HMS 的商品
@@ -47,14 +47,14 @@ sdkbox::HMS::logout();
 托管商品是指在 HMS 管理后台配置的商品.
 
 ```cpp
-sdkbox::HMS::iapRequestProducts();
+sdkbox::PluginHMS::iapRequestProducts();
 ```
 这个方法会触发 Listener 中的 `onIAPProducts` 方法
 
 ### 购买托管商品
 
 ```cpp
-sdkbox::HMS::iapPurchase("coin");
+sdkbox::PluginHMS::iapPurchase("coin");
 ```
 这个方法会触发 Listener 中的 `onIAPPurchase` 方法
 
@@ -77,7 +77,7 @@ const std::string productInfo = R"(
   "developerPayload": "payload1"
 }
 )";
-sdkbox::HMS::iapPurchaseWithPrice(productInfo);
+sdkbox::PluginHMS::iapPurchaseWithPrice(productInfo);
 ```
 这个方法会触发 Listener 中的 `onIAPPurchase` 方法
 
@@ -86,7 +86,7 @@ sdkbox::HMS::iapPurchaseWithPrice(productInfo);
 请求当前拥有的商品的购买记录, 包括 不可消费，订阅商品 和 非消费的可消费商品.
 
 ```cpp
-sdkbox::HMS::iapRequestOwnedPurchases();
+sdkbox::PluginHMS::iapRequestOwnedPurchases();
 ```
 这个方法会触发 Listener 中的 `onIAPOwnedPurchases` 方法
 
@@ -95,7 +95,7 @@ sdkbox::HMS::iapRequestOwnedPurchases();
 注意: 这里传的是 purchaseToken , 非不是商品名字或id
 
 ```cpp
-sdkbox::HMS::iapConsume(purchaseToken);
+sdkbox::PluginHMS::iapConsume(purchaseToken);
 ```
 这个方法会触发 Listener 中的 `onIAPPConsume` 方法
 
@@ -104,7 +104,7 @@ sdkbox::HMS::iapConsume(purchaseToken);
 请求用户所有的消费记录
 
 ```cpp
-sdkbox::HMS::iapRequestOwnedPurchaseRecords(purchaseToken);
+sdkbox::PluginHMS::iapRequestOwnedPurchaseRecords(purchaseToken);
 ```
 这个方法会触发 Listener 中的 `onIAPOwnedPurchaseRecords` 方法
 
@@ -115,7 +115,7 @@ sdkbox::HMS::iapRequestOwnedPurchaseRecords(purchaseToken);
 
 将会触发 Listener 中的函数 `onPlayerInfo`
 ```cpp
-sdkbox::HMS::playerRequestInfo();
+sdkbox::PluginHMS::playerRequestInfo();
 ```
 
 #### 获取玩家额外信息
@@ -125,7 +125,7 @@ sdkbox::HMS::playerRequestInfo();
 将会触发 Listener 中的函数 `onPlayerExtraInfo`
 
 ```cpp
-sdkbox::HMS::playerRequestInfo();
+sdkbox::PluginHMS::playerRequestInfo();
 ```
 
 #### 提交游戏开始
@@ -135,7 +135,7 @@ sdkbox::HMS::playerRequestInfo();
 将会触发 Listener 中的函数 `onPlayerGameBegin`
 
 ```cpp
-sdkbox::HMS::playerSubmitGameBegin();
+sdkbox::PluginHMS::playerSubmitGameBegin();
 ```
 
 #### 提交游戏结束
@@ -145,7 +145,7 @@ sdkbox::HMS::playerSubmitGameBegin();
 将会触发 Listener 中的函数 `onPlayerGameEnd`
 
 ```cpp
-sdkbox::HMS::playerSubmitGameEnd();
+sdkbox::PluginHMS::playerSubmitGameEnd();
 ```
 
 ### 成就
@@ -157,7 +157,7 @@ sdkbox::HMS::playerSubmitGameEnd();
 将会触发 Listener 中的函数 `onAchievementList`
 
 ```cpp
-sdkbox::HMS::achievementRequestList();
+sdkbox::PluginHMS::achievementRequestList();
 ```
 
 #### 显示成就
@@ -167,7 +167,7 @@ sdkbox::HMS::achievementRequestList();
 将会触发 Listener 中的函数 `onAchievementShow`
 
 ```cpp
-sdkbox::HMS::achievementShow();
+sdkbox::PluginHMS::achievementShow();
 ```
 
 #### 成就可见
@@ -175,7 +175,7 @@ sdkbox::HMS::achievementShow();
 将会触发 Listener 中的函数 `onAchievementVisualize`
 
 ```cpp
-sdkbox::HMS::achievementVisualize();
+sdkbox::PluginHMS::achievementVisualize();
 ```
 
 #### 增长成就
@@ -183,7 +183,7 @@ sdkbox::HMS::achievementVisualize();
 将会触发 Listener 中的函数 `onAchievementGrow`
 
 ```cpp
-sdkbox::HMS::achievementGrow();
+sdkbox::PluginHMS::achievementGrow();
 ```
 
 #### 设置成就步骤
@@ -191,13 +191,13 @@ sdkbox::HMS::achievementGrow();
 将会触发 Listener 中的函数 `onAchievementMakeSteps`
 
 ```cpp
-sdkbox::HMS::achievementMakeSteps();
+sdkbox::PluginHMS::achievementMakeSteps();
 ```
 
 #### 解锁成就
 
 ```cpp
-sdkbox::HMS::achievementReach();
+sdkbox::PluginHMS::achievementReach();
 ```
 
 ### 事件
@@ -205,14 +205,14 @@ sdkbox::HMS::achievementReach();
 #### 增长事件
 
 ```cpp
-sdkbox::HMS::eventGrow(event, amount);
+sdkbox::PluginHMS::eventGrow(event, amount);
 ```
 
 #### eventRequestList
 
 将会触发 Listener 中的函数 `onEventList`
 ```cpp
-sdkbox::HMS::eventRequestList();
+sdkbox::PluginHMS::eventRequestList();
 ```
 
 ### 排行榜
@@ -223,7 +223,7 @@ sdkbox::HMS::eventRequestList();
 
 将会触发 Listener 中的函数 `onRankingSwitchStatus`
 ```cpp
-sdkbox::HMS::rankingRequestSwitchStatus();
+sdkbox::PluginHMS::rankingRequestSwitchStatus();
 ```
 
 将会触发 Listener 中的函数 `onRankingSetSwitchStatus`
@@ -232,7 +232,7 @@ int status = 0;
 // 0: allow open score in ranking
 // 1: not allow open score in ranking
 
-sdkbox::HMS::rankingSetSwitchStatus(int status);
+sdkbox::PluginHMS::rankingSetSwitchStatus(int status);
 ```
 
 #### 提交分数
@@ -240,7 +240,7 @@ sdkbox::HMS::rankingSetSwitchStatus(int status);
 将会触发 Listener 中的函数 `onRankingSubmitScore`
 
 ```cpp
-sdkbox::HMS::rankingSubmitScore(rankingName, score, score_unit);
+sdkbox::PluginHMS::rankingSubmitScore(rankingName, score, score_unit);
 ```
 
 #### 显示排行榜
@@ -251,7 +251,7 @@ sdkbox::HMS::rankingSubmitScore(rankingName, score, score_unit);
 
 ```cpp
 bool realtime = true; // true, will request data from hms server; false, will use local cache data
-sdkbox::HMS::rankingRequestList(realtime, rankingName);
+sdkbox::PluginHMS::rankingRequestList(realtime, rankingName);
 ```
 
 用华为默认列表显示
@@ -261,7 +261,7 @@ sdkbox::HMS::rankingRequestList(realtime, rankingName);
 
 ```cpp
 int timeDimension = 2; // 0-> day, 1-> week, 2-> all time
-sdkbox::HMS::rankingShow(timeDimension, rankingName);
+sdkbox::PluginHMS::rankingShow(timeDimension, rankingName);
 ```
 
 #### 取分数
@@ -272,7 +272,7 @@ sdkbox::HMS::rankingShow(timeDimension, rankingName);
 
 ```cpp
 int timeDimension = 2; // 0-> day, 1-> week, 2-> all time
-sdkbox::HMS::rankingRequestCurPlayerScore(rankingName, timeDimension);
+sdkbox::PluginHMS::rankingRequestCurPlayerScore(rankingName, timeDimension);
 ```
 
 取以玩家分数为中心的分数列表
@@ -281,7 +281,7 @@ sdkbox::HMS::rankingRequestCurPlayerScore(rankingName, timeDimension);
 
 ```cpp
 int timeDimension = 2; // 0-> day, 1-> week, 2-> all time
-sdkbox::HMS::rankingRequestPlayerCenteredScores(rankingName, timeDimension, realtime);
+sdkbox::PluginHMS::rankingRequestPlayerCenteredScores(rankingName, timeDimension, realtime);
 ```
 
 ### 存档
@@ -291,7 +291,7 @@ sdkbox::HMS::rankingRequestPlayerCenteredScores(rankingName, timeDimension, real
 将会触发 Listener 中的函数 `onArchiveAdd`
 
 ```cpp
-sdkbox::HMS::archiveAdd(playedTime, progress, description, supportCache,
+sdkbox::PluginHMS::archiveAdd(playedTime, progress, description, supportCache,
                                bmBytes, bmBytesLen, bmBytesType,
                                dataBytes, dataBytesLen);
 ```
@@ -301,7 +301,7 @@ sdkbox::HMS::archiveAdd(playedTime, progress, description, supportCache,
 将会触发 Listener 中的函数 `onArchiveUpdate`
 
 ```cpp
-sdkbox::HMS::archiveUpdate(archiveId,
+sdkbox::PluginHMS::archiveUpdate(archiveId,
                           playedTime, progress, description,
                           bmBytes, bmBytesLen, bmBytesType,
                           dataBytes, dataBytesLen);
@@ -317,7 +317,7 @@ int conflictPolicy = 3;
 //1  -> hms will resolved conflict by played time, 
 //2  -> hms will resolved conflict by progress,
 //3  -> hms will resolved conflict by last update time
-sdkbox::HMS::archiveLoad(archiveId, conflictPolicy);
+sdkbox::PluginHMS::archiveLoad(archiveId, conflictPolicy);
 ```
 
 ### 浮标
@@ -325,11 +325,81 @@ sdkbox::HMS::archiveLoad(archiveId, conflictPolicy);
 如果你的游戏将在中国发行，那必须打开游戏浮标
 
 ```cpp
-sdkbox::HMS::buoyShow();
+sdkbox::PluginHMS::buoyShow();
 //or
-sdkbox::HMS::buoyHide();
+sdkbox::PluginHMS::buoyHide();
 ```
 
+### 广告
+
+缓存广告
+
+```cpp
+sdkbox::PluginHMS::adCache(adName);
+```
+
+显示广告
+
+```cpp
+if (sdkbox::PluginHMS::adIsAvailable(adName)) {
+    sdkbox::PluginHMS::adShow(adName);
+}
+```
+
+隐藏广告
+
+```cpp
+sdkbox::PluginHMS::adHide(adName);
+```
+
+广告请求参数设置 (可选)
+
+```cpp
+/*
+  * 广告内容类型:
+  *   "W"->适合幼儿及以上年龄段观众的内容
+  *  "PI"->适合少儿及以上年龄段观众的内容
+  *   "J"->适合青少年及以上年龄段观众的内容
+  *   "A"->仅适合成年观众众的内容
+  *    ""->未明确广告分级
+  */
+sdkbox::PluginHMS::adSetAdContentClassification("A");
+
+/*
+  * 面向未达到法定承诺年龄用户的设置:
+  *  0->不按面向未达到法定承诺年龄用户的方式来处理广告请求
+  *  1->按面向未达到法定承诺年龄用户的方式来处理广告请求
+  * -1->不确定是否按面向未达到法定承诺年龄用户的方式来处理广告请求
+  */
+sdkbox::PluginHMS::adSetTagForUnderAgeOfPromise(0);
+
+/*
+* 面向儿童的设置:
+*  0->不根据 COPPA 的规定来处理广告请求
+*  1->根据 COPPA 的规定来处理广告请求
+* -1->不确定是否根据 COPPA 的规定来处理广告请求
+*/
+sdkbox::PluginHMS::adSetTagForChildProtection(0);
+
+/*
+* 是否只请求非个性化广告
+*  0->请求个性化广告和非个性化广告（默认）;
+*  1->只请求非个性化广告;
+*/
+sdkbox::PluginHMS::adSetNonPersonalizedAd(0);
+```
+
+奖励广告设置 (可选)
+
+设置的奖励数据必须要URLEncode, 同时长度不超过1024个字符
+
+```cpp
+// 奖励广告定制数据
+sdkbox::PluginHMS::adSetRewardData("cdata");
+
+// 奖励广告用户 id
+sdkbox::PluginHMS::adSetRewardUserId("uid666");
+```
 
 ### 处理HMS事件
 允许您接收 `HMS` 的事件.
@@ -341,18 +411,18 @@ sdkbox::HMS::buoyHide();
 
 这里单独列出常见的一些值的含义:
 
-7020: 本地cache中没有数据
-7022: 未实名或未成年人
-7024: 手机中没有安装 "华为应用市场"
-7218: 华为应用市场中的游戏服务未打开，或用户取消
-7204: 需要安装应用助手最新版
-7013: 未登录帐号 或 在调用 Archive 相关接口时报这个错，也可能是 sdkbox_config 中的 archive 未设置为 true
+- 7020: 本地cache中没有数据
+- 7022: 未实名或未成年人
+- 7024: 手机中没有安装 "华为应用市场"
+- 7218: 华为应用市场中的游戏服务未打开，或用户取消
+- 7204: 需要安装应用助手最新版
+- 7013: 未登录帐号 或 在调用 Archive 相关接口时报这个错，也可能是 sdkbox_config 中的 archive 未设置为 true
 
 
-* 继承这个类 `sdkbox::HMSListener`:
+* 继承这个类 `sdkbox::PluginHMSListener`:
 ```cpp
 #include "PluginHMS/PluginHMS.h"
-class MyClass : public sdkbox::HMSListener
+class MyClass : public sdkbox::PluginHMSListener
 {
 private:
   // Account
@@ -409,10 +479,20 @@ private:
   virtual void onGamePlayerStats(int code, const std::string& errorOrJson) override;
   virtual void onGameSummary(int code, const std::string& errorOrJson) override;
 
+  // Ad
+  virtual void onAdClose(int code, const std::string& errorOrJson) override;
+  virtual void onAdFail(int code, const std::string& errorOrJson) override;
+  virtual void onAdLeave(int code, const std::string& errorOrJson) override;
+  virtual void onAdOpen(int code, const std::string& errorOrJson) override;
+  virtual void onAdLoad(int code, const std::string& errorOrJson) override;
+  virtual void onAdClick(int code, const std::string& errorOrJson) override;
+  virtual void onAdImpression(int code, const std::string& errorOrJson) override;
+  virtual void onAdReward(int code, const std::string& errorOrJson) override;
+
 }
 ```
 
 * 创建一个监听类来接收回调事件:
 ```cpp
-sdkbox::HMS::setListener(listener);
+sdkbox::PluginHMS::setListener(listener);
 ```

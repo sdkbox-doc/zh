@@ -171,17 +171,13 @@ sdkbox.PluginHMS.archiveRequestLimitDetailsSize();
 > get detail max size
 
 ```javascript
-sdkbox.PluginHMS.archiveAdd(playedTime,
-                             progress,
-                             description,
-                             supportCache,
-                             bmBytes,
-                             bmBytesLen,
-                             bmBytesType,
-                             dataBytes,
-                             dataBytesLen);
+sdkbox.PluginHMS.archiveAdd(playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes)
 ```
 > add archive
+> bmBytes: Uint8Array, cover image data
+> dataBytes: Uint8Array, archive data
 
 ```javascript
 sdkbox.PluginHMS.archiveShow(title, allowAdd, allowDelete, pageSize);
@@ -200,16 +196,13 @@ sdkbox.PluginHMS.archiveRequestThumbnail(archiveId);
 
 ```javascript
 sdkbox.PluginHMS.archiveUpdate(archiveId,
-                                playedTime,
-                                progress,
-                                description,
-                                bmBytes,
-                                bmBytesLen,
-                                bmBytesType,
-                                dataBytes,
-                                dataBytesLen);
+                               playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes)
 ```
 > update archive
+> bmBytes: Uint8Array, cover image data
+> dataBytes: Uint8Array, archive data
 
 ```javascript
 sdkbox.PluginHMS.archiveLoad(archiveId, conflictPolicy);
@@ -237,6 +230,46 @@ sdkbox.PluginHMS.buoyShow();
 
 ```javascript
 sdkbox.PluginHMS.buoyHide();
+```
+
+```javascript
+sdkbox.PluginHMS.adCache(name);
+```
+
+```javascript
+sdkbox.PluginHMS.adShow(name);
+```
+
+```javascript
+sdkbox.PluginHMS.adHide(name);
+```
+
+```javascript
+sdkbox.PluginHMS.adIsAvailable(name);
+```
+
+```javascript
+sdkbox.PluginHMS.adSetRewardData(custom_data);
+```
+
+```javascript
+sdkbox.PluginHMS.adSetRewardUserId(user_id);
+```
+
+```javascript
+sdkbox.PluginHMS.adSetAdContentClassification(adContentClassification);
+```
+
+```javascript
+sdkbox.PluginHMS.adSetTagForUnderAgeOfPromise(tagForUnderAgeOfPromise);
+```
+
+```javascript
+sdkbox.PluginHMS.adSetTagForChildProtection(tagForChildProtection);
+```
+
+```javascript
+sdkbox.PluginHMS.adSetNonPersonalizedAd(nonPersonalizedAd);
 ```
 
 
@@ -274,7 +307,7 @@ onIAPPurchase(code, errorOrJson);
 ```
 
 ```javascript
-onIAPPConsume(code, errorOrJson);
+onIAPConsume(code, errorOrJson);
 ```
 
 ```javascript
@@ -303,10 +336,6 @@ onAchievementGrow(code, errorOrJson);
 
 ```javascript
 onAchievementMakeSteps(code, errorOrJson);
-```
-
-```javascript
-onAchievementReach(code, errorOrJson);
 ```
 
 ```javascript
@@ -415,5 +444,37 @@ onGamePlayerStats(code, errorOrJson);
 onGameSummary(code, errorOrJson);
 ```
 > callback for gameSummaryRequest
+
+```javascript
+onAdClose(code, errorOrJson);
+```
+
+```javascript
+onAdFail(code, errorOrJson);
+```
+
+```javascript
+onAdLeave(code, errorOrJson);
+```
+
+```javascript
+onAdOpen(code, errorOrJson);
+```
+
+```javascript
+onAdLoad(code, errorOrJson);
+```
+
+```javascript
+onAdClick(code, errorOrJson);
+```
+
+```javascript
+onAdImpression(code, errorOrJson);
+```
+
+```javascript
+onAdReward(code, errorOrJson);
+```
 
 

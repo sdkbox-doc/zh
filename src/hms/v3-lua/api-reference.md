@@ -171,17 +171,13 @@ sdkbox.PluginHMS:archiveRequestLimitDetailsSize()
 > get detail max size
 
 ```lua
-sdkbox.PluginHMS:archiveAdd(playedTime,
-                             progress,
-                             description,
-                             supportCache,
-                             bmBytes,
-                             bmBytesLen,
-                             bmBytesType,
-                             dataBytes,
-                             dataBytesLen)
+sdkbox.PluginHMS:archiveAdd(playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes)
 ```
 > add archive
+> bmBytes: cover image data
+> dataBytes: archive data
 
 ```lua
 sdkbox.PluginHMS:archiveShow(title, allowAdd, allowDelete, pageSize)
@@ -200,16 +196,13 @@ sdkbox.PluginHMS:archiveRequestThumbnail(archiveId)
 
 ```lua
 sdkbox.PluginHMS:archiveUpdate(archiveId,
-                                playedTime,
-                                progress,
-                                description,
-                                bmBytes,
-                                bmBytesLen,
-                                bmBytesType,
-                                dataBytes,
-                                dataBytesLen)
+                               playedTime, progress, description, supportCache,
+                               bmBytes, bmBytesType,
+                               dataBytes)
 ```
 > update archive
+> bmBytes: cover image data
+> dataBytes: archive data
 
 ```lua
 sdkbox.PluginHMS:archiveLoad(archiveId, conflictPolicy)
@@ -237,6 +230,46 @@ sdkbox.PluginHMS:buoyShow()
 
 ```lua
 sdkbox.PluginHMS:buoyHide()
+```
+
+```lua
+sdkbox.PluginHMS:adCache(name)
+```
+
+```lua
+sdkbox.PluginHMS:adShow(name)
+```
+
+```lua
+sdkbox.PluginHMS:adHide(name)
+```
+
+```lua
+sdkbox.PluginHMS:adIsAvailable(name)
+```
+
+```lua
+sdkbox.PluginHMS:adSetRewardData(custom_data)
+```
+
+```lua
+sdkbox.PluginHMS:adSetRewardUserId(user_id)
+```
+
+```lua
+sdkbox.PluginHMS:adSetAdContentClassification(adContentClassification)
+```
+
+```lua
+sdkbox.PluginHMS:adSetTagForUnderAgeOfPromise(tagForUnderAgeOfPromise)
+```
+
+```lua
+sdkbox.PluginHMS:adSetTagForChildProtection(tagForChildProtection)
+```
+
+```lua
+sdkbox.PluginHMS:adSetNonPersonalizedAd(nonPersonalizedAd)
 ```
 
 
@@ -274,7 +307,7 @@ onIAPPurchase(code, errorOrJson)
 ```
 
 ```lua
-onIAPPConsume(code, errorOrJson)
+onIAPConsume(code, errorOrJson)
 ```
 
 ```lua
@@ -303,10 +336,6 @@ onAchievementGrow(code, errorOrJson)
 
 ```lua
 onAchievementMakeSteps(code, errorOrJson)
-```
-
-```lua
-onAchievementReach(code, errorOrJson)
 ```
 
 ```lua
@@ -415,5 +444,37 @@ onGamePlayerStats(code, errorOrJson)
 onGameSummary(code, errorOrJson)
 ```
 > callback for gameSummaryRequest
+
+```lua
+onAdClose(code, errorOrJson)
+```
+
+```lua
+onAdFail(code, errorOrJson)
+```
+
+```lua
+onAdLeave(code, errorOrJson)
+```
+
+```lua
+onAdOpen(code, errorOrJson)
+```
+
+```lua
+onAdLoad(code, errorOrJson)
+```
+
+```lua
+onAdClick(code, errorOrJson)
+```
+
+```lua
+onAdImpression(code, errorOrJson)
+```
+
+```lua
+onAdReward(code, errorOrJson)
+```
 
 
