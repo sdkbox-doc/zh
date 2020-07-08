@@ -16,7 +16,7 @@ sdkbox import hms
 ### Android步骤
 
 你应该在 `Application::onCreate` 中添加这一行代码 `com.sdkbox.plugin.PluginHMS.ApplicationInit(this);` .
-如下是一个修改的样例:
+如下是一个修改的样例 (如果你的工程没有 Application 类, 那么请创建一个):
 
 ```java
 public class YourApplication extends Application {
