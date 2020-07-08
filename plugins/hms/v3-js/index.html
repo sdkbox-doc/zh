@@ -683,7 +683,7 @@
 <h2 id="_5">额外步骤</h2>
 <h3 id="android">Android步骤</h3>
 <p>你应该在 <code>Application::onCreate</code> 中添加这一行代码 <code>com.sdkbox.plugin.PluginHMS.ApplicationInit(this);</code> .
-如下是一个修改的样例:</p>
+如下是一个修改的样例 (如果你的工程没有 Application 类, 那么请创建一个):</p>
 <pre><code class="java">public class YourApplication extends Application {
 
     @Override
@@ -1962,7 +1962,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-07-07 04:30:12, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-07-08 08:49:24, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
