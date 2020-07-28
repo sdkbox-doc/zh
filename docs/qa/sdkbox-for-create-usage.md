@@ -11,11 +11,12 @@
 
 ### 当前环境
 
-* `CocosCreator` Ver.1.4.1 [安装](http://www.cocos.com/creator)
-* `SDKBox Installer` 1.0.1.18 [安装](http://docs.sdkbox.com/en/installer/)
+* `CocosCreator` Ver.2.4.1 [安装](http://www.cocos.com/creator)
+* `SDKBox Installer` 1.4.0.0 [安装](http://docs.sdkbox.com/en/installer/)
 
 __PS__: 第一次运行, 如果你本机没有 `SDKBox Installer`, SDKBox For Creator 会自动帮你安装.
 
+<!-- 
 ### 安装 SDKBox For Creator
 
 * 在 Creator 的菜单中 `插件` -> `插件商店` 打开商店
@@ -34,14 +35,20 @@ __PS__: 第一次运行, 如果你本机没有 `SDKBox Installer`, SDKBox For Cr
 * 安装成功后, 如果没有在菜单中看到 SDKBox 项, 重启 Creator 试试
 
 ![](../imgs/ccc_tutorial_sdkbox_menu.png)
+-->
 
-### 在 Creator Ver.1.4.0 以下版本安装
+### 在 Creator 上手动安装 SDKBox
 
-如果你使用的是 CocosCreator Ver.1.4.0 以下版本, 同时又想使用 SDKBox For Creator 这个插件, 可以手动来集成:
-* 在 [Cocos Store](http://store.cocos.com/stuff/show/178885.html) 下载 SDKBox For Creator
-* 解压, 并把它放在你工程中的 `packages` 目录下, 要全局有效的话，就放在 `~/.CocosCreator/packages` (Windows 用户为 `C:\Users\${你的用户名}\.CocosCreator\packages`) 目录下
+如果你使用的是 Creator 1.4.0- 或 Creator 2.4.1+ 版本, 那么你可能需要手动来集成 SDKBox.
 
-* 目录结构像这样:
+* 通过这个[链接](http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.0.zip)下载 SDKBox For Creator 插件包
+* 安装 SDKBox For Creator
+    - 全局安装: 将上一步中的插件包解压到 `~/.CocosCreator/packages` (Windows 用户为 `C:\Users\${你的用户名}\.CocosCreator\packages`) 目录下
+    - 项目安装: 将上一步中的插件包解压到 `${你的项目地址}/packages` 目录
+
+* 如果扩展菜单中没有出现 `SDKBox` 项的话, 也许需要重启 Creator
+
+* packages 目录结构应该类似以下:
 ```
 packages
 |--sdkbox
@@ -50,7 +57,6 @@ packages
     |--package.json
 ```
 
-* 如果菜单中没有出现 `SDKBox` 项的话, 也许需要重启 Creator
 
 ### 使用 SDKBox For Creator
 
