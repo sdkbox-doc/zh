@@ -602,9 +602,8 @@
         <li class="main active"><a href="#cocos-creator-sdkbox-for-creator">在 Cocos Creator 工程上使用 SDKBox For Creator 插件</a></li>
             <li><a href="#_1">介绍</a></li>
             <li><a href="#_2">当前环境</a></li>
-            <li><a href="#sdkbox-for-creator">安装 SDKBox For Creator</a></li>
-            <li><a href="#creator-ver140">在 Creator Ver.1.4.0 以下版本安装</a></li>
-            <li><a href="#sdkbox-for-creator_1">使用 SDKBox For Creator</a></li>
+            <li><a href="#creator-sdkbox">在 Creator 上手动安装 SDKBox</a></li>
+            <li><a href="#sdkbox-for-creator">使用 SDKBox For Creator</a></li>
         <li class="main "><a href="#api">插件 API</a></li>
     </ul>
 </div></div>
@@ -619,34 +618,48 @@
 <p><code>SDKBox For Creator</code>是一个运行在 Creator 上的 SDKBox GUI 插件, 它使用户可以图形化集成, 更新 SDKBox 插件.</p>
 <h3 id="_2">当前环境</h3>
 <ul>
-<li><code>CocosCreator</code> Ver.1.4.1 <a href="http://www.cocos.com/creator">安装</a></li>
-<li><code>SDKBox Installer</code> 1.0.1.18 <a href="http://docs.sdkbox.com/en/installer/">安装</a></li>
+<li><code>CocosCreator</code> Ver.2.4.1 <a href="http://www.cocos.com/creator">安装</a></li>
+<li><code>SDKBox Installer</code> 1.4.0.0 <a href="http://docs.sdkbox.com/en/installer/">安装</a></li>
 </ul>
 <p><strong>PS</strong>: 第一次运行, 如果你本机没有 <code>SDKBox Installer</code>, SDKBox For Creator 会自动帮你安装.</p>
-<h3 id="sdkbox-for-creator">安装 SDKBox For Creator</h3>
+<!-- 
+### 安装 SDKBox For Creator
+
+* 在 Creator 的菜单中 `插件` -> `插件商店` 打开商店
+* 搜索 `sdkbox`
+
+![](../imgs/for_creator_store_search.png)
+
+* 安装, 这里选择全局安装
+
+![](../imgs/for_creator_install_query.png)
+
+* 笔者目前这个版本, Creator 并没有给出安装成功的提示, 只能从 console 中看 log
+
+![](../imgs/for_creator_install_log.png)
+
+* 安装成功后, 如果没有在菜单中看到 SDKBox 项, 重启 Creator 试试
+
+![](../imgs/ccc_tutorial_sdkbox_menu.png)
+-->
+
+<h3 id="creator-sdkbox">在 Creator 上手动安装 SDKBox</h3>
+<p>如果你使用的是 Creator 1.4.0- 或 Creator 2.4.1+ 版本, 那么你可能需要手动来集成 SDKBox.</p>
 <ul>
-<li>在 Creator 的菜单中 <code>插件</code> -&gt; <code>插件商店</code> 打开商店</li>
-<li>搜索 <code>sdkbox</code></li>
+<li>通过这个<a href="http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.0.zip">链接</a>下载 SDKBox For Creator 插件包</li>
+<li>
+<p>安装 SDKBox For Creator</p>
+<ul>
+<li>全局安装: 将上一步中的插件包解压到 <code>~/.CocosCreator/packages</code> (Windows 用户为 <code>C:\Users\${你的用户名}\.CocosCreator\packages</code>) 目录下</li>
+<li>项目安装: 将上一步中的插件包解压到 <code>${你的项目地址}/packages</code> 目录</li>
 </ul>
-<p><img alt="" src="../../imgs/for_creator_store_search.png" /></p>
-<ul>
-<li>安装, 这里选择全局安装</li>
-</ul>
-<p><img alt="" src="../../imgs/for_creator_install_query.png" /></p>
-<ul>
-<li>笔者目前这个版本, Creator 并没有给出安装成功的提示, 只能从 console 中看 log</li>
-</ul>
-<p><img alt="" src="../../imgs/for_creator_install_log.png" /></p>
-<ul>
-<li>安装成功后, 如果没有在菜单中看到 SDKBox 项, 重启 Creator 试试</li>
-</ul>
-<p><img alt="" src="../../imgs/ccc_tutorial_sdkbox_menu.png" /></p>
-<h3 id="creator-ver140">在 Creator Ver.1.4.0 以下版本安装</h3>
-<p>如果你使用的是 CocosCreator Ver.1.4.0 以下版本, 同时又想使用 SDKBox For Creator 这个插件, 可以手动来集成:
-* 在 <a href="http://store.cocos.com/stuff/show/178885.html">Cocos Store</a> 下载 SDKBox For Creator
-* 解压, 并把它放在你工程中的 <code>packages</code> 目录下, 要全局有效的话，就放在 <code>~/.CocosCreator/packages</code> (Windows 用户为 <code>C:\Users\${你的用户名}\.CocosCreator\packages</code>) 目录下</p>
-<ul>
-<li>目录结构像这样:</li>
+</li>
+<li>
+<p>如果扩展菜单中没有出现 <code>SDKBox</code> 项的话, 也许需要重启 Creator</p>
+</li>
+<li>
+<p>packages 目录结构应该类似以下:</p>
+</li>
 </ul>
 <pre><code>packages
 |--sdkbox
@@ -655,10 +668,7 @@
     |--package.json
 </code></pre>
 
-<ul>
-<li>如果菜单中没有出现 <code>SDKBox</code> 项的话, 也许需要重启 Creator</li>
-</ul>
-<h3 id="sdkbox-for-creator_1">使用 SDKBox For Creator</h3>
+<h3 id="sdkbox-for-creator">使用 SDKBox For Creator</h3>
 <ul>
 <li>在菜单栏中 <code>SDKBox</code> -&gt; <code>Launch</code></li>
 <li>如果你的工程还从来没有构建过，那么你会看到如下界面</li>
@@ -687,7 +697,7 @@
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-07-08 08:49:28, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-07-28 02:40:34, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
