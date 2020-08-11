@@ -602,8 +602,10 @@
         <li class="main active"><a href="#cocos-creator-sdkbox-for-creator">在 Cocos Creator 工程上使用 SDKBox For Creator 插件</a></li>
             <li><a href="#_1">介绍</a></li>
             <li><a href="#_2">当前环境</a></li>
+            <li><a href="#sdkbox-installer">通过脚本安装 SDKBox Installer</a></li>
+            <li><a href="#sdkbox-for-creator">通过脚本安装 SDKBox For Creator</a></li>
             <li><a href="#creator-sdkbox">在 Creator 上手动安装 SDKBox</a></li>
-            <li><a href="#sdkbox-for-creator">使用 SDKBox For Creator</a></li>
+            <li><a href="#sdkbox-for-creator_1">使用 SDKBox For Creator</a></li>
         <li class="main "><a href="#api">插件 API</a></li>
     </ul>
 </div></div>
@@ -621,7 +623,6 @@
 <li><code>CocosCreator</code> Ver.2.4.1 <a href="http://www.cocos.com/creator">安装</a></li>
 <li><code>SDKBox Installer</code> 1.4.0.0 <a href="http://docs.sdkbox.com/en/installer/">安装</a></li>
 </ul>
-<p><strong>PS</strong>: 第一次运行, 如果你本机没有 <code>SDKBox Installer</code>, SDKBox For Creator 会自动帮你安装.</p>
 <!-- 
 ### 安装 SDKBox For Creator
 
@@ -643,10 +644,24 @@
 ![](../imgs/ccc_tutorial_sdkbox_menu.png)
 -->
 
+<h3 id="sdkbox-installer">通过脚本安装 SDKBox Installer</h3>
+<h4 id="sdkboxhelper">SDKBoxHelper</h4>
+<p>在这个<a href="https://github.com/hugohuang1111/sdkboxhelper/releases">界面</a> 下载最新的 SDKBoxHelper.</p>
+<p>Mac 平台, 请下载 <code>sdkboxhelper</code></p>
+<p>Windows 平台, 请下载 <code>sdkboxhelper.exe</code></p>
+<h4 id="sdkbox-installer_1">安装 SDKBox Installer</h4>
+<p>在命令行中运行 <code>sdkboxhelper</code> , (Windwos平台就应该是运行 <code>sdkboxhelper.exe</code>) 如果你本机没有安装 SDKBox Installer, 会自动帮你安装.</p>
+<h4 id="_3">检查</h4>
+<p>安装完成后, 请新开一个命令行, 并输入 <code>sdkbox -h</code> , 检查是否安装成功. 如果报 sdkbox 不存在, 可能需要重启.</p>
+<h3 id="sdkbox-for-creator">通过脚本安装 SDKBox For Creator</h3>
+<p>在 Cocos Creator 2.4.1+ 后, Cocos Creator 中不再内置 <code>SDKBox For Creator</code> .</p>
+<p>可能通过以下命令在你的工程中安装 <code>SDKBox For Creator</code> .</p>
+<p><code>sdkboxhelper -t creator -p path/to/creator_project</code> , (Windwos平台请替换为 <code>sdkboxhelper.exe</code>)</p>
 <h3 id="creator-sdkbox">在 Creator 上手动安装 SDKBox</h3>
+<p>上一步的命令安装和这里的手动安装是一样的流程. 只是上面的命令只会在工程中安装插件，目前不支持全局安装.</p>
 <p>如果你使用的是 Creator 1.4.0- 或 Creator 2.4.1+ 版本, 那么你可能需要手动来集成 SDKBox.</p>
 <ul>
-<li>通过这个<a href="http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.0.zip">链接</a>下载 SDKBox For Creator 插件包</li>
+<li>通过这个<a href="http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.1.zip">链接</a>下载 SDKBox For Creator 插件包</li>
 <li>
 <p>安装 SDKBox For Creator</p>
 <ul>
@@ -668,7 +683,7 @@
     |--package.json
 </code></pre>
 
-<h3 id="sdkbox-for-creator">使用 SDKBox For Creator</h3>
+<h3 id="sdkbox-for-creator_1">使用 SDKBox For Creator</h3>
 <ul>
 <li>在菜单栏中 <code>SDKBox</code> -&gt; <code>Launch</code></li>
 <li>如果你的工程还从来没有构建过，那么你会看到如下界面</li>
@@ -697,7 +712,7 @@
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-07-28 02:40:34, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-08-11 08:23:31, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
