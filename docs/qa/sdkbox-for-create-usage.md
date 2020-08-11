@@ -14,8 +14,6 @@
 * `CocosCreator` Ver.2.4.1 [安装](http://www.cocos.com/creator)
 * `SDKBox Installer` 1.4.0.0 [安装](http://docs.sdkbox.com/en/installer/)
 
-__PS__: 第一次运行, 如果你本机没有 `SDKBox Installer`, SDKBox For Creator 会自动帮你安装.
-
 <!-- 
 ### 安装 SDKBox For Creator
 
@@ -37,11 +35,39 @@ __PS__: 第一次运行, 如果你本机没有 `SDKBox Installer`, SDKBox For Cr
 ![](../imgs/ccc_tutorial_sdkbox_menu.png)
 -->
 
+### 通过脚本安装 SDKBox Installer
+
+#### SDKBoxHelper
+
+在这个[界面](https://github.com/hugohuang1111/sdkboxhelper/releases) 下载最新的 SDKBoxHelper.
+
+Mac 平台, 请下载 `sdkboxhelper`
+
+Windows 平台, 请下载 `sdkboxhelper.exe`
+
+#### 安装 SDKBox Installer
+
+在命令行中运行 `sdkboxhelper` , (Windwos平台就应该是运行 `sdkboxhelper.exe`) 如果你本机没有安装 SDKBox Installer, 会自动帮你安装.
+
+#### 检查
+
+安装完成后, 请新开一个命令行, 并输入 `sdkbox -h` , 检查是否安装成功. 如果报 sdkbox 不存在, 可能需要重启.
+
+### 通过脚本安装 SDKBox For Creator
+
+在 Cocos Creator 2.4.1+ 后, Cocos Creator 中不再内置 `SDKBox For Creator` .
+
+可能通过以下命令在你的工程中安装 `SDKBox For Creator` .
+
+`sdkboxhelper -t creator -p path/to/creator_project` , (Windwos平台请替换为 `sdkboxhelper.exe`)
+
 ### 在 Creator 上手动安装 SDKBox
+
+上一步的命令安装和这里的手动安装是一样的流程. 只是上面的命令只会在工程中安装插件，目前不支持全局安装.
 
 如果你使用的是 Creator 1.4.0- 或 Creator 2.4.1+ 版本, 那么你可能需要手动来集成 SDKBox.
 
-* 通过这个[链接](http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.0.zip)下载 SDKBox For Creator 插件包
+* 通过这个[链接](http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.1.zip)下载 SDKBox For Creator 插件包
 * 安装 SDKBox For Creator
     - 全局安装: 将上一步中的插件包解压到 `~/.CocosCreator/packages` (Windows 用户为 `C:\Users\${你的用户名}\.CocosCreator\packages`) 目录下
     - 项目安装: 将上一步中的插件包解压到 `${你的项目地址}/packages` 目录
