@@ -128,3 +128,56 @@ https://developers.facebook.com/docs/ios/change-log-4x/
 <<[extra-step.md]
 
 <<[proguard.md]
+
+## Facebook 编译问题
+
+目前 SDKBox 使用的是 Facebook iOS SDK 7.1.1 的静态库.
+
+Facebook iOS SDK 7.1.1 的静态库与 `Other Linker Flags` -> `-ObjC` 存在冲突.
+
+如果编译遇到以下类似错误, 那很有可能是冲突引起的
+
+```html
+Could not find or use auto-linked library 'swiftCompatibilityDynamicReplacements'
+Could not find or use auto-linked library 'swiftCore'
+Could not find or use auto-linked library 'swiftQuartzCore'
+Could not find or use auto-linked library 'swiftDispatch'
+Could not find or use auto-linked library 'swiftAVFoundation'
+Could not find or use auto-linked library 'swiftCoreMedia'
+Could not find or use auto-linked library 'swiftCoreAudio'
+Could not find or use auto-linked library 'swiftPhotos'
+Could not find or use auto-linked library 'swiftCoreMIDI'
+Could not find or use auto-linked library 'swiftCoreLocation'
+Undefined symbol: protocol descriptor for Foundation._ErrorCodeProtocol
+Undefined symbol: associated conformance descriptor for Foundation._ErrorCodeProtocol._ErrorType: Foundation._BridgedStoredNSError
+Undefined symbol: base conformance descriptor for Foundation._BridgedStoredNSError: Foundation.CustomNSError
+Undefined symbol: base conformance descriptor for Foundation._BridgedStoredNSError: Swift.Hashable
+Undefined symbol: base conformance descriptor for Foundation._ErrorCodeProtocol: Swift.Equatable
+Undefined symbol: associated conformance descriptor for Foundation._BridgedStoredNSError.Code: Foundation._ErrorCodeProtocol
+Undefined symbol: associated conformance descriptor for Foundation._BridgedStoredNSError.Code: Swift.RawRepresentable
+Undefined symbol: method descriptor for Foundation._BridgedStoredNSError.init(_nsError: __C.NSError) -> A
+Undefined symbol: base conformance descriptor for Foundation.CustomNSError: Swift.Error
+Undefined symbol: method descriptor for static Foundation.CustomNSError.errorDomain.getter : Swift.String
+Undefined symbol: method descriptor for Foundation._ObjectiveCBridgeableError.init(_bridgedNSError: __shared __C.NSError) -> A?
+Undefined symbol: method descriptor for Swift.Error._code.getter : Swift.Int
+Undefined symbol: method descriptor for Swift.Error._userInfo.getter : Swift.AnyObject?
+Undefined symbol: method descriptor for Swift.Error._getEmbeddedNSError() -> Swift.AnyObject?
+Undefined symbol: protocol conformance descriptor for Swift.Int : Swift.FixedWidthInteger in Swift
+Undefined symbol: type metadata for Swift.Int
+Undefined symbol: protocol descriptor for Foundation.CustomNSError
+Undefined symbol: static Swift._DictionaryStorage.allocate(capacity: Swift.Int) -> Swift._DictionaryStorage<A, B>
+Undefined symbol: __swiftEmptyDictionarySingleton
+```
+
+### 解决方法A
+
+* 去掉 `Project Setting` -> `Build Settings` -> `Linking` -> `Other Linker Flags` -> `-ObjC` 就可以解决这些错误
+
+### 解决方法B
+
+1. 如果你的工程不能去掉 `-ObjC` , 那你需要将 Facebook 静态库替换为[动态库](https://github.com/facebook/facebook-ios-sdk/releases/download/v7.1.1/FacebookSDK_Dynamic.framework.zip)
+
+2. 解压并替换工程中的 Facebook 相关的文件 `FBSDK*.framework` 文件.
+
+3. 调整 Xcode 设置, `Project Setting` -> `General` -> `Frameworks, Libraries, and Embedded Content` 下的 `FBSDK*.framework` 设置为 `Embed & Sign`
+
