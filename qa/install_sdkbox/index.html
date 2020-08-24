@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>SDKBoxGUI For Creator介绍 - SDKBOX</title>
+	<title>SDKBox安装 - SDKBOX</title>
         
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -547,7 +547,7 @@
                         
                             
 <li class="active">
-    <a href="./">SDKBoxGUI For Creator介绍</a>
+    <a href="./">SDKBox安装</a>
 </li>
 
                         
@@ -599,81 +599,64 @@
             
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#cocos-creator-sdkbox-for-creator">在 Cocos Creator 工程上使用 SDKBox For Creator 插件</a></li>
-            <li><a href="#_1">介绍</a></li>
-            <li><a href="#_2">当前环境</a></li>
-            <li><a href="#sdkbox-installer">通过脚本安装 SDKBox Installer</a></li>
-            <li><a href="#sdkbox-for-creator">通过脚本安装 SDKBox For Creator</a></li>
-            <li><a href="#creator-sdkbox">在 Creator 上手动安装 SDKBox</a></li>
-            <li><a href="#sdkbox-for-creator_1">使用 SDKBox For Creator</a></li>
-        <li class="main "><a href="#api">插件 API</a></li>
+        <li class="main active"><a href="#sdkbox-helper">SDKBox Helper (可选)</a></li>
+        <li class="main "><a href="#sdkbox-installer">SDKBox Installer</a></li>
+        <li class="main "><a href="#sdkbox-gui-for-creator">SDKBox GUI For Creator</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <p><a href="http://sdkbox.com">&#171; SDKBOX Home</a></p>
-<h1>在Cocos Creator上使用SDKBox For Creator</h1>
+<h1>安装SDKBox</h1>
 
-<h2 id="cocos-creator-sdkbox-for-creator">在 Cocos Creator 工程上使用 SDKBox For Creator 插件</h2>
-<hr />
-<h3 id="_1">介绍</h3>
-<p><code>SDKBox For Creator</code>是一个运行在 Creator 上的 SDKBox GUI 插件, 它使用户可以图形化集成, 更新 SDKBox 插件.</p>
-<h3 id="_2">当前环境</h3>
+<p>SDKBox 是可以分成安装器与插件两部分, 插件部分是运行在手机端, 也就是开发者最后的应用中, 安装器部分是将插件集成到开发者工程的工具.
+我们在安装器部分提供了两种方式一种是命令行方式(一般称之为 <code>SDKBox Installer</code>), 一种是GUI方式(GUI现在是CocosCreator的一个插件, 所以一般称之为 <code>SDKBox GUI For Creator</code>).</p>
+<p>以下将介绍如何将 <code>SDKBox Installer</code> 和 <code>SDKBox GUI For Creator</code> 安装到你的电脑中 (Windows, macOS).</p>
+<h2 id="sdkbox-helper">SDKBox Helper (可选)</h2>
+<p>这是一个帮助工具, 主要是用来方便安装 <code>SDKBox Installer</code>, <code>SDKBox GUI For Creator</code> (当然, 你可以不使用它, 以下也会提供方式来集成, 以你自己的方式来作选择).</p>
 <ul>
-<li><code>CocosCreator</code> Ver.2.4.1 <a href="http://www.cocos.com/creator">安装</a></li>
-<li><code>SDKBox Installer</code> 1.4.0.0 <a href="http://docs.sdkbox.com/en/installer/">安装</a></li>
+<li><a href="https://github.com/hugohuang1111/sdkboxhelper/releases/download/v0.0.5/sdkboxhelper.exe">SDKBoxHelper Windows</a></li>
+<li><a href="https://github.com/hugohuang1111/sdkboxhelper/releases/download/v0.0.5/sdkboxhelper">SDKBoxHelper Mac</a></li>
 </ul>
-<!-- 
-### 安装 SDKBox For Creator
-
-* 在 Creator 的菜单中 `插件` -> `插件商店` 打开商店
-* 搜索 `sdkbox`
-
-![](../imgs/for_creator_store_search.png)
-
-* 安装, 这里选择全局安装
-
-![](../imgs/for_creator_install_query.png)
-
-* 笔者目前这个版本, Creator 并没有给出安装成功的提示, 只能从 console 中看 log
-
-![](../imgs/for_creator_install_log.png)
-
-* 安装成功后, 如果没有在菜单中看到 SDKBox 项, 重启 Creator 试试
-
-![](../imgs/ccc_tutorial_sdkbox_menu.png)
--->
-
-<h3 id="sdkbox-installer">通过脚本安装 SDKBox Installer</h3>
-<h4 id="sdkboxhelper">SDKBoxHelper</h4>
-<p>在这个<a href="https://github.com/hugohuang1111/sdkboxhelper/releases">界面</a> 下载最新的 SDKBoxHelper.</p>
-<p>Mac 平台, 请下载 <code>sdkboxhelper</code></p>
-<p>Windows 平台, 请下载 <code>sdkboxhelper.exe</code></p>
-<h4 id="sdkbox-installer_1">安装 SDKBox Installer</h4>
-<p>在命令行中运行 <code>sdkboxhelper</code> , (Windwos平台就应该是运行 <code>sdkboxhelper.exe</code>) 如果你本机没有安装 SDKBox Installer, 会自动帮你安装.</p>
-<h4 id="_3">检查</h4>
-<p>安装完成后, 请新开一个命令行, 并输入 <code>sdkbox -h</code> , 检查是否安装成功. 如果报 sdkbox 不存在, 可能需要重启.</p>
-<h3 id="sdkbox-for-creator">通过脚本安装 SDKBox For Creator</h3>
-<p>在 Cocos Creator 2.4.1+ 后, Cocos Creator 中不再内置 <code>SDKBox For Creator</code> .</p>
-<p>可能通过以下命令在你的工程中安装 <code>SDKBox For Creator</code> .</p>
-<p><code>sdkboxhelper -t creator -p path/to/creator_project</code> , (Windwos平台请替换为 <code>sdkboxhelper.exe</code>)</p>
-<h3 id="creator-sdkbox">在 Creator 上手动安装 SDKBox</h3>
-<p>上一步的命令安装和这里的手动安装是一样的流程. 只是上面的命令只会在工程中安装插件，目前不支持全局安装.</p>
-<p>如果你使用的是 Creator 1.4.0- 或 Creator 2.4.1+ 版本, 那么你可能需要手动来集成 SDKBox.</p>
+<h2 id="sdkbox-installer">SDKBox Installer</h2>
+<p>有如下几个方式, 请选择其中一种即可:</p>
 <ul>
-<li>通过这个<a href="http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.1.zip">链接</a>下载 SDKBox For Creator 插件包</li>
+<li>在命令行中运行 <code>sdkboxhelper</code> 来安装 <code>SDKBox Installer</code></li>
+<li>在命令行中运行 Python2 脚本 <code>python -c """import urllib; s = urllib.urlopen('https://raw.githubusercontent.com/sdkbox-doc/en/master/install/install.py').read(); exec(s)"""</code> 来安装 <code>SDKBox Installer</code></li>
+<li>手动下载 <a href="http://download.sdkbox.com/installer/v1/sdkbox_installer.zip">SDKBox Installer</a> 包, 然后解压到 <code>~/.sdkbox/bin</code> 路径 (Windows 上路径为 <code>C:\Users\${UserName}\.sdkbox\bin</code>), 再添加 <code>~/.sdkbox/bin</code> 到环境变量 PATH 即可.</li>
+</ul>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>安装完成后, 新开一个命令窗口, 运行 <code>sdkbox -h</code> 来检查是否安装成功. 在某些时候, 如果环境变量确定已添加, 还是报 <code>command not find</code> 之类的错误, 可能需要重启.</li>
+<li><code>SDKBox Installer</code> 是基于 Python 2.7 , 所以请保证 python 2.7 已安装. 命令行中输入 <code>python --version</code> 查看.</li>
+</ul>
+<h2 id="sdkbox-gui-for-creator">SDKBox GUI For Creator</h2>
+<p>有如下几个方式, 任选其中即可:</p>
+<ul>
 <li>
-<p>安装 SDKBox For Creator</p>
-<ul>
-<li>全局安装: 将上一步中的插件包解压到 <code>~/.CocosCreator/packages</code> (Windows 用户为 <code>C:\Users\${你的用户名}\.CocosCreator\packages</code>) 目录下</li>
-<li>项目安装: 将上一步中的插件包解压到 <code>${你的项目地址}/packages</code> 目录</li>
-</ul>
+<p>在命令行中运行 <code>sdkboxhelper -t creator -p path/to/creator_project</code> 就可以在 <code>path/to/creator_project</code> 这个 creator 工程中安装 SDKBox 插件. (<code>path/to/creator_project</code> 应该是你的真实的工程路径)</p>
 </li>
 <li>
-<p>如果扩展菜单中没有出现 <code>SDKBox</code> 项的话, 也许需要重启 Creator</p>
+<p>手动下载 <code>SDKBox GUI For Creator</code> , <a href="http://sdkbox.anysdk.com/gui/creator/sdkbox-1.4.1.zip">地址</a></p>
+<ul>
+<li>全局安装: 解压 <code>SDKBox GUI For Creator</code> 到 <code>~/.CocosCreator/packages</code> (Windows上路径为 <code>C:\Users\${UserName}\.CocosCreator\packages</code>)</li>
+<li>工程安装: 解压 <code>SDKBox GUI For Creator</code> 到 <code>${CocosCreator Project}/packages</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>
+<p>Cocos Creator 从版本 1.4.0 到 2.4.1 是内置有 <code>SDKBox GUI For Creator</code>, 不需要再安装.</p>
 </li>
 <li>
-<p>packages 目录结构应该类似以下:</p>
+<p><code>SDKBox GUI For Creator</code> 最终还是会调用 <code>SDKBox Installer</code> 来实现安装.</p>
+</li>
+<li>
+<p>如果安装完成后, <code>扩展</code> 菜单中没有出现 <code>SDKBox</code> 项, 那你可以需要重启 Coocs Creator.</p>
+</li>
+<li>
+<p>安装完成后的目录树应该和以下类似:</p>
 </li>
 </ul>
 <pre><code>packages
@@ -681,38 +664,14 @@
     |--app
     |--main.js
     |--package.json
-</code></pre>
-
-<h3 id="sdkbox-for-creator_1">使用 SDKBox For Creator</h3>
-<ul>
-<li>在菜单栏中 <code>SDKBox</code> -&gt; <code>Launch</code></li>
-<li>如果你的工程还从来没有构建过，那么你会看到如下界面</li>
-</ul>
-<p><img alt="" src="../../imgs/for_creator_need_build_project.png" /></p>
-<ul>
-<li>
-<p><code>SDKBox For Creator</code> 中的 Build 按钮, 或 Creator 菜单中 <code>项目</code> -&gt; <code>构建发布</code> 都可以打开 Creator 的构建窗口</p>
-</li>
-<li>
-<p>当你构建完成后, SDKBox 会主动提示你是否要安装 SDKBox 的插件, 这里点击是</p>
-</li>
-</ul>
-<p><img alt="" src="../../imgs/for_creator_install_plugin_query.png" /></p>
-<ul>
-<li>然后在 <code>SDKBox For Creator</code> 中, 可以安装你所需要的插件了</li>
-</ul>
-<h1 id="api">插件 API</h1>
-<ul>
-<li>插件的 API 文档可以在<a href="http://docs.sdkbox.com/zh/">这里</a>查看</li>
-</ul>
-<p>这个<a href="http://docs.sdkbox.com/zh/qa/integration-admob-to-creator/">文档</a>介绍了如何在 Creator 工程中代码上调用 AdMob 的样例.</p></div>
+</code></pre></div>
             
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-08-12 09:26:08, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-08-24 06:43:43, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
