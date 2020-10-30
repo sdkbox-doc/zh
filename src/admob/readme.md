@@ -46,6 +46,7 @@ type:
     - "banner"
     - "interstitial"
     - "rewarded_video"
+    - "appopen"
 
 alignment:
 
@@ -79,6 +80,7 @@ width x height:
 | Interstitial       | ca-app-pub-3940256099942544/1033173712 |
 | Interstitial Video | ca-app-pub-3940256099942544/8691691433 |
 | Rewarded Video     | ca-app-pub-3940256099942544/5224354917 |
+| AppOpen            | ca-app-pub-3940256099942544/1033173712 |
 
 [iOS](https://developers.google.com/admob/android/test-ads)
 
@@ -88,6 +90,7 @@ width x height:
 | Interstitial       | ca-app-pub-3940256099942544/4411468910 |
 | Interstitial Video | ca-app-pub-3940256099942544/5135589807 |
 | Rewarded Video     | ca-app-pub-3940256099942544/1712485313 |
+| AppOpen            | ca-app-pub-3940256099942544/5662855259 |
 
 Example:
 ```json
@@ -104,8 +107,12 @@ Example:
                     "height":50
                 },
                 "gameover":{
-                    "id":"ca-app-pub-1329374026572143/4185543717",
+                    "id":"ca-app-pub-3940256099942544/4411468910",
                     "type":"interstitial"
+                },
+                "appopen":{
+                    "type": "appopen",
+                    "id": "ca-app-pub-3940256099942544/5662855259"
                 }
             }
         }
@@ -114,15 +121,19 @@ Example:
         "AdMob":{
             "ads":{
                 "home":{
-                    "id":"ca-app-pub-1329374026572143/2685130917",
+                    "id":"ca-app-pub-3940256099942544/6300978111",
                     "type":"banner",
                     "alignment":"bottom",
                     "width":300,
                     "height":100
                 },
                 "gameover":{
-                    "id":"ca-app-pub-1329374026572143/1092476511",
+                    "id":"ca-app-pub-3940256099942544/1033173712",
                     "type":"interstitial"
+                },
+                "appopen":{
+                    "id":"ca-app-pub-3940256099942544/1033173712",
+                    "type":"appopen"
                 }
             }
         }
