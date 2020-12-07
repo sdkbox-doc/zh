@@ -640,6 +640,7 @@
         <li class="main "><a href="#facebook_3">Facebook 编译问题</a></li>
             <li><a href="#a">解决方法A</a></li>
             <li><a href="#b">解决方法B</a></li>
+        <li class="main "><a href="#facebook_4">Facebook 编译问题</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1387,14 +1388,20 @@ Undefined symbol: __swiftEmptyDictionarySingleton
 <li>
 <p>调整 Xcode 设置, <code>Project Setting</code> -&gt; <code>General</code> -&gt; <code>Frameworks, Libraries, and Embedded Content</code> 下的 <code>FBSDK*.framework</code> 设置为 <code>Embed &amp; Sign</code></p>
 </li>
-</ol></div>
+</ol>
+<h2 id="facebook_4">Facebook 编译问题</h2>
+<p>如果编译遇到以下类似错误</p>
+<pre><code class="html">dyld: Library not loaded: @rpath/libswiftCore.dylib
+</code></pre>
+
+<p>可以尝试这个方法, 调整 Xcode 设置, <code>Project</code> -&gt; <code>target</code> -&gt; <code>Build Setting/All</code> -&gt; <code>Always Embed Swift Standard Libraries</code> 设置为 <code>YES</code></p></div>
             
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2020-10-30 06:49:31, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2020-12-07 01:56:48, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
