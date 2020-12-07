@@ -181,3 +181,15 @@ Undefined symbol: __swiftEmptyDictionarySingleton
 
 3. 调整 Xcode 设置, `Project Setting` -> `General` -> `Frameworks, Libraries, and Embedded Content` 下的 `FBSDK*.framework` 设置为 `Embed & Sign`
 
+
+## Facebook 编译问题
+
+如果编译遇到以下类似错误
+
+```html
+dyld: Library not loaded: @rpath/libswiftCore.dylib
+```
+
+可以尝试这个方法, 调整 Xcode 设置, `Project` -> `target` -> `Build Setting/All` -> `Always Embed Swift Standard Libraries` 设置为 `YES`
+
+
