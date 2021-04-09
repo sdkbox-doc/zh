@@ -236,6 +236,7 @@ pages:
    - 'SDKBoxPlay相关问题': 'qa/sdkboxplay_troubleshoot.md'
    - 'IAP相关问题': 'qa/iap_troubleshoot.md'
    - 'Installer相关问题': 'qa/sdkbox_installer_issue.md'
+   - 'CMake With XCFramework': 'qa/cmake_xcframework.md'
 
 theme: mkdocs
 theme_dir: 'custom_theme'
