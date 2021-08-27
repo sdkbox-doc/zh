@@ -11,4 +11,5 @@
 
 ## 样例工程
 
-[github 上的一个样例](https://github.com/sdkbox/sdkbox-sample-firebase)
+1. [github 上的一个样例](https://github.com/sdkbox/sdkbox-sample-firebase)
+2. [github 上的 creator 样例](https://github.com/sdkbox/sdkbox-sample-ccc200/tree/firebase)
