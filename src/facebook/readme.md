@@ -210,3 +210,10 @@ ${PROJECT_DIR}/Frameworks/FBSDKLoginKit.framework/FBSDKLoginKit
 -force_load
 ${PROJECT_DIR}/Frameworks/FBSDKCoreKit.framework/FBSDKCoreKit
 ```
+
+## Facebook 登录界面
+
+现象: iOS 13 中, 横屏调用 FB 登录, 当弹出 “在Facebook中打开” 对话框时, 点击无效.
+
+在 `Info.plist` 中的 `LSApplicationQueriesSchemes` 中的不应该包含 `fb-messenger-api20140430` .
+`fb-messenger-api20140430` 是旧版FBSDK使用的. 新版可能应该是 `fb-messenger-share-api`
