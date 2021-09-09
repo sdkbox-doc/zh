@@ -649,6 +649,7 @@
             <li><a href="#b">解决方法B</a></li>
         <li class="main "><a href="#facebook_4">Facebook 编译问题</a></li>
         <li class="main "><a href="#facebook-crash">Facebook Crash 问题</a></li>
+        <li class="main "><a href="#facebook_5">Facebook 登录界面</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -1366,14 +1367,19 @@ Undefined symbol: __swiftEmptyDictionarySingleton
 ${PROJECT_DIR}/Frameworks/FBSDKLoginKit.framework/FBSDKLoginKit
 -force_load
 ${PROJECT_DIR}/Frameworks/FBSDKCoreKit.framework/FBSDKCoreKit
-</code></pre></div>
+</code></pre>
+
+<h2 id="facebook_5">Facebook 登录界面</h2>
+<p>现象: iOS 13 中, 横屏调用 FB 登录, 当弹出 “在Facebook中打开” 对话框时, 点击无效.</p>
+<p>在 <code>Info.plist</code> 中的 <code>LSApplicationQueriesSchemes</code> 中的不应该包含 <code>fb-messenger-api20140430</code> .
+<code>fb-messenger-api20140430</code> 是旧版FBSDK使用的. 新版可能应该是 <code>fb-messenger-share-api</code></p></div>
             
         </div>
 
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2021-08-27 08:18:00, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2021-09-09 06:10:29, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
