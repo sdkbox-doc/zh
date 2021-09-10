@@ -175,7 +175,7 @@ Undefined symbol: __swiftEmptyDictionarySingleton
 
 ### 解决方法B
 
-1. 如果你的工程不能去掉 `-ObjC` , 那你需要将 Facebook 静态库替换为[动态库](https://github.com/facebook/facebook-ios-sdk/releases/download/v7.1.1/FacebookSDK_Dynamic.framework.zip)
+1. 如果你的工程不能去掉 `-ObjC` , 那你需要将 Facebook 静态库替换为[动态库](https://github.com/facebook/facebook-ios-sdk/releases/download/v11.0.1/FacebookSDK_Dynamic.framework.zip)
 
 2. 解压并替换工程中的 Facebook 相关的文件 `FBSDK*.framework` 文件.
 
