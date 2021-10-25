@@ -621,6 +621,7 @@
             <li><a href="#bitcode">禁止 Bitcode 支持</a></li>
             <li><a href="#_4">游戏全屏配置</a></li>
             <li><a href="#canopenurl">canOpenURL 白名单</a></li>
+            <li><a href="#creator">关于 Creator 工程</a></li>
             <li><a href="#json">JSON 配置</a></li>
         <li class="main "><a href="#_5">使用</a></li>
             <li><a href="#firebase">初始化 Firebase</a></li>
@@ -682,6 +683,14 @@ xxx 为你的插件名字
 <p>如果您的游戏不同时支持横竖屏，则必须在 Xcode 中选中 <code>Requires full screen</code>，否则将不会通过 Apple 的审核。</p>
 <h4 id="canopenurl">canOpenURL 白名单</h4>
 <p>取决于您使用哪些插件。需要在 <code>info.plist</code> 的 <code>LSApplicationQueriesSchemes</code> 下添加名单。</p>
+<h3 id="creator">关于 Creator 工程</h3>
+<p>Creator 导出工程会修改工程的配置, 这可能会影响 SDKBox 对工程的配置修改. 所以可以有以下做法(任选其一):</p>
+<ol>
+<li>保存导出工程中的修改, 对于 SDKBox 来说可能有这些文件(mk, gradle, gradle.properties, AppDelegate.cpp, ...), 导出后再恢复对应该文件</li>
+<li>在每一次 Creator 导出工程后, 重新 import 插件.</li>
+</ol>
+<p>推荐第一种, 但是第一种的麻烦点在于, 对于第一次(或很久没接触的人)可能会有露掉某个文件
+第二种, 很方便, 它的麻烦点在于, 如果你对工程有自己的修改, SDKBox 的重新 import 不能帮你恢复.</p>
 <!--## Configuration
 ### SDKBOX Cloud
 SDKBOX Cloud enables developers to receive the benefits of a centralized application management interface, by helping to boost their applications with extended functionality. The two main features are: __Remote Application Management__ which provides the abilities of updating and testing, and __IAP Receipt Verification__.
@@ -1056,7 +1065,7 @@ SDKBox.init(this);
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2021-09-18 05:20:19, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2021-10-25 02:17:32, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
