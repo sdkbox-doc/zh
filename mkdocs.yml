@@ -237,7 +237,7 @@ pages:
    - 'IAP相关问题': 'qa/iap_troubleshoot.md'
    - 'Installer相关问题': 'qa/sdkbox_installer_issue.md'
    - 'CMake With XCFramework': 'qa/cmake_xcframework.md'
-   - 'UseSDKBoxLoaclly': 'qa/use_sdkbox_locally.md'
+   - '本地使用SDKBox': 'qa/use_sdkbox_locally.md'
 
 theme: mkdocs
 theme_dir: 'custom_theme'

@@ -6,20 +6,20 @@
 
 ## 步骤
 
-* 下载插件
-    - 所有已安装过的插件都会在 `~/.sdkbox/plugins` (Windows 上就是类似的个人目录 `%HOME%/.sdkbox/plugins`) .
-    - 如果有需要, 你也可以预先自己下载插件保留备份.
-        1. 浏览网页 `http://download.sdkbox.com/installer/v1/manifest.json`
-        2. 用 `bundle` 的值, 替换 `http://download.sdkbox.com/installer/v1/BUNDLE_NAME` 中的 `BUNDLE_NAME`, 就可以得到插件(以 iap 为例)的下载路径, `http://download.sdkbox.com/installer/v1/sdkbox-iap_v2.7.7.0.tar.gz` .
-        3. 下载, 备份
+### 下载插件
+- 所有已安装过的插件都会在 `~/.sdkbox/plugins` (Windows 上就是类似的个人目录 `%HOME%/.sdkbox/plugins`) .
+- 如果有需要, 你也可以预先自己下载插件保留备份.
+    1. 浏览网页 `http://download.sdkbox.com/installer/v1/manifest.json`
+    2. 用 `bundle` 的值, 替换 `http://download.sdkbox.com/installer/v1/BUNDLE_NAME` 中的 `BUNDLE_NAME`, 就可以得到插件(以 iap 为例)的下载路径, `http://download.sdkbox.com/installer/v1/sdkbox-iap_v2.7.7.0.tar.gz` .
+    3. 下载, 备份
 
-* 安装插件
+### 安装插件
 
-    - 在命令行中, 输入 `sdkbox import /local/path/to/plugin -p /project/path`
+- 在命令行中, 输入 `sdkbox import /local/path/to/plugin -p /project/path`
 
-* 本地安装的例子:
+### 本地安装的例子:
 
-    - 安装本地插件到 creator2 的导出工程中
+- 安装本地插件到 creator2 的导出工程中
 
 `sdkbox import ~/.sdkbox/plugins/sdkbox-iap_v2.7.7.0 -p ./build/jsb-link`
 
@@ -35,7 +35,7 @@ http://sdkbox-doc.github.io/en/plugins/iap/v3-js/
  > Log file = /Users/hugo/.sdkbox/log/sdkbox-log-2021-12-06.sdkbox.temp
 ```
 
-    - 安装本地插件到 creator3 的导出工程中
+- 安装本地插件到 creator3 的导出工程中
 
 `sdkbox import /Users/hugo/Downloads/sdkbox-iap_v2.7.7.0.tar.gz -p /Users/hugo/Documents/work/t/creator3Test --nohelp`
 
@@ -48,7 +48,7 @@ hugo@hugodeMacBook-Pro cocos2dxTest % sdkbox import /Users/hugo/Downloads/sdkbox
  > Log file = /Users/hugo/.sdkbox/log/sdkbox-log-2021-12-06-4.sdkbox.temp
 ```
 
-    - 安装本地插件到 cocos2dx 的工程中
+- 安装本地插件到 cocos2dx 的工程中
 
 `sdkbox import ~/.sdkbox/plugins/sdkbox-admob_v2.7.6.1 -p .`
 
