@@ -9,7 +9,7 @@
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
 
-	<title>UseSDKBoxLoaclly - SDKBOX</title>
+	<title>本地使用SDKBox - SDKBOX</title>
         
         <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../css/font-awesome-4.0.3.css" rel="stylesheet">
@@ -593,7 +593,7 @@
                         
                             
 <li class="active">
-    <a href="./">UseSDKBoxLoaclly</a>
+    <a href="./">本地使用SDKBox</a>
 </li>
 
                         
@@ -632,9 +632,7 @@
 <h2 id="_1">简介</h2>
 <p>有一些工程可能因为各种原因, 需要继续使用 SDKBox. 下面介绍一下, 如何本地使用 SDKBox 安装插件. </p>
 <h2 id="_2">步骤</h2>
-<ul>
-<li>
-<p>下载插件</p>
+<h3 id="_3">下载插件</h3>
 <ul>
 <li>所有已安装过的插件都会在 <code>~/.sdkbox/plugins</code> (Windows 上就是类似的个人目录 <code>%HOME%/.sdkbox/plugins</code>) .</li>
 <li>如果有需要, 你也可以预先自己下载插件保留备份.<ol>
@@ -644,19 +642,13 @@
 </ol>
 </li>
 </ul>
-</li>
-<li>
-<p>安装插件</p>
+<h3 id="_4">安装插件</h3>
 <ul>
 <li>在命令行中, 输入 <code>sdkbox import /local/path/to/plugin -p /project/path</code></li>
 </ul>
-</li>
-<li>
-<p>本地安装的例子:</p>
+<h3 id="_5">本地安装的例子:</h3>
 <ul>
 <li>安装本地插件到 creator2 的导出工程中</li>
-</ul>
-</li>
 </ul>
 <p><code>sdkbox import ~/.sdkbox/plugins/sdkbox-iap_v2.7.7.0 -p ./build/jsb-link</code></p>
 <pre><code class="bash">hugo@hugodeMacBook-Pro creatorTest % sdkbox import ~/.sdkbox/plugins/sdkbox-iap_v2.7.7.0 -p ./build/jsb-link
@@ -670,8 +662,9 @@ http://sdkbox-doc.github.io/en/plugins/iap/v3-js/
  &gt; Log file = /Users/hugo/.sdkbox/log/sdkbox-log-2021-12-06.sdkbox.temp
 </code></pre>
 
-<pre><code>- 安装本地插件到 creator3 的导出工程中
-</code></pre>
+<ul>
+<li>安装本地插件到 creator3 的导出工程中</li>
+</ul>
 <p><code>sdkbox import /Users/hugo/Downloads/sdkbox-iap_v2.7.7.0.tar.gz -p /Users/hugo/Documents/work/t/creator3Test --nohelp</code></p>
 <pre><code class="bash">hugo@hugodeMacBook-Pro cocos2dxTest % sdkbox import /Users/hugo/Downloads/sdkbox-iap_v2.7.7.0.tar.gz -p /Users/hugo/Documents/work/t/creator3Test --nohelp
   _______ ______  _     _ ______   _____  _     _
@@ -681,8 +674,9 @@ http://sdkbox-doc.github.io/en/plugins/iap/v3-js/
  &gt; Log file = /Users/hugo/.sdkbox/log/sdkbox-log-2021-12-06-4.sdkbox.temp
 </code></pre>
 
-<pre><code>- 安装本地插件到 cocos2dx 的工程中
-</code></pre>
+<ul>
+<li>安装本地插件到 cocos2dx 的工程中</li>
+</ul>
 <p><code>sdkbox import ~/.sdkbox/plugins/sdkbox-admob_v2.7.6.1 -p .</code></p>
 <pre><code class="bash">hugo@hugodeMacBook-Pro cocos2dxTest % sdkbox import ~/.sdkbox/plugins/sdkbox-admob_v2.7.6.1 -p .
   _______ ______  _     _ ______   _____  _     _
@@ -709,7 +703,7 @@ http://sdkbox-doc.github.io/en/plugins/admob/v3-cpp/
         <footer class="col-md-12">
             <hr>
             
-            <p>Build Date UTC : 2021-12-06 08:40:06, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+            <p>Build Date UTC : 2021-12-06 08:47:18, Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
 
         
