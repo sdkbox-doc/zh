@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,19 +13,19 @@
         
     <url>
      <loc>/cocos/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/installer/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/cocos_creator/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -41,25 +41,25 @@
         
     <url>
      <loc>/unity/iap/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/unity/review/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/unity/socialshare/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/unity/googleanalytics/documentation/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -69,7 +69,7 @@
         
     <url>
      <loc>/unreal/iap/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -79,25 +79,25 @@
         
     <url>
      <loc>/liveops/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/liveops/remote-config/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/liveops/receipt-verification/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/liveops/catalog-management/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -107,49 +107,55 @@
         
     <url>
      <loc>/qa/installgoogleplaystore/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/integration-admob-to-creator/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/install_sdkbox/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/crypt-sdkbox-config/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/sdkboxplay_troubleshoot/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/iap_troubleshoot/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/sdkbox_installer_issue/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/qa/cmake_xcframework/</loc>
-     <lastmod>2021-10-25</lastmod>
+     <lastmod>2021-12-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/qa/use_sdkbox_locally/</loc>
+     <lastmod>2021-12-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
